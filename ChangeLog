@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Fri May 28 17:18:22 PDT 2004
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+Added error checking
+    *
+------------------------------------------------------------
 User: hierath  Fri May 28 17:18:21 PDT 2004
 astro/astro
 
