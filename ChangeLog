@@ -1,4 +1,16 @@
 ------------------------------------------------------------
+User: hierath  Wed Jan 28 15:23:06 PST 2004
+astro/astro
+
+Modified Files:
+	EarthOrbit.h 
+Added Files:
+	GPS.h 
+Log Message:
+
+Moved GPS class into astro.
+    *
+------------------------------------------------------------
 User: hierath  Fri Jan 23 13:00:34 PST 2004
 astro/astro
 
