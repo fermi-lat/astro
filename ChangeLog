@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Feb  6 12:39:36 PST 2005
+astro/astro
+
+Modified Files:
+	HealpixArray.h 
+Log Message:
+needed public inheritance for useful functionality.
+    *
+------------------------------------------------------------
 User: burnett  Sun Feb  6 12:23:53 PST 2005
 astro/astro
 
