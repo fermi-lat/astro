@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: srobinsn  Mon Sep 16 16:29:17 PDT 2002
+astro/src
+
+Modified Files:
+	EarthOrbit.cxx 
+Log Message:
+extra rotation function removed.
+
+    *
+------------------------------------------------------------
+User: srobinsn  Mon Sep 16 16:29:17 PDT 2002
 astro/astro
 
 Modified Files:
