@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Jun  6 12:10:31 PDT 2004
+astro/src
+
+Modified Files:
+	SkyDir.cxx 
+Log Message:
+fix galactic transformation when generating map
+    *
+------------------------------------------------------------
+User: burnett  Sun Jun  6 12:10:31 PDT 2004
 astro/astro
 
 Modified Files:
