@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.7 2002/10/29 06:46:33 srobinsn Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.8 2004/03/30 10:47:45 burnett Exp $
 
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
@@ -21,7 +21,7 @@ namespace {
     inline double sqr(double x){return x*x;}
     
     astro::JulianDate JD_missionStart =astro::JulianDate(2005, 1, 1,0.0);
-    astro::JulianDate JDStart =        astro::JulianDate(2005.,7,18,0.0);
+    astro::JulianDate JDStart =        astro::JulianDate(2005 ,7,18,0.0);
 }
 
 // static constants relfecting orbit parameters

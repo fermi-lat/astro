@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.19 2004/02/14 23:17:06 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.20 2004/03/12 23:43:30 burnett Exp $
 */
 
 // Include files
@@ -213,7 +213,7 @@ void SkyDir::setProjection( float ref_ra,  float ref_dec,
 
     ProjType type=BAD;
 
-    for( int i = 0; i< sizeof(names)/sizeof(void*); ++i){
+    for( size_t i = 0; i< sizeof(names)/sizeof(void*); ++i){
         if( projName != std::string(names[i])) continue;
             type=static_cast<ProjType>(i); break;
     }
