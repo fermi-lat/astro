@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Mar  2 05:56:00 PST 2004
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Log Message:
+needed const version of this operator
+    *
+------------------------------------------------------------
 User: burnett  Sat Feb 14 17:17:39 PST 2004
 astro/doc
 
