@@ -1,7 +1,7 @@
 /** @file SkyDir.h
-    @brief declaration of the class SkyDir
+@brief declaration of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.21 2004/06/03 22:06:16 hierath Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.22 2004/06/04 01:14:19 hierath Exp $
 
 */
 #ifndef OrbitModel_SkyDir_H
@@ -22,7 +22,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.21 2004/06/03 22:06:16 hierath Exp $
+    * <br>$Id: SkyDir.h,v 1.22 2004/06/04 01:14:19 hierath Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
@@ -39,8 +39,6 @@ namespace astro {
             PROJECTION=2 
         } CoordSystem ;
 
-        //! projection types: MER is mercator, AIT, is Hammer-Aitoff...
-        typedef enum { CAR, SIN, TAN, ARC, NCP, GLS, MER, AIT, STG, BAD } ProjType; 
 
         ///Constructors
         ///(l,b) or (Ra, Dec) or projection instanciation
@@ -50,12 +48,11 @@ namespace astro {
         SkyDir(Hep3Vector, CoordSystem inputType = EQUATORIAL);
 
         /** initialize using a projection and coordinates given in that projection
-         @param pixelx value of x pixel
-         @param pixely value of y pixel
-         @param projection  projection to use to obtain world coordinates
-         @param galactic if true, the 
-         */
-        SkyDir(double pixelx, double pixely, const SkyProj& projection, bool galactic=false);
+        @param pixelx value of x pixel
+        @param pixely value of y pixel
+        @param projection  projection to use to obtain world coordinates
+        */
+        SkyDir(double pixelx, double pixely, const SkyProj& projection);
 
 
         //! function operator returns the direction
@@ -76,33 +73,19 @@ namespace astro {
         //!to return the opening angle (in radians) between two objects:
         double difference(const SkyDir& other)const;
 
-        /** @brief Routine that gives a projection of the current coordinates 
-            @param projection The projection transfomation to apply. 
-            @param galactic [false] if true, generate transformation in galactic coords*/
+        /** @brief Routine that returns a projection
 
-        std::pair<double,double> project(const SkyProj& projection, bool galactic=false) const;
-
-		/** @brief Does a default Hammer-Aitoff projection of the ra and dec */
-		std::pair<double,double> project() const;
-
-        /** @brief inverse projection function for reference: units are degrees
-
-     	@param point_x     coordinates of the projected point
-	@param point_y          in the projection coordinate system
-	@param point_ra    ra and dec (radians) of the point to 
-	@param point_dec        be projected        
+        @param projection The projection transfomation to apply. 
+        @param galactic [false] if true, generate transformation in galactic coords
+        @return (pixelx,pixely)
         */
-        static int inverseProjection( double point_x, double point_y, double *point_ra, double *point_dec);
-
-        class Exception; // forward declaration
+        std::pair<double,double> project(const SkyProj& projection, bool galactic=false) const;
 
     private:
         static HepRotation s_equatorialToGalactic;
 
         Hep3Vector m_dir;
-        //  std::pair<double,double> setGalCoordsFromDir() const;
         void setGalCoordsFromDir(double&, double &) const;
-
 
     };
 
