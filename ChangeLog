@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: hierath  Fri Jun  4 18:34:06 PDT 2004
+astro/doc
+
+Added Files:
+	ait.jpg mol.jpg original.jpg qsc.jpg sfl.jpg skyproj.html 
+	zea.jpg 
+Log Message:
+Documentation for SkyProj wrapper for WCSLIB projection routines.
+    *
+------------------------------------------------------------
 User: hierath  Thu Jun  3 18:14:19 PDT 2004
 astro/src
 
