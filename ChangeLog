@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sat Jun  5 12:30:40 PDT 2004
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+copy over some of the document for doxy: make the pixel-to-pixel function const.
+    *
+------------------------------------------------------------
+User: burnett  Sat Jun  5 12:30:40 PDT 2004
 astro/astro
 
 Modified Files:
