@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.10 2004/07/02 23:21:09 hierath Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.11 2004/07/02 23:47:51 hierath Exp $
 
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
@@ -143,7 +143,7 @@ double EarthOrbit::calcShapiroDelay(JulianDate jd, const SkyDir sourceDir) const
    double costheta = - rsun.dot(rsrc) / ( rsun.mag() * rsrc.mag() );
 
    // m = G * Msun / c^3
-   static double m = 4.9271e16;
+   static double m = 4.9271e-6;
    return 2 * m * log(1+costheta);
 }
 
