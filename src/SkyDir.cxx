@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.8 2003/06/06 20:16:49 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.9 2003/08/19 17:01:38 srobinsn Exp $
 
 // Include files
 #include "astro/SkyDir.h"
@@ -41,7 +41,7 @@ namespace astro {
     /** @brief initialize from direction
     */
     SkyDir::SkyDir(Hep3Vector dir, CoordSystem inputType)
-        : m_dir(dir)
+        : m_dir(dir.unit())
     {
         if(inputType!=EQUATORIAL){
             m_dir = s_celestialToGalactic.inverse() * m_dir;
