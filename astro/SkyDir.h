@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.1.1.1 2002/08/13 00:20:45 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.2 2002/08/13 10:01:16 srobinsn Exp $
 #ifndef OrbitModel_SkyDir_H
 #define OrbitModel_SkyDir_H
 
@@ -6,6 +6,7 @@
 // Include files
 #include "CLHEP/Vector/Rotation.h"
 #include "CLHEP/Vector/ThreeVector.h"
+#include <cmath>
 
 namespace astro {
     
@@ -13,7 +14,7 @@ namespace astro {
 /** @class SkyDir
 * @brief Describe an absolute direction
 * @author S. Robinson 
-* <br>$Id: SkyDir.h,v 1.1.1.1 2002/08/13 00:20:45 burnett Exp $
+* <br>$Id: SkyDir.h,v 1.2 2002/08/13 10:01:16 srobinsn Exp $
 *
     */
     class SkyDir
@@ -43,7 +44,8 @@ namespace astro {
         static HepRotation s_celestialToGalactic;
         
         Hep3Vector m_dir;
-        std::pair<double,double> setGalCoordsFromDir() const;
+	//  std::pair<double,double> setGalCoordsFromDir() const;
+	void setGalCoordsFromDir(double&, double &) const;
         
     };
     

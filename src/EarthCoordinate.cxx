@@ -1,5 +1,5 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.2 2002/08/14 14:37:30 burnett Exp $
-
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.3 2002/08/30 05:12:03 srobinsn Exp $
+#include <cmath>
 
 #include "astro/EarthCoordinate.h"
 
