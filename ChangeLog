@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sat Jun  5 09:53:32 PDT 2004
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+disable dump of wcs struct
+    *
+------------------------------------------------------------
 User: hierath  Fri Jun  4 18:34:06 PDT 2004
 astro/doc
 
