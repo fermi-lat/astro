@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Feb  6 12:23:53 PST 2005
+astro/astro
+
+Modified Files:
+	Healpix.h HealpixArray.h 
+Log Message:
+add default constructor
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r5, operation: add
 Package: astro
