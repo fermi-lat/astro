@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Mar 29 14:27:38 PST 2004
+astro/astro
+
+Added Files:
+	HTM.h 
+Log Message:
+new class to manage a list of HTM nodes
+    *
+------------------------------------------------------------
 User: hierath  Fri Mar 26 16:22:18 PST 2004
 astro/wcslib/test_s
 
