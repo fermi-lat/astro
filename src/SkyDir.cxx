@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.29 2004/06/05 19:28:11 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.30 2004/06/06 19:10:31 burnett Exp $
 */
 
 // Include files
@@ -11,12 +11,6 @@
 using namespace astro;
 #include <string>
 #include <stdexcept>
-
-
-namespace{
-        static double DEGTORAD=M_PI/180.;
-}
-
 
 
 /** @brief initialize from (ra, dec), or (l,b)
@@ -41,7 +35,7 @@ SkyDir::SkyDir(double param1, double param2, CoordSystem inputType){
         double ra = param1*M_PI/180;
         double dec = param2*M_PI/180;
 
-        //here we construct the cartesian celestial vector
+        //here we construct the cartesian equatorial vector
         m_dir = Hep3Vector( cos(ra)*cos(dec), sin(ra)*cos(dec) , sin(dec) );        
     }else{
         //improper coordinate system declaration - default things and say so.
@@ -150,9 +144,6 @@ double SkyDir::difference(const SkyDir& other)const
 	}
 	else
         return 2.*asin(x);
-
-    // TODO: make this computationally efficient, avoid sqrt and asin at least for small angles
-	//return 2.*asin(0.5*(m_dir-other.dir()).mag());
 }
 
 

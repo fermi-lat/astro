@@ -1,7 +1,7 @@
 /** @file SkyDir.h
 @brief declaration of the class SkyDir
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.23 2004/06/05 19:28:11 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.24 2004/06/06 19:10:31 burnett Exp $
 
 */
 #ifndef OrbitModel_SkyDir_H
@@ -22,7 +22,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.23 2004/06/05 19:28:11 burnett Exp $
+    * <br>$Id: SkyDir.h,v 1.24 2004/06/06 19:10:31 burnett Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
@@ -34,9 +34,7 @@ namespace astro {
             //!  fixed direction with respect to the galactic coordinate system (l,b)
             GALACTIC=0,  
             //! fixed direction with respect to the equatorial coordinate system (ra,dec) in the J2000 epoch.
-            EQUATORIAL=1,
-            //! a projection, e.g. AIT. For the constructor, the projection parameters must be set properly
-            PROJECTION=2 
+            EQUATORIAL=1
         } CoordSystem ;
 
 
@@ -76,8 +74,10 @@ namespace astro {
         /** @brief Routine that returns a projection
 
         @param projection The projection transfomation to apply. 
-        @param galactic [false] if true, generate transformation in galactic coords
         @return (pixelx,pixely)
+
+        Note that if the projection specificies galactic coordinates, the 
+        projection will be applied to (l,b) rather than (ra,dec)
         */
         std::pair<double,double> project(const SkyProj& projection) const;
 
