@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Feb  6 11:26:38 PST 2005
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+added new template class HealpixArray, about to tag
+    *
+------------------------------------------------------------
+User: burnett  Sun Feb  6 11:26:38 PST 2005
 astro/cmt
 
 Modified Files:
