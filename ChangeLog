@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Mar 29 15:01:58 PST 2004
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+test of new class to manage a list of HTM nodes
+    *
+------------------------------------------------------------
 User: burnett  Mon Mar 29 14:27:38 PST 2004
 astro/src
 
