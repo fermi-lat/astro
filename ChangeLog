@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jan 27 14:04:50 PST 2005
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+convert spacecraft position from m to km for reading from an FT2 fits file; move warning message from std::cerr to exception's what()
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r4p4, operation: add
 Package: astro
