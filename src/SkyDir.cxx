@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.16 2004/02/07 00:35:21 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.17 2004/02/07 14:15:30 burnett Exp $
 */
 
 // Include files
@@ -67,8 +67,11 @@ SkyDir::SkyDir(double param1, double param2, CoordSystem inputType){
         m_dir = Hep3Vector( cos(ra)*cos(dec), sin(ra)*cos(dec) , sin(dec) );        
     }else if(inputType == PROJECTION){
         double ra_rad, dec_rad;
-        inverseProjection(param1, param2, &ra_rad, &dec_rad);
+        int code =inverseProjection(param1, param2, &ra_rad, &dec_rad);
 
+        if( code==501) { 
+            throw std::out_of_range("projection out of range");
+        }
         Hep3Vector t = Hep3Vector( cos(ra_rad)*cos(dec_rad), sin(ra_rad)*cos(dec_rad) , sin(dec_rad) );        
         if( !s_project_lb){
             m_dir = t;
