@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: hierath  Wed Sep 29 11:06:29 PDT 2004
+astro/src
+
+Modified Files:
+	EarthOrbit.cxx SolarSystem.cxx 
+Log Message:
+Minor fixes and additions related to jplephem and timing corrections.
+    *
+------------------------------------------------------------
+User: hierath  Wed Sep 29 11:06:29 PDT 2004
 astro/astro
 
 Modified Files:
