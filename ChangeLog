@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Oct  1 05:57:49 PDT 2003
+astro/src
+
+Modified Files:
+	PointingTransform.cxx 
+Log Message:
+add ending newline
+    *
+------------------------------------------------------------
 User: srobinsn  Tue Sep 30 15:57:37 PDT 2003
 astro/src
 
