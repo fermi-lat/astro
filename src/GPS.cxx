@@ -1,5 +1,5 @@
 // GPS.cxx: implementation of the GPS class.
-// $Id: GPS.cxx,v 1.4 2004/03/30 10:47:45 burnett Exp $
+// $Id: GPS.cxx,v 1.5 2004/03/30 13:37:44 burnett Exp $
 //////////////////////////////////////////////////////////////////////
 
 #include "astro/GPS.h"
@@ -283,8 +283,8 @@ void GPS::getPointingCharacteristics(double inputTime){
     double lZ,bZ,raX,decX;
     //before rotation, the z axis points along the zenith:
     if(m_rockType == POINT){
-        lZ=m_rotangles.first;
-        bZ=m_rotangles.second;
+        lZ=m_rotangles.first*(180./M_PI);
+        bZ=m_rotangles.second*(180./M_PI);
         SkyDir tempDirZ(lZ,bZ,astro::SkyDir::GALACTIC);
         raX = tempDirZ.ra()-90.0;
         decX = 0.;
