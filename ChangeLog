@@ -1,5 +1,17 @@
 ------------------------------------------------------------
 User: hierath  Wed Jan 21 18:49:30 PST 2004
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+
+Added getGregorianDate to JulianDate.  Allows the calendar year and utc time to be 
+returned as a string in the format desired by the "DATE-OBS" keyword in the FITS header.
+
+    *
+------------------------------------------------------------
+User: hierath  Wed Jan 21 18:49:30 PST 2004
 astro/astro
 
 Modified Files:
