@@ -15,7 +15,7 @@ namespace astro {
   * @brief position of various solarsystem entities
   * @author G. Tosti original code 
   * @author T. Burnett convert to class
-  * $Id: SolarSystem.h,v 1.1.1.1 2002/08/13 00:20:45 burnett Exp $
+  * $Id: SolarSystem.h,v 1.2 2004/03/30 11:35:45 burnett Exp $
   *
   * This is a thin wrapper to code in the class SolSystem
   */
@@ -26,9 +26,9 @@ public:
     /**
      * index of body that corresponds to the #define's in SolSystem  
      */
-    enum Body{ 
-        //VENUS=1, MARS=2, JUPITER=3,SATURN=4, 
-        //URANUS=5,NEPTUNE=6, PLUTO=7, 
+    enum Body{ MERCURY=0,
+        VENUS=1, MARS=2, JUPITER=3,SATURN=4, 
+        URANUS=5,NEPTUNE=6, PLUTO=7, 
             Sun=8, Moon=9 };
     SolarSystem();
 
@@ -43,6 +43,18 @@ public:
     * @brief set the body and date; retun the SkyDir 
     */
     SkyDir direction(Body body, JulianDate date) ;
+
+    /**
+     * @brief set the body and date; return the distance of the body from Earth
+     */
+    double distance(Body body, JulianDate date);
+
+
+    /**
+     * @brief set the date and return the distance vector to solar system barycenter.
+     */
+    Hep3Vector getBarycenter(JulianDate jd);
+
 
     /**
     * @brief conversion operator that returns the SkyDir 
