@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Thu Oct  7 12:40:15 PDT 2004
+astro/src/jplephem
+
+Removed Files:
+	JPLEPH.405 
+Log Message:
+Remove jpl ephemeris fits file to allow an attempt to add it correctly
+    *
+------------------------------------------------------------
 User: jchiang  Mon Oct  4 17:04:00 PDT 2004
 astro/src/test
 
