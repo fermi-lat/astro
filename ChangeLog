@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Nov 11 17:52:23 PST 2004
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+add interface to the history data base
+    *
+------------------------------------------------------------
 User: hierath  Mon Oct 25 12:04:06 PDT 2004
 astro/src
 
