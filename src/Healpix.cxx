@@ -2,7 +2,7 @@
     @brief Healpix class implementation with code from WMAP
 
     @author B. Lesnick 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.3 2005/03/29 19:13:57 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.4 2005/04/01 22:23:32 burnett Exp $
 */
 /* Local Includes */
 #include "astro/Healpix.h"
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <cassert>
-
+#include <stdexcept>
 
 using namespace astro;
 
