@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.4 2002/08/30 12:30:28 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.5 2002/10/24 15:39:08 kuss Exp $
 #include <cmath>
 
 #include "astro/EarthCoordinate.h"
@@ -20,7 +20,6 @@ double EarthCoordinate::s_EarthRadius = 6378145.; //m
 EarthCoordinate::EarthCoordinate(Hep3Vector pos, JulianDate jd)
 {
     m_lat = M_PI/2- pos.theta();
-    double GMST0 = GetGMST(jd);
     m_lon = GetGMST(jd)*M_PI/180 - pos.phi();
     m_lon = fmod(m_lon, 2*M_PI); if(m_lon>M_PI) m_lon -= 2*M_PI;
 

@@ -2,11 +2,14 @@
 @brief implement HTM methods
 
 @author T. Burnett (based on copyright code by Peter Z. Kunszt) 
-$Header: /nfs/slac/g/glast/ground/cvs/users/burnett/tessel/src/htm_clone.cxx,v 1.1 2004/03/29 14:10:20 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HTM.cxx,v 1.1 2004/03/29 22:27:38 burnett Exp $
 */
 
 #include "astro/HTM.h"
 #include <algorithm>
+#include <stdexcept>
+
+using namespace astro;
 
 HTM::HTM(int maxlevel)
 : m_maxid( 2*size(maxlevel)-1 ) 

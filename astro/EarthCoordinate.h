@@ -12,7 +12,7 @@ namespace astro {
 
   * \brief describe a point with respect to the surface of the Earth
   * \author T. Burnett and G. Tosti
-  * <hr> $Id: EarthCoordinate.h,v 1.2 2002/08/14 14:37:30 burnett Exp $
+  * <hr> $Id: EarthCoordinate.h,v 1.3 2004/02/14 23:17:06 burnett Exp $
   *
   * Note that we calculate the geodetic coordinates: from http://ssd.jpl.nasa.gov/glossary.html#geodetic
   *
