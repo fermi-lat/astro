@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Mar 25 04:44:12 PST 2004
+astro/astro
+
+Added Files:
+	SkyFunction.h 
+Log Message:
+moved from map_tools
+    *
+------------------------------------------------------------
 User: burnett  Fri Mar 19 15:29:26 PST 2004
 astro/cmt
 
