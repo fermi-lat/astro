@@ -1,13 +1,7 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.2 2004/03/30 10:47:44 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.3 2004/09/27 21:11:28 jchiang Exp $
 
 #if !defined(_H_GPS_CLASS)
 #define _H_GPS_CLASS
-
-
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
 
 #include "facilities/Scheduler.h"
 #include "facilities/Observer.h"
@@ -24,7 +18,7 @@
 * \class GPS
 * \brief Models the Global Positoning System for a spacecraft. Handles time, position, and orientation for the instrument as a whole.
 * 
-* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.2 2004/03/30 10:47:44 burnett Exp $
+* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.3 2004/09/27 21:11:28 jchiang Exp $
 Represents the Global Positioning System on-board the spacecraft. An Orbit
 object is used to compute the spacecraft's position and pointing characteristics.
 Time is tracked through this object, and synchronized with the Scheduler for 
@@ -61,6 +55,10 @@ public:
         double lat,lon;
         Hep3Vector position;
     }POINTINFO;
+
+    typedef std::map<double,GPS::POINTINFO> HistoryMap;
+    typedef HistoryMap::const_iterator history_iterator;
+    const HistoryMap& getHistory()const{return m_pointingHistory;}
 
     class Coords {
     public:
@@ -201,7 +199,7 @@ private:
     RockType m_rockType;//current rocking scheme
     double m_rockNorth; //internal value for the current number of degrees the craft is rotated at the time.
     std::string m_pointingHistoryFile;//pointing/livetime database history file to use.
-    std::map<double,POINTINFO> m_pointingHistory;//pointing/livetime database history
+    HistoryMap m_pointingHistory;//pointing/livetime database history
     POINTINFO m_currentInterpPoint; //holder object for currently interpotated pointing information
 
    bool haveFitsFile() const;
