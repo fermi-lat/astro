@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: burnett  Mon Apr  4 13:58:25 PDT 2005
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Added Files:
+	Healpix Neighbors Nside=8.txt 
+Log Message:
+add new SAA definiiton, test code
+    *
+------------------------------------------------------------
+User: burnett  Mon Apr  4 13:58:25 PDT 2005
 astro/src
 
 Modified Files:
