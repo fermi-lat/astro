@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: srobinsn  Thu Aug 29 22:12:03 PDT 2002
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+altitude calculation in EarthCoordinate didn't match up with original perugia code, lines examined and fixed;tested.
+
+    *
+------------------------------------------------------------
 User: srobinsn  Wed Aug 28 00:09:41 PDT 2002
 astro/src
 
