@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.15 2004/03/30 11:35:46 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.16 2004/05/24 20:49:09 hierath Exp $
 
 #include <cassert>
 #include "astro/SolarSystem.h"
@@ -231,6 +231,8 @@ int main(){
     double weps;
     bool pass_low_lat, pass_mid_lat, pass_high_lat;
     cout << "Projection/Deprojection Closure Test (0.5 degree or better = pass)" << endl;
+    cout << "Note: Some projections don't work at high latitudes and some projections" << endl;
+    cout << "      can only project one hemisphere."  << endl;
     cout << "Projection   Pass High Lat    Pass Mid Lat    Pass Low Lat" << endl;
     for(int currentcode = 0; currentcode < 26; currentcode++)
     {
