@@ -13,7 +13,7 @@ namespace astro {
 * @brief Postition of Earth satellite
 * @author G. Tosti original code 
 * @author T. Burnett convert to class
-* $Id: EarthOrbit.h,v 1.3 2002/09/03 15:42:49 srobinsn Exp $
+* $Id: EarthOrbit.h,v 1.4 2002/09/16 23:29:17 srobinsn Exp $
     */
     class EarthOrbit   {
     public:
@@ -48,6 +48,7 @@ namespace astro {
         ///this is for interfacing with FluxSvc, which uses "elapsed seconds" as the time parameter.
         JulianDate dateFromSeconds(double seconds) const;
         
+        
     private:
         
     /**
@@ -63,7 +64,6 @@ namespace astro {
         double m_dwdt;
         
         double m_a, m_alt;
-        
         
         static double s_altitude; //<! nominal altitude (km)
         static double s_incl;     //<! orbit inclination in degrees
