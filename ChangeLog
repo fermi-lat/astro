@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: srobinsn  Thu Oct  2 13:59:48 PDT 2003
+astro/src
+
+Modified Files:
+	PointingTransform.cxx SkyDir.cxx 
+Log Message:
+SkyDir unit() problem fixed pointingtransform cleanup.
+
+    *
+------------------------------------------------------------
+User: srobinsn  Thu Oct  2 13:59:48 PDT 2003
 astro/astro
 
 Modified Files:
