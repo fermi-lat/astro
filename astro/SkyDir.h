@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.6 2002/09/20 16:57:48 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.7 2003/02/24 20:12:24 burnett Exp $
 #ifndef OrbitModel_SkyDir_H
 #define OrbitModel_SkyDir_H
 
@@ -15,7 +15,7 @@ namespace astro {
 /** @class SkyDir
 * @brief Describe an absolute direction
 * @author S. Robinson 
-* <br>$Id: SkyDir.h,v 1.6 2002/09/20 16:57:48 burnett Exp $
+* <br>$Id: SkyDir.h,v 1.7 2003/02/24 20:12:24 burnett Exp $
 *
     */
     class SkyDir
@@ -39,7 +39,7 @@ namespace astro {
         const Hep3Vector& dir () const {return m_dir;}
         
         //!to return the opening angle (in radians) between two objects:
-        double SkyDir::difference(const SkyDir& other)const;
+        double difference(const SkyDir& other)const;
 
         //hammer-aitoff equal-area projection.
         std::pair<double,double> hammerAitoff()const;
