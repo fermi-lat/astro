@@ -1,4 +1,4 @@
-// $Header:$
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.1.1.1 2002/08/13 00:20:46 burnett Exp $
 
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
@@ -117,6 +117,14 @@ double EarthOrbit::Kepler(double MeanAnomaly,double Eccentricity)
         TrueAnomaly += 2.*M_PI;
     
     return TrueAnomaly;
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+double EarthOrbit::phase(JulianDate jd) const
+{
+    double elapse = (jd - JDStart)*SecondsPerDay;
+    //double M=m_M0+m_dMdt*elapse;
+    return m_Omega0+m_dOmegadt*elapse;
+
 }
 
 }
