@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Tue Sep 21 18:12:15 PDT 2004
+astro/src
+
+Modified Files:
+	EarthOrbit.cxx 
+Log Message:
+Added JPL ephemeris for getting location of solar system barycenter.
+    *
+------------------------------------------------------------
 User: hierath  Tue Aug 31 16:48:16 PDT 2004
 astro/src/jplephem
 
