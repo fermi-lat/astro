@@ -3,7 +3,7 @@
 
 @author T. Burnett
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealpixArray.h,v 1.3 2005/02/06 20:39:36 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealpixArray.h,v 1.4 2005/03/03 15:30:29 burnett Exp $
 */
 
 #ifndef astro_HealpixArray_h
@@ -22,7 +22,7 @@ namespace astro {
     operator[] with a SkyDir.
 */
 
-template< class C>
+template< typename C>
 class HealpixArray : public std::vector<C> {
 public:
 
