@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.10 2004/01/22 02:49:30 hierath Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.11 2004/02/05 19:36:14 burnett Exp $
 
 #include <cassert>
 #include "astro/SolarSystem.h"
@@ -13,7 +13,7 @@ bool testSkyDir(){
     using namespace astro;
     bool ok = true;
     double l;
-    for(l = -175 ; l < 175 ; l += 5.){
+    for(l = 5 ; l < 355 ; l += 5.){
         for(double b = -85 ; b < 85 ; b +=5.){
             SkyDir sd4(l,b,SkyDir::GALACTIC);
             double test = fabs(l-sd4.l()) + fabs(b - sd4.b());
@@ -159,7 +159,7 @@ int main(){
     double ra=30,dec=50;
     SkyDir sd(ra, dec);
 
-    double l=-10.,b=-10.;
+    double l=10.,b=-10.;
     SkyDir sd3(l,b,SkyDir::GALACTIC);
 
     test += fabs(l-sd3.l()) + fabs(b - sd3.b());
