@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.22 2004/07/18 22:36:52 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.23 2004/10/05 00:04:00 jchiang Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -11,6 +11,9 @@
 #include "astro/HTM.h"
 #include "astro/SkyProj.h"
 #include "CLHEP/Vector/ThreeVector.h"
+
+// local test classes
+#include "TestHealpix.h"
 
 #include <stdexcept>
 
@@ -256,6 +259,8 @@ int main(){
         if( !testHTM() ) return 1;
 
         if(! testSkyProj() ) return 1;
+
+        TestHealpix();
 
 // One needs the test data to run this.
 //        if (!test_GPS_readFitsData()) return 1;
