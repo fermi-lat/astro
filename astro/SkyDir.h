@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.7 2003/02/24 20:12:24 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.8 2003/05/08 23:40:15 pln Exp $
 #ifndef OrbitModel_SkyDir_H
 #define OrbitModel_SkyDir_H
 
@@ -15,7 +15,7 @@ namespace astro {
 /** @class SkyDir
 * @brief Describe an absolute direction
 * @author S. Robinson 
-* <br>$Id: SkyDir.h,v 1.7 2003/02/24 20:12:24 burnett Exp $
+* <br>$Id: SkyDir.h,v 1.8 2003/05/08 23:40:15 pln Exp $
 *
     */
     class SkyDir
@@ -53,9 +53,6 @@ namespace astro {
         
     };
     
-    inline double SkyDir::difference(const SkyDir& other)const{
-        return 2.*asin(0.5*(m_dir-other.dir()).mag());
-    }
     
 } // namespace astro
 #endif    // LHCBEVENT_SKYDIR_H
