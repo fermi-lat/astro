@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sat Mar 19 16:21:17 PST 2005
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+fixes to transmit S/C altitude
+    *
+------------------------------------------------------------
 User: burnett  Sat Mar 19 16:21:16 PST 2005
 astro/doc
 
