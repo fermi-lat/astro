@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Wed Sep 29 16:34:14 PDT 2004
+astro/src/jplephem
+
+Modified Files:
+	bary.h 
+Log Message:
+Removed unused typedef
+    *
+------------------------------------------------------------
 User: hierath  Wed Sep 29 11:06:29 PDT 2004
 astro/src/jplephem
 
