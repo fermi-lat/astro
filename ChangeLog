@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Apr  4 13:58:25 PDT 2005
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+add new SAA definiiton, test code
+    *
+------------------------------------------------------------
+User: burnett  Mon Apr  4 13:58:25 PDT 2005
 astro/astro
 
 Modified Files:
