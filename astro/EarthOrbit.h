@@ -13,7 +13,7 @@ namespace astro {
 * @brief Postition of Earth satellite
 * @author G. Tosti original code 
 * @author T. Burnett convert to class
-* $Id: EarthOrbit.h,v 1.7 2004/07/02 23:21:09 hierath Exp $
+* $Id: EarthOrbit.h,v 1.8 2004/07/08 19:00:05 hierath Exp $
     */
     class EarthOrbit   {
     public:
@@ -43,10 +43,15 @@ namespace astro {
         double phase(JulianDate jd) const;
         
         /** Return the julian date
-        * @param seconds number of "elapsed seconds", as exist in FluxSvc
+        * @param seconds number of "elapsed seconds", as exists in FluxSvc
         */ 
         ///this is for interfacing with FluxSvc, which uses "elapsed seconds" as the time parameter.
         JulianDate dateFromSeconds(double seconds) const;
+
+        /** Return the modified julian date
+         * @param seconds number of "elapsed seconds", as exists in FluxSvc
+         */
+        JulianDate mjdFromSeconds(double seconds) const;
 
         /** Return the timing correction for Shapiro delay due to the gravitational well of the sun
           * @param jd JulianDate of observation
@@ -54,7 +59,6 @@ namespace astro {
           * @return Correction in seconds added to correct for the Shapiro delay
           */
         double calcShapiroDelay(JulianDate jd, const SkyDir &sourceDir) const;
-
 
         /** Return the timing correction for light travel time to solar system barycenter
           * @param jd JulianDate of observation

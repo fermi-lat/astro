@@ -15,7 +15,7 @@ namespace astro {
   * @brief position of various solarsystem entities
   * @author G. Tosti original code 
   * @author T. Burnett convert to class
-  * $Id: SolarSystem.h,v 1.2 2004/03/30 11:35:45 burnett Exp $
+  * $Id: SolarSystem.h,v 1.3 2004/07/02 23:21:09 hierath Exp $
   *
   * This is a thin wrapper to code in the class SolSystem
   */
@@ -55,6 +55,11 @@ public:
      */
     Hep3Vector getBarycenter(JulianDate jd);
 
+    /**
+     * @brief given a date, returns the velocity of the Earth with respect to barycenter in
+     *        inertial coordinates (m/s)
+     */
+    Hep3Vector getEarthVelocity(JulianDate jd);
 
     /**
     * @brief conversion operator that returns the SkyDir 
