@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SolarSystem.cxx,v 1.5 2004/10/09 00:12:20 hierath Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SolarSystem.cxx,v 1.6 2004/10/25 19:04:06 hierath Exp $
 
 #include "astro/SolarSystem.h"
 
@@ -48,7 +48,7 @@ Hep3Vector SolarSystem::getBarycenter(JulianDate jd)
       int denum;
       double c, radsol, msol;
       int j;
-      if ( j = initephem (ephnum, &denum, &c, &radsol, &msol) ) {
+      if ( (j = initephem (ephnum, &denum, &c, &radsol, &msol))!=0 ) {
          fprintf (stderr, "Error while initializing ephemeris; status: %d\n",
 	         j) ;
          denum = 0 ;
@@ -89,7 +89,7 @@ Hep3Vector SolarSystem::getSolarVector(JulianDate jd)
       int denum;
       double c, radsol, msol;
       int j;
-      if ( j = initephem (ephnum, &denum, &c, &radsol, &msol) ) {
+      if ( (j = initephem (ephnum, &denum, &c, &radsol, &msol))!=0 ) {
          fprintf (stderr, "Error while initializing ephemeris; status: %d\n",
 	         j) ;
          denum = 0 ;
@@ -104,11 +104,7 @@ Hep3Vector SolarSystem::getSolarVector(JulianDate jd)
    double y = -eposn[1] + eposn[4];
    double z = -eposn[2] + eposn[5];
 
-   double dist = sqrt(x*x + y*y + z*z);
-   double ra = atan2(y,x) * 180. / M_PI;
-   double dec = atan2(z,sqrt(x*x+y*y)) * 180. / M_PI;
-
-   Hep3Vector solarVector;
+    Hep3Vector solarVector;
    
    solarVector.setX(x);
    solarVector.setY(y);
