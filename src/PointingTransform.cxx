@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingTransform.cxx,v 1.9 2003/08/19 17:01:38 srobinsn Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingTransform.cxx,v 1.1 2003/09/30 00:57:20 srobinsn Exp $
 
 // Include files
 #include "astro/PointingTransform.h"
@@ -15,7 +15,7 @@ namespace astro {
 	HepRotation PointingTransform::localToGalactic () const{
 		const Hep3Vector& xd(m_xDir.dir());
 		const Hep3Vector& zd(m_zDir.dir());
-		const Hep3Vector& yd( (m_zDir.dir())*( m_xDir.dir() ) );
+		const Hep3Vector& yd( -(m_xDir.dir()).cross( m_zDir.dir() ) );
 		HepRotation ret(xd,yd,zd);
 		return ret;
 	}

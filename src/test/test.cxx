@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.6 2003/08/20 22:35:23 jchiang Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.7 2003/09/30 00:57:20 srobinsn Exp $
 
 #include <cassert>
 #include "astro/SolarSystem.h"
@@ -143,14 +143,14 @@ using namespace std;
     test+= fabs( diff/cos(dec*M_PI/180) - M_PI/180. );
 
 	//now test the galactic transformation function:
-	SkyDir zenith(0,20,astro::SkyDir::GALACTIC);
-	SkyDir xdir(90,0,astro::SkyDir::GALACTIC);
+	SkyDir zenith(20,0,astro::SkyDir::GALACTIC);
+	SkyDir xdir(110,0,astro::SkyDir::GALACTIC);
 	PointingTransform trans(zenith,xdir);
 	Hep3Vector vertical(0,0,1);
 	double templ=trans.gDir(vertical).l();	
 	double tempb=trans.gDir(vertical).b();
-	test += trans.gDir(vertical).l();
-	test += trans.gDir(vertical).b()-20.0;
+	test += trans.gDir(vertical).l()-20.0;
+	test += trans.gDir(vertical).b();
 
     if( fabs(test) < 1e-3 ) {
         cout << "tests ok " << endl;
