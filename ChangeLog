@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sat Feb  7 06:15:30 PST 2004
+astro/src
+
+Modified Files:
+	SkyDir.cxx 
+Log Message:
+implement a special nested exception class, since gcc's exception class is useless.
+    *
+------------------------------------------------------------
+User: burnett  Sat Feb  7 06:15:30 PST 2004
 astro/astro
 
 Modified Files:
