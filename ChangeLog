@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sat Jun  5 12:31:30 PDT 2004
+astro/src
+
+Modified Files:
+	mainpage.h 
+Log Message:
+clean up a little, adding SkyProj to list
+    *
+------------------------------------------------------------
 User: burnett  Sat Jun  5 12:30:40 PDT 2004
 astro/src
 
