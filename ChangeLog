@@ -1,0 +1,38 @@
+------------------------------------------------------------
+User: burnett  Mon Aug 12 17:20:46 PDT 2002
+astro
+
+Log Message:
+Inital import of new package with basic astro classes
+
+Status:
+
+Vendor Tag:	GLAST
+Release Tags:	v0
+		
+N astro/.cvsignore
+N astro/astro/EarthCoordinate.h
+N astro/astro/EarthOrbit.h
+N astro/astro/JulianDate.h
+N astro/astro/SkyDir.h
+N astro/astro/SolarSystem.h
+N astro/cmt/.cvsignore
+N astro/cmt/requirements
+N astro/doc/release.notes
+N astro/src/astroutil.cxx
+N astro/src/astroutil.h
+N astro/src/chap95_data.h
+N astro/src/EarthCoordinate.cxx
+N astro/src/EarthOrbit.cxx
+N astro/src/mainpage.h
+N astro/src/SkyDir.cxx
+N astro/src/SolarSystem.cxx
+N astro/src/SolSystem.cxx
+N astro/src/SolSystem.h
+N astro/src/vsop87_data.h
+N astro/src/test/Orbit.cxx
+N astro/src/test/test.cxx
+
+No conflicts created by this import
+
+    *
