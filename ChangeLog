@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: hierath  Mon Apr 19 11:51:33 PDT 2004
+astro/wcslib
+
+Removed Files:
+	cel.cxx cel.h cylfix.cxx cylfix.h lin.cxx lin.h prj.cxx prj.h 
+	spc.cxx spc.h sph.cxx sph.h spx.cxx spx.h wcs.cxx wcs.h 
+	wcsmath.h wcstrig.cxx wcstrig.h 
+Log Message:
+
+    *
+------------------------------------------------------------
 User: hierath  Mon Apr 19 11:41:50 PDT 2004
 astro/src/wcslib
 
