@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.5 2002/09/18 04:31:28 srobinsn Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.6 2002/09/20 16:57:49 burnett Exp $
 
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
@@ -122,7 +122,7 @@ JulianDate EarthOrbit::dateFromSeconds(double seconds)const{
 double EarthOrbit::phase(JulianDate jd) const
 {
     double elapse = (jd - JDStart)*SecondsPerDay;
-    return m_Omega0+m_dOmegadt*elapse;
+    return m_M0+m_dMdt*elapse;
     
 }
 
