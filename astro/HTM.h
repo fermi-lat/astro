@@ -2,7 +2,7 @@
 @brief Define the class HTM
 
 @author T. Burnett (based on copyright code by Peter Z. Kunszt) 
-$Header: /nfs/slac/g/glast/ground/cvs/users/burnett/tessel/src/htm_clone.cxx,v 1.1 2004/03/29 14:10:20 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HTM.h,v 1.1 2004/03/29 22:27:38 burnett Exp $
 */
 
 #ifndef astro_HTM_h
@@ -10,8 +10,10 @@ $Header: /nfs/slac/g/glast/ground/cvs/users/burnett/tessel/src/htm_clone.cxx,v 1
 
 #include "astro/SkyDir.h"
 #include <vector>
-#include <ostream>
+#include <iostream>
 
+
+namespace astro {
 /**
 @class HTM
 @brief Create a Hierarchical Triangle Mesh (HTM)
@@ -23,12 +25,12 @@ of vertices. This is applied recusively to the desired depth.
 
 
 @verbatim
-/\
-/  \
-/____\
-/\    /\
-/  \  /  \
-/____\/____\
+.          /\
+.         /  \
+.        /____\
+.       /\    /\
+.      /  \  /  \
+.     /____\/____\
 @endverbatim
 The result is a vector of nodes describing each triangle, sorted by id.
 Access is via special begin() and end() functions, delimiting each level.
@@ -103,4 +105,5 @@ private:
     NodeList m_nodes;
     unsigned int m_maxid;
 };
+}// namespace
 #endif

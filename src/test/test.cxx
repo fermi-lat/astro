@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.12 2004/03/19 22:17:48 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.13 2004/03/29 23:01:58 burnett Exp $
 
 #include <cassert>
 #include "astro/SolarSystem.h"
@@ -139,8 +139,9 @@ void testJD()
 }
 bool testHTM()
 {
+    using astro::HTM;
     size_t maxlevel = 6;
-    HTM h(maxlevel);
+    astro::HTM h(maxlevel);
     //      h.dump(std::cout);
     for( size_t level = 0; level <= maxlevel; ++level) {
         double area = 0;
