@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: srobinsn  Tue Sep 30 15:57:37 PDT 2003
+astro/src
+
+Modified Files:
+	PointingTransform.cxx mainpage.h 
+Log Message:
+small fixes, documentation checkin
+
+    *
+------------------------------------------------------------
+User: srobinsn  Tue Sep 30 15:57:37 PDT 2003
 astro/astro
 
 Modified Files:
