@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Aug 30 05:30:28 PDT 2002
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx SkyDir.cxx 
+Log Message:
+unix fixes
+    *
+------------------------------------------------------------
 User: burnett  Fri Aug 30 05:30:27 PDT 2002
 astro/astro
 
