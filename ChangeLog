@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: burnett  Sat Jun  5 12:28:11 PDT 2004
+astro/src
+
+Modified Files:
+	SkyDir.cxx 
+Log Message:
+remove vestiges of explicit projection stuff: 
+remove unnecessary Exception class
+clean up doxy.
+    *
+------------------------------------------------------------
+User: burnett  Sat Jun  5 12:28:11 PDT 2004
 astro/astro
 
 Modified Files:
