@@ -2,7 +2,7 @@
 @brief implementation of SolarSystem 
 
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SolarSystem.cxx,v 1.9 2005/03/06 02:20:37 burnett Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SolarSystem.cxx,v 1.10 2005/03/06 04:51:40 burnett Exp $
 */
 #include "astro/SolarSystem.h"
 
@@ -64,8 +64,9 @@ double * SolarSystem::jplSetup(JulianDate jd)
                    where -0.5 <= jd[1] < 0.5
 */
 
+    static double jdt[2];
     double j0 = floor(jd+0.5);
-    static double jdt[]={ j0, jd-j0 };
+    jdt[0]=j0; jdt[1]= jd-j0;
     return jdt;
 }
 
