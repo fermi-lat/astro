@@ -1,4 +1,8 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.11 2004/01/21 09:59:20 hierath Exp $
+/** @file SkyDir.cxx
+    @brief implementation of the class SkyDir
+
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.12 2004/02/05 18:46:21 burnett Exp $
+*/
 
 // Include files
 
