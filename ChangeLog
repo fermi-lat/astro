@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: burnett  Sat Mar 26 13:51:46 PST 2005
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Added Files:
+	Geomag.cxx Geomag.h Geomag.inc 
+Log Message:
+Copy P Nolan's table-driven L, B compuation and put interface into EarthCoordinate
+    *
+------------------------------------------------------------
 User: burnett  Sat Mar 26 13:51:45 PST 2005
 astro/astro
 
