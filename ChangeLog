@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Mon Oct 25 12:04:05 PDT 2004
+astro/astro
+
+Modified Files:
+	SolarSystem.h 
+Log Message:
+Changed calculation of shapiro delay to use JPL ephemeris.  Also fixed ephemeris file initialization so that it's only called once.
+    *
+------------------------------------------------------------
 User: hierath  Fri Oct  8 17:12:20 PDT 2004
 astro/src
 
