@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: hierath  Wed Jan 21 01:59:19 PST 2004
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Log Message:
+
+Added project member function to allow different mapping projections.
+    *
+------------------------------------------------------------
 User: burnett  Mon Nov 24 11:40:11 PST 2003
 astro/doc
 
