@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Jun  6 15:30:25 PDT 2004
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Log Message:
+fix galactic conversion for projection; patch tag p1
+    *
+------------------------------------------------------------
 User: burnett  Sun Jun  6 12:10:31 PDT 2004
 astro/src
 
