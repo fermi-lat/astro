@@ -26,7 +26,7 @@
 *                      AUSTRALIA
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
-*   $Id: cylfix.c,v 3.4 2004/02/11 00:15:03 mcalabre Exp $
+*   $Id: cylfix.c,v 1.1 2004/05/21 18:52:27 hierath Exp $
 *===========================================================================*/
 
 #include <string.h>
@@ -66,6 +66,10 @@ struct wcsprm *wcs;
    /* Initialize if required. */
    if (wcs == 0) return 1;
    if (wcs->flag != WCSSET) {
+     /* All instances of wcsset were changed to wcsset2 to avoid a namespace 
+      * conflict that occurs with a Windows function of same name.  
+      * - T. Hierath
+      */
       if (status = wcsset2(wcs)) return status;
    }
 
@@ -150,5 +154,9 @@ struct wcsprm *wcs;
    wcs->crval[wcs->lat] = world[0][wcs->lat];
    wcs->lonpole = phi[0] - phi0;
 
+    /* All instances of wcsset were changed to wcsset2 to avoid a namespace 
+     * conflict that occurs with a Windows function of same name.  
+     * - T. Hierath
+     */
    return wcsset2(wcs);
 }
