@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.3 2004/09/27 21:11:28 jchiang Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.4 2004/11/12 01:52:23 burnett Exp $
 
 #if !defined(_H_GPS_CLASS)
 #define _H_GPS_CLASS
@@ -18,7 +18,7 @@
 * \class GPS
 * \brief Models the Global Positoning System for a spacecraft. Handles time, position, and orientation for the instrument as a whole.
 * 
-* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.3 2004/09/27 21:11:28 jchiang Exp $
+* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.4 2004/11/12 01:52:23 burnett Exp $
 Represents the Global Positioning System on-board the spacecraft. An Orbit
 object is used to compute the spacecraft's position and pointing characteristics.
 Time is tracked through this object, and synchronized with the Scheduler for 
@@ -54,6 +54,7 @@ public:
         astro::SkyDir dirX;
         double lat,lon;
         Hep3Vector position;
+        double altitude;
     }POINTINFO;
 
     typedef std::map<double,GPS::POINTINFO> HistoryMap;
@@ -74,6 +75,7 @@ public:
     private:
         GPStime m_time;
         double m_lat, m_lon, m_pitch, m_yaw, m_roll, m_phase;
+        double m_altitude;
     };
 
     // const access
@@ -84,6 +86,7 @@ public:
     double lat()const;//{getPointingCharacteristics(time);return m_lat;} 
     /// present longitude
     double lon()const;//{getPointingCharacteristics(time);return m_lon;}  
+    double altitude()const; // rad_geo
     /// pointing characteristics
     double RAX()const;//{getPointingCharacteristics(time);return m_RAX;}
     double RAZ()const;//{getPointingCharacteristics(time);return m_RAZ;}
@@ -190,6 +193,7 @@ private:
     double m_lastQueriedTime; //the last time that was asked for
     double  m_sampleintvl;  // interval to sample for each pt. in the orbit - to normalize spectra
     double m_lat,m_lon; //position characteristics
+    double m_altitude; 
     double m_RAX,m_RAZ,m_DECX,m_DECZ; //pointing characteristics.
     double m_RAZenith,m_DECZenith,m_RAXZenith,m_DECXZenith; //pointing characteristic of the zenith direction.
     Hep3Vector m_position; //current vector position of the LAT.
