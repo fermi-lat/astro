@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.4 2002/09/16 17:56:45 srobinsn Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.5 2002/09/18 04:31:28 srobinsn Exp $
 #ifndef OrbitModel_SkyDir_H
 #define OrbitModel_SkyDir_H
 
@@ -7,6 +7,7 @@
 #include "CLHEP/Vector/Rotation.h"
 #include "CLHEP/Vector/ThreeVector.h"
 #include <cmath>
+#include <utility> // for pair
 
 namespace astro {
     
@@ -14,7 +15,7 @@ namespace astro {
 /** @class SkyDir
 * @brief Describe an absolute direction
 * @author S. Robinson 
-* <br>$Id: SkyDir.h,v 1.4 2002/09/16 17:56:45 srobinsn Exp $
+* <br>$Id: SkyDir.h,v 1.5 2002/09/18 04:31:28 srobinsn Exp $
 *
     */
     class SkyDir
@@ -41,7 +42,7 @@ namespace astro {
         double SkyDir::difference(const SkyDir& other)const;
 
         //hammer-aitoff equal-area projection.
-        std::pair<double,double> hammerAitoff();
+        std::pair<double,double> hammerAitoff()const;
         
     private:
         static HepRotation s_celestialToGalactic;
