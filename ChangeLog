@@ -1,4 +1,17 @@
 ------------------------------------------------------------
+User: hierath  Fri May 21 19:34:16 PDT 2004
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Added Files:
+	SkyProj.h 
+Log Message:
+
+Added the class SkyProj.  It is a wrapper class for the projection routines
+in the WCS library.
+    *
+------------------------------------------------------------
 User: hierath  Fri May 21 11:52:28 PDT 2004
 astro/src/wcslib
 
