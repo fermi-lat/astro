@@ -12,7 +12,7 @@ namespace astro {
 
   * \brief describe a point with respect to the surface of the Earth
   * \author T. Burnett and G. Tosti
-  * <hr> $Id: EarthCoordinate.h,v 1.3 2004/02/14 23:17:06 burnett Exp $
+  * <hr> $Id: EarthCoordinate.h,v 1.4 2004/03/30 10:47:44 burnett Exp $
   *
   * Note that we calculate the geodetic coordinates: from http://ssd.jpl.nasa.gov/glossary.html#geodetic
   *
@@ -34,6 +34,18 @@ public:
 
 
     //! true if inside the SAA 
+    /**
+Some work on defining a realistic SAA boundary for the LAT is described at
+http://www.slac.stanford.edu/~rac/SAA/
+A contour plot of the SAA, showing a 12-segment polygon fit for the section of the SAA north of -30 degrees latitude is at http://www.slac.stanford.edu/~rac/SAA/saacode/saaplot.png
+
+The (latitude,longitude) vertices for the SAA polygon are (in degrees):
+latv=(-30,-26,-20,-17,-10, 1, 2, -3, -8,-12,-19,-30,-30);
+lonv=( 45, 41, 31, 9,-11,-34,-46,-62,-79,-85,-89,-87, 45);
+
+TODO: implement this
+
+    */
     bool insideSAA()const;
 
     //! the Earth radius in km
@@ -42,6 +54,11 @@ public:
     double latitude()const;
     double longitude()const;
     double altitude()const;
+
+    //!  McIlwain L
+    double L()const;
+    //! magnetic field in gauss
+    double B()const;
 
 
 private:
