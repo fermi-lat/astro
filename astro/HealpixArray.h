@@ -3,7 +3,7 @@
 
 @author T. Burnett
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealpixArray.h,v 1.4 2005/03/03 15:30:29 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealpixArray.h,v 1.5 2005/03/06 02:21:14 burnett Exp $
 */
 
 #ifndef astro_HealpixArray_h
@@ -39,6 +39,12 @@ public:
     astro::SkyDir dir(typename std::vector<C>::const_iterator it)const{
         astro::Healpix::Pixel px(it-begin(), m_hp);
         return px();
+    }
+
+    //! return the pixel associated with an iterator
+    astro::Healpix::Pixel pixel(typename std::vector<C>::const_iterator it)const{
+        astro::Healpix::Pixel px(it-begin(), m_hp);
+        return px;
     }
 
     //! @brief access a content object by direction, for modificaion
