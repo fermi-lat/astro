@@ -2,6 +2,14 @@
 TAG
 Tag name: v1r7p3, operation: add
 Package: astro
+User: burnett  Sat Apr  2 08:10:17 2005
+Files:
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: v1r7p3, operation: add
+Package: astro
 User: burnett  Sat Apr  2 08:09:21 2005
 Files:
   astro/astro/JulianDate.h  1.8
