@@ -1,7 +1,7 @@
 /** @file SkyDir.h
     @brief declaration of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.12 2004/02/05 18:46:21 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.13 2004/02/05 19:05:42 burnett Exp $
 
 */
 #ifndef OrbitModel_SkyDir_H
@@ -20,7 +20,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.12 2004/02/05 18:46:21 burnett Exp $
+    * <br>$Id: SkyDir.h,v 1.13 2004/02/05 19:05:42 burnett Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
@@ -41,7 +41,7 @@ namespace astro {
         typedef enum { CAR, SIN, TAN, ARC, NCP, GLS, MER, AIT, STG } ProjType; 
 
         ///Constructors
-        ///(l,b) or (Ra, Dec) instantiation
+        ///(l,b) or (Ra, Dec) or projection instanciation
         SkyDir(double param1=0, double param2=0, CoordSystem inputType = EQUATORIAL);
 
         //! initialize from a vector direction
@@ -100,7 +100,7 @@ namespace astro {
 
      	@param point_x     coordinates of the projected point
 	@param point_y          in the projection coordinate system
-	@param point_ra    ra and dec of the point to 
+	@param point_ra    ra and dec (radians) of the point to 
 	@param point_dec        be projected        
         */
         static int inverseProjection( double point_x, double point_y, double *point_ra, double *point_dec);
