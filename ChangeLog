@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Mar 12 15:43:30 PST 2004
+astro/src
+
+Modified Files:
+	SkyDir.cxx 
+Log Message:
+return galactic longitude in proper range
+    *
+------------------------------------------------------------
 User: burnett  Tue Mar  2 05:56:00 PST 2004
 astro/astro
 
