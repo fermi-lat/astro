@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.12 2004/07/02 23:55:47 hierath Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.13 2004/07/08 19:00:05 hierath Exp $
 
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
@@ -21,7 +21,7 @@ namespace {
     
     inline double sqr(double x){return x*x;}
     
-    astro::JulianDate JD_missionStart =astro::JulianDate(2005, 1, 1,0.0);
+    astro::JulianDate JD_missionStart =astro::JulianDate(2001, 1, 1,0.0);
     astro::JulianDate JDStart =        astro::JulianDate(2005 ,7,18,0.0);
 }
 

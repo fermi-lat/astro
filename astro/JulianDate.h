@@ -1,9 +1,13 @@
+/** @file JulianDate.h
+    @brief definition of JulianDate class
+    
+    $Header$
+
+*/
 
 #ifndef OrbitModel_JulianDate_H
 #define OrbitModel_JulianDate_H
 
-#include <stdio.h>
-#include <math.h>
 #include <string>
 
 namespace astro {
@@ -17,7 +21,7 @@ namespace astro {
 *    (on the Julian calendar).
 *  @author Gino Tosti (primary)
 *  @author Toby Burnett (convert to a class)
-*  <hr>$Id: JulianDate.h,v 1.6 2004/01/22 09:33:35 cohen Exp $ 
+*  <hr>$Id: JulianDate.h,v 1.7 2004/01/23 21:00:34 hierath Exp $ 
 */
 class JulianDate {
 public:
@@ -29,8 +33,8 @@ public:
     * @param utc hours
     */
     JulianDate(int An,int Me,int Gio,double utc);
-    void getGregorianDate(int &An, int &Me, int &Gio, double &utc);
-    std::string getGregorianDate(void);
+    void getGregorianDate(int &An, int &Me, int &Gio, double &utc)const;
+    std::string getGregorianDate(void) const;
 
     //! conversion constructor
     JulianDate(double jd):m_JD(jd){}
@@ -41,6 +45,9 @@ public:
     double seconds()const{ return m_JD* secondsPerDay;}
 
     enum{ secondsPerDay = 60*60*24 };
+
+    /// the GLAST official mission start: 1 Jan 2001 00:00, which should be 2451910.5
+    static JulianDate missionStart(){ return JulianDate(2001,1,1,0); }
     
 private:
     double m_JD;

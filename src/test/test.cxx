@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.20 2004/06/03 21:03:16 hierath Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.21 2004/06/05 19:35:27 burnett Exp $
 
 #include <cassert>
 #include "astro/SolarSystem.h"
@@ -183,10 +183,11 @@ void testJD()
             }
         }
     }
+
     if(passed)
     {
         std::cout << "JD Conversions passed!" << std::endl;
-        std::cout << JD2000.getGregorianDate() << std::endl;
+        std::cout << astro::JulianDate::missionStart().getGregorianDate() << std::endl;
     }
 }
 bool testHTM()
@@ -227,13 +228,13 @@ int main(){
 
         if(! testSkyProj() ) return 1;
 
-        JulianDate JD2000 = JulianDate(2000,1,1,12.); //2451545
+        JulianDate start = JulianDate::missionStart(); 
 
         //   testJD();
 
         double test=0;
 
-        test += fabs(JD2000 -2451545);
+        test += fabs(start -2451910.5);
 
         double ra=30,dec=50;
         SkyDir sd(ra, dec);
@@ -287,7 +288,7 @@ int main(){
             return 0;
         } else {
             cout << "failed a test" << endl;
-            cout << "JD2000" << JD2000 << endl;  
+            cout << "Mission start" << start << endl;  
             cout << "SkyDir("<<ra<<","<<dec<<") " << sd.ra() << ", " << sd.dec()   << endl;
             cout << "SkyDir3("<<l<<","<<b<<") " << sd3.l() << ", " << sd3.b()   << endl;
             cout << "EarthCoordinate("<<lat<<","<<lon<<") " << ec.latitude() << ", " << ec.longitude() << endl;
