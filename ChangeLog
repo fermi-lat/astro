@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: cohen  Fri Jun 11 18:02:38 PDT 2004
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+the package_test pattern still is loaded by FluxSvc, which crashed as a result due to missing main app.
+    *
+------------------------------------------------------------
 User: burnett  Fri Jun 11 13:15:49 PDT 2004
 astro/cmt
 
