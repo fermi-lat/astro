@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.13 2004/03/29 23:01:58 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.14 2004/03/30 10:47:45 burnett Exp $
 
 #include <cassert>
 #include "astro/SolarSystem.h"
@@ -211,8 +211,8 @@ int main(){
     SkyDir xdir(-70,0,astro::SkyDir::GALACTIC);
     PointingTransform trans(zenith,xdir);
     Hep3Vector vertical(0,0,1);
-    double templ=trans.gDir(vertical).l();	
-    double tempb=trans.gDir(vertical).b();
+    //double templ=trans.gDir(vertical).l();	
+    //double tempb=trans.gDir(vertical).b();
     test += trans.gDir(vertical).l()-20.0;
     test += trans.gDir(vertical).b();
 
@@ -220,7 +220,7 @@ int main(){
 
     std::pair<double,double> proj= sd.project();
     SkyDir sd4(proj.first, proj.second, astro::SkyDir::PROJECTION);
-    double sd4_ra= sd4.ra(), sd4_dec=sd4.dec();
+    //THB double sd4_ra= sd4.ra(), sd4_dec=sd4.dec();
     test += sd4.difference(sd);
 
 
