@@ -1,5 +1,8 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.20 2004/10/09 00:12:20 hierath Exp $
+/** @file EarthOrbit.cxx
+    @brief implemention of EarthOrbit
 
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.21 2004/10/25 19:04:06 hierath Exp $
+*/
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
 #include "astro/SolarSystem.h"
