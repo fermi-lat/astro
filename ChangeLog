@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: srobinsn  Tue Sep  3 08:42:49 PDT 2002
+astro/astro
+
+Modified Files:
+	EarthOrbit.h 
+Log Message:
+methods to get the current julian date from the elapsed number of seconds, and the rotation from celestial to zenith-local coordinates have been added to EarthOrbit.
+
+    *
+------------------------------------------------------------
 User: burnett  Fri Aug 30 05:30:28 PDT 2002
 astro/src/test
 
