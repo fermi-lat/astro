@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: hierath  Tue Apr  6 13:57:42 PDT 2004
+astro/wcslib
+
+Added Files:
+	cel.cxx cel.h cylfix.cxx cylfix.h lin.cxx lin.h prj.cxx prj.h 
+	spc.cxx spc.h sph.cxx sph.h spx.cxx spx.h wcs.cxx wcs.h 
+	wcsmath.h wcstrig.cxx wcstrig.h 
+Log Message:
+Adding WCS library version 3.4 for projection transformations
+    *
+------------------------------------------------------------
 User: burnett  Wed Mar 31 06:53:19 PST 2004
 astro/src
 
