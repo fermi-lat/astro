@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.2 2005/01/22 21:19:49 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.3 2005/02/06 19:26:38 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -55,7 +55,7 @@ public:
     @param coordsys equatorial (ra,dec) or galactic (l,b)
 
     */
-    Healpix(long nside, Ordering ord = NESTED, 
+    Healpix(long nside=2, Ordering ord = NESTED, 
         astro::SkyDir::CoordSystem coordsys = astro::SkyDir::EQUATORIAL);
 
     ///@brief the number of sides per dodecahedron
