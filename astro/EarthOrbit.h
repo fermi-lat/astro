@@ -13,7 +13,7 @@ namespace astro {
 * @brief Postition of Earth satellite
 * @author G. Tosti original code 
 * @author T. Burnett convert to class
-* $Id: EarthOrbit.h,v 1.6 2004/02/14 23:17:06 burnett Exp $
+* $Id: EarthOrbit.h,v 1.7 2004/07/02 23:21:09 hierath Exp $
     */
     class EarthOrbit   {
     public:
@@ -53,7 +53,7 @@ namespace astro {
           * @param sourceDir SkyDir giving the location of the source
           * @return Correction in seconds added to correct for the Shapiro delay
           */
-        double calcShapiroDelay(JulianDate jd, const SkyDir sourceDir) const;
+        double calcShapiroDelay(JulianDate jd, const SkyDir &sourceDir) const;
 
 
         /** Return the timing correction for light travel time to solar system barycenter
@@ -61,7 +61,7 @@ namespace astro {
           * @param sourceDir SkyDir giving location of the source
           * @return Correction in seconds added to correct for light travel time
           */
-        double calcTravelTime(JulianDate jd, const SkyDir sourceDir) const;
+        double calcTravelTime(JulianDate jd, const SkyDir &sourceDir) const;
 
 
         /** Return the correction that is added to TT to obtain TDB time
