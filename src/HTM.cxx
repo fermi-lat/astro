@@ -2,7 +2,7 @@
 @brief implement HTM methods
 
 @author T. Burnett (based on copyright code by Peter Z. Kunszt) 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HTM.cxx,v 1.1 2004/03/29 22:27:38 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HTM.cxx,v 1.2 2004/03/30 10:47:45 burnett Exp $
 */
 
 #include "astro/HTM.h"
@@ -12,7 +12,8 @@ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/HTM.cxx,v 1.1 2004/03/29 22:27:3
 using namespace astro;
 
 HTM::HTM(int maxlevel)
-: m_maxid( 2*size(maxlevel)-1 ) 
+: m_level(maxlevel)
+, m_maxid( 2*size(maxlevel)-1 ) 
 {
     using astro::SkyDir;
     // create vertices of the octahedron: order is the same as for htm
@@ -40,11 +41,15 @@ HTM::HTM(int maxlevel)
 }
 
 HTM::NodeList::const_iterator HTM::begin(int level)const {
+    if( level <0 ) level = m_level; // default
     return level>0? m_nodes.begin()+start(level) : m_nodes.begin();
     //   return std::find(m_nodes.begin(), m_nodes.end(), size(level));
 }
 
 HTM::NodeList::const_iterator HTM::end(int level)const {
+
+    if( level <0 ) level = m_level; // default
+
     size_t off = start(level)+size(level);
     return off> m_nodes.size()? m_nodes.end() : m_nodes.begin()+off;
     //        return std::find(m_nodes.begin(), m_nodes.end(), size(level+1));
