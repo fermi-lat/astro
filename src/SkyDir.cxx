@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.18 2004/02/13 22:01:05 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.19 2004/02/14 23:17:06 burnett Exp $
 */
 
 // Include files
@@ -110,6 +110,7 @@ void  SkyDir::setGalCoordsFromDir(double & l, double & b) const{
     //where yhat points at the galactic origin.
     // we want to make this into l and b now.
     l = atan2(pointingin.y(), pointingin.x())*180/M_PI;
+    if( l<0) l+=360;
     b = asin(pointingin.z())*180/M_PI;
 
 }
