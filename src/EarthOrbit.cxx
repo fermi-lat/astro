@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.19 2004/09/29 18:06:29 hierath Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.20 2004/10/09 00:12:20 hierath Exp $
 
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
@@ -135,16 +135,25 @@ double EarthOrbit::phase(JulianDate jd) const
 // photon arrival times.
 double EarthOrbit::calcShapiroDelay(JulianDate jd, const SkyDir &sourceDir) const
 {
-   SolarSystem::Body sunID = (SolarSystem::Body) 8;
+//   SolarSystem::Body sunID = (SolarSystem::Body) 8;
 
    SolarSystem sun;
-   SkyDir sunDir = sun.direction(sunID,jd);
+//   SkyDir sunDir = sun.direction(sunID,jd);
 
-   Hep3Vector rsun = sunDir.dir();
+//   Hep3Vector rsun = sunDir.dir();
    Hep3Vector rsrc = sourceDir.dir();
 
+   //***************
+   SolarSystem solsys;
+   Hep3Vector sun2 = solsys.getSolarVector(jd);
+//   rsun /= rsun.mag();
+//   sun2 /= sun2.mag();
+
+//   Hep3Vector difference = rsun - sun2;
+   //***************
+   
    // Angle of source-sun-observer
-   double costheta = - rsun.dot(rsrc) / ( rsun.mag() * rsrc.mag() );
+   double costheta = - sun2.dot(rsrc) / ( sun2.mag() * rsrc.mag() );
 
    // m = G * Msun / c^3
    static double m = 4.9271e-6;

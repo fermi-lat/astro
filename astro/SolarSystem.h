@@ -15,7 +15,7 @@ namespace astro {
   * @brief position of various solarsystem entities
   * @author G. Tosti original code 
   * @author T. Burnett convert to class
-  * $Id: SolarSystem.h,v 1.4 2004/09/29 18:06:29 hierath Exp $
+  * $Id: SolarSystem.h,v 1.5 2004/10/09 00:12:20 hierath Exp $
   *
   * This is a thin wrapper to code in the class SolSystem
   */
@@ -55,12 +55,14 @@ public:
      */
     Hep3Vector getBarycenter(JulianDate jd);
 
+    Hep3Vector getSolarVector(JulianDate jd);
+
     /**
     * @brief conversion operator that returns the SkyDir 
     */
     operator SkyDir()const { return m_dir; }
 private:
-
+    bool s_ephemInitialized;
     SkyDir m_dir;
     SolSystem* m_ss;
 };
