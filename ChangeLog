@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Wed Aug 14 07:37:30 PDT 2002
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+improve documentation
+    *
+------------------------------------------------------------
+User: burnett  Wed Aug 14 07:37:30 PDT 2002
 astro/astro
 
 Modified Files:
