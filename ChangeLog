@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: hierath  Mon May 24 13:49:09 PDT 2004
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+Added ability to specify parameters, and simple test of projections.
+    *
+------------------------------------------------------------
+User: hierath  Mon May 24 13:49:09 PDT 2004
 astro/src
 
 Modified Files:
