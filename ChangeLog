@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Nov 24 11:40:11 PST 2003
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+tagging SkyDir initialization fix to v0r6p1
+    *
+------------------------------------------------------------
+User: burnett  Mon Nov 24 11:40:11 PST 2003
 astro/cmt
 
 Modified Files:
