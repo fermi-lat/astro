@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: hierath  Fri May 28 16:52:15 PDT 2004
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+SkyProj now wraps the main wcs interface
+    *
+------------------------------------------------------------
+User: hierath  Fri May 28 16:52:15 PDT 2004
 astro/src
 
 Modified Files:
