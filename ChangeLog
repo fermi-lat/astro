@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Jun  6 13:16:49 PDT 2003
+astro
+
+Modified Files:
+	.cvsignore 
+Log Message:
+fix warning in SkyDir header, move difference() to .cxx file
+    *
+------------------------------------------------------------
 User: pln  Thu May  8 16:40:15 PDT 2003
 astro/astro
 
