@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Tue Apr  6 14:10:20 PDT 2004
+astro/src/test
+
+Added Files:
+	tprj1.cxx 
+Log Message:
+adding wcslib test file for projection closure
+    *
+------------------------------------------------------------
 User: hierath  Tue Apr  6 13:57:42 PDT 2004
 astro/wcslib
 
