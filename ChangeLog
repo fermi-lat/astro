@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Thu Oct  7 12:42:37 PDT 2004
+astro/src/jplephem
+
+Added Files:
+	JPLEPH.405 
+Log Message:
+jpl ephemeris fits file added as binary
+    *
+------------------------------------------------------------
 User: hierath  Thu Oct  7 12:40:15 PDT 2004
 astro/src/jplephem
 
