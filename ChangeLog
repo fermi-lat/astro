@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: burnett  Sat Apr  2 08:08:04 PST 2005
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+fix gcc errors
+
+    *
+------------------------------------------------------------
 User: burnett  Sat Apr  2 08:07:39 PST 2005
 astro/cmt
 
