@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: burnett  Tue Mar 30 09:09:15 PST 2004
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+rename version to v0r12 following strong feelings from members of the core group
+removed old tag
+    *
+------------------------------------------------------------
 User: burnett  Tue Mar 30 09:09:14 PST 2004
 astro/cmt
 
