@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.2 2002/08/13 10:01:16 srobinsn Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.3 2002/08/30 12:30:27 burnett Exp $
 #ifndef OrbitModel_SkyDir_H
 #define OrbitModel_SkyDir_H
 
@@ -14,7 +14,7 @@ namespace astro {
 /** @class SkyDir
 * @brief Describe an absolute direction
 * @author S. Robinson 
-* <br>$Id: SkyDir.h,v 1.2 2002/08/13 10:01:16 srobinsn Exp $
+* <br>$Id: SkyDir.h,v 1.3 2002/08/30 12:30:27 burnett Exp $
 *
     */
     class SkyDir
@@ -39,6 +39,9 @@ namespace astro {
         
         //!to return the opening angle (in radians) between two objects:
         double SkyDir::difference(const SkyDir& other)const;
+
+        //hammer-aitoff equal-area projection.
+        void hammerAitoff(double &l,double &b);
         
     private:
         static HepRotation s_celestialToGalactic;
