@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.3 2002/08/14 14:58:19 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.4 2002/09/18 04:31:28 srobinsn Exp $
 
 #include "astro/SolarSystem.h"
 #include "astro/EarthCoordinate.h"
@@ -9,7 +9,8 @@
 bool testSkyDir(){
     using namespace astro;
     bool ok = true;
-    for(double l = -175 ; l < 175 ; l += 5.){
+    double l;
+    for(l = -175 ; l < 175 ; l += 5.){
         for(double b = -85 ; b < 85 ; b +=5.){
             SkyDir sd4(l,b,SkyDir::GALACTIC);
             double test = fabs(l-sd4.l()) + fabs(b - sd4.b());
