@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Thu Jun  3 14:03:15 PDT 2004
+astro/astro
+
+Modified Files:
+	SkyProj.h 
+Log Message:
+Changed SkyProj member function project and deproject to sph2pix and pix2sph.  Also added some comments to wcslib files where wcsset was changed to wcsset2.
+    *
+------------------------------------------------------------
 User: burnett  Thu Jun  3 07:19:36 PDT 2004
 astro/src
 
