@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: kuss  Thu Oct 24 08:39:08 PDT 2002
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+For compilation with gcc v3, fixed "ISO scope" errors.
+
+    *
+------------------------------------------------------------
+User: kuss  Thu Oct 24 08:39:08 PDT 2002
 astro/src
 
 Modified Files:
