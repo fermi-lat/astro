@@ -1,7 +1,7 @@
 /** @file SkyDir.h
     @brief declaration of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.15 2004/02/07 00:35:21 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.16 2004/02/07 14:15:30 burnett Exp $
 
 */
 #ifndef OrbitModel_SkyDir_H
@@ -20,7 +20,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.15 2004/02/07 00:35:21 burnett Exp $
+    * <br>$Id: SkyDir.h,v 1.16 2004/02/07 14:15:30 burnett Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
@@ -50,6 +50,7 @@ namespace astro {
 
         //! function operator returns the direction
         Hep3Vector& operator () () {return m_dir;}
+        const Hep3Vector& operator () ()const  {return m_dir;}
         //! glactic l in degrees
         double l () const;
         //! glactic b in degrees
