@@ -1,17 +1,14 @@
 package astro
 
 version v0r10p6
-#$Id: requirements,v 1.12 2004/02/14 23:24:06 burnett Exp $
+#$Id: requirements,v 1.13 2004/02/15 01:17:39 burnett Exp $
 author  T. Burnett <tburnett@u.washington.edu>
 
 branches astro cmt src doc
 
-use GlastPolicy v5*
-use facilities   v2r*
-use CLHEP v2* IExternal
+use GlastPolicy  *
+use facilities   *
+use CLHEP * IExternal
 
 apply_pattern GLAST_static_library_package
 
-
-# this is the test program from G. Tosti -- enable it to run the test
-#application orbit test/orbit/*.cxx 
