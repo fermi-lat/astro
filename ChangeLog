@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: srobinsn  Tue Sep 30 15:57:37 PDT 2003
+astro/astro
+
+Modified Files:
+	PointingTransform.h 
+Log Message:
+small fixes, documentation checkin
+
+    *
+------------------------------------------------------------
 User: srobinsn  Tue Sep 30 14:03:51 PDT 2003
 astro/src/test
 
