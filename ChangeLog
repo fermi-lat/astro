@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Jun  6 15:30:25 PDT 2004
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+fix galactic conversion for projection; patch tag p1
+    *
+------------------------------------------------------------
+User: burnett  Sun Jun  6 15:30:25 PDT 2004
 astro/cmt
 
 Modified Files:
