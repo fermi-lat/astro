@@ -13,7 +13,7 @@ namespace astro {
 * @brief Postition of Earth satellite
 * @author G. Tosti original code 
 * @author T. Burnett convert to class
-* $Id: EarthOrbit.h,v 1.4 2002/09/16 23:29:17 srobinsn Exp $
+* $Id: EarthOrbit.h,v 1.5 2004/01/28 23:23:06 hierath Exp $
     */
     class EarthOrbit   {
     public:

@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.17 2004/02/07 14:15:30 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.18 2004/02/13 22:01:05 burnett Exp $
 */
 
 // Include files
@@ -10,7 +10,7 @@
 
 using namespace astro;
 #include <string>
-#include <exception>
+#include <stdexcept>
 
 bool  SkyDir::s_project_lb=false;  // If true, project uses l, b coords instead of RA, DEC
 float SkyDir::s_refRA=0;  // Projection Center RA (radians)

@@ -1,4 +1,6 @@
-// 
+/** @file EarthCoordinate.h
+
+*/
 #ifndef astro_EarthCoordinate_H
 #define astro_EarthCoordinate_H
 
@@ -10,7 +12,7 @@ namespace astro {
 
   * \brief describe a point with respect to the surface of the Earth
   * \author T. Burnett and G. Tosti
-  * <hr> $Id: EarthCoordinate.h,v 1.1.1.1 2002/08/13 00:20:45 burnett Exp $
+  * <hr> $Id: EarthCoordinate.h,v 1.2 2002/08/14 14:37:30 burnett Exp $
   *
   * Note that we calculate the geodetic coordinates: from http://ssd.jpl.nasa.gov/glossary.html#geodetic
   *
@@ -57,6 +59,8 @@ private:
     static double  GetGMST(JulianDate J_D);
     static double s_EarthRadius;
 };
+
+
 
 inline double EarthCoordinate::latitude()const{ return m_lat*180/M_PI;}
 inline double EarthCoordinate::longitude()const{ return m_lon*180/M_PI;}
