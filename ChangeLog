@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Aug 14 07:37:30 PDT 2002
+astro/astro
+
+Modified Files:
+	EarthCoordinate.h JulianDate.h 
+Log Message:
+improve documentation
+    *
+------------------------------------------------------------
 User: srobinsn  Tue Aug 13 03:01:16 PDT 2002
 astro/src/test
 
