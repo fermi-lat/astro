@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Feb  5 11:36:14 PST 2004
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Log Message:
+add test, fix new constructor path
+    *
+------------------------------------------------------------
 User: burnett  Thu Feb  5 11:05:43 PST 2004
 astro/src
 
