@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Thu Jul  8 12:00:05 PDT 2004
+astro/astro
+
+Modified Files:
+	EarthOrbit.h 
+Log Message:
+Minor fixes to parameter passing and sign of correction for geometric delay.
+    *
+------------------------------------------------------------
 User: hierath  Fri Jul  2 16:55:47 PDT 2004
 astro/src
 
