@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: burnett  Sun Feb  6 11:26:38 PST 2005
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Added Files:
+	TestHealpixArray.h 
+Log Message:
+added new template class HealpixArray, about to tag
+    *
+------------------------------------------------------------
+User: burnett  Sun Feb  6 11:26:38 PST 2005
 astro/src/jplephem
 
 Modified Files:
