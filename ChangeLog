@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Jun  3 07:19:36 PDT 2004
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+fix that allows blank projection type.
+    *
+------------------------------------------------------------
 User: burnett  Wed Jun  2 11:36:01 PDT 2004
 astro/src/test
 
