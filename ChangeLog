@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Fri Jan 23 12:53:50 PST 2004
+astro/src
+
+Added Files:
+	JulianDate.cxx 
+Log Message:
+Moved functions from header file to separate .cxx file.
+    *
+------------------------------------------------------------
 User: cohen  Thu Jan 22 01:33:35 PST 2004
 astro/astro
 
