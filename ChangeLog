@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sat Feb 14 17:10:55 PST 2004
+astro/src
+
+Modified Files:
+	astroutil.h chap95_data.h 
+Log Message:
+deal with gcc warnings
+    *
+------------------------------------------------------------
 User: burnett  Sat Feb 14 15:24:06 PST 2004
 astro/src/test
 
