@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Aug 14 07:58:19 PDT 2002
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+fix return code to reflect error in new tests
+    *
+------------------------------------------------------------
 User: burnett  Wed Aug 14 07:37:30 PDT 2002
 astro/src
 
