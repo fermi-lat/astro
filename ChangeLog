@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: srobinsn  Tue Aug 13 03:01:16 PDT 2002
+astro/src
+
+Modified Files:
+	SkyDir.cxx 
+Log Message:
+much fixing, streamlining and testing of skydir, and additional tests in test.cxx.
+
+    *
+------------------------------------------------------------
+User: srobinsn  Tue Aug 13 03:01:16 PDT 2002
 astro/astro
 
 Modified Files:
