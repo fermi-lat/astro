@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string>
+#include "stdio.h"
 
 namespace astro {
 /**
@@ -17,7 +18,7 @@ namespace astro {
 *    (on the Julian calendar).
 *  @author Gino Tosti (primary)
 *  @author Toby Burnett (convert to a class)
-*  <hr>$Id: JulianDate.h,v 1.3 2004/01/22 02:49:30 hierath Exp $ 
+*  <hr>$Id: JulianDate.h,v 1.4 2004/01/22 08:04:21 hierath Exp $ 
 */
 class JulianDate {
 public:
