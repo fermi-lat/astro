@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Dec 22 15:41:29 PST 2004
+astro/astro
+
+Added Files:
+	SkyStat.h 
+Log Message:
+Add new class that computes statistics of a sky image, using HTM.
+    *
+------------------------------------------------------------
 User: burnett  Thu Nov 11 20:12:55 PST 2004
 astro/doc
 
