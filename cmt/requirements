@@ -1,13 +1,14 @@
 package astro
 
 version v1r1	
-#$Id: requirements,v 1.29 2004/07/18 22:51:58 burnett Exp $
+#$Id: requirements,v 1.30 2004/08/31 23:48:16 hierath Exp $
 author  T. Burnett <tburnett@u.washington.edu>
 
 branches astro cmt src doc
 
 use GlastPolicy  *
 use facilities   *
+use cfitsio * IExternal
 use CLHEP * IExternal
 use cfitsio * IExternal
 

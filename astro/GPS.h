@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.1 2004/01/28 23:23:06 hierath Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.2 2004/03/30 10:47:44 burnett Exp $
 
 #if !defined(_H_GPS_CLASS)
 #define _H_GPS_CLASS
@@ -24,7 +24,7 @@
 * \class GPS
 * \brief Models the Global Positoning System for a spacecraft. Handles time, position, and orientation for the instrument as a whole.
 * 
-* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.1 2004/01/28 23:23:06 hierath Exp $
+* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.2 2004/03/30 10:47:44 burnett Exp $
 Represents the Global Positioning System on-board the spacecraft. An Orbit
 object is used to compute the spacecraft's position and pointing characteristics.
 Time is tracked through this object, and synchronized with the Scheduler for 
@@ -203,6 +203,10 @@ private:
     std::string m_pointingHistoryFile;//pointing/livetime database history file to use.
     std::map<double,POINTINFO> m_pointingHistory;//pointing/livetime database history
     POINTINFO m_currentInterpPoint; //holder object for currently interpotated pointing information
+
+   bool haveFitsFile() const;
+   void readFitsData();
+   void fitsReportError(FILE *, int) const;
 };
 
 inline std::istream&    operator>>(std::istream& i, GPS::Coords& c) {
