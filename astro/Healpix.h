@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header$
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.1 2005/01/22 04:18:33 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -67,6 +67,8 @@ public:
     ///@brief the value of the ordering parameter: either NESTED or RING
     Ordering ord()const{return m_ord;}
     bool nested()const{return m_ord==NESTED;}
+    astro::SkyDir::CoordSystem coordsys()const{return m_coordsys;}
+    bool galactic()const{return m_coordsys==astro::SkyDir::GALACTIC; }
 
     /**@class Pixel
     @brief represent a Healpix pixel
