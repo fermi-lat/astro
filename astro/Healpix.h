@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.3 2005/02/06 19:26:38 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.4 2005/02/06 20:23:53 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -11,6 +11,7 @@ $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.3 2005/02/06 19:
 
 #include "astro/SkyDir.h"
 #include "astro/SkyFunction.h"
+#include <vector>
 
 namespace astro{
 /**
@@ -91,6 +92,7 @@ public:
         operator astro::SkyDir()const;
         astro::SkyDir operator()()const{ return *this;}
         long index()const{return m_index;}
+        void neighbors(std::vector<Pixel> & p) const;
 
     private:
         long m_index;
