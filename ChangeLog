@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Mon Apr 19 11:41:19 PDT 2004
+astro/src/wcslib
+
+Added Files:
+	wcs.cxx 
+Log Message:
+Moving wcs
+    *
+------------------------------------------------------------
 User: hierath  Mon Apr 19 11:40:48 PDT 2004
 astro/src/wcslib
 
