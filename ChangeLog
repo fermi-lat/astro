@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: srobinsn  Mon Sep 16 16:29:17 PDT 2002
+astro/astro
+
+Modified Files:
+	EarthOrbit.h 
+Log Message:
+extra rotation function removed.
+
+    *
+------------------------------------------------------------
 User: srobinsn  Mon Sep 16 10:56:47 PDT 2002
 astro/src
 
