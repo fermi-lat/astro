@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: srobinsn  Mon Sep 16 10:56:47 PDT 2002
+astro/src
+
+Modified Files:
+	SkyDir.cxx 
+Log Message:
+hammer-aitoff projection added to SkyDir.
+
+    *
+------------------------------------------------------------
+User: srobinsn  Mon Sep 16 10:56:47 PDT 2002
 astro/cmt
 
 Modified Files:
