@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.3 2002/08/30 12:30:27 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.4 2002/09/16 17:56:45 srobinsn Exp $
 #ifndef OrbitModel_SkyDir_H
 #define OrbitModel_SkyDir_H
 
@@ -14,7 +14,7 @@ namespace astro {
 /** @class SkyDir
 * @brief Describe an absolute direction
 * @author S. Robinson 
-* <br>$Id: SkyDir.h,v 1.3 2002/08/30 12:30:27 burnett Exp $
+* <br>$Id: SkyDir.h,v 1.4 2002/09/16 17:56:45 srobinsn Exp $
 *
     */
     class SkyDir
@@ -41,7 +41,7 @@ namespace astro {
         double SkyDir::difference(const SkyDir& other)const;
 
         //hammer-aitoff equal-area projection.
-        void hammerAitoff(double &l,double &b);
+        std::pair<double,double> hammerAitoff();
         
     private:
         static HepRotation s_celestialToGalactic;

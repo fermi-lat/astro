@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.3 2002/08/30 12:30:28 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.4 2002/09/16 17:56:47 srobinsn Exp $
 
 // Include files
 #include "astro/SkyDir.h"
@@ -78,7 +78,9 @@ namespace astro {
     *  will be in internal Aitoff units where "l" is in the range [-2, 2]
     *  and "b" is in the range [-1, 1].
     */
-    void SkyDir::hammerAitoff(double &l,double &b){
+    std::pair<double,double> SkyDir::hammerAitoff(){
+        double l = this->l();
+        double b = this->b();
         float lover2, den;
         float radl, radb;
         
@@ -100,7 +102,7 @@ namespace astro {
         b = sin(radb) / den;
         // "x" is now in the range [-2, 2] and "y" in the range [-1, 1]. 
         
-        return;
+        return std::make_pair<double,double>(l,b);
     }
     
     

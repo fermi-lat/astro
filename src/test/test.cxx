@@ -1,4 +1,4 @@
-// $Header:$
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.3 2002/08/14 14:58:19 burnett Exp $
 
 #include "astro/SolarSystem.h"
 #include "astro/EarthCoordinate.h"
@@ -67,6 +67,12 @@ using namespace std;
     test += fabs(ra-sd.ra()) +fabs(dec-sd.dec());
     
     double lat=40, lon=45;
+    EarthOrbit abcd;
+    double juliandate = abcd.dateFromSeconds(0.0);
+    EarthCoordinate xyza(abcd.position(juliandate),juliandate);
+    std::cout << "latitude at t0 = " << xyza.latitude()
+        << " , longitude at t0 = " << xyza.longitude() << std::endl;
+    
 
     EarthCoordinate ec(lat, lon);
 
