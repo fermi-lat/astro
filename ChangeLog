@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: srobinsn  Tue Aug 13 03:01:16 PDT 2002
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Log Message:
+much fixing, streamlining and testing of skydir, and additional tests in test.cxx.
+
+    *
+------------------------------------------------------------
 User: burnett  Mon Aug 12 17:20:46 PDT 2002
 astro
 
