@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Thu Jun  3 15:06:16 PDT 2004
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Log Message:
+Removed old projection routines
+    *
+------------------------------------------------------------
 User: hierath  Thu Jun  3 14:03:16 PDT 2004
 astro/src/wcslib
 
