@@ -26,7 +26,7 @@
 *                      AUSTRALIA
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
-*   $Id: wcs.c,v 3.4 2004/02/11 00:15:03 mcalabre Exp $
+*   $Id: wcs.c,v 1.1 2004/05/21 18:52:28 hierath Exp $
 *===========================================================================*/
 
 #include <math.h>
@@ -632,6 +632,10 @@ const struct wcsprm *wcs;
 
 /*--------------------------------------------------------------------------*/
 
+/* All instances of wcsset were changed to wcsset2 to avoid a namespace 
+ * conflict that occurs with a Windows function of same name.  
+ * - T. Hierath
+ */
 int wcsset2(wcs)
 
 struct wcsprm *wcs;
@@ -944,6 +948,10 @@ int stat[];
    /* Initialize if required. */
    if (wcs == 0) return 1;
    if (wcs->flag != WCSSET) {
+    /* All instances of wcsset were changed to wcsset2 to avoid a namespace 
+     * conflict that occurs with a Windows function of same name.  
+     * - T. Hierath
+     */
       if (status = wcsset2(wcs)) return status;
    }
 
@@ -1110,6 +1118,10 @@ int stat[];
    /* Initialize if required. */
    if (wcs == 0) return 1;
    if (wcs->flag != WCSSET) {
+     /* All instances of wcsset were changed to wcsset2 to avoid a namespace 
+      * conflict that occurs with a Windows function of same name.  
+      * - T. Hierath
+      */
       if (status = wcsset2(wcs)) return status;
    }
 
@@ -1274,6 +1286,10 @@ double pixcrd[];
    /* Initialize if required. */
    if (wcs == 0) return 1;
    if (wcs->flag != WCSSET) {
+     /* All instances of wcsset were changed to wcsset2 to avoid a namespace 
+      * conflict that occurs with a Windows function of same name.  
+      * - T. Hierath
+      */
       if (status = wcsset2(wcs)) return status;
    }
 
