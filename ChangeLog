@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Apr 20 06:31:07 PDT 2004
+astro/src
+
+Modified Files:
+	SolSystem.cxx 
+Log Message:
+remove some remaining planet stuff, to quiet warnings
+    *
+------------------------------------------------------------
 User: burnett  Mon Apr 19 17:31:45 PDT 2004
 astro/src
 
