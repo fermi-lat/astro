@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: hierath  Wed Jan 28 15:23:07 PST 2004
+astro/src
+
+Added Files:
+	GPS.cxx 
+Log Message:
+
+Moved GPS class into astro.
+    *
+------------------------------------------------------------
+User: hierath  Wed Jan 28 15:23:07 PST 2004
 astro/cmt
 
 Modified Files:
