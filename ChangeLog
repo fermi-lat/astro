@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Fri May 28 16:50:58 PDT 2004
+astro/astro
+
+Modified Files:
+	SkyProj.h 
+Log Message:
+Changes to SkyProj to allow use of main wcs interface
+    *
+------------------------------------------------------------
 User: hierath  Mon May 24 16:00:59 PDT 2004
 astro/src/test/wcs
 
