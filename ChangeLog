@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Fri Oct  8 17:12:20 PDT 2004
+astro/astro
+
+Modified Files:
+	SolarSystem.h 
+Log Message:
+Changed sign on Shapiro delay correction.  Removed unnecessary function from SolarSystem.
+    *
+------------------------------------------------------------
 User: hierath  Thu Oct  7 12:42:37 PDT 2004
 astro/src/jplephem
 
