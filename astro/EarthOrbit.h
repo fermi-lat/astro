@@ -12,7 +12,7 @@ namespace astro {
   * @brief Postition of Earth satellite
   * @author G. Tosti original code 
   * @author T. Burnett convert to class
-  * $Id:$
+  * $Id: EarthOrbit.h,v 1.1.1.1 2002/08/13 00:20:45 burnett Exp $
   */
 class EarthOrbit   {
 public:
@@ -29,6 +29,12 @@ public:
       *  @return  The orbit position (in inertial coordinates) in km
       */
     Hep3Vector position(JulianDate jd)const;
+
+    ///return the inclination of orbit
+    double inclination(){return s_incl;}
+
+    ///return the orbital phase, in terms of 'phase since ascending node was passed'
+    double phase(JulianDate jd) const;
 
 private:
 
