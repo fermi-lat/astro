@@ -1,7 +1,7 @@
 package astro
 
-version v1r2	
-#$Id: requirements,v 1.31 2004/09/27 21:11:29 jchiang Exp $
+version v1r3	
+#$Id: requirements,v 1.32 2004/11/12 04:12:54 burnett Exp $
 author  T. Burnett <tburnett@u.washington.edu>
 
 branches astro cmt src doc
@@ -43,5 +43,7 @@ apply_pattern astro_package_test
 
 # this is the test program from G. Tosti
 # application orbit test/orbit/Orbit.cxx 
+
+#application testHTM test/htm/*.cxx
 
 
