@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Fri Jul  2 16:47:51 PDT 2004
+astro/src
+
+Modified Files:
+	EarthOrbit.cxx 
+Log Message:
+Simplified vector magnitude calculations
+    *
+------------------------------------------------------------
 User: hierath  Fri Jul  2 16:21:09 PDT 2004
 astro/src
 
