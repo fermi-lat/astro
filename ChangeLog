@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Fri Jan 23 13:00:34 PST 2004
+astro/astro
+
+Modified Files:
+	JulianDate.h 
+Log Message:
+Remove functions from header file.
+    *
+------------------------------------------------------------
 User: hierath  Fri Jan 23 12:53:50 PST 2004
 astro/src
 
