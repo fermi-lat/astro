@@ -1,7 +1,7 @@
 /** @file SkyDir.h
     @brief declaration of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.18 2004/03/19 22:17:48 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.19 2004/05/22 02:34:16 hierath Exp $
 
 */
 #ifndef OrbitModel_SkyDir_H
@@ -22,7 +22,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.18 2004/03/19 22:17:48 burnett Exp $
+    * <br>$Id: SkyDir.h,v 1.19 2004/05/22 02:34:16 hierath Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
@@ -49,10 +49,13 @@ namespace astro {
         //! initialize from a vector direction
         SkyDir(Hep3Vector, CoordSystem inputType = EQUATORIAL);
 
-        //! initialize using a projection and coordinates given in that projection
-        // x1, x2 = ra, dec equivalent coordinates
-        // projection = projection to use to obtain deprojected coordinates
-        SkyDir(double x1, double x2, SkyProj projection);
+        /** initialize using a projection and coordinates given in that projection
+         @param pixelx value of x pixel
+         @param pixely value of y pixel
+         @param projection  projection to use to obtain world coordinates
+         @param galactic if true, the 
+         */
+        SkyDir(double pixelx, double pixely, const SkyProj& projection, bool galactic=false);
 
 
         //! function operator returns the direction
@@ -112,8 +115,10 @@ namespace astro {
         std::pair<double,double> project() const;
 
         /** @brief Routine that gives a projection of the current coordinates 
-            @param projection The projection transfomation to apply. */
-        std::pair<double,double> project(SkyProj projection) const;
+            @param projection The projection transfomation to apply. 
+            @param galactic [false] if true, generate transformation in galactic coords*/
+
+        std::pair<double,double> project(const SkyProj& projection, bool galactic=false) const;
 
         /** @brief inverse projection function for reference: units are degrees
 
