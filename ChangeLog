@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: srobinsn  Tue Sep 17 21:31:28 PDT 2002
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Log Message:
+extraaneous methods removed, hammer-aitoff projection altered to return current-location translation, method to check orbit in test function.
+
+    *
+------------------------------------------------------------
 User: srobinsn  Mon Sep 16 16:29:17 PDT 2002
 astro/src
 
