@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sat Mar 26 13:51:46 PST 2005
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+Copy P Nolan's table-driven L, B compuation and put interface into EarthCoordinate
+    *
+------------------------------------------------------------
+User: burnett  Sat Mar 26 13:51:46 PST 2005
 astro/src
 
 Modified Files:
