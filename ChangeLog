@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Jan 31 12:26:40 PST 2003
+astro/cmt
+
+Added Files:
+	Makefile 
+Log Message:
+convenient to have a Makefile
+    *
+------------------------------------------------------------
 User: als  Thu Jan  9 17:14:35 PST 2003
 astro/cmt
 
