@@ -1,24 +1,4 @@
 ------------------------------------------------------------
-User: burnett  Sun Jan 23 11:59:54 PST 2005
-astro/src/jplephem
-
-Modified Files:
-	bary.cxx 
-Removed Files:
-	JPLEPH.405 
-Log Message:
-implement external access to the ephemeris file,
-    *
-------------------------------------------------------------
-User: burnett  Sun Jan 23 11:59:50 PST 2005
-astro/src
-
-Modified Files:
-	SolarSystem.cxx 
-Log Message:
-implement external access to the ephemeris file,
-    *
-------------------------------------------------------------
 User: burnett  Sat Jan 22 20:41:12 PST 2005
 astro/src/test
 
