@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: burnett  Fri Jan 21 20:18:34 PST 2005
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Added Files:
+	TestHealpix.h 
+Log Message:
+added new class Healpix
+    *
+------------------------------------------------------------
+User: burnett  Fri Jan 21 20:18:34 PST 2005
 astro/src
 
 Added Files:
