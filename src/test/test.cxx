@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.26 2005/01/23 20:02:57 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.27 2005/02/06 19:26:38 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -312,8 +312,15 @@ int main(){
         test += trans.gDir(vertical).b();
 
         // make sure can set ephemeris
+        JulianDate jdbary(2454101.5001062094);
         SolarSystem ss(SolarSystem::Sun, juliandate);
-        Hep3Vector bary = ss.getBarycenter(juliandate);
+        Hep3Vector bary = ss.getBarycenter(jdbary);
+        std::cout << "Barycenter coords for JD: "
+            << std::setprecision(8)<< jdbary << ": "  << bary << std::endl;
+        // expected, from comparison with glbary.
+        Hep3Vector expect (84.7056619, -445.132338, -192.922157);
+        test += (expect-bary).mag() *1e3 ;
+
 
         /// @todo: some test of the barycenter calculation.
         /*
