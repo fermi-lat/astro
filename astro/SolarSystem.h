@@ -15,7 +15,7 @@ namespace astro {
   * @brief position of various solarsystem entities
   * @author G. Tosti original code 
   * @author T. Burnett convert to class
-  * $Id:$
+  * $Id: SolarSystem.h,v 1.1.1.1 2002/08/13 00:20:45 burnett Exp $
   *
   * This is a thin wrapper to code in the class SolSystem
   */
