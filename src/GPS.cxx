@@ -1,5 +1,5 @@
 // GPS.cxx: implementation of the GPS class.
-// $Id: GPS.cxx,v 1.3 2004/02/14 23:17:06 burnett Exp $
+// $Id: GPS.cxx,v 1.4 2004/03/30 10:47:45 burnett Exp $
 //////////////////////////////////////////////////////////////////////
 
 #include "astro/GPS.h"
@@ -244,9 +244,6 @@ HepRotation GPS::transformCelToGlast(double seconds){
     // set the needed pointing/location variables:
     getPointingCharacteristics(seconds);
 
-    double time = m_earthOrbit->dateFromSeconds(seconds);
-
-    //m_position = m_earthOrbit->position(time);
 
     SkyDir dirZ(m_RAZ,m_DECZ,SkyDir::EQUATORIAL);
     SkyDir dirX(m_RAX,m_DECX);
