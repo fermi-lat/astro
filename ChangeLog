@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Apr 19 17:13:38 PDT 2004
+astro/src
+
+Modified Files:
+	SolSystem.cxx 
+Log Message:
+disable planets (besides Earth, of couse) to avoid lots of Linux warnings
+    *
+------------------------------------------------------------
 User: hierath  Mon Apr 19 11:51:33 PDT 2004
 astro/wcslib
 
