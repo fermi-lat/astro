@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Jun  2 11:36:01 PDT 2004
+astro/astro
+
+Modified Files:
+	SkyDir.h SkyProj.h 
+Log Message:
+rewrite and revise -- almost works!
+    *
+------------------------------------------------------------
 User: hierath  Fri May 28 17:18:22 PDT 2004
 astro/src
 
