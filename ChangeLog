@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Jul 18 15:36:52 PDT 2004
+astro/src
+
+Modified Files:
+	EarthOrbit.cxx JulianDate.cxx 
+Log Message:
+put in mission start
+    *
+------------------------------------------------------------
+User: burnett  Sun Jul 18 15:36:52 PDT 2004
 astro/astro
 
 Modified Files:
