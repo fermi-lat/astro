@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Wed Jun  2 11:36:01 PDT 2004
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+rewrite and revise -- almost works!
+    *
+------------------------------------------------------------
+User: burnett  Wed Jun  2 11:36:01 PDT 2004
 astro/src
 
 Modified Files:
