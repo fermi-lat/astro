@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: hierath  Thu Jun  3 18:14:19 PDT 2004
+astro/src
+
+Modified Files:
+	SkyDir.cxx SkyProj.cxx 
+Log Message:
+Added back a project() function to skydir that takes no arguments and does a default projection.  Also changed constructor of skyproj to also allow specification of lonpole and latpole. 
+    *
+------------------------------------------------------------
+User: hierath  Thu Jun  3 18:14:19 PDT 2004
 astro/astro
 
 Modified Files:
