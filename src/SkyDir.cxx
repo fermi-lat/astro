@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.22 2004/05/22 02:34:16 hierath Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.23 2004/05/24 20:49:09 hierath Exp $
 */
 
 // Include files
@@ -250,7 +250,10 @@ void SkyDir::setProjection( float ref_ra,  float ref_dec,
 // WCS based projection routine
 std::pair<double,double> SkyDir::project(SkyProj projection) const
 {
-   return projection.project(this->ra(),this->dec());
+   if(s_project_lb)
+      return projection.project(this->l(), this->b());
+   else
+      return projection.project(this->ra(),this->dec());
 }
 
 
