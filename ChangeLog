@@ -1,31 +1,4 @@
 ------------------------------------------------------------
-User: burnett  Tue Apr 20 06:32:56 PDT 2004
-astro/doc
-
-Modified Files:
-	release.notes 
-Log Message:
-tagging after zapping more warnings: v0r12p2
-    *
-------------------------------------------------------------
-User: burnett  Tue Apr 20 06:32:56 PDT 2004
-astro/cmt
-
-Modified Files:
-	requirements 
-Log Message:
-tagging after zapping more warnings: v0r12p2
-    *
-------------------------------------------------------------
-User: burnett  Tue Apr 20 06:31:07 PDT 2004
-astro/src
-
-Modified Files:
-	SolSystem.cxx 
-Log Message:
-remove some remaining planet stuff, to quiet warnings
-    *
-------------------------------------------------------------
 User: burnett  Mon Apr 19 17:31:45 PDT 2004
 astro/src
 
