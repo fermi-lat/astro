@@ -1,6 +1,6 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.8 2004/06/04 01:14:19 hierath Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.9 2004/06/05 16:53:32 burnett Exp $
 */
 
 // Include files
@@ -114,7 +114,7 @@ std::pair<double,double> SkyProj::pix2sph(double x1, double x2) const
 @param x2 projected equivalent dec or b, in degrees
 @param projection used to deproject these coordinates
 */
-std::pair<double,double> SkyProj::pix2pix(double x1, double x2, SkyProj otherProjection)
+std::pair<double,double> SkyProj::pix2pix(double x1, double x2, SkyProj otherProjection)const
 {
     std::pair<double,double> s = otherProjection.pix2sph(x1,x2);
     return SkyProj::sph2pix(s.first,s.second);
