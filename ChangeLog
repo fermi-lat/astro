@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Feb 24 12:12:24 PST 2003
+astro/src
+
+Modified Files:
+	SkyDir.cxx 
+Log Message:
+add  optional arg to Hep3Vector constructor
+    *
+------------------------------------------------------------
+User: burnett  Mon Feb 24 12:12:24 PST 2003
 astro/astro
 
 Modified Files:
