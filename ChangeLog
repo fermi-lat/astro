@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Mar  2 14:59:54 PST 2005
+astro/astro
+
+Modified Files:
+	EarthOrbit.h 
+Log Message:
+make launch date settable in constructor
+    *
+------------------------------------------------------------
 User: burnett  Sun Feb  6 12:39:36 PST 2005
 astro/astro
 
