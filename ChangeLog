@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: burnett  Fri Sep 20 09:57:48 PDT 2002
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+
+remove debug output; tag v0r2
+    *
+------------------------------------------------------------
+User: burnett  Fri Sep 20 09:57:48 PDT 2002
 astro/astro
 
 Modified Files:
