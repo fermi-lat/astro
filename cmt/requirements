@@ -1,7 +1,7 @@
 package astro
 
-version v1r0
-#$Id: requirements,v 1.22 2004/05/24 18:53:15 burnett Exp $
+version v1r0p1	
+#$Id: requirements,v 1.23 2004/06/05 19:35:27 burnett Exp $
 author  T. Burnett <tburnett@u.washington.edu>
 
 branches astro cmt src doc
@@ -18,18 +18,16 @@ private
 #the following prepend makes the includes and src folders available locally
 macro_prepend includes "-I $(ASTROROOT)/src -I.." WIN32 "/I $(ASTROROOT)\src /I.. "
 
-
 macro source *.cxx WIN32 "*.h *.cxx"
 library astro -no_share \
  -s=../astro $(source) \
  -s=../src $(source) \
  -s=wcslib  $(source) *.c
 
+# simple program to test basic functionality
+apply_pattern package_test
 
 # this is the test program from G. Tosti
 # application orbit test/orbit/Orbit.cxx 
-
-# simple program to test basic functionality
-application test_astro test/test.cxx
 
 
