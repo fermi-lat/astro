@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: cohen  Thu Jan 22 01:25:28 PST 2004
+astro/astro
+
+Modified Files:
+	JulianDate.h 
+Log Message:
+fixed gcc2.95 compilation
+    *
+------------------------------------------------------------
 User: hierath  Thu Jan 22 00:04:21 PST 2004
 astro/astro
 
