@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Feb  4 15:07:55 PST 2004
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Log Message:
+implement the inverse projection, both as a static and an alternate constructor
+    *
+------------------------------------------------------------
 User: hierath  Wed Jan 28 15:23:07 PST 2004
 astro/src
 
