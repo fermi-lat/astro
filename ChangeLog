@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Mar 29 11:13:58 PST 2005
+astro/src
+
+Modified Files:
+	Healpix.cxx 
+Log Message:
+implement pixel neighbors
+    *
+------------------------------------------------------------
 User: burnett  Tue Mar 29 11:13:57 PST 2005
 astro/astro
 
