@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingTransform.cxx,v 1.4 2003/10/01 12:57:49 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingTransform.cxx,v 1.5 2003/10/02 20:59:48 srobinsn Exp $
 
 // Include files
 #include "astro/PointingTransform.h"
@@ -26,7 +26,7 @@ namespace astro {
     */
     SkyDir PointingTransform::gDir(Hep3Vector localDir) const{
         Hep3Vector dir(localDir);
-        SkyDir ret(localToCelestial()*dir,SkyDir::CELESTIAL);
+        SkyDir ret(localToCelestial()*dir,SkyDir::EQUATORIAL);
         return ret;
     }
 

@@ -1,5 +1,5 @@
 // GPS.cxx: implementation of the GPS class.
-// $Id: GPS.cxx,v 1.22 2003/11/29 04:24:50 srobinsn Exp $
+// $Id: GPS.cxx,v 1.1 2004/01/28 23:23:07 hierath Exp $
 //////////////////////////////////////////////////////////////////////
 
 #include "astro/GPS.h"
@@ -196,7 +196,7 @@ HepRotation GPS::rockingAngleTransform(double seconds){
         //don't do anything - the new pointing characteristics have already been taken account of
         //in getPointingCharacteristics().
         //rockRot.rotateX(m_rockNorth);
-        SkyDir dirZenith(m_RAZenith,m_DECZenith,SkyDir::CELESTIAL);
+        SkyDir dirZenith(m_RAZenith,m_DECZenith,SkyDir::EQUATORIAL);
         SkyDir dirXZenith(m_RAXZenith,m_DECXZenith);
 
     // orthogonalize, since interpolation and transformations destory orthogonality (limit is 10E-8)
@@ -248,7 +248,7 @@ HepRotation GPS::transformCelToGlast(double seconds){
 
     //m_position = m_earthOrbit->position(time);
 
-    SkyDir dirZ(m_RAZ,m_DECZ,SkyDir::CELESTIAL);
+    SkyDir dirZ(m_RAZ,m_DECZ,SkyDir::EQUATORIAL);
     SkyDir dirX(m_RAX,m_DECX);
 
     // orthogonalize, since interpolation and transformations destory orthogonality (limit is 10E-8)
