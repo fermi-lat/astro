@@ -12,7 +12,7 @@ namespace astro {
 
   * \brief describe a point with respect to the surface of the Earth
   * \author T. Burnett and G. Tosti
-  * <hr> $Id: EarthCoordinate.h,v 1.5 2005/03/26 21:51:45 burnett Exp $
+  * <hr> $Id: EarthCoordinate.h,v 1.6 2005/03/27 03:04:50 burnett Exp $
   *
   * Note that we calculate the geodetic coordinates: from http://ssd.jpl.nasa.gov/glossary.html#geodetic
   *
@@ -42,7 +42,6 @@ The (latitude,longitude) vertices for the SAA polygon are (in degrees):
 latv=(-30,-26,-20,-17,-10, 1, 2, -3, -8,-12,-19,-30,-30);
 lonv=( 45, 41, 31, 9,-11,-34,-46,-62,-79,-85,-89,-87, 45);
 
-@TODO: implement this
     */
     bool insideSAA()const;
 
