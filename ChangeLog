@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: burnett  Fri Sep 20 09:57:49 PDT 2002
+astro/src
+
+Modified Files:
+	EarthOrbit.cxx SkyDir.cxx 
+Log Message:
+
+remove debug output; tag v0r2
+    *
+------------------------------------------------------------
 User: burnett  Fri Sep 20 09:57:48 PDT 2002
 astro/doc
 
