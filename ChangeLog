@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Mar 30 05:37:44 PST 2004
+astro/src
+
+Modified Files:
+	EarthOrbit.cxx GPS.cxx JulianDate.cxx SkyDir.cxx vsop87_data.h 
+Log Message:
+fix unix warnings,
+    *
+------------------------------------------------------------
 User: burnett  Tue Mar 30 03:35:46 PST 2004
 astro/src/test
 
