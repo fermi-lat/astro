@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Mar 30 02:47:45 PST 2004
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx EarthOrbit.cxx GPS.cxx HTM.cxx 
+Log Message:
+fix unix warnings, put HTM into namespace
+    *
+------------------------------------------------------------
+User: burnett  Tue Mar 30 02:47:45 PST 2004
 astro/doc
 
 Modified Files:
