@@ -1,7 +1,7 @@
 /** @file EarthOrbit.h
     @brief definition of EarthOrbit class
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/EarthOrbit.h,v 1.10 2004/11/12 01:53:08 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/EarthOrbit.h,v 1.11 2005/01/23 20:02:56 burnett Exp $
 */
 #ifndef astro_EarthOrbit_H
 #define astro_EarthOrbit_H
@@ -21,7 +21,8 @@ namespace astro {
     class EarthOrbit   {
     public:
         
-        EarthOrbit();
+        //! specify launch date in constructor
+        EarthOrbit(JulianDate launch= JulianDate(2005 ,7,18,0.0));
         
         /** 
         * set up for calculation, with orbital parameters currently wired in
@@ -95,6 +96,7 @@ namespace astro {
         double m_dwdt;
         
         double m_a, m_alt;
+        JulianDate m_launch;
         
         static double s_altitude; //<! nominal altitude (km)
         static double s_incl;     //<! orbit inclination in degrees
