@@ -1,6 +1,6 @@
 /** @file SkyProj.h
 @brief declaration of the class SkyProj
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.8 2004/06/04 01:14:19 hierath Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.9 2004/06/05 19:30:40 burnett Exp $
 */
 
 #ifndef OrbitModel_SkyProj_H
@@ -21,7 +21,9 @@ namespace astro {
     * @brief Map Projection wrapper class for WCSLIB
     * @author T. Hierath
     *
-    This class acts as a wrapper for WCSLIB, a library written for handling transformations
+    This class acts as a wrapper for 
+    <a href=http://www.atnf.csiro.au/people/mcalabre/>WCSLIB</a>, 
+    a library written for handling transformations
     between celestial and projection coordinate systems. 
     See <a href="../skyproj.html"> this document</a> for example images.
 
