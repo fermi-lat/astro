@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Wed Feb  4 15:07:55 PST 2004
+astro/src
+
+Modified Files:
+	GPS.cxx PointingTransform.cxx SkyDir.cxx 
+Log Message:
+implement the inverse projection, both as a static and an alternate constructor
+    *
+------------------------------------------------------------
+User: burnett  Wed Feb  4 15:07:55 PST 2004
 astro/astro
 
 Modified Files:
