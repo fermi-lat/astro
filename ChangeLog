@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Oct  4 17:03:59 PDT 2004
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+more robust implementation of GPS::readFitsData
+    *
+------------------------------------------------------------
 User: hierath  Wed Sep 29 16:34:14 PDT 2004
 astro/src/jplephem
 
