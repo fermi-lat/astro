@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.15 2004/02/05 19:36:14 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.16 2004/02/07 00:35:21 burnett Exp $
 */
 
 // Include files
@@ -25,6 +25,20 @@ float SkyDir::s_rot=0;;   // Projection Rotation Angle
 namespace{
         static double DEGTORAD=M_PI/180.;
 }
+
+class SkyDir::Exception : public std::exception 
+    {
+    public:
+        Exception() {}
+        Exception(std::string errorString) 
+            : m_what(errorString)
+        {}
+
+        virtual ~Exception() throw() {}
+        virtual const char *what() const throw() {return m_what.c_str();}
+    protected:
+        std::string m_what;
+    };
 
 
 /** @brief initialize from (ra, dec), or (l,b)
@@ -199,7 +213,7 @@ void SkyDir::setProjection( float ref_ra,  float ref_dec,
         if( projName != std::string(names[i])) continue;
             type=static_cast<ProjType>(i); break;
     }
-    if( type==BAD) throw std::exception(("Unrecognized projection type: "+projName).c_str());
+    if( type==BAD) throw Exception(std::string("Unrecognized SkyDir projection type: ")+projName);
     setProjection(ref_ra, ref_dec, type, myRef_x, myRef_y, myScale_x, myScale_y, rot, use_lb);
 
 }
@@ -584,4 +598,5 @@ int SkyDir::inverseProjection(  double point_x,   double point_y,
 
     return(0);
 }  
+
 

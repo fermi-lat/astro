@@ -1,7 +1,7 @@
 /** @file SkyDir.h
     @brief declaration of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.14 2004/02/05 19:36:14 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.15 2004/02/07 00:35:21 burnett Exp $
 
 */
 #ifndef OrbitModel_SkyDir_H
@@ -20,7 +20,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.14 2004/02/05 19:36:14 burnett Exp $
+    * <br>$Id: SkyDir.h,v 1.15 2004/02/07 00:35:21 burnett Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
@@ -123,6 +123,8 @@ namespace astro {
         static float s_scaleX; // Projection X Scaling 1/degrees
         static float s_scaleY; // Projection Y Scaling 1/degrees
         static float s_rot;   // Projection Rotation Angle
+
+        class Exception; // forward declaration
 
     private:
         static HepRotation s_equatorialToGalactic;
