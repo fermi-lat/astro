@@ -1,7 +1,7 @@
 /** @file SkyDir.h
     @brief declaration of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.20 2004/06/02 18:36:01 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.21 2004/06/03 22:06:16 hierath Exp $
 
 */
 #ifndef OrbitModel_SkyDir_H
@@ -22,7 +22,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.20 2004/06/02 18:36:01 burnett Exp $
+    * <br>$Id: SkyDir.h,v 1.21 2004/06/03 22:06:16 hierath Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
@@ -81,6 +81,9 @@ namespace astro {
             @param galactic [false] if true, generate transformation in galactic coords*/
 
         std::pair<double,double> project(const SkyProj& projection, bool galactic=false) const;
+
+		/** @brief Does a default Hammer-Aitoff projection of the ra and dec */
+		std::pair<double,double> project() const;
 
         /** @brief inverse projection function for reference: units are degrees
 

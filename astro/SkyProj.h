@@ -1,6 +1,6 @@
 /** @file SkyProj.cxx
 @brief declaration of the class SkyProj
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.6 2004/06/02 18:36:01 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.7 2004/06/03 21:03:15 hierath Exp $
 */
 
 #ifndef OrbitModel_SkyProj_H
@@ -69,7 +69,14 @@ namespace astro {
             @param galactic if coords are to be interpreted as galactic
             **/
         SkyProj(const std::string &projName, 
-                 double* crpix, double* crval, double* cdelt, double crota2=0, bool galactic=false  );
+                 double* crpix, double* crval, double* cdelt, double crota2=0, bool galactic=false);
+
+		/** @brief Alternate constructor with 2 additional parameters
+			@param lonpole corresponds to the FITS keyword LONPOLE (native coordinates of celestial pole)
+			@param latpole corresponds to the FITS keyword LATPOLE */
+        SkyProj(const std::string &projName, 
+                 double* crpix, double* crval, double* cdelt, double lonpole, double latpole,
+				 double crota2=0, bool galactic=false);
 
         // Destructor
        ~SkyProj();
@@ -98,6 +105,11 @@ namespace astro {
         bool isGalactic()const;
         class Exception; // forward declaration
     private:
+
+		/** @brief called by constructor to initialize the projection */
+		void init(const std::string &projName, 
+                 double* crpix, double* crval, double* cdelt, 
+				 double lonpole, double latpole, double crota2, bool galactic);
 
         /* Structure defined in WCSLIB wcs.h.  This contains all
           projection information. */
