@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sat Mar  5 20:51:41 PST 2005
+astro/src
+
+Modified Files:
+	SolarSystem.cxx 
+Log Message:
+strange difference between gcc and vs 
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r5p1, operation: add
 Package: astro
