@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Jun  7 07:08:16 PDT 2004
+astro/astro
+
+Modified Files:
+	SkyProj.h 
+Log Message:
+put  WCSLIB URL.in doxy header. (Thanks to S. Digel for pointing it out.)
+    *
+------------------------------------------------------------
 User: burnett  Sun Jun  6 15:30:25 PDT 2004
 astro/src
 
