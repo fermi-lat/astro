@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: srobinsn  Thu May 13 13:17:05 PDT 2004
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+fix to angular units in specifying POINT rocking in GPS
+
+    *
+------------------------------------------------------------
 User: srobinsn  Thu May 13 13:17:04 PDT 2004
 astro/doc
 
