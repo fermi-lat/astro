@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.6 2002/09/20 16:57:49 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.7 2003/02/24 20:12:24 burnett Exp $
 
 // Include files
 #include "astro/SkyDir.h"
@@ -117,6 +117,11 @@ namespace astro {
         return std::make_pair<double,double>(l,b);
     }
     
+    double SkyDir::difference(const SkyDir& other)const
+    {
+      // TODO: make this computationally efficient, avoid sqrt and asin at least for small angles
+        return 2.*asin(0.5*(m_dir-other.dir()).mag());
+    }
     
     
     
