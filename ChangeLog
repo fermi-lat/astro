@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: hierath  Fri May 21 11:52:28 PDT 2004
+astro/src/wcslib
+
+Added Files:
+	cel.c cel.h cylfix.c cylfix.h lin.c lin.h prj.c prj.h spc.c 
+	spc.h sph.c sph.h spx.c spx.h wcs.c wcs.h wcsmath.h wcstrig.c 
+	wcstrig.h 
+Log Message:
+WCSLIB 3.4 with function wcsset renamed to wcsset2.
+    *
+------------------------------------------------------------
 User: hierath  Fri May 21 11:38:24 PDT 2004
 astro/src/wcslib
 
