@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.28 2004/06/04 01:14:19 hierath Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.29 2004/06/05 19:28:11 burnett Exp $
 */
 
 // Include files
@@ -126,12 +126,15 @@ double SkyDir::dec ()const{
 }
 
 // wcslib based projection routine
-std::pair<double,double> SkyDir::project(const SkyProj& projection, bool galactic) const
+std::pair<double,double> SkyDir::project(const SkyProj& projection) const
 {
-   if(galactic)
-      return projection.sph2pix(this->l(), this->b());
-   else
+    if(projection.isGalactic()){
+        double l, b; 
+        setGalCoordsFromDir(l,b);
+        return projection.sph2pix(l,b);
+    } else {
       return projection.sph2pix(this->ra(),this->dec());
+    }
 }
 
 

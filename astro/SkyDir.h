@@ -1,7 +1,7 @@
 /** @file SkyDir.h
 @brief declaration of the class SkyDir
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.22 2004/06/04 01:14:19 hierath Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.23 2004/06/05 19:28:11 burnett Exp $
 
 */
 #ifndef OrbitModel_SkyDir_H
@@ -22,7 +22,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.22 2004/06/04 01:14:19 hierath Exp $
+    * <br>$Id: SkyDir.h,v 1.23 2004/06/05 19:28:11 burnett Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
@@ -79,7 +79,7 @@ namespace astro {
         @param galactic [false] if true, generate transformation in galactic coords
         @return (pixelx,pixely)
         */
-        std::pair<double,double> project(const SkyProj& projection, bool galactic=false) const;
+        std::pair<double,double> project(const SkyProj& projection) const;
 
     private:
         static HepRotation s_equatorialToGalactic;
