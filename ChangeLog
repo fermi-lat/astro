@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Jan 23 12:02:57 PST 2005
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+tagging after removing ephemeris, a few fixed comments
+    *
+------------------------------------------------------------
+User: burnett  Sun Jan 23 12:02:57 PST 2005
 astro/src
 
 Modified Files:
