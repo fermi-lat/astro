@@ -1,7 +1,7 @@
 package astro
 
 version v1r0p2	
-#$Id: requirements,v 1.24 2004/06/06 22:30:25 burnett Exp $
+#$Id: requirements,v 1.25 2004/06/11 18:36:55 burnett Exp $
 author  T. Burnett <tburnett@u.washington.edu>
 
 branches astro cmt src doc
@@ -30,7 +30,7 @@ library astro -no_share \
 pattern package_test \
  private ; \
  macro test_source "test/*.cxx " WIN32 "-s=../src/test *.h *.cxx " ; \
- application test_<package> -group=test $(test_source) <extra>; \
+ application test_<package> -group=test $(test_source) <extra> ; \
  public
 
 apply_pattern package_test
