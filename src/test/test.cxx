@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.24 2005/01/22 04:18:34 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.25 2005/01/23 04:41:12 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -289,7 +289,6 @@ int main(){
         std::cout << "latitude at t0 = " << xyza.latitude()
             << " , longitude at t0 = " << xyza.longitude() << std::endl;
 
-
         EarthCoordinate ec(lat, lon);
 
         test += fabs(lat-ec.latitude()) + fabs(lon-ec.longitude());
@@ -310,6 +309,11 @@ int main(){
         test += trans.gDir(vertical).l()-20.0;
         test += trans.gDir(vertical).b();
 
+        // make sure can set ephemeris
+        SolarSystem ss(SolarSystem::Sun, juliandate);
+        Hep3Vector bary = ss.getBarycenter(juliandate);
+
+        /// @todo: some test of the barycenter calculation.
         /*
         // test projection (use default)
 

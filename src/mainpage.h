@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/mainpage.h,v 1.2 2003/09/30 22:57:37 srobinsn Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/mainpage.h,v 1.3 2004/06/05 19:31:29 burnett Exp $
 // Mainpage for doxygen
 
 /*! \mainpage package astro
@@ -15,6 +15,8 @@
   - astro::SolarSystem Sky positions of Moon and Sun
   - astro::PointingTransform Transformation between GLAST and Celestial coordinate systems
   - astro::SkyProj Image projections to/from celestial coordinates (wrapper of wcslib)
+  - astro::Healpix manage transformation to/from Healpix pixels, as an STL container
+  - astro::HTM   same for HTM pixels
 
   
 
