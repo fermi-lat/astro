@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.5 2002/09/18 04:31:28 srobinsn Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.6 2002/09/20 16:57:48 burnett Exp $
 #ifndef OrbitModel_SkyDir_H
 #define OrbitModel_SkyDir_H
 
@@ -15,20 +15,20 @@ namespace astro {
 /** @class SkyDir
 * @brief Describe an absolute direction
 * @author S. Robinson 
-* <br>$Id: SkyDir.h,v 1.5 2002/09/18 04:31:28 srobinsn Exp $
+* <br>$Id: SkyDir.h,v 1.6 2002/09/20 16:57:48 burnett Exp $
 *
     */
     class SkyDir
     {
     public:
         enum CoordSystem { 
-            GALACTIC,  //!  fixed direction with respect to the galactic coordinate system (l,b)
-                CELESTIAL //! fixed direction with respect to the celestial coordinate system (ra,dec) in the J2000 epoch.
+            GALACTIC=0,  //!  fixed direction with respect to the galactic coordinate system (l,b)
+                CELESTIAL=1, EQUATORIAL=1 //! fixed direction with respect to the celestial coordinate system (ra,dec) in the J2000 epoch.
         };
         ///Constructors
         ///(l,b) or (Ra, Dec) instantiation
         SkyDir(double param1=0, double param2=0, CoordSystem inputType = CELESTIAL);
-        SkyDir(Hep3Vector);
+        SkyDir(Hep3Vector, CoordSystem inputType = CELESTIAL);
         
         ///return methods
         Hep3Vector& operator () () {return m_dir;}
