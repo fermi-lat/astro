@@ -1,6 +1,7 @@
 /** @file EarthOrbit.h
     @brief definition of EarthOrbit class
-    $Header$
+
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/EarthOrbit.h,v 1.10 2004/11/12 01:53:08 burnett Exp $
 */
 #ifndef astro_EarthOrbit_H
 #define astro_EarthOrbit_H

@@ -1,6 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.9 2004/06/05 16:53:32 burnett Exp $
+
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.10 2004/06/05 19:30:40 burnett Exp $
 */
 
 // Include files
