@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Mar 30 03:35:46 PST 2004
+astro/src
+
+Modified Files:
+	chap95_data.h 
+Log Message:
+fix unix warnings,
+    *
+------------------------------------------------------------
+User: burnett  Tue Mar 30 03:35:46 PST 2004
 astro/astro
 
 Modified Files:
