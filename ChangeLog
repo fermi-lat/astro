@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sat Feb 14 15:17:06 PST 2004
+astro/astro
+
+Modified Files:
+	EarthCoordinate.h EarthOrbit.h 
+Log Message:
+add some cr chars. include <stdexcept>
+    *
+------------------------------------------------------------
 User: burnett  Fri Feb 13 14:02:40 PST 2004
 astro/doc
 
