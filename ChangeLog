@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Feb 13 14:01:05 PST 2004
+astro/src
+
+Modified Files:
+	SkyDir.cxx 
+Log Message:
+put in out of range exception
+    *
+------------------------------------------------------------
 User: burnett  Sat Feb  7 06:17:05 PST 2004
 astro/doc
 
