@@ -3,7 +3,7 @@
 
 @author T. Burnett
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealpixArray.h,v 1.1 2005/02/06 19:26:38 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealpixArray.h,v 1.2 2005/02/06 20:23:53 burnett Exp $
 */
 
 #ifndef astro_HealpixArray_h
@@ -52,6 +52,8 @@ public:
         astro::Healpix::Pixel pix = m_hp.pixel(dir);
         return at(pix.index());
     }
+    //! access the Healpix configuration object
+    Healpix healpix()const{return m_hp;}
     void setHealpix(astro::Healpix hp){m_hp=hp; resize(hp.size());}
 
 private:
