@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: hierath  Fri Oct  8 17:12:20 PDT 2004
+astro/src
+
+Modified Files:
+	EarthOrbit.cxx SolarSystem.cxx 
+Log Message:
+Changed sign on Shapiro delay correction.  Removed unnecessary function from SolarSystem.
+    *
+------------------------------------------------------------
+User: hierath  Fri Oct  8 17:12:20 PDT 2004
 astro/astro
 
 Modified Files:
