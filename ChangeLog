@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Mar 30 17:53:11 PST 2004
+astro/astro
+
+Modified Files:
+	HTM.h 
+Log Message:
+add simple function to HTM::Node to  facilitate integration
+    *
+------------------------------------------------------------
 User: burnett  Tue Mar 30 09:09:15 PST 2004
 astro/doc
 
