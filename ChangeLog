@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: srobinsn  Wed Aug 28 00:09:40 PDT 2002
+astro/astro
+
+Modified Files:
+	EarthOrbit.h 
+Log Message:
+Extra methods added to the EarthOrbit class, to return the inclination and phase (relative to the ascending node) of the orbit, given a date.
+
+    *
+------------------------------------------------------------
 User: burnett  Wed Aug 14 07:58:19 PDT 2002
 astro/src/test
 
