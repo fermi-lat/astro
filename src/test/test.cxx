@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.7 2003/09/30 00:57:20 srobinsn Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.8 2003/09/30 21:03:51 srobinsn Exp $
 
 #include <cassert>
 #include "astro/SolarSystem.h"
@@ -144,7 +144,7 @@ using namespace std;
 
 	//now test the galactic transformation function:
 	SkyDir zenith(20,0,astro::SkyDir::GALACTIC);
-	SkyDir xdir(110,0,astro::SkyDir::GALACTIC);
+	SkyDir xdir(-70,0,astro::SkyDir::GALACTIC);
 	PointingTransform trans(zenith,xdir);
 	Hep3Vector vertical(0,0,1);
 	double templ=trans.gDir(vertical).l();	
