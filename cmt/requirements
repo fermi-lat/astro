@@ -1,13 +1,13 @@
 package astro
 
 version v0r6p1
-#$Id:$
+#$Id: requirements,v 1.6 2003/11/24 19:40:11 burnett Exp $
 author  T. Burnett <tburnett@u.washington.edu>
 
 branches astro cmt src doc
 
 use GlastPolicy v5*
-
+use facilities   v2r*
 use CLHEP v2* IExternal
 
 apply_pattern package_include
