@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.4 2004/11/12 01:52:23 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.5 2005/03/20 00:21:16 burnett Exp $
 
 #if !defined(_H_GPS_CLASS)
 #define _H_GPS_CLASS
@@ -8,6 +8,7 @@
 
 #include "astro/SkyDir.h"
 #include "astro/EarthOrbit.h"
+#include "astro/EarthCoordinate.h"
 #include "CLHEP/Vector/Rotation.h"
 
 #include <iostream>
@@ -18,7 +19,7 @@
 * \class GPS
 * \brief Models the Global Positoning System for a spacecraft. Handles time, position, and orientation for the instrument as a whole.
 * 
-* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.4 2004/11/12 01:52:23 burnett Exp $
+* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.5 2005/03/20 00:21:16 burnett Exp $
 Represents the Global Positioning System on-board the spacecraft. An Orbit
 object is used to compute the spacecraft's position and pointing characteristics.
 Time is tracked through this object, and synchronized with the Scheduler for 
@@ -103,6 +104,10 @@ public:
     /// access m_rotangles
     std::pair<double,double> rotateAngles(); 
 
+    /// position in Earth coordinates
+    astro::EarthCoordinate earthpos()const{
+        return astro::EarthCoordinate(lat(), lon(), altitude());
+    }
 
     // set data
 
