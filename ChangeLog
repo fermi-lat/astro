@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Wed Sep 29 11:06:29 PDT 2004
+astro/astro
+
+Modified Files:
+	EarthOrbit.h SolarSystem.h 
+Log Message:
+Minor fixes and additions related to jplephem and timing corrections.
+    *
+------------------------------------------------------------
 User: jchiang  Mon Sep 27 14:11:31 PDT 2004
 astro/src
 
