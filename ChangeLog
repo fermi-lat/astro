@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: pln  Thu May  8 16:40:15 PDT 2003
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Log Message:
+Removed erroneous SkyDir:: from declaration of distance.
+
+    *
+------------------------------------------------------------
 User: burnett  Mon Feb 24 12:12:24 PST 2003
 astro/src
 
