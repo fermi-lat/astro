@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.6 2004/03/30 10:47:45 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.7 2005/03/26 21:51:46 burnett Exp $
 #include <cmath>
 
 #include "astro/EarthCoordinate.h"
@@ -34,16 +34,25 @@ EarthCoordinate::EarthCoordinate(Hep3Vector pos, JulianDate jd)
         -s_EarthRadius / (1000.*sqrt(1.-sqr(0.00669454*sin(m_lat))));
 
 }
-    //!  McIlwain L
+   
 double EarthCoordinate::L()const
 {
     return Geomag::L(latitude(), longitude());
 
 }
-    //! McIlwain B
+   
 double EarthCoordinate::B()const
 {
     return Geomag::B(latitude(), longitude());
+}
+double EarthCoordinate::geolat()const
+{
+    return Geomag::geolat(latitude(), longitude());
+}
+
+double EarthCoordinate::geolon()const
+{
+    return Geomag::geolon(latitude(), longitude());
 }
 
 
