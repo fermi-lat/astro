@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: hierath  Fri May 21 11:38:24 PDT 2004
+astro/src/wcslib
+
+Removed Files:
+	cel.cxx cel.h cylfix.cxx cylfix.h lin.cxx lin.h prj.cxx prj.h 
+	spc.cxx spc.h sph.cxx sph.h spx.cxx spx.h wcs.cxx wcs.h 
+	wcsmath.h wcstrig.cxx wcstrig.h 
+Log Message:
+Removing to restore original (non cxx) wcs files.
+    *
+------------------------------------------------------------
 User: srobinsn  Thu May 13 13:17:05 PDT 2004
 astro/src
 
