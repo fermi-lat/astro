@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: srobinsn  Mon Oct 28 22:46:33 PST 2002
+astro/src
+
+Modified Files:
+	EarthOrbit.cxx 
+Log Message:
+earthorbit::phase() altered to return orbital phase.
+
+    *
+------------------------------------------------------------
 User: kuss  Thu Oct 24 08:39:08 PDT 2002
 astro/src/test
 
