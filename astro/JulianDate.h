@@ -6,14 +6,14 @@ namespace astro {
 /**
 *  @class JulianDate
 *
-*
 *  @brief store a Julian Date
+*
 *  Julian dates (abbreviated JD) are a continuous 
 *   count of days and fractions since noon Universal Time on January 1, 4713 BCE 
 *    (on the Julian calendar).
 *  @author Gino Tosti (primary)
 *  @author Toby Burnett (convert to a class)
-*  <hr>$Id:$ 
+*  <hr>$Id: JulianDate.h,v 1.1.1.1 2002/08/13 00:20:45 burnett Exp $ 
 */
 class JulianDate {
 public:

@@ -1,4 +1,4 @@
-// $Header: $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.1.1.1 2002/08/13 00:20:46 burnett Exp $
 
 
 #include "astro/EarthCoordinate.h"
@@ -24,9 +24,12 @@ EarthCoordinate::EarthCoordinate(Hep3Vector pos, JulianDate jd)
     m_lon = GetGMST(jd)*M_PI/180 - pos.phi();
     m_lon = fmod(m_lon, 2*M_PI); if(m_lon>M_PI) m_lon -= 2*M_PI;
 
-    // oblateness correction: 
+    // oblateness correction to obtain geodedic latitude 
     m_lat=(atan(tan(m_lat))/(sqr(1.-EarthFlat)) );
 
+    // this is also such a correction: the number 0.00669454 is the geodetic eccentricity squared?
+    // see http://www.cage.curtin.edu.au/~will/gra64_05.pdf
+    // or http://www.colorado.edu/geography/gcraft/notes/datum/gif/ellipse.gif
     m_altitude=sqrt(sqr(pos.x())+sqr(pos.y())/cos(m_lat) )
         -s_EarthRadius / (1000.*sqrt(1.-sqr(0.00669454*sin(m_lat))));
 
