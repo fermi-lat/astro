@@ -1,5 +1,5 @@
 // GPS.cxx: implementation of the GPS class.
-// $Id: GPS.cxx,v 1.1 2004/01/28 23:23:07 hierath Exp $
+// $Id: GPS.cxx,v 1.2 2004/02/04 23:07:55 burnett Exp $
 //////////////////////////////////////////////////////////////////////
 
 #include "astro/GPS.h"
