@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: srobinsn  Tue Sep 17 21:31:28 PDT 2002
+astro/src
+
+Modified Files:
+	EarthOrbit.cxx SkyDir.cxx 
+Log Message:
+extraaneous methods removed, hammer-aitoff projection altered to return current-location translation, method to check orbit in test function.
+
+    *
+------------------------------------------------------------
+User: srobinsn  Tue Sep 17 21:31:28 PDT 2002
 astro/astro
 
 Modified Files:
