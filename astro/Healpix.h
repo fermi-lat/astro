@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.1 2005/01/22 04:18:33 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.2 2005/01/22 21:19:49 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -62,6 +62,10 @@ public:
     long nside()const{return m_nside; }
     ///@brief the number of pixels
     long npix()const{return 12*m_nside*m_nside;}
+
+    ///@brief the number of pixels, as the size.
+    size_t size()const{return 12*m_nside*m_nside;}
+
     ///@brief the area per pixel
     double pixelArea()const{return 4*M_PI/npix();}
     ///@brief the value of the ordering parameter: either NESTED or RING
