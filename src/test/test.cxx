@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.28 2005/03/06 02:20:37 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.29 2005/03/26 21:51:46 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -292,6 +292,8 @@ int main(){
         double L = ec.L(), B=ec.B();
         std::cout << "\tL=\t"<< ec.L() 
             << "\n\tB=\t"<< ec.B() 
+            << "\n\tgeolat=\t"<< ec.geolat() 
+            << "\n\tgeolon=\t"<< ec.geolon() 
             << std::endl;
 
         // test the SkyDir difference function
