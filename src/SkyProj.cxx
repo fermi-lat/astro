@@ -1,6 +1,6 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.7 2004/06/03 21:03:16 hierath Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.8 2004/06/04 01:14:19 hierath Exp $
 */
 
 // Include files
@@ -169,7 +169,8 @@ void SkyProj::init(const std::string &projName,
     std::pair<double, double> s = pix2sph(t.first, t.second);
     check = fabs(s.first-crval[0]-s.second-crval[1]);
 
-    wcsprt(m_wcs);// temp
+    // enable this to see a nice formatted dump
+    //wcsprt(m_wcs);
 
 
 };
