@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Jun 20 10:35:51 PDT 2004
+astro/src
+
+Modified Files:
+	SolSystem.cxx 
+Log Message:
+fix external ephi_planet
+    *
+------------------------------------------------------------
 User: cohen  Fri Jun 11 18:02:38 PDT 2004
 astro/cmt
 
