@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: srobinsn  Thu Oct  2 13:59:48 PDT 2003
+astro/astro
+
+Modified Files:
+	PointingTransform.h 
+Log Message:
+SkyDir unit() problem fixed pointingtransform cleanup.
+
+    *
+------------------------------------------------------------
 User: burnett  Wed Oct  1 05:57:49 PDT 2003
 astro/src
 
