@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.16 2004/09/22 01:12:15 hierath Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.17 2004/09/27 16:29:31 hierath Exp $
 
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
@@ -168,7 +168,7 @@ double EarthOrbit::calcTravelTime(JulianDate jd, const SkyDir &sourceDir) const
 
       correction = -1. * barycenter.dot(rsrc) / (rsrc.mag() /** 299792458.*/);
 
-      if(correction - last_correction < eps)
+      if(fabs(correction - last_correction) < eps)
          precision_not_met = false;
       else
          last_correction = correction;
