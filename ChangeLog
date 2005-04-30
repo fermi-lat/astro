@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sat Apr 30 14:15:59 PDT 2005
+astro/src
+
+Modified Files:
+	Healpix.cxx 
+Log Message:
+add Healpix method to reutrn list or neighbors for given pixel index
+    *
+------------------------------------------------------------
+User: burnett  Sat Apr 30 14:15:59 PDT 2005
 astro/astro
 
 Modified Files:
