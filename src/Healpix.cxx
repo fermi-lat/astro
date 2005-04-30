@@ -2,7 +2,7 @@
     @brief Healpix class implementation with code from WMAP
 
     @author B. Lesnick 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.4 2005/04/01 22:23:32 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.5 2005/04/02 16:08:16 burnett Exp $
 */
 /* Local Includes */
 #include "astro/Healpix.h"
@@ -1365,6 +1365,21 @@ void Healpix::Pixel::neighbors(std::vector<Healpix::Pixel> & p) const
 double Healpix::integrate(const astro::SkyFunction& f)const
 {
     return std::accumulate(begin(), end(), 0., Integrand(f));
+}
+
+void Healpix::findNeighbors(long index, std::vector<long> &p)
+{
+   
+    if (!(nested()))
+        throw std::invalid_argument("Healpix::findNeighbors -- Nested ordering required to determine neighbors.");
+
+    p.clear();
+
+    long n[8];// local copy of the list
+    int nbr_neighbors; // its length--either 7 or 8
+    neighbours_nest(m_nside, index, n, &nbr_neighbors);
+    // now insert this list into the output vector
+    std::copy( n, n+nbr_neighbors, std::back_insert_iterator<std::vector<long> >(p));
 }
 
 

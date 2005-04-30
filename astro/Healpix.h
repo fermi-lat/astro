@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.4 2005/02/06 20:23:53 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.5 2005/03/29 19:13:57 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -75,6 +75,7 @@ public:
     astro::SkyDir::CoordSystem coordsys()const{return m_coordsys;}
     bool galactic()const{return m_coordsys==astro::SkyDir::GALACTIC; }
 
+    void findNeighbors(long index, std::vector<long> &neighbors);
     /**@class Pixel
     @brief represent a Healpix pixel
 
