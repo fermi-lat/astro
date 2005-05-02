@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon May  2 16:09:53 PDT 2005
+astro/src
+
+Modified Files:
+	SolarSystem.cxx 
+Log Message:
+Convert SolarSystem to use JPL ephemeris
+    *
+------------------------------------------------------------
+User: burnett  Mon May  2 16:09:53 PDT 2005
 astro/astro
 
 Modified Files:
