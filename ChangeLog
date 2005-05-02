@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon May  2 16:09:07 PDT 2005
+astro/src
+
+Removed Files:
+	SolSystem.cxx SolSystem.h chap95_data.h vsop87_data.h 
+Log Message:
+not needed by new SolarSystem
+    *
+------------------------------------------------------------
 User: burnett  Sat Apr 30 14:15:59 PDT 2005
 astro/src/test
 
