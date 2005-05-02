@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon May  2 16:13:20 PDT 2005
+astro/src
+
+Added Files:
+	HealPixel.cxx 
+Log Message:
+new class to allow pixels of different nesting.
+    *
+------------------------------------------------------------
+User: burnett  Mon May  2 16:13:20 PDT 2005
 astro/astro
 
 Added Files:
