@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.41 2005/04/04 20:58:53 burnett Exp $
+$Id: release.notes,v 1.42 2005/05/02 23:15:16 burnett Exp $
 
 @verbatim
+  v1r9p1   02-may-05 THB fixes
   v1r9     02-may-05 THB Healpix neighbors; new SAA.
   v1r8     04-apr-05 THB Healpix neighbors; new SAA.
   v1r7p3   02-apr-05 THB gcc fixes
