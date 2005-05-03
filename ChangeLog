@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon May  2 19:14:48 PDT 2005
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx SolarSystem.cxx 
+Log Message:
+fix unix problems; add some consts.
+    *
+------------------------------------------------------------
+User: burnett  Mon May  2 19:14:48 PDT 2005
 astro/astro
 
 Modified Files:
