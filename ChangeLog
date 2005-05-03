@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon May  2 19:14:48 PDT 2005
+astro/astro
+
+Modified Files:
+	SolarSystem.h 
+Log Message:
+fix unix problems; add some consts.
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r9, operation: add
 Package: astro
