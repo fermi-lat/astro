@@ -2,7 +2,7 @@
 @brief implementation of SolarSystem 
 
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SolarSystem.cxx,v 1.11 2005/03/07 17:00:03 burnett Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SolarSystem.cxx,v 1.12 2005/05/02 23:09:53 burnett Exp $
 */
 #include "astro/SolarSystem.h"
 #include "jplephem/bary.h" //local interface to the JPL ephemeris
@@ -11,17 +11,16 @@
 namespace astro {
 
 SolarSystem::SolarSystem(Body body)
+: m_body(body)
 {
-	m_body = body;
 }
 
-SkyDir SolarSystem::direction(JulianDate jd)
+SkyDir SolarSystem::direction(JulianDate jd)const
 {
-    m_dir = SkyDir(vector(m_body,EARTH,jd));
-	return m_dir;
+    return SkyDir(vector(m_body,EARTH,jd));
 }
  
-double SolarSystem::distance(JulianDate jd)
+double SolarSystem::distance(JulianDate jd)const
 {
    return vector(m_body,EARTH,jd).mag();
 }
@@ -58,7 +57,7 @@ double * SolarSystem::jplSetup(JulianDate jd)
 }
 
 // Returns an Hep3Vector with light seconds as distance units
-Hep3Vector SolarSystem::getBarycenter(JulianDate jd)
+Hep3Vector SolarSystem::getBarycenter(JulianDate jd)const
 {
     const double *eposn =  dpleph(jplSetup(jd), m_body, SUN);
 
@@ -70,7 +69,7 @@ Hep3Vector SolarSystem::getBarycenter(JulianDate jd)
 
 }
 
-Hep3Vector SolarSystem::getSolarVector(JulianDate jd)
+Hep3Vector SolarSystem::getSolarVector(JulianDate jd)const
 {
 	return vector(EARTH,SUN,jd);
 }

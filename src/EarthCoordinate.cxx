@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.10 2005/04/02 16:08:16 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.11 2005/04/04 20:58:25 burnett Exp $
 #include <cmath>
 #include <vector>
 
@@ -94,7 +94,7 @@ bool EarthCoordinate::insideSAA() const
     
     if (!initialized)
     {
-        for (int i = 0; i < sizeof(latv)/sizeof(double); ++i)
+        for (size_t i = 0; i < sizeof(latv)/sizeof(double); ++i)
         {
             corners.push_back(coords(latv[i], lonv[i]));
             if (latv[i] < lat_min) lat_min = latv[i];
