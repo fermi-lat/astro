@@ -1,7 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.10 2004/06/05 19:30:40 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.11 2005/01/23 20:02:57 burnett Exp $
 */
 
 // Include files
@@ -14,6 +14,7 @@ using namespace astro;
 #include <sstream>
 #include <stdexcept>
 #include <cmath>
+#include <cassert>
 
 class SkyProj::Exception : public std::exception 
 {
@@ -57,7 +58,6 @@ SkyProj::SkyProj(const std::string &projName,
 SkyProj::~SkyProj()
 {
     wcsfree(m_wcs);
-    delete m_wcs;
 }
 
 
@@ -115,7 +115,7 @@ std::pair<double,double> SkyProj::pix2sph(double x1, double x2) const
 @param x2 projected equivalent dec or b, in degrees
 @param projection used to deproject these coordinates
 */
-std::pair<double,double> SkyProj::pix2pix(double x1, double x2, SkyProj otherProjection)const
+std::pair<double,double> SkyProj::pix2pix(double x1, double x2, const SkyProj& otherProjection)const
 {
     std::pair<double,double> s = otherProjection.pix2sph(x1,x2);
     return SkyProj::sph2pix(s.first,s.second);
@@ -130,7 +130,8 @@ void SkyProj::init(const std::string &projName,
                  double* crpix, double* crval, double* cdelt, 
 				 double lonpole, double latpole, double crota2, bool galactic)
 {
-    m_wcs = reinterpret_cast<wcsprm*>(new char[sizeof(wcsprm)]);
+    assert( sizeof_wcslib>=sizeof(wcsprm));
+    m_wcs = reinterpret_cast<wcsprm*>(m_wcs_struct);
     m_wcs->flag = -1;
 
     int naxis = 2;
@@ -172,6 +173,13 @@ void SkyProj::init(const std::string &projName,
 
     // enable this to see a nice formatted dump
     //wcsprt(m_wcs);
+}
+
+SkyProj::SkyProj(const SkyProj & other)
+{
+    // copy constructor just resets pointer
+    assert( sizeof_wcslib>=sizeof(wcsprm));
+    m_wcs = reinterpret_cast<wcsprm*>(m_wcs_struct);    
+}
 
 
-};
