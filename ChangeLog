@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Jun  3 23:48:36 PDT 2005
+astro/astro
+
+Modified Files:
+	SkyProj.h 
+Log Message:
+fix bug in the pix2pix member function; make the wcs struct part of this object rather than allocated, to make copy simple and save allocation overhead. (Pimpl scheme)
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r9p1, operation: add
 Package: astro
