@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Jun 15 14:39:17 PDT 2005
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+put GPS into the namespace and tag
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r9p2, operation: add
 Package: astro
