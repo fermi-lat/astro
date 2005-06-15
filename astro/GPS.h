@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.5 2005/03/20 00:21:16 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.6 2005/03/27 03:05:42 burnett Exp $
 
 #if !defined(_H_GPS_CLASS)
 #define _H_GPS_CLASS
@@ -9,17 +9,19 @@
 #include "astro/SkyDir.h"
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
+#include "astro/GPS.h"
+
 #include "CLHEP/Vector/Rotation.h"
 
 #include <iostream>
 #include <string>
-
+namespace astro {
 
 /** 
 * \class GPS
 * \brief Models the Global Positoning System for a spacecraft. Handles time, position, and orientation for the instrument as a whole.
 * 
-* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.5 2005/03/20 00:21:16 burnett Exp $
+* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.6 2005/03/27 03:05:42 burnett Exp $
 Represents the Global Positioning System on-board the spacecraft. An Orbit
 object is used to compute the spacecraft's position and pointing characteristics.
 Time is tracked through this object, and synchronized with the Scheduler for 
@@ -127,11 +129,14 @@ public:
     /// set m_rotangles
     void    rotateAngles(std::pair<double,double> coords); 
 
-    /// set the desired pointing history file to use:
-    void setPointingHistoryFile(std::string fileName);
+    /** @brief set the desired pointing history file to use. 
+     *  @param fileName 
+     *  @param offset mission elapsed time for "launch", number to be added to time increments
+     */
+    void setPointingHistoryFile(std::string fileName, double offset=0);
 
     /// write the explicit history data for re-creation of orbit.
-    void setUpHistory();
+    void setUpHistory(double offset);
 
     /// print time & position
     void    printOn(std::ostream& out) const; 
@@ -228,4 +233,6 @@ inline std::ostream&    operator<<(std::ostream& o, const GPS::Coords& c) {
         << c.time() <<' ' << c.phase();
     return o;
 }
+
+} // namespace
 #endif // !defined(AFX_GPS_H__F9844433_4E64_11D2_B4DD_00A0C9960210__INCLUDED_)
