@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.31 2005/04/04 20:58:25 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.32 2005/05/02 23:09:53 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -214,7 +214,7 @@ void checkdir(double ra1, double dec1, double ra2, double dec2) {
 }
 
 bool test_GPS_readFitsData() {
-    GPS * gps = GPS::instance();
+    astro::GPS * gps = astro::GPS::instance();
 
     std::string filename("test_FT2.fits");
     gps->setPointingHistoryFile(filename);
