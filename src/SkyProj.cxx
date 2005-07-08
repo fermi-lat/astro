@@ -1,7 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.11 2005/01/23 20:02:57 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.12 2005/06/04 06:48:36 burnett Exp $
 */
 
 // Include files
@@ -119,6 +119,26 @@ std::pair<double,double> SkyProj::pix2pix(double x1, double x2, const SkyProj& o
 {
     std::pair<double,double> s = otherProjection.pix2sph(x1,x2);
     return SkyProj::sph2pix(s.first,s.second);
+}
+
+void SkyProj::setLonpole(double lonpole)
+{
+   m_wcs->lonpole = lonpole;
+
+   int status = wcsset2(m_wcs);
+   if (status !=0) {
+      throw SkyProj::Exception(status);
+   }
+}
+
+void SkyProj::setLatpole(double latpole)
+{
+   m_wcs->latpole = latpole;
+
+   int status = wcsset2(m_wcs);
+   if (status !=0) {
+      throw SkyProj::Exception(status);
+   }
 }
 
 bool SkyProj::isGalactic()const

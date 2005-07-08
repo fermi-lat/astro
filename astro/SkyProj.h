@@ -1,7 +1,7 @@
 /** @file SkyProj.h
 @brief declaration of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.11 2005/01/23 20:02:57 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.12 2005/06/04 06:48:36 burnett Exp $
 */
 
 #ifndef astro_SkyProj_H
@@ -125,6 +125,16 @@ namespace astro {
          @return pair(x,y) in spherical coordinates
        */
         std::pair<double,double> pix2sph(double x1, double x2) const;
+
+        /** @brief Sets lonpole parameter
+        @param lonpole corresponds to the FITS keyword LONPOLE (native coordinates of celestial pole)
+        */
+        void setLonpole(double lonpole);
+
+        /** @brief Sets latpole parameter
+        @param latpole corresponds to the FITS keyword LATPOLE
+        */
+        void setLatpole(double latpole);
 
         /** @brief is this galactic? */
         bool isGalactic()const;
