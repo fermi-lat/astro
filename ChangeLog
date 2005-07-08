@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: hierath  Fri Jul  8 15:47:45 PDT 2005
+astro/astro
+
+Modified Files:
+	SkyProj.h 
+Log Message:
+Added setLatpole and setLonpole member functions to SkyProj class
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r10p1, operation: add
 Package: astro
