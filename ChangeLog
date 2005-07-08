@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: hierath  Fri Jul  8 15:47:45 PDT 2005
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+Added setLatpole and setLonpole member functions to SkyProj class
+
+    *
+------------------------------------------------------------
+User: hierath  Fri Jul  8 15:47:45 PDT 2005
 astro/astro
 
 Modified Files:
