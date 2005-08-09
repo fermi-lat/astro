@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Aug  9 15:54:15 PDT 2005
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+fix to be ablle to use ROOT with SkyDir as suggested by J. Peachey
+    *
+------------------------------------------------------------
+User: burnett  Tue Aug  9 15:54:15 PDT 2005
 astro/astro
 
 Modified Files:
