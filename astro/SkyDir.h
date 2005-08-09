@@ -1,7 +1,7 @@
 /** @file SkyDir.h
 @brief declaration of the class SkyDir
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.24 2004/06/06 19:10:31 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.25 2004/06/06 22:30:25 burnett Exp $
 
 */
 #ifndef OrbitModel_SkyDir_H
@@ -16,13 +16,30 @@ $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.24 2004/06/06 19:
 #include <string>
 #include "astro/SkyProj.h"
 
+/*
+> Date: Tue, 9 Aug 2005 11:18:24 -0400 (EDT)
+> From: James Peachey <peachey@milkyway.gsfc.nasa.gov>
+> 
+> Rootcint and Cint are notoriously bad with macros, especially when 
+> used in unusual ways, such as using HepStd to switch between using std 
+> and not using it. For what it's worth, I found that by adding the 
+> following to astro/SkyDir.h, the rootcint command you sent was able to create 
+> the dictionary (whether it works is another matter).
+*/
+#ifdef __MAKECINT__
+#include <iostream>
+ namespace HepStd {
+   typedef std::ostream ostream;
+ }
+#endif
+
 namespace astro {
 
 
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.24 2004/06/06 19:10:31 burnett Exp $
+    * <br>$Id: SkyDir.h,v 1.25 2004/06/06 22:30:25 burnett Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
