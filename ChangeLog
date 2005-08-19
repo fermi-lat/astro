@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Aug 19 12:00:10 PDT 2005
+astro/astro
+
+Modified Files:
+	HealPixel.h 
+Log Message:
+add simple area, or solid angle function
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r10p2, operation: add
 Package: astro
