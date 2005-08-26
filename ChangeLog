@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Aug 26 09:23:34 PDT 2005
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+add access to livetime info
+    *
+------------------------------------------------------------
 User: jchiang  Fri Aug 26 09:23:33 PDT 2005
 astro/astro
 
