@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.46 2005/06/16 13:14:06 burnett Exp $
+$Id: release.notes,v 1.47 2005/08/09 22:54:15 burnett Exp $
 
 @verbatim
+  v1r10p3  26-aug-05 JC  add access to livetime info in GPS
   v1r10p2  09-aug-05 THB special patch for CINT to manage SkyDir
   v1r10p1  16-jun-05 THB fix test program
   v1r10    15-jun-05 THB put GPS in the namespace
