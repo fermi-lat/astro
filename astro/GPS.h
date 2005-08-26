@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.6 2005/03/27 03:05:42 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.7 2005/06/15 21:39:17 burnett Exp $
 
 #if !defined(_H_GPS_CLASS)
 #define _H_GPS_CLASS
@@ -21,7 +21,7 @@ namespace astro {
 * \class GPS
 * \brief Models the Global Positoning System for a spacecraft. Handles time, position, and orientation for the instrument as a whole.
 * 
-* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.6 2005/03/27 03:05:42 burnett Exp $
+* $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.7 2005/06/15 21:39:17 burnett Exp $
 Represents the Global Positioning System on-board the spacecraft. An Orbit
 object is used to compute the spacecraft's position and pointing characteristics.
 Time is tracked through this object, and synchronized with the Scheduler for 
@@ -58,6 +58,7 @@ public:
         double lat,lon;
         Hep3Vector position;
         double altitude;
+        double livetime_frac;
     }POINTINFO;
 
     typedef std::map<double,GPS::POINTINFO> HistoryMap;
@@ -182,6 +183,9 @@ public:
         return m_earthOrbit->position(time);
         /*return m_position;*/} //interface to EarthOrbit::position()
 
+   double livetime_frac() const;
+   void setLivetime_frac(double time);
+
 protected:
     // singleton - protect ctor/dtor
     GPS();
@@ -216,6 +220,7 @@ private:
     HistoryMap m_pointingHistory;//pointing/livetime database history
     POINTINFO m_currentInterpPoint; //holder object for currently interpotated pointing information
 
+   double m_livetime_frac;
    bool haveFitsFile() const;
    void readFitsData();
    void fitsReportError(FILE *, int) const;
