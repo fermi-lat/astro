@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Aug 28 13:06:52 PDT 2005
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+patch for FT2 file use
+    *
+------------------------------------------------------------
 User: jchiang  Sun Aug 28 13:06:29 PDT 2005
 astro/src
 
