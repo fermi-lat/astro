@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Aug 28 13:06:29 PDT 2005
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+patch for FT2 file use
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r10p3, operation: add
 Package: astro
