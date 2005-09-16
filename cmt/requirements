@@ -1,7 +1,7 @@
 package astro
 
-version v1r10p4
-#$Id: requirements,v 1.57 2005/08/28 20:07:31 jchiang Exp $
+version v1r10p5
+#$Id: requirements,v 1.58 2005/09/16 06:20:20 jchiang Exp $
 author  T. Burnett <tburnett@u.washington.edu>
 
 branches astro cmt src doc
