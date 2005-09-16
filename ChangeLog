@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Sep 15 23:20:20 PDT 2005
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+use tip to read FT2 files in GPS
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r10p4, operation: add
 Package: astro
