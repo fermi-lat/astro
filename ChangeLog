@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Sep 15 23:20:20 PDT 2005
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+use tip to read FT2 files in GPS
+    *
+------------------------------------------------------------
+User: jchiang  Thu Sep 15 23:20:20 PDT 2005
 astro/cmt
 
 Modified Files:
