@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.48 2005/08/26 16:24:46 jchiang Exp $
+$Id: release.notes,v 1.49 2005/08/28 20:07:46 jchiang Exp $
 
 @verbatim
+  v1r10p5  15-Sep-05 JC  use tip to read in FT2 data in GPS
   v1r10p4  28-aug-05 JC  patch to handle events arriving after end time of 
                          pointing history file
   v1r10p3  26-aug-05 JC  add access to livetime info in GPS
