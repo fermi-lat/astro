@@ -3,9 +3,11 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.50 2005/09/16 06:21:41 jchiang Exp $
+$Id: release.notes,v 1.51 2005/10/12 19:23:38 jchiang Exp $
 
 @verbatim
+  v1r10p7  12-0ct-05 JC  move Exception class to inside of SkyProj class 
+                         declaration
   v1r10p6  12-Oct-05 JC  add SkyProj constructor from FITS file; small
                          fix to GPS.cxx for computing orbitPhase faster        
   v1r10p5  15-Sep-05 JC  use tip to read in FT2 data in GPS
