@@ -1,5 +1,5 @@
 // GPS.cxx: implementation of the GPS class.
-// $Id: GPS.cxx,v 1.14 2005/08/28 20:06:29 jchiang Exp $
+// $Id: GPS.cxx,v 1.15 2005/09/16 06:20:20 jchiang Exp $
 //////////////////////////////////////////////////////////////////////
 
 #include "astro/GPS.h"
@@ -374,7 +374,8 @@ void GPS::getPointingCharacteristics(double inputTime){
             m_rockNorth -= m_rockNorth*((5.5-fabs(m_DECZenith))/5.5);
         }
     }else if(m_rockType == ONEPERORBIT){
-        while(orbitPhase >2.*M_2PI) {orbitPhase -= 2.*M_2PI;}
+//       while(orbitPhase >2.*M_2PI) {orbitPhase -= 2.*M_2PI;}
+       orbitPhase = fmod(orbitPhase, 2.*M_2PI);
         if(orbitPhase <= M_2PI) m_rockNorth *= -1.;
     }else{
         //important - this includes EXPLICIT rocking angles - they
