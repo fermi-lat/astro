@@ -1,7 +1,7 @@
 /** @file SkyProj.h
 @brief declaration of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.13 2005/07/08 22:47:45 hierath Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.14 2005/10/12 19:21:49 jchiang Exp $
 */
 
 #ifndef astro_SkyProj_H
@@ -147,7 +147,20 @@ namespace astro {
         /** @brief is this galactic? */
         bool isGalactic()const;
 
-        class Exception;
+       class Exception : public std::exception 
+       {
+       public:
+          Exception() {}
+          Exception(int status) 
+             : m_status(status)
+             {}
+          
+          virtual ~Exception() throw() {}
+          virtual const char *what() const throw();
+          int status()const throw(){return m_status;}
+       private:
+          int m_status;
+       };
     private:
 
         /** @brief called by constructor to initialize the projection */
@@ -163,22 +176,6 @@ namespace astro {
         static const size_t sizeof_wcslib = 1240;
         char  m_wcs_struct[sizeof_wcslib];
     };
-
-class SkyProj::Exception : public std::exception 
-{
-public:
-    Exception() {}
-    Exception(int status) 
-        : m_status(status)
-    {}
-
-    virtual ~Exception() throw() {}
-    virtual const char *what() const throw();
-    int status()const throw(){return m_status;}
-private:
-    int m_status;
-};
-
 
 } // namespace astro
 #endif    // astro_SKYPROJ_H
