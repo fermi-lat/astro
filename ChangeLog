@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Oct 12 12:21:50 PDT 2005
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+add SkyProj constructor from FITS file and add tests; move SkyProj::Exception to SkyProj.h and test
+    *
+------------------------------------------------------------
 User: jchiang  Wed Oct 12 12:21:49 PDT 2005
 astro/astro
 
