@@ -27,47 +27,39 @@
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
 *   http://www.atnf.csiro.au/~mcalabre/index.html
-*   $Id: wcsmath.h,v 4.2 2005/09/22 08:59:02 cal103 Exp $
+*   $Id: wcslib.h,v 4.2 2005/09/22 09:21:16 cal103 Exp $
 *=============================================================================
 *
-*   Definition of mathematical constants used by WCSLIB.
+*   WCSLIB 4.2 - C routines that implement the FITS World Coordinate System
+*   (WCS) standard.  Refer to
+*
+*   This header file includes all WCSLIB headers.
 *
 *===========================================================================*/
 
-#ifndef WCSLIB_WCSMATH
-#define WCSLIB_WCSMATH
+#ifndef WCSLIB_WCSLIB
+#define WCSLIB_WCSLIB
 
-#ifdef PI
-#undef PI
+#include "cel.h"
+#include "fitshdr.h"
+#include "lin.h"
+#include "log.h"
+#include "prj.h"
+#include "spc.h"
+#include "sph.h"
+#include "spx.h"
+#include "tab.h"
+#include "wcs.h"
+#include "wcsfix.h"
+#include "wcshdr.h"
+#include "wcslib.h"
+#include "wcsmath.h"
+#include "wcstrig.h"
+#include "wcsunits.h"
+#include "wcsutil.h"
+
+#ifdef __cplusplus
+};
 #endif
 
-#ifdef D2R
-#undef D2R
-#endif
-
-#ifdef R2D
-#undef R2D
-#endif
-
-#ifdef SQRT2
-#undef SQRT2
-#endif
-
-#ifdef SQRT2INV
-#undef SQRT2INV
-#endif
-
-#define PI 3.141592653589793238462643
-#define D2R PI/180.0
-#define R2D 180.0/PI
-#define SQRT2 1.4142135623730950488
-#define SQRT2INV 1.0/SQRT2
-
-#ifdef UNDEFINED
-#undef UNDEFINED
-#endif
-
-#define UNDEFINED 987654321.0e99
-#define undefined(value) (value == UNDEFINED)
-
-#endif /* WCSLIB_WCSMATH */
+#endif /* WCSLIB_WCSLIB */

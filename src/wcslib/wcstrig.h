@@ -1,21 +1,21 @@
 /*============================================================================
 *
-*   WCSLIB 3.4 - an implementation of the FITS WCS convention.
-*   Copyright (C) 1995-2004, Mark Calabretta
+*   WCSLIB 4.2 - an implementation of the FITS WCS standard.
+*   Copyright (C) 1995-2005, Mark Calabretta
 *
-*   This library is free software; you can redistribute it and/or modify it
-*   under the terms of the GNU Library General Public License as published
-*   by the Free Software Foundation; either version 2 of the License, or (at
-*   your option) any later version.
+*   WCSLIB is free software; you can redistribute it and/or modify it under
+*   the terms of the GNU General Public License as published by the Free
+*   Software Foundation; either version 2 of the License, or (at your option)
+*   any later version.
 *
-*   This library is distributed in the hope that it will be useful, but
-*   WITHOUT ANY WARRANTY; without even the implied warranty of
-*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library
-*   General Public License for more details.
+*   WCSLIB is distributed in the hope that it will be useful, but WITHOUT ANY
+*   WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+*   FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+*   details.
 *
-*   You should have received a copy of the GNU Library General Public License
-*   along with this library; if not, write to the Free Software Foundation,
-*   Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+*   You should have received a copy of the GNU General Public License along
+*   with WCSLIB; if not, write to the Free Software Foundation, Inc.,
+*   59 Temple Place, Suite 330, Boston, MA  02111-1307, USA
 *
 *   Correspondence concerning WCSLIB may be directed to:
 *      Internet email: mcalabre@atnf.csiro.au
@@ -26,11 +26,17 @@
 *                      AUSTRALIA
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
-*   $Id: wcstrig.h,v 3.4 2004/02/11 00:15:03 mcalabre Exp $
+*   http://www.atnf.csiro.au/~mcalabre/index.html
+*   $Id: wcstrig.h,v 4.2 2005/09/22 08:59:02 cal103 Exp $
 *===========================================================================*/
 
-#ifndef WCSLIB_TRIG
-#define WCSLIB_TRIG
+#ifndef WCSLIB_WCSTRIG
+#define WCSLIB_WCSTRIG
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 #ifdef WCSTRIG_MACRO
 
@@ -49,36 +55,22 @@
 
 /* Use WCSLIB wrappers or native trigd functions. */
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-
-#if __STDC__ || defined(__cplusplus)
-   double cosd(double);
-   double sind(double);
-   double tand(double);
-   double acosd(double);
-   double asind(double);
-   double atand(double);
-   double atan2d(double, double);
-#else
-   double cosd();
-   double sind();
-   double tand();
-   double acosd();
-   double asind();
-   double atand();
-   double atan2d();
-#endif
+double cosd(double);
+double sind(double);
+double tand(double);
+double acosd(double);
+double asind(double);
+double atand(double);
+double atan2d(double, double);
 
 /* Domain tolerance for asin and acos functions. */
 #define WCSTRIG_TOL 1e-10
+
+#endif /* WCSTRIG_MACRO */
+
 
 #ifdef __cplusplus
 };
 #endif
 
-#endif /* WCSTRIG_MACRO */
-
-#endif /* WCSLIB_TRIG */
+#endif /* WCSLIB_WCSTRIG */

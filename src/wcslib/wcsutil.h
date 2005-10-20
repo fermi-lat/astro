@@ -27,47 +27,22 @@
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
 *   http://www.atnf.csiro.au/~mcalabre/index.html
-*   $Id: wcsmath.h,v 4.2 2005/09/22 08:59:02 cal103 Exp $
+*   $Id: wcsutil.h,v 4.2 2005/09/22 08:59:02 cal103 Exp $
 *=============================================================================
 *
-*   Definition of mathematical constants used by WCSLIB.
+*   Simple utility functions used by WCSLIB.
 *
 *===========================================================================*/
 
-#ifndef WCSLIB_WCSMATH
-#define WCSLIB_WCSMATH
+#ifndef WCSLIB_WCSUTIL
+#define WCSLIB_WCSUTIL
 
-#ifdef PI
-#undef PI
-#endif
+void wcsutil_blank_fill(int, char []);
+void wcsutil_null_fill(int, char []);
 
-#ifdef D2R
-#undef D2R
-#endif
+int  wcsutil_allEq(int, int, const double *);
+void wcsutil_setAll(int, int, double *);
+void wcsutil_setAli(int, int, int *);
+void wcsutil_setBit(int, int*, int, int *);
 
-#ifdef R2D
-#undef R2D
-#endif
-
-#ifdef SQRT2
-#undef SQRT2
-#endif
-
-#ifdef SQRT2INV
-#undef SQRT2INV
-#endif
-
-#define PI 3.141592653589793238462643
-#define D2R PI/180.0
-#define R2D 180.0/PI
-#define SQRT2 1.4142135623730950488
-#define SQRT2INV 1.0/SQRT2
-
-#ifdef UNDEFINED
-#undef UNDEFINED
-#endif
-
-#define UNDEFINED 987654321.0e99
-#define undefined(value) (value == UNDEFINED)
-
-#endif /* WCSLIB_WCSMATH */
+#endif /* WCSLIB_WCSUTIL */
