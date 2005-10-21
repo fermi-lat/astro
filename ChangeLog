@@ -1,37 +1,4 @@
 ------------------------------------------------------------
-User: burnett  Fri Oct 21 14:46:53 PDT 2005
-astro/src/test
-
-Modified Files:
-	TestHealpix.h 
-Log Message:
-added NASA healpix C++ class - removed C implementation
-added range finder for projections 
-mroth
-    *
-------------------------------------------------------------
-User: burnett  Fri Oct 21 14:46:52 PDT 2005
-astro/src
-
-Modified Files:
-	HealPixel.cxx Healpix.cxx SkyProj.cxx 
-Log Message:
-added NASA healpix C++ class - removed C implementation
-added range finder for projections 
-mroth
-    *
-------------------------------------------------------------
-User: burnett  Fri Oct 21 14:46:51 PDT 2005
-astro/astro
-
-Modified Files:
-	Healpix.h SkyProj.h 
-Log Message:
-added NASA healpix C++ class - removed C implementation
-added range finder for projections 
-mroth
-    *
-------------------------------------------------------------
 User: burnett  Fri Oct 21 14:29:36 PDT 2005
 astro/src/healpix
 
