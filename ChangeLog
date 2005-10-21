@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: burnett  Fri Oct 21 14:46:52 PDT 2005
+astro/src
+
+Modified Files:
+	HealPixel.cxx Healpix.cxx SkyProj.cxx 
+Log Message:
+added NASA healpix C++ class - removed C implementation
+added range finder for projections 
+mroth
+    *
+------------------------------------------------------------
 User: burnett  Fri Oct 21 14:46:51 PDT 2005
 astro/astro
 
