@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: burnett  Fri Oct 21 15:13:39 PDT 2005
+astro/src/healpix
+
+Added Files:
+	arr.h constants.h cxxutils.cc cxxutils.h healpix_base.cc 
+	healpix_base.h message_error.h pointing.h vec3.h 
+Log Message:
+adding the new healpix code
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r11, operation: add
 Package: astro
