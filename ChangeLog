@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sat Oct 22 12:09:08 PDT 2005
+astro/src/wcslib
+
+Modified Files:
+	wcspih.c wcsulex.c wcsutrn.c 
+Log Message:
+remove io.h, not valid for unix.
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r11p2, operation: add
 Package: astro
