@@ -2,6 +2,14 @@
 TAG
 Tag name: v1r11p3, operation: add
 Package: astro
+User: burnett  Sat Oct 22 12:10:52 2005
+Files:
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: v1r11p3, operation: add
+Package: astro
 User: burnett  Sat Oct 22 12:10:08 2005
 Files:
   astro/.cvsignore  1.2
