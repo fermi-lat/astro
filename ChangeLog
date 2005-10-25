@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Oct 25 10:45:21 PDT 2005
+astro/astro
+
+Modified Files:
+	Healpix.h 
+Log Message:
+quick, temporary fix to allow map_tools to build
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r11p3, operation: add
 Package: astro
