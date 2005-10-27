@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Thu Oct 27 15:20:17 PDT 2005
+astro/astro
+
+Modified Files:
+	SkyProj.h 
+Log Message:
+Added a constructor to SkyProj that uses wcslib's function wcspih to read from a fits file and initialize the wcsprm struct.
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r11p4, operation: add
 Package: astro
