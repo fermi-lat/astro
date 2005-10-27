@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Thu Oct 27 15:20:18 PDT 2005
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+Added a constructor to SkyProj that uses wcslib's function wcspih to read from a fits file and initialize the wcsprm struct.
+    *
+------------------------------------------------------------
 User: hierath  Thu Oct 27 15:20:17 PDT 2005
 astro/astro
 
