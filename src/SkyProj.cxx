@@ -1,7 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.15 2005/10/21 21:46:52 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.16 2005/10/27 22:20:18 hierath Exp $
 */
 
 // Include files
@@ -305,8 +305,14 @@ void SkyProj::init(const std::string &projName,
     wcsini(1, naxis, m_wcs);
 
     std::string 
-        lon_type = (galactic? "GLON-" : "RA---") + projName,
-        lat_type =  (galactic? "GLAT-" : "DEC--") + projName;
+        lon_type = (galactic? "GLON" : "RA"),
+        lat_type =  (galactic? "GLAT" : "DEC");
+
+    if(projName.compare("") != 0) {
+       lon_type += (galactic? "-" : "---") + projName;
+       lat_type += (galactic? "-" : "--") + projName;
+    }
+
     strcpy(m_wcs->ctype[0], lon_type.c_str() );
     strcpy(m_wcs->ctype[1], lat_type.c_str() );
 
