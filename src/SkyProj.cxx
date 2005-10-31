@@ -1,7 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.16 2005/10/27 22:20:18 hierath Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.17 2005/10/28 21:39:38 hierath Exp $
 */
 
 // Include files
@@ -126,12 +126,15 @@ SkyProj::SkyProj(const std::string &fitsFile, int relax, int ctrl)
    wcspih(header,numkeys,relax,ctrl,&nreject,&m_nwcs,&m_wcs);
    m_wcspih_used = true;
 
+   // Manually set naxis to 2.
+   m_wcs->naxis = 2;
+
     int status = wcsset2(m_wcs);
     if (status !=0) {
         throw SkyProj::Exception(status );
     }
 
-//      wcsprt(&m_wcs[0]); 
+    //  wcsprt(&m_wcs[0]); 
 }
 
 SkyProj::~SkyProj()
