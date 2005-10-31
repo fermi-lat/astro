@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: hierath  Mon Oct 31 13:33:43 PST 2005
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+Set naxis manually in SkyProj when reading from fits header using wcspih.
+    *
+------------------------------------------------------------
 User: hierath  Fri Oct 28 14:39:38 PDT 2005
 astro/src
 
