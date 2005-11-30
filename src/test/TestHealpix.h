@@ -1,7 +1,7 @@
 /** @file TestHealpix.h
 @brief code to test the class Healpix
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/TestHealpix.h,v 1.7 2005/04/30 21:15:59 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/TestHealpix.h,v 1.8 2005/10/21 21:46:53 burnett Exp $
 
 */
 
@@ -28,7 +28,7 @@ class TestHealpix {
 public:
     TestHealpix(){
         using astro::Healpix;
-        test(256, NEST, astro::SkyDir::GALACTIC);
+        test(256, astro::Healpix::NESTED, astro::SkyDir::GALACTIC);
 //        test(256, Healpix::NESTED, astro::SkyDir::EQUATORIAL);
 //        test(256, Healpix::RING, astro::SkyDir::GALACTIC);
 //        test(256, Healpix::RING, astro::SkyDir::EQUATORIAL);
@@ -36,7 +36,7 @@ public:
         Healpix hp(8);
         TestNeighbors(hp);
     }
-    void test(long nside, Healpix_Ordering_Scheme ord, astro::SkyDir::CoordSystem coord)
+    void test(long nside, astro::Healpix::Ordering ord, astro::SkyDir::CoordSystem coord)
     {
         using astro::Healpix;
 
@@ -135,6 +135,13 @@ public:
                     from_file.push_back(neighbor);
             }
             
+            #if 0 // Run this block to see detailed results.
+            #else
+            {
+                std::cout << calculated << from_file << std::endl ;
+            }
+            #endif
+
             if (calculated != from_file)
             {
                 std::cout << "Neighbor mismatch for pixel " << pixel_nbr << std::endl;

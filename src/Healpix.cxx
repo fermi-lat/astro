@@ -2,21 +2,18 @@
     @brief Healpix class implementation with code from WMAP
 
     @author B. Lesnick 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.6 2005/04/30 21:15:59 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.7 2005/10/21 21:46:52 burnett Exp $
 */
 /* Local Includes */
-#include "astro/Healpix.h"
-#include "healpix/pointing.h" ///< NASA library for ra,d
 
+#include "astro/Healpix.h"
+#include "healpix/healpix_base.h"
+#include "healpix/pointing.h" ///< NASA library for ra,d
+#include "healpix/arr.h"
+
+///< NASA healpix class
 /* Standard Includes */
 #include <numeric> // for accumulate
-
-#include <cmath>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <cassert>
-#include <stdexcept>
 
 using namespace astro;
 
@@ -24,12 +21,13 @@ using namespace astro;
 //=========================================================================================
 //  C++ interface funtions
 //=========================================================================================
-Healpix::Healpix(long nside, Healpix_Ordering_Scheme ord, SkyDir::CoordSystem coordsys)
-    : m_nside(nside),
-      m_ord(ord),
-      m_coordsys(coordsys),
-      m_heal(nside,ord,SET_NSIDE)
-{}
+
+Healpix::Healpix(long nside, astro::Healpix::Ordering ord, SkyDir::CoordSystem coordsys)
+    : m_coordsys(coordsys),
+    m_heal( * new Healpix_Base(nside,static_cast<Healpix_Ordering_Scheme>(ord),SET_NSIDE))
+{
+
+}
 
 void Healpix::pix2ang(long index, double &theta, double &phi)const
 {
@@ -119,5 +117,15 @@ void Healpix::findNeighbors(long index, std::vector<long> &p)
     std::copy(n,n+nit, std::back_insert_iterator<std::vector<long> >(p));
 }
 
+ ///@brief the number of sides per dodecahedron
+long Healpix::nside()const{return m_heal.Nside(); }
+    ///@brief the number of pixels
+long Healpix::npix()const{return 12*m_heal.Nside()*m_heal.Nside();}
 
+    ///@brief the number of pixels, as the size.
+size_t Healpix::size()const{return 12*m_heal.Nside()*m_heal.Nside();}
+
+Healpix::Ordering Healpix::ord()const{return static_cast<Healpix::Ordering>(m_heal.Scheme());}
+
+bool Healpix::nested()const{return static_cast<Healpix::Ordering>(m_heal.Scheme())==NESTED;}
 
