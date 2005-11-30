@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.8 2005/10/25 17:45:21 jchiang Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.9 2005/11/30 18:58:48 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -48,8 +48,8 @@ Note: Healpix stands for "Hierarchical, Equal Area, and iso-Latitude Pixelisatio
 class Healpix {
 public: 
 
-    typedef enum { RING,
-        NESTED} Ordering;
+    typedef enum { RING=0,
+        NESTED=1, NEST=1} Ordering;
 
     /**@brief specify configuration
     @param nside Number of divisions of the side of 
@@ -155,6 +155,8 @@ public:
     void pix2ang(long index, double &theta, double &phi)const;
     void ang2pix(double theta, double phi, long &index)const;
     
+    //! copy operator
+    Healpix& operator=(const Healpix& other);
 
 private:
     Healpix_Base& m_heal;///< reference to the NASA library
