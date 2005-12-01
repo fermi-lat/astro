@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.9 2005/11/30 18:58:48 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.10 2005/11/30 21:31:57 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -159,8 +159,8 @@ public:
     Healpix& operator=(const Healpix& other);
 
 private:
-    Healpix_Base& m_heal;///< reference to the NASA library
     astro::SkyDir::CoordSystem m_coordsys;///< how to define SkyDir
+    Healpix_Base& m_heal;///< reference to the NASA library
 };
 
 } // namespace astro
