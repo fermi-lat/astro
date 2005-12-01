@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Dec  1 12:40:35 PST 2005
+astro/astro
+
+Modified Files:
+	Healpix.h 
+Log Message:
+unix fixes, patch tag
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r12, operation: add
 Package: astro
