@@ -2,7 +2,7 @@
     @brief Healpix class implementation with code from WMAP
 
     @author B. Lesnick 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.8 2005/11/30 18:58:49 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.9 2005/11/30 21:31:57 burnett Exp $
 */
 /* Local Includes */
 
@@ -14,6 +14,7 @@
 ///< NASA healpix class
 /* Standard Includes */
 #include <numeric> // for accumulate
+#include <stdexcept>
 
 using namespace astro;
 

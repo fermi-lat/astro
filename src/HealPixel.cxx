@@ -1,7 +1,7 @@
 /** @file HealPixel.cxx
 @brief Implement the HealPixel class
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HealPixel.cxx,v 1.2 2005/10/21 21:46:52 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HealPixel.cxx,v 1.3 2005/11/30 18:58:49 burnett Exp $
 */
 
 #include "astro/HealPixel.h" 

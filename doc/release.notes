@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.57 2005/11/13 16:03:22 burnett Exp $
+$Id: release.notes,v 1.58 2005/11/30 21:36:34 burnett Exp $
 
 @verbatim
+  v1r12p1  01-dec-05 THB unix fixes
   v1r12    29-nov-05 THB mods to Healpix to hide healix_base; slight change to interface
   v1r11p5  13-oct-05 THB Fix sign of longitude
   v1r11p4  25-Oct-05 JC  Temporary fix to give access to healpix_base.h
