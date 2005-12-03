@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.12 2005/05/03 02:14:48 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.13 2005/11/13 16:03:22 burnett Exp $
 #include <cmath>
 #include <vector>
 
@@ -19,11 +19,16 @@ double EarthCoordinate::s_EarthRadius = 6378145.; //m
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-EarthCoordinate::EarthCoordinate(Hep3Vector pos, JulianDate jd)
+EarthCoordinate::EarthCoordinate(Hep3Vector pos, double met) //JulianDate jd)
 {
+
     m_lat = M_PI/2- pos.theta();
+    // convert from MET to JD
+    JulianDate jd(JulianDate::missionStart() + met/JulianDate::secondsPerDay);
     m_lon = pos.phi() - GetGMST(jd)*M_PI/180;
-    m_lon = fmod(m_lon, 2*M_PI); if(m_lon>M_PI) m_lon -= 2*M_PI;
+    m_lon = fmod(m_lon, 2*M_PI); 
+    if(m_lon>M_PI) m_lon -= 2*M_PI;
+    if(m_lon<M_PI) m_lon += 2*M_PI;
 
     // oblateness correction to obtain geodedic latitude 
     m_lat=(atan(tan(m_lat))/(sqr(1.-EarthFlat)) );
