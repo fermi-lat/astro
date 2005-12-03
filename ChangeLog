@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sat Dec  3 08:42:23 PST 2005
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+add access function for history end time; compute lat/lon/altitude only from position
+    *
+------------------------------------------------------------
 User: burnett  Sat Dec  3 08:42:22 PST 2005
 astro/astro
 
