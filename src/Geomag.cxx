@@ -1,7 +1,7 @@
 /** \file Geomag.cxx
 \brief implementation of Geomag functions
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Geomag.cxx,v 1.1 2005/03/26 21:51:46 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Geomag.cxx,v 1.2 2005/04/02 16:08:16 burnett Exp $
 
 */
 
@@ -25,6 +25,7 @@ namespace {
 
         if(lon < 0)
             lon += 360;
+        if(lon>360) lon -= 360;
 
         ilat = static_cast<int>(lat/5.+6);
         ilon = static_cast<int>(lon/5.);
