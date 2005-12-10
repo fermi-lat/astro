@@ -1,7 +1,7 @@
 /** @file SkyProj.h
 @brief declaration of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.19 2005/10/27 23:56:14 hierath Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.20 2005/12/10 16:51:13 burnett Exp $
 =======
 */
 
@@ -189,6 +189,7 @@ namespace astro {
        private:
           int m_status;
        };
+       std::string projType()const{return m_projName;}///< access to the projection
     private:
 
         /** @brief called by constructor to initialize the projection */
@@ -200,6 +201,8 @@ namespace astro {
         /* Structure defined in WCSLIB wcs.h.  This contains all
         projection information. */
         wcsprm* m_wcs;
+
+        std::string m_projName;
         
         /*@brief determines if bounding rectangle exists
            @param xvar varies x if true, varies y if false

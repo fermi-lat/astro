@@ -1,7 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.18 2005/10/31 21:33:43 hierath Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.19 2005/12/10 16:51:14 burnett Exp $
 */
 
 // Include files
@@ -301,6 +301,8 @@ void SkyProj::init(const std::string &projName,
     assert( sizeof_wcslib>=sizeof(wcsprm));
     m_wcs = reinterpret_cast<wcsprm*>(m_wcs_struct);
     m_wcs->flag = -1;
+
+    m_projName = projName; // save for user access
 
     m_wcspih_used = false;
 
