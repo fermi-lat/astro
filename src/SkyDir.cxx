@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.30 2004/06/06 19:10:31 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.31 2004/06/06 22:30:25 burnett Exp $
 */
 
 // Include files
@@ -60,9 +60,14 @@ SkyDir::SkyDir(Hep3Vector dir, CoordSystem inputType)
 @param param2 projected equivalent dec or b, in degrees
 @param projection used to deproject these coordinates
 */
-SkyDir::SkyDir(double param1, double param2, const SkyProj& projection)
+SkyDir::SkyDir(double param1, double param2, const SkyProj& projection, bool check)
 {
-   // convert from pixel to ra/dec (or l/b)
+   // convert from pixel to ra/dec (or l/b) 
+    if( check && projection.testpix2sph(param1, param2)!=0){
+        m_dir=Hep3Vector(0,0,2);
+        return;
+    }
+    // this can throw an exception
    std::pair<double,double> s = projection.pix2sph(param1, param2);
 
    double ra_rad = s.first * M_PI/180.;
