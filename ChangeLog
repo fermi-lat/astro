@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Dec 11 09:53:53 PST 2005
+astro/astro
+
+Modified Files:
+	SkyProj.h 
+Log Message:
+take the exception class out of the interface
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r13, operation: add
 Package: astro
