@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.10 2005/11/30 21:31:57 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.11 2005/12/01 20:40:34 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -78,6 +78,8 @@ public:
     bool galactic()const{return m_coordsys==astro::SkyDir::GALACTIC; }
 
     void findNeighbors(long index, std::vector<long> &neighbors);
+
+#ifndef SWIG // can't export these nested classes, and therefore the integration, to python
     /**@class Pixel
     @brief represent a Healpix pixel
 
@@ -150,6 +152,7 @@ public:
 
     ///@brief do the integral
     double integrate(const astro::SkyFunction& f)const;
+#endif
 
     // direct access to NASA healpix routines
     void pix2ang(long index, double &theta, double &phi)const;
