@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Dec 11 09:57:22 PST 2005
+astro/src
+
+Removed Files:
+	astroutil.cxx astroutil.h 
+Log Message:
+these are no longer needed.
+    *
+------------------------------------------------------------
 User: burnett  Sun Dec 11 09:55:40 PST 2005
 astro/astro
 
