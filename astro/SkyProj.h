@@ -1,7 +1,7 @@
 /** @file SkyProj.h
 @brief declaration of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.20 2005/12/10 16:51:13 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.21 2005/12/10 21:23:14 burnett Exp $
 =======
 */
 
@@ -175,20 +175,6 @@ namespace astro {
         */
         void setKeywords(tip::Header& header);
 
-       class Exception : public std::exception 
-       {
-       public:
-          Exception() {}
-          Exception(int status) 
-             : m_status(status)
-             {}
-          
-          virtual ~Exception() throw() {}
-          virtual const char *what() const throw();
-          int status()const throw(){return m_status;}
-       private:
-          int m_status;
-       };
        std::string projType()const{return m_projName;}///< access to the projection
     private:
 
