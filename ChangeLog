@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Dec 11 09:55:40 PST 2005
+astro/astro
+
+Modified Files:
+	Healpix.h 
+Log Message:
+project nested classes against SWIG
+    *
+------------------------------------------------------------
 User: burnett  Sun Dec 11 09:53:53 PST 2005
 astro/src
 
