@@ -3,10 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.62 2005/12/10 21:23:14 burnett Exp $
+$Id: release.notes,v 1.63 2005/12/13 02:15:59 burnett Exp $
 
 @verbatim
-  v1r13p1  12-dec-05 THB Improve SWIG access by taking out, or hiding nested classes
+  v1r13p1,2  12-dec-05 THB Improve SWIG access by taking out, or hiding nested classes
   v1r13    10-dec-05 THB SkyDir and SkyProj: allow check for invalid projected coords;
                          SkyProj: add function to set a FITS image header
   v1r12p3  03-dec-05 THB Fix computation of longitude from position
