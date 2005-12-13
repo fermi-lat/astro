@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.34 2005/10/12 19:21:50 jchiang Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.35 2005/10/27 22:20:18 hierath Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -136,7 +136,7 @@ bool testSkyProj(){
        other.pix2sph(-1000, -1000);
        // This should have thrown; if not, indicate failure.
        throw std::runtime_error("SkyProj::Exception failed");
-    } catch (SkyProj::Exception &) {
+    } catch (std::exception &) {
        // Caught as expected, so do nothing.
     }
 
