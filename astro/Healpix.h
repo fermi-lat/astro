@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.12 2005/12/11 17:55:40 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.13 2005/12/15 00:52:46 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -60,7 +60,11 @@ public:
     */
     Healpix(long nside=2, Ordering ord = NESTED, 
         astro::SkyDir::CoordSystem coordsys = astro::SkyDir::EQUATORIAL);
-    
+    /// copy constructor
+    Healpix(const Healpix& other);
+
+    /// need explicit equality operator
+    Healpix& operator=(const Healpix& other); 
     ~Healpix();
 
     ///@brief the number of sides per dodecahedron
@@ -160,8 +164,6 @@ public:
     void pix2ang(long index, double &theta, double &phi)const;
     void ang2pix(double theta, double phi, long &index)const;
     
-    //! copy operator
-    Healpix& operator=(const Healpix& other);
 
 private:
     astro::SkyDir::CoordSystem m_coordsys;///< how to define SkyDir

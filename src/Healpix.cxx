@@ -2,7 +2,7 @@
     @brief Healpix class implementation with code from WMAP
 
     @author B. Lesnick 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.10 2005/12/01 20:40:35 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.11 2005/12/15 00:52:47 burnett Exp $
 */
 /* Local Includes */
 
@@ -29,6 +29,20 @@ Healpix::Healpix(long nside, astro::Healpix::Ordering ord, SkyDir::CoordSystem c
 {
 
 }
+
+// copy constructur
+Healpix::Healpix(const astro::Healpix& other)
+: m_coordsys (other.m_coordsys)
+, m_heal( * new Healpix_Base(other.m_heal))
+{}
+
+Healpix& Healpix::operator=(const Healpix& other)
+{
+    m_coordsys = other.m_coordsys;
+    m_heal = other.m_heal;
+    return *this;
+}
+
 Healpix::~Healpix()
 {
     delete &m_heal;
@@ -133,8 +147,4 @@ Healpix::Ordering Healpix::ord()const{return static_cast<Healpix::Ordering>(m_he
 
 bool Healpix::nested()const{return static_cast<Healpix::Ordering>(m_heal.Scheme())==NESTED;}
 
-Healpix& Healpix::operator =(const astro::Healpix& other){
-    m_heal = other.m_heal;
-    m_coordsys = other.m_coordsys;
-    return *this;
-}
+
