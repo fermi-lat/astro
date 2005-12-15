@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.11 2005/12/01 20:40:34 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.12 2005/12/11 17:55:40 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -61,6 +61,8 @@ public:
     Healpix(long nside=2, Ordering ord = NESTED, 
         astro::SkyDir::CoordSystem coordsys = astro::SkyDir::EQUATORIAL);
     
+    ~Healpix();
+
     ///@brief the number of sides per dodecahedron
     long nside()const;
     ///@brief the number of pixels
@@ -152,7 +154,7 @@ public:
 
     ///@brief do the integral
     double integrate(const astro::SkyFunction& f)const;
-#endif
+#endif //SWIG
 
     // direct access to NASA healpix routines
     void pix2ang(long index, double &theta, double &phi)const;
