@@ -1,22 +1,4 @@
 ------------------------------------------------------------
-User: burnett  Wed Dec 14 17:44:21 PST 2005
-astro/src
-
-Modified Files:
-	Healpix.cxx 
-Log Message:
-needed both copy constructor and equality operator
-    *
-------------------------------------------------------------
-User: burnett  Wed Dec 14 17:44:21 PST 2005
-astro/astro
-
-Modified Files:
-	Healpix.h 
-Log Message:
-needed both copy constructor and equality operator
-    *
-------------------------------------------------------------
 TAG
 Tag name: v1r13p3, operation: add
 Package: astro
