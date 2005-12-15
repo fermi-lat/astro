@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Dec 14 16:52:46 PST 2005
+astro/astro
+
+Modified Files:
+	Healpix.h 
+Log Message:
+fix memory leak
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceToolsv6r2, operation: add
 Package: astro
