@@ -1,7 +1,7 @@
 /** @file GPS.cxx
  @brief  implementation of the GPS class.
 
- $Id: GPS.cxx,v 1.16 2005/10/12 17:23:40 jchiang Exp $
+ $Id: GPS.cxx,v 1.17 2005/12/03 16:42:23 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -31,7 +31,7 @@ m_sampleintvl(30.), // update position every 30 seconds
 m_rockDegrees(35.),
 m_rockType(NONE),
 m_rockNorth(0), 
-m_sctable("Ext1"), // default FITS extension name for pointing history file
+m_sctable("SC_DATA"), // default FITS extension name for pointing history file
 m_livetime_frac(1), m_endTime(0)
 {   // initialize the singleton
     getPointingCharacteristics(0);
