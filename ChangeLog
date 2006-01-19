@@ -1,4 +1,16 @@
 ------------------------------------------------------------
+User: peachey  Thu Jan 19 11:15:28 PST 2006
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+Prevent cfitsio from including typedef for wtbarr, which conflicts
+with wcs struct definition. Also use short name for fits_header2str, because the long
+version of the name is not available in cfitsio 3.x.
+
+    *
+------------------------------------------------------------
 User: jchiang  Fri Dec 23 12:00:22 PST 2005
 astro/src
 
