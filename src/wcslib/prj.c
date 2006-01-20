@@ -27,7 +27,7 @@
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
 *   http://www.atnf.csiro.au/~mcalabre/index.html
-*   $Id: prj.c,v 4.2 2005/09/21 13:21:57 cal103 Exp $
+*   $Id: prj.c,v 1.2 2005/10/20 16:08:37 hierath Exp $
 *===========================================================================*/
 
 #include <math.h>
@@ -98,7 +98,7 @@ const char *prj_errmsg[] = {
    "One or more of the (x,y) coordinates were invalid",
    "One or more of the (phi,theta) coordinates were invalid"};
 
-int prj_stat;
+int prj_stat = 0;
 
 
 #define copysign(X, Y) ((Y) < 0.0 ? -fabs(X) : fabs(X))
