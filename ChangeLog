@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: peachey  Thu Jan 19 18:23:05 PST 2006
+astro/src/wcslib
+
+Modified Files:
+	prj.c wcspih.c wcsulex.c 
+Log Message:
+Initialize variables.
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r13p5, operation: add
 Package: astro
