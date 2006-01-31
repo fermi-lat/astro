@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: usher  Tue Jan 31 11:58:35 PST 2006
+astro/src/healpix
+
+Modified Files:
+      Tag: GR-v7r3p20-newext
+	constants.h healpix_base.cc healpix_base.h pointing.h 
+Log Message:
+    *
+------------------------------------------------------------
 User: usher  Tue Jan 31 11:58:33 PST 2006
 astro/src
 
