@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.60 2005/12/03 16:44:39 burnett Exp $
+$Id: release.notes,v 1.61 2005/12/03 21:59:22 burnett Exp $
 
 @verbatim
+  v1r12cl0 31-Jan-06  TU Tag development branch for new externals
   v1r12p3  03-dec-05 THB Fix computation of longitude from position
   v1r12p2  03-dec-05 THB GPS mods to treat history file consistently
   v1r12p1  01-dec-05 THB unix fixes

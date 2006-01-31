@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/PointingTransform.h,v 1.2 2003/09/30 22:57:37 srobinsn Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/PointingTransform.h,v 1.3 2003/10/02 20:59:48 srobinsn Exp $
 #ifndef OrbitModel_PointingTransform_H
 #define OrbitModel_PointingTransform_H
 
@@ -20,7 +20,7 @@ namespace astro {
     * between coordinate systems.  Generally, it is assumed that the user will want
     * to take a GLAST local incoming direction (x,y,z) and get the SkyDir direction
     * corresponding to that same direction.
-    * <br>$Id: PointingTransform.h,v 1.2 2003/09/30 22:57:37 srobinsn Exp $
+    * <br>$Id: PointingTransform.h,v 1.3 2003/10/02 20:59:48 srobinsn Exp $
     *
     */
     class PointingTransform
@@ -31,10 +31,10 @@ namespace astro {
         PointingTransform(SkyDir zdir, SkyDir xdir);
 
         /// The rotation that turns glast-local to SkyDir cartesian celestial vector
-        HepRotation localToCelestial () const;
+        CLHEP::HepRotation localToCelestial () const;
 
         /// The absolute direction corresponding to some GLAST direction
-        SkyDir gDir(Hep3Vector localDir) const;
+        SkyDir gDir(CLHEP::Hep3Vector localDir) const;
 
     private:
         SkyDir m_xDir,m_zDir;

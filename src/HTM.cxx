@@ -2,7 +2,7 @@
 @brief implement HTM methods
 
 @author T. Burnett (based on copyright code by Peter Z. Kunszt) 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HTM.cxx,v 1.2 2004/03/30 10:47:45 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HTM.cxx,v 1.3 2004/03/31 14:53:19 burnett Exp $
 */
 
 #include "astro/HTM.h"
@@ -18,12 +18,12 @@ HTM::HTM(int maxlevel)
     using astro::SkyDir;
     // create vertices of the octahedron: order is the same as for htm
     SkyDir v[]= {        
-        SkyDir(Hep3Vector( 0, 0, 1)), // 0
-            SkyDir(Hep3Vector( 1, 0, 0)), // 1
-            SkyDir(Hep3Vector( 0, 1, 0)), // 2
-            SkyDir(Hep3Vector(-1, 0, 0)), // 3
-            SkyDir(Hep3Vector( 0,-1, 0)), // 4
-            SkyDir(Hep3Vector( 0, 0,-1))  // 5
+        SkyDir(CLHEP::Hep3Vector( 0, 0, 1)), // 0
+            SkyDir(CLHEP::Hep3Vector( 1, 0, 0)), // 1
+            SkyDir(CLHEP::Hep3Vector( 0, 1, 0)), // 2
+            SkyDir(CLHEP::Hep3Vector(-1, 0, 0)), // 3
+            SkyDir(CLHEP::Hep3Vector( 0,-1, 0)), // 4
+            SkyDir(CLHEP::Hep3Vector( 0, 0,-1))  // 5
     };
 
     // then make a quad tree of nodes for each one, again same order
