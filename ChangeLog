@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: usher  Tue Jan 31 11:58:29 PST 2006
+astro/astro
+
+Modified Files:
+      Tag: GR-v7r3p20-newext
+	EarthCoordinate.h EarthOrbit.h GPS.h PointingTransform.h 
+	SkyDir.h SolarSystem.h 
+Log Message:
+    *
+------------------------------------------------------------
 User: jchiang  Tue Jan 31 08:47:19 PST 2006
 astro/astro
 
