@@ -1,7 +1,7 @@
 /** @file EarthOrbit.h
     @brief definition of EarthOrbit class
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/EarthOrbit.h,v 1.11 2005/01/23 20:02:56 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/EarthOrbit.h,v 1.12 2005/03/02 22:59:54 burnett Exp $
 */
 #ifndef astro_EarthOrbit_H
 #define astro_EarthOrbit_H
@@ -33,7 +33,7 @@ namespace astro {
         * @param jd the Julian Date for the orbit calculation
         *  @return  The orbit position (in inertial coordinates) in km
         */
-        Hep3Vector position(JulianDate jd)const;
+        CLHEP::Hep3Vector position(JulianDate jd)const;
         
         /**
         * return the inclination of orbit

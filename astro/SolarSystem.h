@@ -2,7 +2,7 @@
 @brief definition of class SolarSystem 
 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SolarSystem.cxx,v 1.12 2005/05/02 23:09:53 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SolarSystem.h,v 1.9 2005/05/03 02:14:47 burnett Exp $
 */
 #ifndef astro_SolarSystem_H
 #define astro_SolarSystem_H
@@ -49,17 +49,17 @@ namespace astro {
         /**
         * @brief return the distance vector to solar system barycenter at date in lightseconds
         */
-        Hep3Vector getBarycenter(JulianDate jd)const;
+        CLHEP::Hep3Vector getBarycenter(JulianDate jd)const;
 
         /**
         * @brief return a distance vector to the sun at date in lightseconds
         */
-        Hep3Vector getSolarVector(JulianDate jd)const;
+        CLHEP::Hep3Vector getSolarVector(JulianDate jd)const;
 
         /*
         * @brief returns the distance vector between two bodies: target and center at date in lightseconds
         */
-        static Hep3Vector vector(Body targ, Body cent, JulianDate jd);
+        static CLHEP::Hep3Vector vector(Body targ, Body cent, JulianDate jd);
 
 
     private:

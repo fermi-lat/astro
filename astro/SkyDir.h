@@ -1,7 +1,7 @@
 /** @file SkyDir.h
 @brief declaration of the class SkyDir
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.25 2004/06/06 22:30:25 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.26 2005/08/09 22:54:15 burnett Exp $
 
 */
 #ifndef OrbitModel_SkyDir_H
@@ -39,7 +39,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.25 2004/06/06 22:30:25 burnett Exp $
+    * <br>$Id: SkyDir.h,v 1.26 2005/08/09 22:54:15 burnett Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
@@ -60,7 +60,7 @@ namespace astro {
         SkyDir(double param1=0, double param2=0, CoordSystem inputType = EQUATORIAL);
 
         //! initialize from a vector direction
-        SkyDir(Hep3Vector, CoordSystem inputType = EQUATORIAL);
+        SkyDir(CLHEP::Hep3Vector, CoordSystem inputType = EQUATORIAL);
 
         /** initialize using a projection and coordinates given in that projection
         @param pixelx value of x pixel
@@ -71,8 +71,8 @@ namespace astro {
 
 
         //! function operator returns the direction
-        Hep3Vector& operator () () {return m_dir;}
-        const Hep3Vector& operator () ()const  {return m_dir;}
+        CLHEP::Hep3Vector& operator () () {return m_dir;}
+        const CLHEP::Hep3Vector& operator () ()const  {return m_dir;}
         //! glactic l in degrees
         double l () const;
         //! glactic b in degrees
@@ -83,7 +83,7 @@ namespace astro {
         double dec () const;
 
         //! unit vector (in default equatorial system)
-        const Hep3Vector& dir () const {return m_dir;}
+        const CLHEP::Hep3Vector& dir () const {return m_dir;}
 
         //!to return the opening angle (in radians) between two objects:
         double difference(const SkyDir& other)const;
@@ -99,9 +99,9 @@ namespace astro {
         std::pair<double,double> project(const SkyProj& projection) const;
 
     private:
-        static HepRotation s_equatorialToGalactic;
+        static CLHEP::HepRotation s_equatorialToGalactic;
 
-        Hep3Vector m_dir;
+        CLHEP::Hep3Vector m_dir;
         void setGalCoordsFromDir(double&, double &) const;
 
     };
