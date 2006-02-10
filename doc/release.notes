@@ -3,9 +3,11 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.67 2006/01/19 19:36:48 peachey Exp $
+$Id: release.notes,v 1.68 2006/01/20 02:24:06 peachey Exp $
 
 @verbatim
+  v1r13p7  10-Feb-06 JC  this-> qualifier needed in templated methods 
+                         for gcc3.4.3 (without -fpermissive flag)
   v1r13p6  19-jan-06 JP  fix to allow compiling with gcc 3.3 and later, initialize uninitialized vars
   v1r13p5  19-jan-06 JP  fix to allow compiling with cfitsio 3.005, change name of FT2 table to SC_DATA
   v1r13p3,4  14-dec-05 THB change at v1r12 generated Healpix memory leak, fixed
