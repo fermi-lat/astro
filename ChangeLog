@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Wed Mar 15 11:42:56 PST 2006
+astro/src
+
+Modified Files:
+	Healpix.cxx 
+Log Message:
+change wrapping to create healpix_base objects only when needed for geometry calculation.
+    *
+------------------------------------------------------------
+User: burnett  Wed Mar 15 11:42:56 PST 2006
 astro/astro
 
 Modified Files:
