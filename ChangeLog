@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Mar 15 11:40:27 PST 2006
+astro/src/healpix
+
+Modified Files:
+	healpix_base.h 
+Log Message:
+change maximum order from 13 (why wired in?) to 15
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r13p7, operation: add
 Package: astro
