@@ -1,11 +1,11 @@
 /** @file SkyDir.h
 @brief declaration of the class SkyDir
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.26 2005/08/09 22:54:15 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyDir.h,v 1.27 2005/12/10 21:23:14 burnett Exp $
 
 */
-#ifndef OrbitModel_SkyDir_H
-#define OrbitModel_SkyDir_H
+#ifndef astro_SkyDir_H
+#define astro_SkyDir_H
 
 
 // Include files
@@ -39,7 +39,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.26 2005/08/09 22:54:15 burnett Exp $
+    * <br>$Id: SkyDir.h,v 1.27 2005/12/10 21:23:14 burnett Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
