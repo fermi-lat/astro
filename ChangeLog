@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Mar 15 20:39:02 PST 2006
+astro/astro
+
+Added Files:
+	Photon.h 
+Log Message:
+New class to represent minimal photon properties for source detection, fitting
+    *
+------------------------------------------------------------
 User: burnett  Wed Mar 15 20:38:12 PST 2006
 astro/astro
 
