@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Mar 15 20:38:12 PST 2006
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Log Message:
+fix historic guard name
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r14, operation: add
 Package: astro
