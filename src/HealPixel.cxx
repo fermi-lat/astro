@@ -1,7 +1,7 @@
 /** @file HealPixel.cxx
 @brief Implement the HealPixel class
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HealPixel.cxx,v 1.3 2005/11/30 18:58:49 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HealPixel.cxx,v 1.4 2005/12/01 20:40:35 burnett Exp $
 */
 
 #include "astro/HealPixel.h" 
@@ -34,6 +34,9 @@ HealPixel::HealPixel(const astro::SkyDir& dir, int level)
     }
     // and set the pixel number
     hp.ang2pix( theta, phi, m_index);
+    if( m_index<0 ){
+        throw std::out_of_range("HealPixel::HealPixel: bad index");
+    }
 }
 
 
