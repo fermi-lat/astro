@@ -7,12 +7,13 @@
 #include "astro/JulianDate.h"
 
 #include "CLHEP/Vector/ThreeVector.h"
+
 namespace astro {
 /** \class EarthCoordinate
 
   * \brief describe a point with respect to the surface of the Earth
   * \author T. Burnett and G. Tosti
-  * <hr> $Id: EarthCoordinate.h,v 1.7 2005/04/04 20:58:25 burnett Exp $
+  * <hr> $Id: EarthCoordinate.h,v 1.8.6.1 2006/01/31 19:58:27 usher Exp $
   *
   * Note that we calculate the geodetic coordinates: from http://ssd.jpl.nasa.gov/glossary.html#geodetic
   *
@@ -30,7 +31,7 @@ public:
     EarthCoordinate( double latDeg=0, double lonDeg=0 , double altitude=0);
 
     //! initialize with orbit position (in km), current MET in sec (was JD)
-    EarthCoordinate( Hep3Vector position, double met); //JulianDate jd);
+    EarthCoordinate( CLHEP::Hep3Vector position, double met); //JulianDate jd);
 
     /** @brief true if inside the SAA
 
