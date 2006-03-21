@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: usher  Mon Mar 20 17:43:18 PST 2006
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx EarthOrbit.cxx GPS.cxx HTM.cxx 
+	PointingTransform.cxx SkyDir.cxx SolarSystem.cxx 
+Log Message:
+    *
+------------------------------------------------------------
 User: usher  Mon Mar 20 17:43:17 PST 2006
 astro/astro
 
