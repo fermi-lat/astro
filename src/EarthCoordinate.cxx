@@ -1,7 +1,7 @@
 /** @file EarthCoordinate.cxx
     @brief implement class EarthCoordinate
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.14 2005/12/03 21:53:11 burnett Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.15.6.1 2006/01/31 19:58:31 usher Exp $
 
 */
 #include <cmath>
@@ -24,7 +24,7 @@ double EarthCoordinate::s_EarthRadius = 6378145.; //m
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-EarthCoordinate::EarthCoordinate(Hep3Vector pos, double met) //JulianDate jd)
+EarthCoordinate::EarthCoordinate(CLHEP::Hep3Vector pos, double met) //JulianDate jd)
 {
 
     m_lat = M_PI/2- pos.theta();

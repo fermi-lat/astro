@@ -1,7 +1,7 @@
 /** @file EarthOrbit.cxx
     @brief implemention of EarthOrbit
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.22 2004/11/12 01:53:09 burnett Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.23.6.1 2006/01/31 19:58:31 usher Exp $
 */
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
@@ -73,7 +73,7 @@ void EarthOrbit::initialize()
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hep3Vector EarthOrbit::position(JulianDate JD) const
+CLHEP::Hep3Vector EarthOrbit::position(JulianDate JD) const
 {
     double elapse = (JD - m_launch)*SecondsPerDay;
     
@@ -85,7 +85,7 @@ Hep3Vector EarthOrbit::position(JulianDate JD) const
     double Enew =Kepler(M,s_e); 
     
     
-    Hep3Vector pos= Hep3Vector( cos(Enew)-s_e, sqrt(1.-sqr(s_e))*sin(Enew), 0 ).unit()*m_alt;
+    CLHEP::Hep3Vector pos= CLHEP::Hep3Vector( cos(Enew)-s_e, sqrt(1.-sqr(s_e))*sin(Enew), 0 ).unit()*m_alt;
     pos.rotateZ(w).rotateX(s_incl).rotateZ(Omega);
     
     return pos;  
@@ -142,11 +142,11 @@ double EarthOrbit::calcShapiroDelay(JulianDate jd, const SkyDir &sourceDir) cons
 //   SkyDir sunDir = sun.direction(sunID,jd);
 
 //   Hep3Vector rsun = sunDir.dir();
-   Hep3Vector rsrc = sourceDir.dir();
+   CLHEP::Hep3Vector rsrc = sourceDir.dir();
 
    //***************
    SolarSystem solsys;
-   Hep3Vector sun2 = solsys.getSolarVector(jd);
+   CLHEP::Hep3Vector sun2 = solsys.getSolarVector(jd);
 //   rsun /= rsun.mag();
 //   sun2 /= sun2.mag();
 
@@ -166,7 +166,7 @@ double EarthOrbit::calcShapiroDelay(JulianDate jd, const SkyDir &sourceDir) cons
 double EarthOrbit::calcTravelTime(JulianDate jd, const SkyDir &sourceDir) const
 {
    SolarSystem solsys;
-   Hep3Vector barycenter;
+   CLHEP::Hep3Vector barycenter;
    double correction = 0;
    double last_correction = 1e20; // impossible value to force loop to iterate more than once
    double eps = 1e-7;  // 100 nanosecond precision
@@ -179,7 +179,7 @@ double EarthOrbit::calcTravelTime(JulianDate jd, const SkyDir &sourceDir) const
       // Add location of satellite with respect to the earth to the barycenter vector;
       barycenter -= (EarthOrbit::position(jd+correction/86400.)/299792.458);
 
-      Hep3Vector rsrc = sourceDir.dir();
+      CLHEP::Hep3Vector rsrc = sourceDir.dir();
 
       correction = -1. * barycenter.dot(rsrc) / rsrc.mag();
 

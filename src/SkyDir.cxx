@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.31 2004/06/06 22:30:25 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.32 2005/12/10 21:23:15 burnett Exp $
 */
 
 // Include files
@@ -11,6 +11,8 @@
 using namespace astro;
 #include <string>
 #include <stdexcept>
+
+using namespace CLHEP;
 
 
 /** @brief initialize from (ra, dec), or (l,b)
