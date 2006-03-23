@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: heather  Wed Mar 22 22:30:26 PST 2006
+astro/src
+
+Modified Files:
+	HealPixel.cxx 
+Log Message:
+include stdexcept
+    *
+------------------------------------------------------------
 User: usher  Mon Mar 20 17:43:18 PST 2006
 astro/src/healpix
 
