@@ -1,11 +1,12 @@
 /** @file HealPixel.cxx
 @brief Implement the HealPixel class
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HealPixel.cxx,v 1.4 2005/12/01 20:40:35 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HealPixel.cxx,v 1.5 2006/03/20 20:36:14 burnett Exp $
 */
 
 #include "astro/HealPixel.h" 
 #include "astro/Healpix.h"
+#include <stdexcept>
 
 using namespace astro;
 
