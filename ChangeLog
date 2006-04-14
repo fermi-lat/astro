@@ -1,13 +1,4 @@
 ------------------------------------------------------------
-User: burnett  Fri Apr 14 12:23:51 PDT 2006
-astro/astro
-
-Modified Files:
-	HealpixArray.h 
-Log Message:
-add function for more efficient dot product
-    *
-------------------------------------------------------------
 TAG
 Tag name: v1r16, operation: add
 Package: astro
