@@ -3,7 +3,7 @@
 
 @author T. Burnett
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealpixArray.h,v 1.6 2005/03/29 19:13:57 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealpixArray.h,v 1.7 2006/01/31 16:47:18 jchiang Exp $
 */
 
 #ifndef astro_HealpixArray_h
@@ -40,6 +40,13 @@ public:
         astro::Healpix::Pixel px(it-this->begin(), m_hp);
         return px();
     }
+
+    //! return the dot product of the direction with respect fixed direction
+    double dot(typename std::vector<C>::const_iterator it, const astro::SkyDir& extdir)const{
+        astro::Healpix::Pixel px(it-this->begin(), m_hp);
+        return px().dir().dot(extdir());
+    }
+
 
     //! return the pixel associated with an iterator
     astro::Healpix::Pixel pixel(typename std::vector<C>::const_iterator it)const{
