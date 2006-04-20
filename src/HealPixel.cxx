@@ -1,7 +1,7 @@
 /** @file HealPixel.cxx
 @brief Implement the HealPixel class
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HealPixel.cxx,v 1.5 2006/03/20 20:36:14 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/HealPixel.cxx,v 1.6 2006/03/23 06:30:26 heather Exp $
 */
 
 #include "astro/HealPixel.h" 
@@ -50,6 +50,16 @@ HealPixel::operator astro::SkyDir()const
     return astro::SkyDir( phi*180/M_PI, (M_PI/2-theta)*180/M_PI, s_coordsys );
 }
 
+long HealPixel::lastChildIndex(int childLevel) const
+{
+    int leveldiff = childLevel - level();
+    
+    if (leveldiff < 0)
+        throw std::runtime_error("Level for children cannot be less than my level.");
+        
+    return ((index() + 1) << (leveldiff * 2)) - 1;
+}
+
 
 bool HealPixel::operator<(const HealPixel& other)const
 {
@@ -62,6 +72,21 @@ bool HealPixel::operator<(const HealPixel& other)const
         // my level is greater: I'm less if these are equal
         return index() < (other.index() << leveldiff*2); 
     }
+}
+
+bool HealPixel::operator==(const HealPixel& other)const
+{
+    return level() == other.level() && index() == other.index();
+}
+
+bool HealPixel::operator!=(const HealPixel& other)const
+{
+    return level() != other.level() || index() != other.index();
+}
+
+bool HealPixel::operator<=(const HealPixel& other)const
+{
+    return *this < other || *this == other;
 }
 
 std::vector<HealPixel> HealPixel::neighbors() const

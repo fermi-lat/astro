@@ -1,6 +1,6 @@
 /** @file HealPixel.h
 @brief Define the HealPixel class 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealPixel.h,v 1.2 2005/08/19 19:00:10 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealPixel.h,v 1.3 2006/03/15 19:42:56 burnett Exp $
 */
 
 #ifndef astro_HealPixel_h
@@ -39,9 +39,16 @@ namespace astro {
         int level()const{return m_level;} ///< the level, where nside=2**level
         
         double area()const{return (4 * M_PI)/(12 * nside() * nside());}///< solid angle
+        
+        long lastChildIndex(int childLevel)const; // largest index for my child at given level.
 
         /// sort operator
         bool operator<(const HealPixel& other)const;
+        
+        /// other comparison operators
+        bool operator==(const HealPixel& other)const;
+        bool operator!=(const HealPixel& other)const;
+        bool operator<=(const HealPixel& other)const;
 
         static bool test(); // should be true
 
