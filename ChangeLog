@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Apr 20 14:58:20 PDT 2006
+astro/src
+
+Modified Files:
+	HealPixel.cxx 
+Log Message:
+needed functionality for iteration over PhotonMap collection
+    *
+------------------------------------------------------------
 User: burnett  Thu Apr 20 14:58:19 PDT 2006
 astro/astro
 
