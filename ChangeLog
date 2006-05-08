@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon May  8 14:31:18 PDT 2006
+astro/astro
+
+Modified Files:
+	Healpix.h 
+Log Message:
+expose cone pixel selection method
+    *
+------------------------------------------------------------
 User: burnett  Thu Apr 20 14:58:20 PDT 2006
 astro/src
 
