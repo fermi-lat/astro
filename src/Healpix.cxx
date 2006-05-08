@@ -2,7 +2,7 @@
     @brief Healpix class implementation with code from WMAP
 
     @author B. Lesnick 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.12 2005/12/15 01:44:21 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Healpix.cxx,v 1.13 2006/03/15 19:42:56 burnett Exp $
 */
 /* Local Includes */
 
@@ -133,3 +133,15 @@ size_t Healpix::size()const{return npix();}
 Healpix::Ordering Healpix::ord()const{return m_ord;}
 
 bool Healpix::nested()const{return ord()==NESTED;}
+
+void Healpix::query_disc (const astro::SkyDir dir, double radius, std::vector<int> & v) const
+{
+    v.clear();
+	double theta, phi;
+	Healpix::Pixel px(dir, *this);
+	pix2ang(px.index(), theta, phi);
+
+    Healpix_Base hpb(this->nside(),static_cast<Healpix_Ordering_Scheme>(this->ord()),SET_NSIDE); 
+	hpb.query_disc(pointing(theta, phi), radius, v);
+}
+
