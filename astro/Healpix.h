@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.14 2005/12/15 01:44:21 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.15 2006/03/15 19:42:56 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -78,6 +78,7 @@ public:
     bool galactic()const{return m_coordsys==astro::SkyDir::GALACTIC; }
 
     void findNeighbors(long index, std::vector<long> &neighbors);
+	void query_disc (const astro::SkyDir dir, double radius, std::vector<int> & v) const;
 
 #ifndef SWIG // can't export these nested classes, and therefore the integration, to python
     /**@class Pixel
