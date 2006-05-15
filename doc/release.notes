@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.73 2006/04/14 19:28:42 burnett Exp $
+$Id: release.notes,v 1.74 2006/05/14 02:50:07 burnett Exp $
 
 @verbatim
+  v1r18    15-May-06 THB Add time to Photon data class
   v1r17p1  13-May-06 THB Fix bug introduced at v1r11p2 that broke default history generation of lat/lon
   v1r17    14-Apr-06 THB Add function to HealpixArray, to take dot product for efficiency
   v1r16    23-Mar-06 THB Changes for new CLHEP namespace
