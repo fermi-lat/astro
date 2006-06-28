@@ -1,7 +1,7 @@
 /** @file Photon.h
 @brief Define the Photon class
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Photon.h,v 1.1 2006/03/16 04:39:02 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Photon.h,v 1.2 2006/05/15 16:00:27 burnett Exp $
 */
 
 #ifndef astro_Photon_h
@@ -19,20 +19,23 @@ namespace astro {
     */
     class Photon : public astro::SkyDir {
     public:
-        Photon(const astro::SkyDir& dir, double energy, double time, int event_class=-1)
+        Photon(const astro::SkyDir& dir, double energy, double time, int event_class=-1, int source=-1)
             : astro::SkyDir(dir)
             , m_energy(energy)
             , m_time(time)
             , m_event_class(event_class)
+            , m_source(source)
         {}
         double energy()const{return m_energy;}
         int eventClass()const{return m_event_class;}
         double time()const{return m_time;}
+        int source()const{return m_source;}
 
     private:
         double m_energy;
         double m_time;
         int m_event_class;
+        int m_source;
 
     };
 
