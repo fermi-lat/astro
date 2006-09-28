@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Thu Sep 28 16:31:59 PDT 2006
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+implement spacecraft inertial pointing mode
+    *
+------------------------------------------------------------
+User: burnett  Thu Sep 28 16:31:59 PDT 2006
 astro/astro
 
 Modified Files:
