@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.75 2006/05/15 16:02:41 burnett Exp $
+$Id: release.notes,v 1.76 2006/05/25 16:27:08 jchiang Exp $
 
 @verbatim
+  v1r19    28-sep-06 THB Implement pointed mode in GPS.
   v1r18p1  25-May-06 JC  fix sign error in SolarSystem::direction method
   v1r18    15-May-06 THB Add time to Photon data class
   v1r17p1  13-May-06 THB Fix bug introduced at v1r11p2 that broke default history generation of lat/lon
