@@ -1,7 +1,7 @@
 /** @file GPS.cxx
  @brief  implementation of the GPS class.
 
- $Id: GPS.cxx,v 1.20 2006/05/14 02:45:36 burnett Exp $
+ $Id: GPS.cxx,v 1.21 2006/09/28 23:31:59 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -403,7 +403,7 @@ void GPS::getPointingCharacteristics(double inputTime){
     }else{
         //important - this includes EXPLICIT rocking angles - they
         //are currently still handled by rockingTransform().
-        m_rockNorth = 0.;
+        // why? m_rockNorth = 0.;
     }
 
     dirZ().rotate(dirX.dir() , m_rockNorth);
