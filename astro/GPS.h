@@ -1,7 +1,7 @@
 /** @file GPS.h
     @brief declare class GPS
 
-  $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.12 2006/03/21 01:43:17 usher Exp $
+  $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.13 2006/09/28 23:31:59 burnett Exp $
 */
 #if !defined(_H_GPS_CLASS)
 #define _H_GPS_CLASS
@@ -206,11 +206,6 @@ protected:
     // singleton - protect ctor/dtor
     GPS();
     virtual ~GPS();
-
-    std::pair<double,double> m_rotangles;  //angles for coordinate rotation (rocking angle)
-
-    // friends
-    friend class FluxGenerator;
 
 private:
     static GPS* s_instance;
