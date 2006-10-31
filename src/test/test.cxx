@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.36 2005/12/13 02:25:39 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.37 2006/10/31 19:17:12 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -305,6 +305,8 @@ int main(){
         if( Quaternion::test()!=0) {
             std::cerr << "Failed quaternion test" << std::endl;
             rc=1;
+        }else{
+            std::cerr << "Quaternion tests ok" << std::endl;
         }
 
         // HealPixel test
