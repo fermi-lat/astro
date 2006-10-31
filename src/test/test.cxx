@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.35 2005/10/27 22:20:18 hierath Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.36 2005/12/13 02:25:39 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -10,6 +10,8 @@
 #include "astro/PointingTransform.h"
 #include "astro/HTM.h"
 #include "astro/SkyProj.h"
+#include "astro/Quaternion.h"
+
 #include "CLHEP/Vector/ThreeVector.h"
 #include "astro/HealPixel.h"
 
@@ -300,6 +302,11 @@ int main(){
     int rc = 0;
 
     try {
+        if( Quaternion::test()!=0) {
+            std::cerr << "Failed quaternion test" << std::endl;
+            rc=1;
+        }
+
         // HealPixel test
         {
 
@@ -435,6 +442,8 @@ int main(){
 
         TestHealpix();
         TestHealpixArray();
+
+
 
     }catch( const std::exception& e){
         std::cerr << "Failed test because caught " <<typeid(e).name()<<" \""  
