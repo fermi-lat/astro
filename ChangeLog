@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Oct 31 11:17:12 PST 2006
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+adding new Quaternion support, with test
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r19p2, operation: add
 Package: astro
