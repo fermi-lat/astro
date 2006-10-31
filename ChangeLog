@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Oct 31 15:21:22 PST 2006
+astro/astro
+
+Modified Files:
+	Quaternion.h 
+Log Message:
+fix angular sign convention: add features allowing SLERP; tag as patch
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r20, operation: add
 Package: astro
