@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Oct 31 15:21:22 PST 2006
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+fix angular sign convention: add features allowing SLERP; tag as patch
+    *
+------------------------------------------------------------
+User: burnett  Tue Oct 31 15:21:22 PST 2006
 astro/src
 
 Modified Files:
