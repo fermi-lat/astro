@@ -1,7 +1,7 @@
 /** @file PointingHistory.cxx
     @brief implement PointingHistory
 
-    $Header$
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingHistory.cxx,v 1.1 2006/11/05 20:06:27 burnett Exp $
 
     */
 
@@ -13,6 +13,7 @@ using namespace astro;
 
 #include <fstream>
 #include <sstream>
+#include <stdexcept>
 
 PointingHistory::PointingHistory(const std::string& filename, double offset)
 : m_selected(-1)
