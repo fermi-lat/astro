@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Nov  5 14:09:12 PST 2006
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+unix fixes
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r0, operation: add
 Package: astro
