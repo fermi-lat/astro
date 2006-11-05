@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: burnett  Sun Nov  5 12:06:27 PST 2006
+astro/astro
+
+Modified Files:
+	GPS.h Quaternion.h 
+Added Files:
+	PointingHistory.h PointingInfo.h 
+Log Message:
+massive refactoring of the GPS class. Remove lots of obsolete, or not maintained features, split history management to new class PointingHistory, and represention of position/orientaion to PointingInfo.
+    *
+------------------------------------------------------------
 TAG
 Tag name: v1r20p1, operation: add
 Package: astro
