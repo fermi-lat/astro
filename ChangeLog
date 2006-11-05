@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: burnett  Sun Nov  5 12:06:27 PST 2006
+astro/src
+
+Modified Files:
+	GPS.cxx Quaternion.cxx mainpage.h 
+Added Files:
+	PointingHistory.cxx PointingInfo.cxx 
+Log Message:
+massive refactoring of the GPS class. Remove lots of obsolete, or not maintained features, split history management to new class PointingHistory, and represention of position/orientaion to PointingInfo.
+    *
+------------------------------------------------------------
+User: burnett  Sun Nov  5 12:06:27 PST 2006
 astro/astro
 
 Modified Files:
