@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.14 2006/10/06 01:16:36 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.15 2006/11/05 20:06:26 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -125,10 +125,12 @@ protected:
 private:
     static GPS* s_instance;
     astro::EarthOrbit* m_earthOrbit; //orbital position object, from the astro package.
+    astro::PointingHistory* m_history;
 
-    double  m_expansion;    // orbit expansion factor
     double m_time;	    // global time
+    double m_endTime;
     double m_lastQueriedTime; //the last time that was asked for
+    double  m_expansion;    // orbit expansion factor
 
     // notification
     double  m_sampleintvl;  // interval to sample for each pt. in the orbit - to normalize spectra
@@ -137,10 +139,8 @@ private:
     double m_rockDegrees; //number of degrees to "rock" the spacecraft, along the local x axis. 
     RockType m_rockType;//current rocking scheme
     
-    astro::PointingHistory* m_history;
     astro::PointingInfo m_currentPoint;
 
-    double m_endTime;
 
     astro::SkyDir m_point; ///< set for pointing 
 

@@ -1,7 +1,7 @@
 /** @file GPS.cxx
  @brief  implementation of the GPS class.
 
- $Id: GPS.cxx,v 1.23 2006/10/06 01:16:36 burnett Exp $
+ $Id: GPS.cxx,v 1.24 2006/11/05 20:06:27 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -23,10 +23,10 @@ GPS*	GPS::s_instance = 0;
 GPS::GPS() 
 : m_earthOrbit(new astro::EarthOrbit)
 , m_history(0)
-, m_expansion(1.)    // default expansion:regular orbit for now
 , m_time(0.) 
 , m_endTime(0)
 , m_lastQueriedTime(-1.)
+, m_expansion(1.)    // default expansion:regular orbit for now
 , m_sampleintvl(1.) // notification interval for clients
 , m_rockDegrees(0), m_rockType(NONE) 
 {   
@@ -299,7 +299,6 @@ int GPS::test()
     gps.setPointingDirection( in );
     gps.time(0);
     SkyDir out(gps.zAxisDir()); 
-    double out_ra(out.ra()), out_dec(out.dec());
     if ( !in().isNear(out())) ++rc;
 
 
