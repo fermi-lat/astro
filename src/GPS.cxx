@@ -1,7 +1,7 @@
 /** @file GPS.cxx
  @brief  implementation of the GPS class.
 
- $Id: GPS.cxx,v 1.24 2006/11/05 20:06:27 burnett Exp $
+ $Id: GPS.cxx,v 1.25 2006/11/05 22:09:12 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -86,6 +86,11 @@ void GPS::expansion ( double e ){    m_expansion = e; }
 
 void GPS::time ( double t )
 {
+    // ignore a large request, meant to be invalid, and not expecting anything
+    if( t>3e8 ){
+        return;
+    }
+
     m_time = t;
     update(t);
 }
