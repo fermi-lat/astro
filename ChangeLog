@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Nov  6 08:37:09 PST 2006
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+fix to ignore large time requests
+    *
+------------------------------------------------------------
+User: burnett  Mon Nov  6 08:37:09 PST 2006
 astro/doc
 
 Modified Files:
