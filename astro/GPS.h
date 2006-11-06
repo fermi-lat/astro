@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.15 2006/11/05 20:06:26 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.16 2006/11/05 22:09:12 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -64,6 +64,20 @@ public:
     astro::SkyDir xAxisDir()const; ///< spacecraft x-axis direction
     astro::SkyDir zenithDir()const;///< local zenith direction
     CLHEP::Hep3Vector position()const;///< return current position;
+    astro::EarthCoordinate earthpos()const;    ///< position in Earth coordinates
+
+
+    // non-const versions that allow setting the time before retrieving info.
+    double lat(double t);  /// < latitude (degrees)
+    double lon(double t); ///  < longitude (degrees)
+    double altitude(double t); ///< altitude (km)
+
+    astro::SkyDir zAxisDir(double t); ///< spacecraft z-axis direction
+    astro::SkyDir xAxisDir(double t); ///< spacecraft x-axis direction
+    astro::SkyDir zenithDir(double t);///< local zenith direction
+    CLHEP::Hep3Vector position(double t);///< return current position;
+    astro::EarthCoordinate earthpos(double t);    ///< position in Earth coordinates
+
 
     /// return a rotation matrix for the requested transformation
     CLHEP::HepRotation transformToGlast(double seconds,CoordSystem index);
@@ -73,8 +87,6 @@ public:
     /// sample interval for random orbit distribution
     double     sampleintvl () const; 
 
-    /// position in Earth coordinates
-    astro::EarthCoordinate earthpos()const;
 
     /// pass a specific amount of time
     void    pass ( double );
