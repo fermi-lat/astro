@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Nov  6 13:49:21 PST 2006
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+restore rocking modes (not all tested)
+    *
+------------------------------------------------------------
+User: burnett  Mon Nov  6 13:49:21 PST 2006
 astro/doc
 
 Modified Files:
