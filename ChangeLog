@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Nov  7 09:50:22 PST 2006
+astro/src
+
+Modified Files:
+	Quaternion.cxx 
+Log Message:
+protect against roundoff errors
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r2, operation: add
 Package: astro
