@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Nov  7 11:41:26 PST 2006
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+the famous stdexcept fix for unix
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r2p1, operation: add
 Package: astro
