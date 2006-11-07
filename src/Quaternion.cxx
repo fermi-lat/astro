@@ -1,12 +1,14 @@
 /** @file Quaternion.cxx
 @brief implement class Quaternion
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.3 2006/11/05 20:06:27 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.4 2006/11/07 17:50:22 burnett Exp $
 
 */
 
 #include "astro/Quaternion.h"
 #include "astro/SkyDir.h" // only for test
+
+#include <stdexcept>
 
 using namespace astro;
 using namespace CLHEP;
@@ -35,7 +37,7 @@ Quaternion::Quaternion(const CLHEP::Hep3Vector& zhat, const CLHEP::Hep3Vector& x
 {
     // note no check that they are unit vectors and orthogonal, beware
     double check( zhat.dot(xhat) ); // should be very small
-    if( fabs(check) >1e-6) throw std::runtime_error("Quaternion ctor: fail orthogonality");
+    if( fabs(check) >1e-6) throw std::invalid_argument("Quaternion ctor: fail orthogonality");
     Hep3Vector yhat(zhat.cross(xhat));
     // code mostly from ROOT's TRotation::AngleAxis. 
     double cosa  = 0.5*(xhat.x()+yhat.y()+zhat.z()-1);
