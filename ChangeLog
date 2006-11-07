@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Nov  7 11:41:26 PST 2006
+astro/src
+
+Modified Files:
+	Quaternion.cxx 
+Log Message:
+the famous stdexcept fix for unix
+    *
+------------------------------------------------------------
+User: burnett  Tue Nov  7 11:41:26 PST 2006
 astro/doc
 
 Modified Files:
