@@ -1,7 +1,7 @@
 /** @file GPS.cxx
  @brief  implementation of the GPS class.
 
- $Id: GPS.cxx,v 1.27 2006/11/06 18:52:02 burnett Exp $
+ $Id: GPS.cxx,v 1.28 2006/11/06 21:49:21 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -24,7 +24,6 @@ GPS::GPS()
 : m_earthOrbit(new astro::EarthOrbit)
 , m_history(0)
 , m_time(0.) 
-, m_endTime(0)
 , m_lastQueriedTime(-1.)
 , m_expansion(1.)    // default expansion:regular orbit for now
 , m_sampleintvl(1.) // notification interval for clients
@@ -75,6 +74,8 @@ astro::EarthCoordinate GPS::earthpos()const{ return m_currentPoint.earthCoord();
 double	GPS::time ()  const{     return m_time;}
 
 double   GPS::expansion () const{    return m_expansion;}
+
+double GPS::endTime()const{ return m_history==0? 3e8 : m_history->endTime();}
 
 // functions that set the state, then retrieve the given value
 
@@ -318,9 +319,16 @@ int GPS::test()
     }
     // test reading and interpolating an ascii file
     const char * package_root(::getenv("ASTROROOT") );
-    gps.setPointingHistoryFile(std::string(package_root)+"/src/test/history_test.txt");
+#if 0
+    std::string history(std::string(package_root)+"/src/test/history_test.txt");
+#else
+    std::string history("Y:/common/DC2/history/pointing_history.txt");
 
-    double start(900), stop(start+61), step(5);  // will interpolate two intervals
+#endif
+    std::cout << "Reading history file " << history << std::endl;
+    gps.setPointingHistoryFile(history);
+
+    double start(gps.endTime()-100), stop(start+61), step(5);  // will interpolate two intervals
     cout << "\nRead history file test\ntime\tlat\tlon\traz\tdecz\trax\tdecz\trazen\tdeczen" << endl;
     for( double time=start; time<stop; time+=step){
         gps.time(time);  // set the time
