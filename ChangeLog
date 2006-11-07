@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Nov  7 09:51:48 PST 2006
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+minor change to implementation of endTime
+    *
+------------------------------------------------------------
 User: burnett  Tue Nov  7 09:50:22 PST 2006
 astro/src
 
