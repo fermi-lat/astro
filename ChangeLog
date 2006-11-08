@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Nov  7 19:19:44 PST 2006
+astro/src
+
+Modified Files:
+	GPS.cxx Quaternion.cxx 
+Log Message:
+fix tests.
+    *
+------------------------------------------------------------
+User: burnett  Tue Nov  7 19:19:44 PST 2006
 astro/doc
 
 Modified Files:
