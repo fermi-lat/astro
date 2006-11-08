@@ -1,7 +1,7 @@
 /** @file GPS.cxx
  @brief  implementation of the GPS class.
 
- $Id: GPS.cxx,v 1.28 2006/11/06 21:49:21 burnett Exp $
+ $Id: GPS.cxx,v 1.29 2006/11/07 17:51:48 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -319,12 +319,7 @@ int GPS::test()
     }
     // test reading and interpolating an ascii file
     const char * package_root(::getenv("ASTROROOT") );
-#if 0
     std::string history(std::string(package_root)+"/src/test/history_test.txt");
-#else
-    std::string history("Y:/common/DC2/history/pointing_history.txt");
-
-#endif
     std::cout << "Reading history file " << history << std::endl;
     gps.setPointingHistoryFile(history);
 
