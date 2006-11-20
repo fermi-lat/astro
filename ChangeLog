@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Nov 20 13:39:03 PST 2006
+astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+fix read problem with ascii history file, tag patch
+    *
+------------------------------------------------------------
+User: burnett  Mon Nov 20 13:39:03 PST 2006
 astro/doc
 
 Modified Files:
