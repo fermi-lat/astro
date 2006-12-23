@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sat Dec 23 07:42:33 PST 2006
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+Relax quaternion orthogonality requirement to admit SC1 FT2 file; tag
+    *
+------------------------------------------------------------
+User: burnett  Sat Dec 23 07:42:33 PST 2006
 astro/cmt
 
 Modified Files:
