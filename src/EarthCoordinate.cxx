@@ -1,7 +1,7 @@
 /** @file EarthCoordinate.cxx
     @brief implement class EarthCoordinate
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.15.6.1 2006/01/31 19:58:31 usher Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.16 2006/03/21 01:43:17 usher Exp $
 
 */
 #include <cmath>
@@ -70,7 +70,11 @@ double EarthCoordinate::geolon()const
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 EarthCoordinate::EarthCoordinate(double latDeg, double lonDeg, double alt)
 : m_lat(latDeg*M_PI/180), m_lon(lonDeg*M_PI/180), m_altitude(alt)
-{}
+{
+    // the altitude might be radius (in km) 
+    static double radius(s_EarthRadius/1000.);
+    if( alt>radius ) m_altitude -= radius;
+}
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 double  EarthCoordinate::GetGMST(JulianDate jd)
