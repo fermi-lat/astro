@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.90 2006/11/20 21:39:03 burnett Exp $
+$Id: release.notes,v 1.91 2006/12/23 15:42:33 burnett Exp $
 
 @verbatim
+  v2r2p6   15-Feb-07 THB  Fix bug in interpolating altitude from history file, introduced v2r0
   v2r2p5   20-Nov-06 THB  Relax quaternion orthogonality requirement to admit SC1 FT2 file
   v2r2p4   20-Nov-06 THB  Fix lat/lon swap in reading history file
   v2r2p3   07-Nov-06 THB  Protection for Quaternion constructor
