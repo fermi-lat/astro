@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Thu Feb 15 12:09:10 PST 2007
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+fix bug in altitude determination.
+    *
+------------------------------------------------------------
+User: burnett  Thu Feb 15 12:09:10 PST 2007
 astro/doc
 
 Modified Files:
