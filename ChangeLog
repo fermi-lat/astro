@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Feb 19 11:27:20 PST 2007
+astro/astro
+
+Modified Files:
+	EarthOrbit.h 
+Log Message:
+new function to change inclination; default altitude now 565km
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r2p6, operation: add
 Package: astro
