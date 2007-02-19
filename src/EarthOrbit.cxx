@@ -1,7 +1,7 @@
 /** @file EarthOrbit.cxx
     @brief implemention of EarthOrbit
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.23.6.1 2006/01/31 19:58:31 usher Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.24 2006/03/21 01:43:17 usher Exp $
 */
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
@@ -29,7 +29,7 @@ namespace {
 // static constants reflecting orbit parameters
 
 namespace astro {
-double EarthOrbit::s_altitude = 550.e3  ; //m
+double EarthOrbit::s_altitude = 565.e3  ; //m
 double EarthOrbit::s_incl = 28.5*M_PI/180; //radian 
 double EarthOrbit::s_e = 0.; //eccentricity
 
@@ -42,6 +42,7 @@ EarthOrbit::EarthOrbit(JulianDate launch) : m_launch(launch)
 {
     initialize();
 }
+
 
 void EarthOrbit::initialize()
 {

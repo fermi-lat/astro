@@ -1,7 +1,7 @@
 /** @file EarthOrbit.h
     @brief definition of EarthOrbit class
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/EarthOrbit.h,v 1.12.6.1 2006/01/31 19:58:27 usher Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/EarthOrbit.h,v 1.13 2006/03/21 01:43:17 usher Exp $
 */
 #ifndef astro_EarthOrbit_H
 #define astro_EarthOrbit_H
@@ -22,7 +22,7 @@ namespace astro {
     public:
         
         //! specify launch date in constructor
-        EarthOrbit(JulianDate launch= JulianDate(2005 ,7,18,0.0));
+        EarthOrbit(JulianDate launch= JulianDate(2008 ,1,1,0.0));
         
         /** 
         * set up for calculation, with orbital parameters currently wired in
@@ -77,6 +77,9 @@ namespace astro {
           * @return Correction in seconds added to TT to obtain TDB
           */
         double tdb_minus_tt(JulianDate jd) const;
+
+        /// set the inclination (degrees)
+        static double set_inclination(double inclination){s_incl=inclination*M_PI/180;}
         
     private:
         
