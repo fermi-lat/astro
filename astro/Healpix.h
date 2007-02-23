@@ -3,7 +3,7 @@
 
 @author B. Lesnick (based on information from http://www.eso.org/science/healpix/) 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.15 2006/03/15 19:42:56 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.16 2006/05/08 21:31:18 burnett Exp $
 */
 
 #ifndef astro_Healpix_h
@@ -13,6 +13,7 @@ $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Healpix.h,v 1.15 2006/03/15 19
 #include "astro/SkyFunction.h"
 
 #include <vector>
+#include <cmath>
 ///< needed fixed size array class
 
 class Healpix_Base;
