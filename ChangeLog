@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Fri Feb 23 13:24:34 PST 2007
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+add offset in SolarSystem direction calculation to allow parallax
+    *
+------------------------------------------------------------
+User: burnett  Fri Feb 23 13:24:34 PST 2007
 astro/astro
 
 Modified Files:
