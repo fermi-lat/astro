@@ -2,7 +2,7 @@
 @brief definition of class SolarSystem 
 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SolarSystem.h,v 1.9.6.1 2006/01/31 19:58:28 usher Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SolarSystem.h,v 1.10 2006/03/21 01:43:17 usher Exp $
 */
 #ifndef astro_SolarSystem_H
 #define astro_SolarSystem_H
@@ -37,11 +37,16 @@ namespace astro {
         ~SolarSystem();
 
         /**
-        * @brief return the SkyDir at date 
+        * @brief return the SkyDir at date, with respect to position (in km) from center of Earth 
+        */
+        SkyDir direction(JulianDate jd, const CLHEP::Hep3Vector& position)const ;
+
+        /**
+        * @brief return the SkyDir at date
         */
         SkyDir direction(JulianDate jd)const ;
 
-        /**
+		/**
         * @brief return the distance of the body from Earth at date in lightseconds
         */
         double distance(JulianDate jd)const;

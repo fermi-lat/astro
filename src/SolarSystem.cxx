@@ -2,7 +2,7 @@
 @brief implementation of SolarSystem 
 
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SolarSystem.cxx,v 1.14 2006/03/21 01:43:18 usher Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SolarSystem.cxx,v 1.15 2006/05/25 16:25:47 jchiang Exp $
 */
 #include "astro/SolarSystem.h"
 #include "jplephem/bary.h" //local interface to the JPL ephemeris
@@ -17,10 +17,19 @@ SolarSystem::SolarSystem(Body body)
 
 SkyDir SolarSystem::direction(JulianDate jd)const
 {
-//    return SkyDir(vector(m_body,EARTH,jd));
     return SkyDir(vector(EARTH, m_body,jd));
 }
- 
+
+SkyDir SolarSystem::direction(JulianDate jd, const CLHEP::Hep3Vector& position)const
+{
+    static double c(299792.458); // velocity of light in km/s
+
+    CLHEP::Hep3Vector r(vector(EARTH, m_body,jd));
+
+    return SkyDir(r-position/c);
+}
+
+
 double SolarSystem::distance(JulianDate jd)const
 {
    return vector(m_body,EARTH,jd).mag();
