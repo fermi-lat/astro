@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.38 2006/10/31 23:21:22 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.39 2006/11/05 20:06:27 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -11,6 +11,7 @@
 #include "astro/HTM.h"
 #include "astro/SkyProj.h"
 #include "astro/Quaternion.h"
+#include "astro/MoonDir.h"
 
 #include "CLHEP/Vector/ThreeVector.h"
 #include "astro/HealPixel.h"
@@ -303,6 +304,12 @@ int main(){
     int rc = 0;
 
     try {
+#if 1
+		if( MoonDir::test() !=0) {
+			std::cerr<< "Failed MoonDir test" << std::endl;
+			rc=1;
+		}
+#endif
         if( Quaternion::test()!=0) {
             std::cerr << "Failed quaternion test" << std::endl;
             rc=1;
