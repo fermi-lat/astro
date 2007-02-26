@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.93 2007/02/19 19:27:20 burnett Exp $
+$Id: release.notes,v 1.94 2007/02/23 21:27:09 burnett Exp $
 
 @verbatim
+  v2r4p1   25-Feb-07 THB  fix test program
   v2r4     22-Feb-07 THB  Change to allow for parallax of Moon position
   v2r3     19-Feb-07 THB  Set default altitude to 565 km; new static to change inclination
   v2r2p6   15-Feb-07 THB  Fix bug in interpolating altitude from history file, introduced v2r0
