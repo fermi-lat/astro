@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Mar 15 07:27:54 PDT 2007
+astro/astro
+
+Modified Files:
+	EarthOrbit.h 
+Log Message:
+fix compilation error found only on win32 release?
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r4p1, operation: add
 Package: astro
