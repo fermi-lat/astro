@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Thu Mar 15 07:27:54 PDT 2007
+astro/src
+
+Modified Files:
+	EarthOrbit.cxx 
+Log Message:
+fix compilation error found only on win32 release?
+    *
+------------------------------------------------------------
+User: burnett  Thu Mar 15 07:27:54 PDT 2007
 astro/astro
 
 Modified Files:
