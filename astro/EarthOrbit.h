@@ -1,7 +1,7 @@
 /** @file EarthOrbit.h
     @brief definition of EarthOrbit class
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/EarthOrbit.h,v 1.13 2006/03/21 01:43:17 usher Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/EarthOrbit.h,v 1.14 2007/02/19 19:27:20 burnett Exp $
 */
 #ifndef astro_EarthOrbit_H
 #define astro_EarthOrbit_H
@@ -79,7 +79,7 @@ namespace astro {
         double tdb_minus_tt(JulianDate jd) const;
 
         /// set the inclination (degrees)
-        static double set_inclination(double inclination){s_incl=inclination*M_PI/180;}
+        static double set_inclination(double inclination);
         
     private:
         

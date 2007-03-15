@@ -1,7 +1,7 @@
 /** @file EarthOrbit.cxx
     @brief implemention of EarthOrbit
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.24 2006/03/21 01:43:17 usher Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthOrbit.cxx,v 1.25 2007/02/19 19:27:20 burnett Exp $
 */
 #include "astro/EarthOrbit.h"
 #include "astro/EarthCoordinate.h"
@@ -421,6 +421,13 @@ double EarthOrbit::ctatv(int long jdno, double fjdno) const
       t30 = t * tt * 0.143388 * sin( 6283.075849991*t + 1.131453581) ;
 
       return (t1+t2+t3+t4+t5+t24+t25+t29+t30) * 1.0e-6 ;
+}
+double EarthOrbit::set_inclination(double inclination)
+{
+    double old = s_incl;
+    s_incl=inclination*M_PI/180;
+    return old*180/M_PI;
+
 }
 
 
