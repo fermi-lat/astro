@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Mar 18 07:52:55 PDT 2007
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+Implement x-axis East
+    *
+------------------------------------------------------------
+User: burnett  Sun Mar 18 07:52:55 PDT 2007
 astro/astro
 
 Modified Files:
