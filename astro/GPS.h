@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.17 2006/11/06 18:52:01 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.18 2006/11/07 17:51:48 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -51,7 +51,8 @@ public:
         ONEPERORBIT, ///< LAT rocked northward for one orbit, southward for the next.
         EXPLICIT, ///<  Explicit angles given - this is used only if rotAngles get set.
         POINT, //!  Inertial pointing 
-        HISTORY //! This setting is for using a previously generated pointing database to represent the orbit.
+        HISTORY, //! This setting is for using a previously generated pointing database to represent the orbit.
+        HISTORY_X_EAST ///< use history for everything but the x-axis, which will be oriented East 
     };
 
     double	time () const; /// <current time
@@ -104,10 +105,12 @@ public:
         @param fileName 
         @param offset mission elapsed time for "launch", 
               number to be added to time increments
+       @param x_east if true, force x axis to be East
 
        The file can be either FT1 or an ascii format
+       
     */
-    void setPointingHistoryFile(std::string fileName, double offset=0);
+    void setPointingHistoryFile(std::string fileName, double offset=0, bool x_east=false);
 
     // notification support, managed by facilities/Observer
     void notifyObservers() { m_notification.notify();}
