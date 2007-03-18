@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Mar 18 07:52:55 PDT 2007
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+Implement x-axis East
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r4p2, operation: add
 Package: astro
