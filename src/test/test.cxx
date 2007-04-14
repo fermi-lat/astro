@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.40 2007/02/23 21:27:09 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.41 2007/02/26 02:37:11 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -292,6 +292,8 @@ bool test_GPS_readFitsData() {
     checkdir(gps->xAxisDir(), SkyDir( 281.15841674804688, 0.82335680723190308));
     checkdir(gps->zAxisDir(), SkyDir(11.064399719238281, -6.5129880905151367));
     checkdir(gps->zenithDir(), SkyDir(11.605173110961914, 28.483125686645508));
+
+    gps->time( -1); // should generate exception
 
     return true;
 }
