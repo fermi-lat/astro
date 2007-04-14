@@ -1,7 +1,7 @@
 /** @file GPS.cxx
 @brief  implementation of the GPS class.
 
-$Id: GPS.cxx,v 1.30 2006/11/08 03:19:44 burnett Exp $
+$Id: GPS.cxx,v 1.31 2007/03/18 14:52:55 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -351,5 +351,15 @@ int GPS::test()
             << endl;
     }
 
+    // check exception
+    try{
+        cout << "\n trying time that is not in the range...\n";
+        gps.time(1e6);
+    }catch(const PointingHistory::TimeRangeError& x){
+        cout << " caught expected exception " << x.what() << std::endl;
+        return rc;
+    }
+    // should not get here
+    throw std::runtime_error("GPS test failed to throw exception");
     return rc;
 }
