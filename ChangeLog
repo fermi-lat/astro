@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sat Apr 14 20:51:08 PDT 2007
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+attempt to satisfy gcc
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r6, operation: add
 Package: astro
