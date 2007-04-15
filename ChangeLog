@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sat Apr 14 20:51:09 PDT 2007
+astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+attempt to satisfy gcc
+    *
+------------------------------------------------------------
+User: burnett  Sat Apr 14 20:51:09 PDT 2007
 astro/doc
 
 Modified Files:
