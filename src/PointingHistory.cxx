@@ -1,7 +1,7 @@
 /** @file PointingHistory.cxx
     @brief implement PointingHistory
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingHistory.cxx,v 1.3 2006/11/20 21:39:03 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingHistory.cxx,v 1.4 2007/04/14 20:40:32 burnett Exp $
 
     */
 
@@ -60,7 +60,7 @@ void PointingHistory::readTextData(std::string filename, double offset)
     }
 }
 
-const astro::PointingInfo& PointingHistory::operator()(double time)const{
+const astro::PointingInfo& PointingHistory::operator()(double time)const throw(TimeRangeError){
 
     if( time!=m_selected){
     std::map<double,astro::PointingInfo>::const_iterator iter=m_data.upper_bound(time);
