@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Apr 15 20:19:46 PDT 2007
+astro/src
+
+Modified Files:
+	SolarSystem.cxx 
+Log Message:
+convert to throw exceptions when JD is invalid.
+    *
+------------------------------------------------------------
+User: burnett  Sun Apr 15 20:19:46 PDT 2007
 astro/astro
 
 Modified Files:
