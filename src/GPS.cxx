@@ -1,7 +1,7 @@
 /** @file GPS.cxx
 @brief  implementation of the GPS class.
 
-$Id: GPS.cxx,v 1.31 2007/03/18 14:52:55 burnett Exp $
+$Id: GPS.cxx,v 1.32 2007/04/14 20:40:32 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -13,7 +13,7 @@ $Id: GPS.cxx,v 1.31 2007/03/18 14:52:55 burnett Exp $
 
 #include <iomanip>
 #include <sstream>
-#include <stdexcept>
+
 
 using namespace astro;
 using namespace CLHEP;
@@ -36,6 +36,12 @@ GPS::GPS()
 GPS::~GPS ()
 { delete m_history;
 }//delete m_orbit; }
+
+
+const astro::PointingHistory& GPS::history()const throw(GPS::NoHistoryError)
+{   if( m_history==0) throw GPS::NoHistoryError("GPS:: no history has been loaded");
+    return *m_history;
+}
 
 
 void GPS::synch ()
@@ -334,6 +340,7 @@ int GPS::test()
     std::string history(std::string(package_root)+"/src/test/history_test.txt");
     std::cout << "Reading history file " << history << std::endl;
     gps.setPointingHistoryFile(history);
+    const astro::PointingHistory& h = gps.history(); // get the history object
 
     double start(gps.endTime()-100), stop(start+61), step(5);  // will interpolate two intervals
     cout << "\nRead history file test\ntime\tlat\tlon\traz\tdecz\trax\tdecz\trazen\tdeczen" << endl;
