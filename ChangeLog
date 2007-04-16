@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Apr 15 21:14:59 PDT 2007
+astro/astro
+
+Modified Files:
+	SolarSystem.h 
+Log Message:
+retag after fix for gcc
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r7, operation: add
 Package: astro
