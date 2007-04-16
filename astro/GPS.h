@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.18 2006/11/07 17:51:48 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.19 2007/03/18 14:52:55 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -16,6 +16,7 @@ $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.18 2006/11/07 17:51:
 #include "CLHEP/Vector/Rotation.h"
 
 #include <string>
+#include <stdexcept>
 namespace astro {
 
     // forward declarations
@@ -111,6 +112,17 @@ public:
        
     */
     void setPointingHistoryFile(std::string fileName, double offset=0, bool x_east=false);
+
+    /** @class NoHistory
+        @brief exception class to be thrown if no history has been loaded
+    */
+    class NoHistoryError : public std::runtime_error{
+    public: 
+        NoHistoryError(const std::string& msg): std::runtime_error(msg){}
+    };
+
+    /// access to a const reference for the history. Error if does not exist.
+    const astro::PointingHistory& history()const throw(NoHistoryError);
 
     // notification support, managed by facilities/Observer
     void notifyObservers() { m_notification.notify();}
