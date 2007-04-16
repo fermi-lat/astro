@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Apr 16 12:15:02 PDT 2007
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+add access function to the history
+    *
+------------------------------------------------------------
+User: burnett  Mon Apr 16 12:15:02 PDT 2007
 astro/astro
 
 Modified Files:
