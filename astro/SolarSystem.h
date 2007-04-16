@@ -2,7 +2,7 @@
 @brief definition of class SolarSystem 
 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SolarSystem.h,v 1.11 2007/02/23 21:24:34 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SolarSystem.h,v 1.12 2007/04/16 03:19:46 burnett Exp $
 */
 #ifndef astro_SolarSystem_H
 #define astro_SolarSystem_H
@@ -79,7 +79,7 @@ namespace astro {
 
     private:
         //! setup the jpl ephemeris database if needed, return jd in correct form
-        static double * jplSetup(JulianDate jd);
+        static double * jplSetup(JulianDate jd) ;
         Body m_body;       ///< target body
     };
 

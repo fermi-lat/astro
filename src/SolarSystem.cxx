@@ -2,7 +2,7 @@
 @brief implementation of SolarSystem 
 
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SolarSystem.cxx,v 1.16 2007/02/23 21:24:34 burnett Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SolarSystem.cxx,v 1.17 2007/04/16 03:19:46 burnett Exp $
 */
 #include "astro/SolarSystem.h"
 #include "jplephem/bary.h" //local interface to the JPL ephemeris
@@ -35,7 +35,7 @@ double SolarSystem::distance(JulianDate jd)const throw( SolarSystem::BadDate)
    return vector(m_body,EARTH,jd).mag();
 }
 
-double * SolarSystem::jplSetup(JulianDate jd) throw( SolarSystem::BadDate)
+double * SolarSystem::jplSetup(JulianDate jd) 
 {
     static bool ephemInit=false;
     if(!ephemInit) {
