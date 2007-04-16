@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Apr 15 20:19:46 PDT 2007
+astro/astro
+
+Modified Files:
+	SolarSystem.h 
+Log Message:
+convert to throw exceptions when JD is invalid.
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r6p1, operation: add
 Package: astro
