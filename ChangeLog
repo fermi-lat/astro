@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Apr 15 21:14:59 PDT 2007
+astro/src
+
+Modified Files:
+	SolarSystem.cxx 
+Log Message:
+retag after fix for gcc
+    *
+------------------------------------------------------------
+User: burnett  Sun Apr 15 21:14:59 PDT 2007
 astro/doc
 
 Modified Files:
