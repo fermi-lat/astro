@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Apr 24 19:52:52 PDT 2007
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+make notification more robust
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r8, operation: add
 Package: astro
