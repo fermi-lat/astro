@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri May  4 11:04:02 PDT 2007
+astro/astro
+
+Modified Files:
+	EarthCoordinate.h 
+Log Message:
+allow for setting the SAA
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r8p1, operation: add
 Package: astro
