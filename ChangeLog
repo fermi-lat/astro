@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Jun 25 16:01:48 PDT 2007
+astro/astro
+
+Modified Files:
+	PointingHistory.h 
+Log Message:
+swig-ify
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r9, operation: add
 Package: astro
