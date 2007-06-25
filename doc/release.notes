@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.103 2007/04/25 02:54:25 burnett Exp $
+$Id: release.notes,v 1.104 2007/05/08 13:55:08 burnett Exp $
 
 @verbatim
+  v2r9p1   25-jun-07 THB  SWIG fix for PointingHistory  
   v2r9     08-May-07 THB  Allow to set the SAA boundary in EarthCoordinate  
   v2r8p1   24-Apr-07 THB  Make GPS client notification more robust
   v2r8     16-Apr-07 THB  Add access to pointing history object in GPS.
