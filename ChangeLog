@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Jun 25 16:02:22 PDT 2007
+astro/src
+
+Modified Files:
+	Quaternion.cxx 
+Log Message:
+adjust for non-orthogonal x,y
+    *
+------------------------------------------------------------
 User: burnett  Mon Jun 25 16:01:48 PDT 2007
 astro/astro
 
