@@ -1,7 +1,7 @@
 /** @file Quaternion.cxx
 @brief implement class Quaternion
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.6 2006/11/08 03:19:44 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.7 2006/12/23 15:42:34 burnett Exp $
 
 */
 
@@ -41,7 +41,9 @@ Quaternion::Quaternion(const CLHEP::Hep3Vector& zhat, const CLHEP::Hep3Vector& x
         std::cerr << "Quaternion ctor: fail 1 arc-sec orthogonality requirement, dot product = " << check << std::endl;
         throw std::invalid_argument("Quaternion ctor: fail orthogonality");
     }
-    Hep3Vector yhat(zhat.cross(xhat));
+    // correct orthogonality by adjusting x
+    Hep3Vector xhatp( (xhat- check*zhat).unit());
+    Hep3Vector yhat(zhat.cross(xhatp));
     // code mostly from ROOT's TRotation::AngleAxis. 
     double cosa  = 0.5*(xhat.x()+yhat.y()+zhat.z()-1);
     if( cosa < -1.) cosa=-1; if(cosa>1.) cosa=1.; // prevent sqrt errors
