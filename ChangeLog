@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Jul 20 08:59:35 PDT 2007
+astro/src
+
+Modified Files:
+	Quaternion.cxx 
+Log Message:
+tagging after modifying quaternion interpolation
+    *
+------------------------------------------------------------
 User: burnett  Fri Jul 20 08:59:34 PDT 2007
 astro/doc
 
