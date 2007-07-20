@@ -1,7 +1,7 @@
 /** @file Quaternion.cxx
 @brief implement class Quaternion
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.8 2007/06/25 23:02:22 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.9 2007/07/20 15:59:35 burnett Exp $
 
 */
 
@@ -134,7 +134,7 @@ Quaternion Quaternion::interpolate(const Quaternion& q1, double t)const
 
     Hep3Vector va(this->vector()), vb(q1.vector());
     Hep3Vector c( (1-t)*va + t*vb ); // linear interpolation of the rotation axis
-    return Quaternion(c, 1. - sqrt(c.mag2()) );
+    return Quaternion(c, sqrt(1. - c.mag2()) );
 
 #endif
 }
