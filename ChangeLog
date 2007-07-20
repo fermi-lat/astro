@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Fri Jul 20 08:59:34 PDT 2007
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+tagging after modifying quaternion interpolation
+    *
+------------------------------------------------------------
+User: burnett  Fri Jul 20 08:59:34 PDT 2007
 astro/cmt
 
 Modified Files:
