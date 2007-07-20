@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Jul 20 13:13:23 PDT 2007
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+fix mistype in interpolation
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r9p2, operation: add
 Package: astro
