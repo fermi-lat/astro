@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Fri Jul 20 13:13:24 PDT 2007
+astro/src
+
+Modified Files:
+	Quaternion.cxx 
+Log Message:
+fix mistype in interpolation
+    *
+------------------------------------------------------------
+User: burnett  Fri Jul 20 13:13:24 PDT 2007
 astro/doc
 
 Modified Files:
