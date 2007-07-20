@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Jul 20 08:59:34 PDT 2007
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+tagging after modifying quaternion interpolation
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r9p1, operation: add
 Package: astro
