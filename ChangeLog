@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: burnett  Sat Jul 21 01:25:51 PDT 2007
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+Fix quaternion problem
+
+    *
+------------------------------------------------------------
+User: burnett  Sat Jul 21 01:25:51 PDT 2007
 astro/cmt
 
 Modified Files:
