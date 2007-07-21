@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: burnett  Sat Jul 21 01:25:51 PDT 2007
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+Fix quaternion problem
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r9p3, operation: add
 Package: astro
