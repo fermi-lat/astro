@@ -1,7 +1,7 @@
 /** @file Quaternion.cxx
 @brief implement class Quaternion
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.9 2007/07/20 15:59:35 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.10 2007/07/20 20:13:24 burnett Exp $
 
 */
 
@@ -128,15 +128,13 @@ bool Quaternion::isNear(const Quaternion& other)const
 Quaternion Quaternion::interpolate(const Quaternion& q1, double t)const
 {
     if( t==0) return *this;
-#if 0  // this SLERP fails sometimes
+    if( m_v.dot(q1.vector()) <0) {
+        // this is when the rotation angle approaches 180 degrees
+        Quaternion q2(-q1.vector(), -q1.scalar());
+        return (q2*(this->conjugate())).power(t) * (*this);
+    }
+
     return (q1*(this->conjugate())).power(t) * (*this);
-#else // so replace with kluge
-
-    Hep3Vector va(this->vector()), vb(q1.vector());
-    Hep3Vector c( (1-t)*va + t*vb ); // linear interpolation of the rotation axis
-    return Quaternion(c, sqrt(1. - c.mag2()) );
-
-#endif
 }
 
 

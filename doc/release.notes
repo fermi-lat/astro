@@ -3,10 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.106 2007/07/20 15:59:34 burnett Exp $
+$Id: release.notes,v 1.107 2007/07/20 20:13:24 burnett Exp $
 
 @verbatim
-  v2r9p3   20-jul-07 THB  Kluge out quaternion interpolation until understand problem
+  v2r9p4   20-jul-07 THB  Fix quaternion interpolation
   v2r9p1   25-jun-07 THB  SWIG fix for PointingHistory  
   v2r9     08-May-07 THB  Allow to set the SAA boundary in EarthCoordinate  
   v2r8p1   24-Apr-07 THB  Make GPS client notification more robust
