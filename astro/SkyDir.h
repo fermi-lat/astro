@@ -17,7 +17,7 @@
 
 /*
 > Date: Tue, 9 Aug 2005 11:18:24 -0400 (EDT)
-> From: James Peachey <peachey@milkyway.gsfc.nasa.gov>
+> From: James Peachey <James.Peachey-1@nasa.gov>
 > 
 > Rootcint and Cint are notoriously bad with macros, especially when 
 > used in unusual ways, such as using HepStd to switch between using std 
@@ -38,7 +38,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.28 2006/03/16 04:38:11 burnett Exp $
+    * <br>$Id: SkyDir.h,v 1.29 2006/03/21 01:43:17 usher Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
