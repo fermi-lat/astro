@@ -1,7 +1,7 @@
 /** @file GPS.cxx
 @brief  implementation of the GPS class.
 
-$Id: GPS.cxx,v 1.36 2007/07/24 16:56:32 burnett Exp $
+$Id: GPS.cxx,v 1.37 2007/07/24 17:05:57 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -113,7 +113,9 @@ void GPS::time ( double t )
 
     m_time = t; // set the new time
     update(t);  // update orientation, etc.
+#if 0 // do not do this automatically since other clients are changing things
     synch();    // may notify observers if enough time elapsed 
+#endif
 }
 
 GPS*	GPS::instance() 
