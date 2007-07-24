@@ -1,7 +1,7 @@
 /** @file GPS.cxx
 @brief  implementation of the GPS class.
 
-$Id: GPS.cxx,v 1.34 2007/04/25 02:52:52 burnett Exp $
+$Id: GPS.cxx,v 1.35 2007/07/22 18:11:57 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -57,7 +57,7 @@ void GPS::synch ()
     }
 
     // If elapsed time exceeds interval then update
-    if ((time() - last_time) > m_sampleintvl) {
+    if ((time() - last_time) > m_sampleintvl  || time()< last_time) {
         last_time = time();
         changed = true;    
     }
