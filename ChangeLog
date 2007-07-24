@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Jul 24 13:16:08 PDT 2007
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+tagging after synch patch
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r10p2, operation: add
 Package: astro
