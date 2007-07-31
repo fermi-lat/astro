@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Jul 31 13:46:48 PDT 2007
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+SWIG found function not implemented
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r10p2, operation: add
 Package: astro
