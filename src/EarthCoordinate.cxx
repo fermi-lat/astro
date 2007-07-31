@@ -1,7 +1,7 @@
 /** @file EarthCoordinate.cxx
     @brief implement class EarthCoordinate
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.17 2007/02/15 20:09:10 burnett Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.18 2007/05/04 18:04:02 burnett Exp $
 
 */
 #include <cmath>
@@ -33,6 +33,8 @@ namespace astro {
 double EarthCoordinate::s_EarthRadius = 6378145.; //m
 
 std::vector<std::pair<double,double> > EarthCoordinate::s_SAA_boundary;
+
+double EarthCoordinate::earthRadius(){return s_EarthRadius;}
 
 
 
