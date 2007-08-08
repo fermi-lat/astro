@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Aug  7 19:45:45 PDT 2007
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+fix serious timing but and retag
+    *
+------------------------------------------------------------
+User: burnett  Tue Aug  7 19:45:45 PDT 2007
 astro/doc
 
 Modified Files:
