@@ -1,7 +1,7 @@
 /** @file GPS.cxx
 @brief  implementation of the GPS class.
 
-$Id: GPS.cxx,v 1.38 2007/07/24 20:16:08 burnett Exp $
+$Id: GPS.cxx,v 1.39 2007/08/08 02:45:45 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -196,6 +196,7 @@ CLHEP::HepRotation GPS::transformToGlast(double seconds, CoordSystem index){
 
             //SkyDir to SC is inverse of SC to SkyDir
             trans= m_currentPoint.rotation().inverse();
+            trans *= m_alignment;
             break;
 
         default:

@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.20 2007/04/16 19:15:01 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.21 2007/07/22 18:11:57 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -144,6 +144,8 @@ public:
 
     static int test();
 
+    void setAlignmentRotation(CLHEP::HepRotation r){m_alignment=r;}
+
 protected:
     // singleton - protect ctor/dtor
     GPS();
@@ -169,6 +171,8 @@ private:
 
 
     astro::SkyDir m_point; ///< set for pointing 
+
+    CLHEP::HepRotation m_alignment; ///< set to apply alignment
 
     ///! update position, orientaion
     void update(double inputTime);
