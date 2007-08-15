@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Aug 15 11:42:38 PDT 2007
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+update after allowing for alignment transformation
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r11, operation: add
 Package: astro
