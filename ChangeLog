@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Aug 24 22:52:00 PDT 2007
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+bug fix for windows build; tagging v2r13p1
+    *
+------------------------------------------------------------
 User: jchiang  Fri Aug 24 22:51:59 PDT 2007
 astro/cmt
 
