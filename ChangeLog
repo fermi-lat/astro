@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Aug 24 22:51:59 PDT 2007
+astro/astro
+
+Modified Files:
+	SkyProj.h 
+Log Message:
+bug fix for windows build; tagging v2r13p1
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r13, operation: add
 Package: astro
