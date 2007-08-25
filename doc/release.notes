@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.113 2007/08/15 18:42:38 burnett Exp $
+$Id: release.notes,v 1.114 2007/08/20 22:48:05 markusa Exp $
 
 @verbatim
+  v2r13p1  24-aug-07 JC change to #include "f2c.h" to use local copy for Windows
   v2r13    20-aug-07 MA Implement IGRF-10 model to calculate geomagnetic coordinates
   v2r12    15-aug-07 THB  Implement GPS alignment correction applied to celestical transformation
   v2r11    07-aug-07 THB  correct setious error preventing long-term simulations

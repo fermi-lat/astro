@@ -1,7 +1,7 @@
 /** @file SkyProj.h
 @brief declaration of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.21 2005/12/10 21:23:14 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyProj.h,v 1.22 2005/12/11 17:53:52 burnett Exp $
 =======
 */
 
@@ -168,7 +168,7 @@ namespace astro {
         std::pair<double,double> range(double x1, bool xvar);
         
         /** @brief returns 0 if point (x1,x2) is in range */
-        int SkyProj::testpix2sph(double x1, double x2)const;
+        int testpix2sph(double x1, double x2)const;
 
         /** @brief set appropriate keywords in the FITS header
 
