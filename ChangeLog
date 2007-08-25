@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Aug 24 22:52:00 PDT 2007
+astro/src/igrf_sub
+
+Modified Files:
+	igrf_sub.cxx 
+Log Message:
+bug fix for windows build; tagging v2r13p1
+    *
+------------------------------------------------------------
+User: jchiang  Fri Aug 24 22:52:00 PDT 2007
 astro/doc
 
 Modified Files:
