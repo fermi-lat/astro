@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: usher  Fri Aug 31 11:00:39 PDT 2007
+astro/src/igrf_sub
+
+Modified Files:
+	igrf_sub.cxx 
+Log Message:
+added function definitions inside namespace to get to build on windows (not RM).
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r13p2, operation: add
 Package: astro
