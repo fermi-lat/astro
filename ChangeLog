@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Thu Oct  4 20:26:42 PDT 2007
+astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+fix to allow access to last history interval
+    *
+------------------------------------------------------------
+User: burnett  Thu Oct  4 20:26:42 PDT 2007
 astro/doc
 
 Modified Files:
