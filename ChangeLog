@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Oct  4 20:26:42 PDT 2007
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+fix to allow access to last history interval
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r13p3, operation: add
 Package: astro
