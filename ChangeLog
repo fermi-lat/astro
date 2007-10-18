@@ -1,22 +1,4 @@
 ------------------------------------------------------------
-User: burnett  Thu Oct 18 11:50:33 PDT 2007
-astro/src
-
-Modified Files:
-	EarthCoordinate.cxx 
-Log Message:
-convert to use IGRField.
-    *
-------------------------------------------------------------
-User: burnett  Thu Oct 18 11:50:33 PDT 2007
-astro/astro
-
-Modified Files:
-	EarthCoordinate.h 
-Log Message:
-convert to use IGRField.
-    *
-------------------------------------------------------------
 TAG
 Tag name: v2r13p4, operation: add
 Package: astro
