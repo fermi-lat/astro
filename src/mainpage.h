@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/mainpage.h,v 1.4 2005/01/23 20:02:57 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/mainpage.h,v 1.5 2006/11/05 20:06:27 burnett Exp $
 // Mainpage for doxygen
 
 /*! \mainpage package astro
@@ -18,6 +18,7 @@
   - astro::Healpix manage transformation to/from Healpix pixels, as an STL container
   - astro::HealPixel Special class to support multiple pixel sizes 
   - astro::Quaternion Quaternion objects, used to represent rotations
+  - astro::IGRField interface to the fortran code for the magnetic field. Used by EarthCoordinate
 
     <hr>
   \section notes release notes
