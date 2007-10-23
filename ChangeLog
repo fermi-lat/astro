@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Oct 23 10:52:21 PDT 2007
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+fix SAA test, tagging.
+    *
+------------------------------------------------------------
+User: burnett  Tue Oct 23 10:52:21 PDT 2007
 astro/src
 
 Modified Files:
