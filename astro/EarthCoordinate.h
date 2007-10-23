@@ -13,7 +13,7 @@ namespace astro {
 
   * \brief describe a point with respect to the surface of the Earth
   * \author T. Burnett and G. Tosti
-  * <hr> $Id: EarthCoordinate.h,v 1.10 2007/05/04 18:04:02 burnett Exp $
+  * <hr> $Id: EarthCoordinate.h,v 1.11 2007/10/18 18:50:33 burnett Exp $
   *
   * Note that we calculate the geodetic coordinates: from http://ssd.jpl.nasa.gov/glossary.html#geodetic
   *
@@ -27,12 +27,10 @@ namespace astro {
 class EarthCoordinate   {
 public:
 
-    //! initialize with latitude and longitude, in deg, optional altitude 
-    EarthCoordinate( double latDeg=0, double lonDeg=0 , double altitude=0);
-
     //! initialize with orbit position (in km), current MET in sec (was JD)
     EarthCoordinate( CLHEP::Hep3Vector position, double met); //JulianDate jd);
 
+    EarthCoordinate(){} // default ctor
     /** @brief true if inside the SAA
 
 Some work on defining a realistic SAA boundary for the LAT is described at
@@ -44,7 +42,11 @@ latv=(-30,-26,-20,-17,-10, 1,  2, -3, -8,-12,-19,-30,-30);
 lonv=( 45, 41, 31, 9,-11,-34,-46,-62,-79,-85,-89,-87, 45);
 
     */
+    ///! @brief test for SAA with current position
     bool insideSAA()const;
+
+    ///! test for SAA with explicit coordinates
+    bool insideSAA(double lat, double lon)const;
 
     //! the Earth radius in km
     static double earthRadius();

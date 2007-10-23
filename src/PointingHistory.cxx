@@ -1,7 +1,7 @@
 /** @file PointingHistory.cxx
     @brief implement PointingHistory
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingHistory.cxx,v 1.5 2007/04/15 03:51:09 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingHistory.cxx,v 1.6 2007/10/05 03:26:42 burnett Exp $
 
     */
 
@@ -47,10 +47,10 @@ void PointingHistory::readTextData(std::string filename, double offset)
 
             double razenith, deczenith;
             buf >> razenith >> deczenith; // ignore since redundant with position
-
             double lat, lon, alt;
-            buf >> lon >> lat >> alt;
-            EarthCoordinate earth(lat, lon, alt);
+            buf >> lon >> lat >> alt;     // these are ignored, too.
+
+            EarthCoordinate earth(position, start);
 
             m_endTime = start + offset;
             m_data[m_endTime] = PointingInfo(position, orientation, earth);
