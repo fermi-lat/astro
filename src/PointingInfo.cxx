@@ -1,7 +1,7 @@
 /** @file PointingInfo.h
     @brief implement class PointingInfo
 
-    $Header$
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingInfo.cxx,v 1.1 2006/11/05 20:06:27 burnett Exp $
 */
 
 #include "astro/PointingInfo.h"
@@ -65,10 +65,8 @@ astro::PointingInfo PointingInfo::interpolate(const astro::PointingInfo& next, d
          , alt( interp(alt1,alt2,f) );
     Hep3Vector position (interp(pos1,pos2,f).unit() * alt );
 
-    EarthCoordinate earthpos(lat,lon, alt);
-
     // note using the quaternion interpolation (SLERP)
-    return PointingInfo(position, m_q.interpolate(next.m_q, f), earthpos);
+    return PointingInfo(position, m_q.interpolate(next.m_q, f), earthCoord());
  
     return *this; // todo
 
