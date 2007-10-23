@@ -1,22 +1,4 @@
 ------------------------------------------------------------
-User: burnett  Tue Oct 23 10:52:20 PDT 2007
-astro/cmt
-
-Modified Files:
-	requirements 
-Log Message:
-fix SAA test, tagging.
-    *
-------------------------------------------------------------
-User: burnett  Tue Oct 23 10:52:20 PDT 2007
-astro/astro
-
-Modified Files:
-	EarthCoordinate.h 
-Log Message:
-fix SAA test, tagging.
-    *
-------------------------------------------------------------
 User: burnett  Sun Oct 21 11:32:56 PDT 2007
 astro/src
 
