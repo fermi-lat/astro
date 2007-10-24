@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Wed Oct 24 08:16:27 PDT 2007
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+correct call to EarthCoordinate: add check for lat, lon consistency with position, time
+    *
+------------------------------------------------------------
+User: burnett  Wed Oct 24 08:16:27 PDT 2007
 astro/src
 
 Modified Files:
