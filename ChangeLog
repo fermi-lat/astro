@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Oct 24 08:16:27 PDT 2007
+astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+correct call to EarthCoordinate: add check for lat, lon consistency with position, time
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r14p1, operation: add
 Package: astro
