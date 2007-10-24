@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: burnett  Wed Oct 24 11:08:15 PDT 2007
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Added Files:
+	test_FT2.fits 
+Log Message:
+fixt test and tag
+    *
+------------------------------------------------------------
+User: burnett  Wed Oct 24 11:08:15 PDT 2007
 astro/doc
 
 Modified Files:
