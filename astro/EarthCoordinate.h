@@ -13,7 +13,7 @@ namespace astro {
 
   * \brief describe a point with respect to the surface of the Earth
   * \author T. Burnett and G. Tosti
-  * <hr> $Id: EarthCoordinate.h,v 1.11 2007/10/18 18:50:33 burnett Exp $
+  * <hr> $Id: EarthCoordinate.h,v 1.12 2007/10/23 17:52:20 burnett Exp $
   *
   * Note that we calculate the geodetic coordinates: from http://ssd.jpl.nasa.gov/glossary.html#geodetic
   *
@@ -63,7 +63,7 @@ lonv=( 45, 41, 31, 9,-11,-34,-46,-62,-79,-85,-89,-87, 45);
     double geolat()const;///< geomagnetic latitude (deg)
     double geolon()const;///< geomagnetic longitude (deg) (deprecated)
 
-    CLHEP::Hep3Vector magnetic_field()const; ///< return magnetic field in zenith system
+    const CLHEP::Hep3Vector& magnetic_field()const; ///< return magnetic field in zenith system
 
     /// set the boundary from external list
     static void setSAAboundary(const std::vector<std::pair<double,double> >& boundary);

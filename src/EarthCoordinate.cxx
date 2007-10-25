@@ -1,7 +1,7 @@
 /** @file EarthCoordinate.cxx
     @brief implement class EarthCoordinate
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.20 2007/10/18 18:50:33 burnett Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.21 2007/10/23 17:52:21 burnett Exp $
 
 */
 #include <cmath>
@@ -199,6 +199,10 @@ bool EarthCoordinate::insideSAA(double lat, double lon) const
     }
     
     return true;
+}
+const CLHEP::Hep3Vector& EarthCoordinate::magnetic_field()const
+{
+    return m_field; 
 }
 
 } // namespace astro
