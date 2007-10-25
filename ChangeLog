@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Oct 25 08:10:49 PDT 2007
+astro/astro
+
+Modified Files:
+	EarthCoordinate.h HealPixel.h 
+Log Message:
+implement magnetic field access; SWIG wanted a default ctor
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r14p2, operation: add
 Package: astro
