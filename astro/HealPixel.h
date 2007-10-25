@@ -1,6 +1,6 @@
 /** @file HealPixel.h
 @brief Define the HealPixel class 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealPixel.h,v 1.3 2006/03/15 19:42:56 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/HealPixel.h,v 1.4 2006/04/20 21:58:19 burnett Exp $
 */
 
 #ifndef astro_HealPixel_h
@@ -23,7 +23,7 @@ namespace astro {
     class HealPixel{
     public:
         ///@brief construct a pixel from the index and level (nside = 2**level).
-        HealPixel(long index, int level);
+        HealPixel(long index=0, int level=5);
 
         ///@brief create a HealPixel from a direction, and a level (nside=2**level)
         HealPixel(const astro::SkyDir& dir, int level);
