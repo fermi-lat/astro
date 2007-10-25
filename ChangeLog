@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Thu Oct 25 08:10:49 PDT 2007
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+implement magnetic field access; SWIG wanted a default ctor
+    *
+------------------------------------------------------------
+User: burnett  Thu Oct 25 08:10:49 PDT 2007
 astro/astro
 
 Modified Files:
