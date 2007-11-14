@@ -1,7 +1,7 @@
 /** @file EarthCoordinate.cxx
     @brief implement class EarthCoordinate
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.21 2007/10/23 17:52:21 burnett Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.22 2007/10/25 15:10:49 burnett Exp $
 
 */
 #include <cmath>
@@ -26,6 +26,8 @@ namespace {
 
     // boundaries 
     static double lon_min = 1e10, lon_max = 1e-10, lat_min = 1e10, lat_max=1e-10;
+    // JRB add static keyword; moved from namespace astro to anonymous
+    static std::vector<std::pair<double,double> > s_SAA_boundary;
 
 }
 
@@ -33,7 +35,6 @@ namespace {
 namespace astro {
 double EarthCoordinate::s_EarthRadius = 6378145.; //m
 
-std::vector<std::pair<double,double> > EarthCoordinate::s_SAA_boundary;
 
 double EarthCoordinate::earthRadius(){return s_EarthRadius;}
 
