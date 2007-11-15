@@ -13,7 +13,7 @@ namespace astro {
 
   * \brief describe a point with respect to the surface of the Earth
   * \author T. Burnett and G. Tosti
-  * <hr> $Id: EarthCoordinate.h,v 1.12 2007/10/23 17:52:20 burnett Exp $
+  * <hr> $Id: EarthCoordinate.h,v 1.13 2007/10/25 15:10:49 burnett Exp $
   *
   * Note that we calculate the geodetic coordinates: from http://ssd.jpl.nasa.gov/glossary.html#geodetic
   *
@@ -31,6 +31,7 @@ public:
     EarthCoordinate( CLHEP::Hep3Vector position, double met); //JulianDate jd);
 
     EarthCoordinate(){} // default ctor
+
     /** @brief true if inside the SAA
 
 Some work on defining a realistic SAA boundary for the LAT is described at
@@ -87,7 +88,7 @@ private:
     static double s_EarthRadius;
 
     /// the SAA boundary
-    static std::vector<std::pair<double,double> > s_SAA_boundary;
+    static std::vector<std::pair<double,double> >*  s_SAA_boundary;
 };
 
 
