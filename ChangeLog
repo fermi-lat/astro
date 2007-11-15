@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jrb  Wed Nov 14 16:56:51 PST 2007
+astro/astro
+
+Modified Files:
+	EarthCoordinate.h 
+Log Message:
+Another attempt at double-free problem; previous was misguided
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r14p4, operation: add
 Package: astro
