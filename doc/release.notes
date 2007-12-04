@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.123 2007/11/14 22:58:06 jrb Exp $
+$Id: release.notes,v 1.124 2007/11/15 00:58:15 jrb Exp $
 
 @verbatim
+  v2r14p6  03-dec-07 THB fix bugs affecting SAA and lat/lon interpolation
   v2r14p5  14-nov-07 JRB Another stab at double free problem on RHEL4
   v2r14p4  14-nov-07 JRB Fix for double free problem on RHEL4
   v2r14p3  25-oct-07 THB another fix -- mag field access; default ctor
