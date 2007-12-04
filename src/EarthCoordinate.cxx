@@ -1,7 +1,7 @@
 /** @file EarthCoordinate.cxx
     @brief implement class EarthCoordinate
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.22 2007/10/25 15:10:49 burnett Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.24 2007/11/15 00:56:56 jrb Exp $
 
 */
 #include <cmath>
@@ -129,7 +129,7 @@ void EarthCoordinate::setSAAboundary(const std::vector<std::pair<double,double> 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 bool EarthCoordinate::insideSAA() const
 {
-    return insideSAA(longitude(), latitude());
+    return insideSAA( latitude(), longitude());
 }
 bool EarthCoordinate::insideSAA(double lat, double lon) const
 {
