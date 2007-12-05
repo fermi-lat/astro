@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Dec  4 16:14:36 PST 2007
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+restore inadvertent modification of build; tagging.
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r14p6, operation: add
 Package: astro
