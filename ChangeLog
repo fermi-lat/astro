@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: mar0  Thu Dec  6 14:15:54 PST 2007
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+added stellar aberration method (source)
+    *
+------------------------------------------------------------
 User: mar0  Thu Dec  6 14:15:39 PST 2007
 astro/astro
 
