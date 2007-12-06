@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.21 2007/07/22 18:11:57 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.22 2007/08/15 18:42:38 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -83,6 +83,10 @@ public:
 
     /// return a rotation matrix for the requested transformation
     CLHEP::HepRotation transformToGlast(double seconds,CoordSystem index);
+
+    // create stellar aberration with given magnitude
+    // mag in radians
+    CLHEP::Hep3Vector aberrate(CLHEP::Hep3Vector &pvec, double seconds, double mag);
 
     /// expansion of the current orbit
     double      expansion () const; 
