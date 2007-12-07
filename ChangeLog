@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Thu Dec  6 21:20:05 PST 2007
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+update aberration of light calculation
+    *
+------------------------------------------------------------
+User: burnett  Thu Dec  6 21:20:05 PST 2007
 astro/astro
 
 Modified Files:
