@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.25 2007/12/07 05:31:40 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.26 2007/12/10 03:05:43 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -92,6 +92,10 @@ public:
     /// @return the direction in LAT coordinates
     CLHEP::Hep3Vector LATdirection(CoordSystem index,const CLHEP::Hep3Vector& dir, double met=-1);
 
+    /// @brief transform a direction from the LAT system to a SkyDir
+    /// @param latdir particle direction to transform 
+    /// @param met mission elapsed time: default (-1) means use current time
+    /// @return a Sky position, including the sign reversal
     astro::SkyDir toSky(const CLHEP::Hep3Vector& latdir, double met=-1);
 
     /** @brief stellar aberration: apparent difference in position
