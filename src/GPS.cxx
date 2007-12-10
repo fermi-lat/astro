@@ -1,7 +1,7 @@
 /** @file GPS.cxx
 @brief  implementation of the GPS class.
 
-$Id: GPS.cxx,v 1.43 2007/12/07 05:31:40 burnett Exp $
+$Id: GPS.cxx,v 1.44 2007/12/10 03:05:43 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -250,8 +250,10 @@ CLHEP::Hep3Vector GPS::LATdirection(CoordSystem index,const CLHEP::Hep3Vector& d
             {
                 // for this case we need to consider both misalignment and aberration
                 // since both are small, we don't worry about second-order
+                // assume that the direction is toward the source!
                 if( m_enableAberration)  result += aberration(dir, met);
-                result = m_currentPoint.rotation().inverse() *  m_alignment * result;
+                // apply alignment correction
+                result = -( m_alignment * m_currentPoint.rotation().inverse() *   result);
             }
             break; 
 
@@ -266,7 +268,8 @@ astro::SkyDir GPS::toSky(const CLHEP::Hep3Vector& latdir, double met)
 {
     if( met != -1)update( met);
 
-    CLHEP::Hep3Vector tdir( m_currentPoint.rotation() * latdir);
+    // rotate (and reverse direction to get a sky location
+    CLHEP::Hep3Vector tdir( - (m_currentPoint.rotation() * latdir) );
     if( m_enableAberration) tdir -= aberration(tdir, met);
     return astro::SkyDir(tdir);
 }
@@ -428,9 +431,26 @@ int GPS::test()
     CLHEP::Hep3Vector t(gps.aberration(npole(), 0) );
     double test( t.mag() - 1e-4);
 
-    if( fabs(test)<2e-6)++rc ;// expect within 1% of the total
+    if( fabs(test)>2e-6)++rc ;// expect within 1% of the total
 
 
+    // test transformation without, then with the aberration
+    {
+    astro::SkyDir npole(0,90);
+    CLHEP::Hep3Vector latdir( gps.LATdirection(GPS::CELESTIAL, npole()));
+    astro::SkyDir back( gps.toSky(latdir) ); 
+    double check( npole.difference(back));
+    if( check> 1e-12) ++rc;
+    }
+    gps.enableAberration();
+    {
+    astro::SkyDir npole(0,90);
+    CLHEP::Hep3Vector latdir( gps.LATdirection(GPS::CELESTIAL, npole()));
+    astro::SkyDir back( gps.toSky(latdir) ); 
+    double check( npole.difference(back));
+    if( check> 1e-12) ++rc;
+
+    }
     // check exception
     try{
         cout << "\n trying time that is not in the range...\n";
