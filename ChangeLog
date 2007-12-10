@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Dec 10 12:06:26 PST 2007
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+implement, document methods to transform to/from LAT frame, including alignment and aberration
+    *
+------------------------------------------------------------
 User: golpa  Mon Dec 10 12:00:47 PST 2007
 astro
 
