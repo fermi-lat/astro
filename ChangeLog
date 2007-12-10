@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Dec  9 19:05:43 PST 2007
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+more complete implementation of stellar aberration
+    *
+------------------------------------------------------------
+User: burnett  Sun Dec  9 19:05:43 PST 2007
 astro/astro
 
 Modified Files:
