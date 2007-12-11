@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: burnett  Mon Dec 10 20:12:29 PST 2007
+astro/astro
+
+Modified Files:
+	GPS.h 
+Removed Files:
+	HealPixel.h Healpix.h HealpixArray.h 
+Log Message:
+finish removal of healpix, conversion to a sharable
+    *
+------------------------------------------------------------
 User: burnett  Mon Dec 10 12:06:26 PST 2007
 astro/src
 
