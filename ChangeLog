@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Dec 10 20:12:29 PST 2007
+astro/src
+
+Removed Files:
+	HealPixel.cxx Healpix.cxx 
+Log Message:
+finish removal of healpix, conversion to a sharable
+    *
+------------------------------------------------------------
+User: burnett  Mon Dec 10 20:12:29 PST 2007
 astro/cmt
 
 Modified Files:
