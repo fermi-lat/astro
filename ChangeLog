@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Dec 10 21:02:44 PST 2007
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+tagging after refactoring healpix out, convert to shareable
+    *
+------------------------------------------------------------
+User: burnett  Mon Dec 10 21:02:44 PST 2007
 astro/cmt
 
 Modified Files:
