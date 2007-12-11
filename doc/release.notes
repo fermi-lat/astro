@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.125 2007/12/04 04:26:17 burnett Exp $
+$Id: release.notes,v 1.126 2007/12/05 00:14:36 burnett Exp $
 
 @verbatim
+  v3r0     10-dec-07 THB convert to sharable and factor healpix to new healpix package
   v2r14p7  04-dec-07 THB fix bugs affecting SAA and lat/lon interpolation
   v2r14p5  14-nov-07 JRB Another stab at double free problem on RHEL4
   v2r14p4  14-nov-07 JRB Fix for double free problem on RHEL4
