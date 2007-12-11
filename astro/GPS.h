@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.26 2007/12/10 03:05:43 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.27 2007/12/10 20:06:26 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -135,7 +135,7 @@ public:
        
     */
     void setPointingHistoryFile(std::string fileName, double offset=0, bool x_horizontal=false);
-
+#ifndef SWIG
     /** @class NoHistory
         @brief exception class to be thrown if no history has been loaded
     */
@@ -143,9 +143,13 @@ public:
     public: 
         NoHistoryError(const std::string& msg): std::runtime_error(msg){}
     };
-
+#endif
     /// access to a const reference for the history. Error if does not exist.
-    const astro::PointingHistory& history()const throw(NoHistoryError);
+    const astro::PointingHistory& history()const 
+#ifndef SWIG
+        throw(NoHistoryError)
+#endif
+        ;
 
     // notification support, managed by facilities/Observer
     void notifyObservers() { m_notification.notify();}
