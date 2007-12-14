@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Dec 14 07:27:33 PST 2007
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+improve aberration correction, test.
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r0, operation: add
 Package: astro
