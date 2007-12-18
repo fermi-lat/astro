@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.27 2007/12/10 20:06:26 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.28 2007/12/11 04:12:29 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -173,7 +173,10 @@ public:
 
     void setAlignmentRotation(CLHEP::HepRotation r){m_alignment=r;}
 
-    void enableAberration(){m_enableAberration=true;}
+    /// @brief enable the application of the aberration
+    /// @flag [true] value to set
+    /// @return the current value
+    bool enableAberration(bool flag=true){bool t=m_enableAberration; m_enableAberration=flag; return t;}
 
 protected:
     // singleton - protect ctor/dtor
