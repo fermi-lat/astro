@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Wed Jan  2 14:29:26 PST 2008
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+fix SConstruct file
+    *
+------------------------------------------------------------
+User: burnett  Wed Jan  2 14:29:26 PST 2008
 astro
 
 Modified Files:
