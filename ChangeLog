@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Jan  1 17:44:20 PST 2008
+astro/python
+
+Added Files:
+	swig_setup.in 
+Log Message:
+add swig interface and tag
+    *
+------------------------------------------------------------
+User: burnett  Tue Jan  1 17:44:20 PST 2008
 astro/doc
 
 Modified Files:
