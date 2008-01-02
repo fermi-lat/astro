@@ -1,7 +1,7 @@
 # @file SConscript
 # @brief build info
 #
-# $Header$
+# $Header: /nfs/slac/g/glast/ground/cvs/astro/SConscript,v 1.2 2008/01/02 19:09:06 burnett Exp $
 
 import glob,os
 
@@ -10,7 +10,7 @@ Import('listFiles')
 libEnv = baseEnv.Clone()
 progEnv = baseEnv.Clone()
 
-astroLib = libEnv.DynamicLibrary('astro', listFiles(
+astroLib = libEnv.SharedLibrary('astro', listFiles(
 ['src/*.cxx', 
  'src/healpix/*.cxx', 
  'src/healpix/*.cc', 
