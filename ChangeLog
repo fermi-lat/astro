@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Wed Jan  2 11:09:07 PST 2008
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+relax GPS rotation check tolerance; fix SConscript ?
+    *
+------------------------------------------------------------
+User: burnett  Wed Jan  2 11:09:07 PST 2008
 astro/doc
 
 Modified Files:
