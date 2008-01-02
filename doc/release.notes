@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.127 2007/12/11 05:02:44 burnett Exp $
+$Id: release.notes,v 1.128 2008/01/02 01:44:20 burnett Exp $
 
 @verbatim
+  v3r0p2   02-jan-08 THB relax GPS test tolerance
   v3r0p1   01-jan-08 THB add SWIG interface 
   v3r0     10-dec-07 THB convert to sharable and factor healpix to new healpix package
   v2r14p7  04-dec-07 THB fix bugs affecting SAA and lat/lon interpolation
