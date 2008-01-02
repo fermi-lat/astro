@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Jan  2 14:29:26 PST 2008
+astro
+
+Modified Files:
+	SConscript 
+Log Message:
+fix SConstruct file
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r0p2, operation: add
 Package: astro
