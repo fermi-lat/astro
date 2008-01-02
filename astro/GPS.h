@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.28 2007/12/11 04:12:29 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.29 2007/12/18 02:47:29 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -114,7 +114,9 @@ public:
 
 
     /// pass a specific amount of time
+#ifndef SWIG // avoid warning message
     void    pass ( double );
+#endif
     /// set the expansion factor for the orbit (-1) = random
     void    expansion ( double );
     /// synchronize w. scheduler
@@ -146,7 +148,7 @@ public:
 #endif
     /// access to a const reference for the history. Error if does not exist.
     const astro::PointingHistory& history()const 
-#ifndef SWIG
+#ifndef SWIG // not recognized by swig
         throw(NoHistoryError)
 #endif
         ;
