@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Jan  2 11:09:06 PST 2008
+astro
+
+Modified Files:
+	SConscript 
+Log Message:
+relax GPS rotation check tolerance; fix SConscript ?
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r0p1, operation: add
 Package: astro
