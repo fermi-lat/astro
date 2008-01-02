@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Jan  1 17:44:20 PST 2008
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+add swig interface and tag
+    *
+------------------------------------------------------------
 User: burnett  Tue Jan  1 17:42:00 PST 2008
 astro/python
 
