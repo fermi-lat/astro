@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Jan 21 17:14:12 PST 2008
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+behavior fix needed by SkyImage fits header initialization
+    *
+------------------------------------------------------------
+User: burnett  Mon Jan 21 17:14:12 PST 2008
 astro/doc
 
 Modified Files:
