@@ -1,7 +1,7 @@
 package astro
 
-version v3r0p3
-#$Id: requirements,v 1.140 2008/01/02 19:09:06 burnett Exp $
+version v3r0p4
+#$Id: requirements,v 1.141 2008/01/02 22:29:26 burnett Exp $
 
 author  T. Burnett <tburnett@u.washington.edu>
 
