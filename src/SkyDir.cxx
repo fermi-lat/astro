@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.32 2005/12/10 21:23:15 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.33 2006/03/21 01:43:17 usher Exp $
 */
 
 // Include files
@@ -143,13 +143,6 @@ std::pair<double,double> SkyDir::project(const SkyProj& projection) const
 double SkyDir::difference(const SkyDir& other)const
 {
 	double x = 0.5*(m_dir-other.dir()).mag();
-
-	if(fabs(x) < 0.1)
-	{
-		// Approximation good to 4e-4 radians or 0.02 degrees
-		return 2. * x;
-	}
-	else
         return 2.*asin(x);
 }
 
