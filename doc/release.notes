@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.129 2008/01/02 19:09:07 burnett Exp $
+$Id: release.notes,v 1.130 2008/01/02 22:29:26 burnett Exp $
 
 @verbatim
+  v3r0p4   21-jan-08 THB Kluge fix for odd wcslib behavior reading a FITS cube
   v3r0p3   02-jan-08 THB relax GPS test tolerance; fix SConscript file
   v3r0p1   01-jan-08 THB add SWIG interface 
   v3r0     10-dec-07 THB convert to sharable and factor healpix to new healpix package
