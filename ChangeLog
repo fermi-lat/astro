@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Jan 22 13:25:31 PST 2008
+astro/src
+
+Modified Files:
+	SkyDir.cxx 
+Log Message:
+remove approximation for asin(x)
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r0p4, operation: add
 Package: astro
