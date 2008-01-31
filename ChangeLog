@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Jan 31 14:50:17 PST 2008
+astro
+
+Modified Files:
+	SConscript 
+Log Message:
+add missing code. (why not a top-level glob???)
+    *
+------------------------------------------------------------
 User: burnett  Tue Jan 22 13:25:31 PST 2008
 astro/src
 
