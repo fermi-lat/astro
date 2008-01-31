@@ -1,7 +1,7 @@
 # @file SConscript
 # @brief build info
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/astro/SConscript,v 1.2 2008/01/02 19:09:06 burnett Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/astro/SConscript,v 1.3 2008/01/02 22:29:26 burnett Exp $
 
 import glob,os
 
@@ -16,6 +16,7 @@ astroLib = libEnv.SharedLibrary('astro', listFiles(
  'src/healpix/*.cc', 
  'src/wcslib/*.cxx', 
  'src/wcslib/*.c', 
- 'src/jplephem/*.cxx']))
+ 'src/jplephem/*.cxx',
+ 'src/igrf_sub/*.cxx']))
 
 progEnv.Tool('registerObjects', package = 'astro', libraries = [astroLib], includes = listFiles(['astro/*.h']))
