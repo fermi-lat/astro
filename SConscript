@@ -1,7 +1,7 @@
 # @file SConscript
 # @brief build info
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/astro/SConscript,v 1.3 2008/01/02 22:29:26 burnett Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/astro/SConscript,v 1.4 2008/01/31 22:50:17 burnett Exp $
 
 import glob,os
 
@@ -9,6 +9,11 @@ Import('baseEnv')
 Import('listFiles')
 libEnv = baseEnv.Clone()
 progEnv = baseEnv.Clone()
+
+if libEnv['PLATFORM'] == "win32":
+  libEnv.AppendUnique(CCFLAGS = "/D_USE_MATH_DEFINES")
+  libEnv.AppendUnique(CCFLAGS = "/EHsc")
+  libEnv.AppendUnique(CCFLAGS = "/D_CRT_SECURE_NO_DEPRECATE")
 
 astroLib = libEnv.SharedLibrary('astro', listFiles(
 ['src/*.cxx', 
@@ -20,3 +25,5 @@ astroLib = libEnv.SharedLibrary('astro', listFiles(
  'src/igrf_sub/*.cxx']))
 
 progEnv.Tool('registerObjects', package = 'astro', libraries = [astroLib], includes = listFiles(['astro/*.h']))
+
+
