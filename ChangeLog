@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Feb 21 14:47:29 PST 2008
+astro
+
+Modified Files:
+	SConscript 
+Log Message:
+fix for windows compilation
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-00-05, operation: add
 Package: astro
