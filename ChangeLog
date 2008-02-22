@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 TAG
+Tag name: astro-03-00-04, operation: mov
+Package: astro
+User: glast  Thu Feb 21 17:23:00 2008
+Files:
+  astro/SConscript  1.6
+
+    *
+------------------------------------------------------------
+TAG
 Tag name: v3r0p4, operation: mov
 Package: astro
 User: glast  Thu Feb 21 17:22:50 2008
