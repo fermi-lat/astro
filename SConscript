@@ -1,7 +1,7 @@
 # @file SConscript
 # @brief build info
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/astro/SConscript,v 1.4 2008/01/31 22:50:17 burnett Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/astro/SConscript,v 1.5 2008/02/21 22:47:29 burnett Exp $
 
 import glob,os
 
@@ -24,6 +24,7 @@ astroLib = libEnv.SharedLibrary('astro', listFiles(
  'src/jplephem/*.cxx',
  'src/igrf_sub/*.cxx']))
 
-progEnv.Tool('registerObjects', package = 'astro', libraries = [astroLib], includes = listFiles(['astro/*.h']))
+progEnv.Tool('astroLib')
+test_astro = progEnv.Program('test_astro', listFiles(['src/test/*.cxx']))
 
-
+progEnv.Tool('registerObjects', package = 'astro', libraries = [astroLib], testApps = [test_astro], includes = listFiles(['astro/*.h']))
