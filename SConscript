@@ -1,7 +1,7 @@
 # @file SConscript
 # @brief build info
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/astro/SConscript,v 1.6 2008/02/22 01:18:36 golpa Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/astro/SConscript,v 1.7 2008/02/22 01:44:30 burnett Exp $
 
 import glob,os
 
@@ -10,6 +10,8 @@ Import('listFiles')
 libEnv = baseEnv.Clone()
 progEnv = baseEnv.Clone()
 
+if baseEnv['PLATFORM'] == "win32":
+    libEnv.Append(CCFLAGS = "/wd4554") #  warning C4554: '<<' : check operator precedence
 
 astroLib = libEnv.SharedLibrary('astro', listFiles(
 ['src/*.cxx', 
