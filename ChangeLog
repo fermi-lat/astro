@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: glastrm  Mon Feb 25 18:55:39 PST 2008
+ScienceTools-scons/astro
+
+Modified Files:
+	astroLib.py SConscript 
+Log Message:
+Set lib dependencies up for when building libraries
+    *
+------------------------------------------------------------
 User: burnett  Mon Feb 25 09:58:48 PST 2008
 astro
 
