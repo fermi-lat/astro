@@ -13,7 +13,7 @@ namespace astro {
 
   * \brief describe a point with respect to the surface of the Earth
   * \author T. Burnett and G. Tosti
-  * <hr> $Id: EarthCoordinate.h,v 1.13 2007/10/25 15:10:49 burnett Exp $
+  * <hr> $Id: EarthCoordinate.h,v 1.14 2007/11/15 00:56:50 jrb Exp $
   *
   * Note that we calculate the geodetic coordinates: from http://ssd.jpl.nasa.gov/glossary.html#geodetic
   *
@@ -92,10 +92,6 @@ private:
 };
 
 
-
-inline double EarthCoordinate::latitude()const{ return m_lat*180/M_PI;}
-inline double EarthCoordinate::longitude()const{ return m_lon*180/M_PI;}
-inline double EarthCoordinate::altitude()const{ return m_altitude;}
 
 }
 #endif

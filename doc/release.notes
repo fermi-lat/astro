@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.130 2008/01/02 22:29:26 burnett Exp $
+$Id: release.notes,v 1.131 2008/01/22 01:14:12 burnett Exp $
 
 @verbatim
+  v3r1     15-Mar-08 THB Implement python module interface in build
   v3r0p4   21-jan-08 THB Kluge fix for odd wcslib behavior reading a FITS cube
   v3r0p3   02-jan-08 THB relax GPS test tolerance; fix SConscript file
   v3r0p1   01-jan-08 THB add SWIG interface 
