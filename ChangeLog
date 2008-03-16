@@ -2,6 +2,14 @@
 TAG
 Tag name: astro-03-01-00, operation: add
 Package: astro
+User: glastrm  Sun Mar 16 16:45:42 2008
+Files:
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: astro-03-01-00, operation: add
+Package: astro
 User: glastrm  Sun Mar 16 16:45:14 2008
 Files:
   astro/.cvsignore  1.2
