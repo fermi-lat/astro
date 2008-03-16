@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Mar 16 16:34:57 PDT 2008
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+invoke new SwigPolicy capability to create a python module
+    *
+------------------------------------------------------------
+User: burnett  Sun Mar 16 16:34:57 PDT 2008
 astro/cmt
 
 Modified Files:
