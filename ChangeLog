@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Mar 16 16:34:57 PDT 2008
+astro/astro
+
+Modified Files:
+	EarthCoordinate.h 
+Log Message:
+invoke new SwigPolicy capability to create a python module
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-00-04, operation: mov
 Package: astro
