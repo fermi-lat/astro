@@ -1,7 +1,7 @@
 /** @file EarthCoordinate.cxx
     @brief implement class EarthCoordinate
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.24 2007/11/15 00:56:56 jrb Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.25 2007/12/04 04:21:38 burnett Exp $
 
 */
 #include <cmath>
@@ -217,5 +217,10 @@ const CLHEP::Hep3Vector& EarthCoordinate::magnetic_field()const
 {
     return m_field; 
 }
+
+double EarthCoordinate::latitude()const{ return m_lat*180/M_PI;}
+double EarthCoordinate::longitude()const{ return m_lon*180/M_PI;}
+double EarthCoordinate::altitude()const{ return m_altitude;}
+
 
 } // namespace astro

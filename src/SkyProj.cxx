@@ -1,7 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.22 2006/01/19 19:15:25 peachey Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.23 2008/01/22 01:14:12 burnett Exp $
 */
 
 // Include files
@@ -13,7 +13,7 @@ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.22 2006/01/19 19
 #include "wcslib/wcs.h"
 #include "wcslib/wcshdr.h"
 
-#include "longnam.h"
+//#include "longnam.h"
 #ifndef WCSLIB_GETWCSTAB
 #define WCSLIB_GETWCSTAB
 #endif
