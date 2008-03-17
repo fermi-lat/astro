@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Mar 16 18:24:21 PDT 2008
+astro/astro
+
+Modified Files:
+	Quaternion.h SolarSystem.h 
+Log Message:
+add quaternion, solarsystem; fix bug in setup
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-01-00, operation: add
 Package: astro
