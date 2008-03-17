@@ -2,7 +2,7 @@
 @brief definition of class SolarSystem 
 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SolarSystem.h,v 1.12 2007/04/16 03:19:46 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SolarSystem.h,v 1.13 2007/04/16 04:14:59 burnett Exp $
 */
 #ifndef astro_SolarSystem_H
 #define astro_SolarSystem_H
@@ -37,7 +37,7 @@ namespace astro {
         */
         SolarSystem(Body body=SUN);
         ~SolarSystem();
-
+#ifndef SWIG
         /** @class BadDate
             @brief exception class inheriting from invalid_argumetn if Julian date is invalid
 
@@ -46,6 +46,7 @@ namespace astro {
         public:
             BadDate( const std::string&msg): std::invalid_argument(msg){}
         };
+#endif
         /**
         * @brief return the SkyDir at date, with respect to position (in km) from center of Earth 
         */
