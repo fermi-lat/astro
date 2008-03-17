@@ -2,7 +2,7 @@
 @brief declare class Quaternion
 
 @author T. Burnett <tburnett@u.washington.edu>
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Quaternion.h,v 1.2 2006/10/31 23:21:21 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Quaternion.h,v 1.3 2006/11/05 20:06:26 burnett Exp $
 
 */
 
@@ -42,9 +42,6 @@ namespace astro {
         */
         explicit Quaternion(const CLHEP::HepRotation& R);
 
-        /** ctor from an open stream, presume a single line
-        */
-        Quaternion(std::istream& in); 
         ~Quaternion(){};
 
         /// is it approximately identical?
