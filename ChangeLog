@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Mar 16 18:24:21 PDT 2008
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+add quaternion, solarsystem; fix bug in setup
+    *
+------------------------------------------------------------
+User: burnett  Sun Mar 16 18:24:21 PDT 2008
 astro/astro
 
 Modified Files:
