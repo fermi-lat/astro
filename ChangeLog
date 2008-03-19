@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Wed Mar 19 14:09:43 PDT 2008
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+using the new SwigModule
+    *
+------------------------------------------------------------
+User: burnett  Wed Mar 19 14:09:43 PDT 2008
 astro/cmt
 
 Modified Files:
