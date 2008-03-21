@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Fri Mar 21 14:06:51 PDT 2008
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+fix for windows exectution of clients
+    *
+------------------------------------------------------------
+User: burnett  Fri Mar 21 14:06:51 PDT 2008
 astro/cmt
 
 Modified Files:
