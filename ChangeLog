@@ -1,31 +1,4 @@
 ------------------------------------------------------------
-User: burnett  Tue Apr 15 19:40:31 PDT 2008
-astro/doc
-
-Modified Files:
-	release.notes 
-Log Message:
-remove default parameter for vector-scalar constructor
-    *
-------------------------------------------------------------
-User: burnett  Tue Apr 15 19:40:31 PDT 2008
-astro/cmt
-
-Modified Files:
-	requirements 
-Log Message:
-remove default parameter for vector-scalar constructor
-    *
-------------------------------------------------------------
-User: burnett  Tue Apr 15 19:40:31 PDT 2008
-astro/astro
-
-Modified Files:
-	Quaternion.h 
-Log Message:
-remove default parameter for vector-scalar constructor
-    *
-------------------------------------------------------------
 TAG
 Tag name: astro-03-01-04, operation: add
 Package: astro
