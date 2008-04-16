@@ -2,7 +2,7 @@
 @brief declare class Quaternion
 
 @author T. Burnett <tburnett@u.washington.edu>
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Quaternion.h,v 1.3 2006/11/05 20:06:26 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Quaternion.h,v 1.4 2008/03/17 01:24:21 burnett Exp $
 
 */
 
@@ -25,12 +25,11 @@ namespace astro {
         */
         Quaternion():m_v(0,0,0),m_s(1){}
 
-        /** ctor from vector and scalar
+        /** @brief ctor from vector and scalar
+        note that the normalization is not checked!
 
         */
-        Quaternion(const CLHEP::Hep3Vector& v, double s=0)
-            :m_v(v), m_s(s)
-        {}
+        Quaternion(const CLHEP::Hep3Vector& v, double s);
 
         /** ctor from x and z directions of rotated object
 
