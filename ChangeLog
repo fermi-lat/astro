@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Apr 15 19:40:31 PDT 2008
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+remove default parameter for vector-scalar constructor
+    *
+------------------------------------------------------------
+User: burnett  Tue Apr 15 19:40:31 PDT 2008
 astro/astro
 
 Modified Files:
