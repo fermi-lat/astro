@@ -1,7 +1,7 @@
 /** @file Quaternion.cxx
 @brief implement class Quaternion
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.10 2007/07/20 20:13:24 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.11 2007/07/21 08:25:51 burnett Exp $
 
 */
 
@@ -12,6 +12,10 @@ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.10 2007/07/20
 
 using namespace astro;
 using namespace CLHEP;
+
+Quaternion::Quaternion(const CLHEP::Hep3Vector& v, double s)
+:m_v(v), m_s(s)
+{}
 
 Quaternion::Quaternion(const CLHEP::HepRotation& R)
 : m_v(Hep3Vector(0,0,0))
