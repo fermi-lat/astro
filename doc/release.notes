@@ -3,9 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.137 2008/04/16 02:40:31 burnett Exp $
+$Id: release.notes,v 1.138 2008/05/06 02:41:44 burnett Exp $
 
 @verbatim
+  v3r1p7   05-may-08 THB Allow EarthCoordinate to be initialized with km or m; protect field.compute
   v3r1p6   05-may-08 THB Disable SwigModule since it does not work on Linux
   v3r1p5   15-Apr-08 THB Mod to Quaternion interface to protect against unnormalized intialization
   v3r1p4   21-Mar-08 THB Needed to make python runtime library available for clients.
