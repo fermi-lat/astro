@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: glastrm  Thu May 22 12:22:24 PDT 2008
+ScienceTools-scons/astro/src/wcslib
+
+Modified Files:
+	wcsulex.c wcsutrn.c 
+Log Message:
+changes allowig astro to compile on 64bit linux
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-01-07, operation: add
 Package: astro
