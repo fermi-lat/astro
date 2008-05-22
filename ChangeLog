@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+TAG
+Tag name: v3r1p7, operation: mov
+Package: astro
+User: glastrm  Thu May 22 12:59:03 2008
+Files:
+  astro/src/wcslib/wcsulex.c  1.4
+  astro/src/wcslib/wcsutrn.c  1.3
+
+    *
+------------------------------------------------------------
 User: glastrm  Thu May 22 12:22:24 PDT 2008
 ScienceTools-scons/astro/src/wcslib
 
