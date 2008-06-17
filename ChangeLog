@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Jun 17 13:19:06 PDT 2008
+astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+tagging after relaxing tolerance on lat/lon consistency in FT2 files.
+    *
+------------------------------------------------------------
+User: burnett  Tue Jun 17 13:19:06 PDT 2008
 astro/doc
 
 Modified Files:
