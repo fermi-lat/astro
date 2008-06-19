@@ -1,7 +1,10 @@
+# -*- python -*-
 # @file SConscript
 # @brief build info
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/SConscript,v 1.8 2008/02/25 17:58:48 burnett Exp $
+# $Id$
+# Authors: T. Burnett <tburnett@u.washington.edu>
+# Version: astro-03-01-08
 
 Import('baseEnv')
 Import('listFiles')
