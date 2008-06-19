@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+TAG
+Tag name: v3r1p8, operation: mov
+Package: astro
+User: glastrm  Thu Jun 19 14:48:28 2008
+Files:
+  astro/SConscript  1.10
+
+    *
+------------------------------------------------------------
 User: glastrm  Thu Jun 19 13:43:47 PDT 2008
 ScienceTools-scons/astro
 
