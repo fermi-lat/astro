@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Jun 26 16:21:34 PDT 2008
+astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+PointingHistory now checks for quaternion in the fits file
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-01-08, operation: mov
 Package: astro
