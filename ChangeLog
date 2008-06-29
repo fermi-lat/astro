@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Jun 29 04:06:52 PDT 2008
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+fix numerical vulnerability in Quaternion interpolation; back off loading quaternion components from histor file
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-01-09, operation: add
 Package: astro
