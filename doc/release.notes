@@ -3,9 +3,11 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.139 2008/05/12 16:59:53 burnett Exp $
+$Id: release.notes,v 1.140 2008/06/17 20:19:06 burnett Exp $
 
 @verbatim
+  v3r1p11  29-jun-08 THB Protect roundoff error when extrapolating with identical quaterions; back out loading quaternions
+  v3r1p10  26-jun-08 THB Accept explicit quaternion input to PointingHistory
   v3r1p8   17-jun-08 THB Relax tolerance when checking FT2 files for consistency of lat,lon
   v3r1p7   05-may-08 THB Allow EarthCoordinate to be initialized with km or m; protect field.compute
   v3r1p6   05-may-08 THB Disable SwigModule since it does not work on Linux
