@@ -1,7 +1,7 @@
 /** @file Quaternion.cxx
 @brief implement class Quaternion
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.11 2007/07/21 08:25:51 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.12 2008/04/16 02:40:31 burnett Exp $
 
 */
 
@@ -15,7 +15,13 @@ using namespace CLHEP;
 
 Quaternion::Quaternion(const CLHEP::Hep3Vector& v, double s)
 :m_v(v), m_s(s)
-{}
+{
+    // force identity
+    if( fabs(m_s)>1.){
+        m_s=1.; 
+        m_v=Hep3Vector(0,0,0);
+    }
+}
 
 Quaternion::Quaternion(const CLHEP::HepRotation& R)
 : m_v(Hep3Vector(0,0,0))
@@ -120,7 +126,7 @@ CLHEP::Hep3Vector Quaternion::rotate(const CLHEP::Hep3Vector& t) const
 
 astro::Quaternion Quaternion::power(double t)const{
     if( t==0) return Quaternion();
-    double a( acos(m_s) );
+    double a( m_s>1? 0 : acos(m_s) );
     return Quaternion( m_v.unit()*sin(a*t), cos(a*t) );
 }
 
