@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Sun Jun 29 04:06:52 PDT 2008
+astro/src
+
+Modified Files:
+	PointingHistory.cxx Quaternion.cxx 
+Log Message:
+fix numerical vulnerability in Quaternion interpolation; back off loading quaternion components from histor file
+    *
+------------------------------------------------------------
+User: burnett  Sun Jun 29 04:06:52 PDT 2008
 astro/doc
 
 Modified Files:
