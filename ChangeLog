@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Jun 30 11:12:30 PDT 2008
+astro/src/test/orbit
+
+Removed Files:
+	Orbit.cxx 
+Log Message:
+obsolete test
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-01-11, operation: add
 Package: astro
