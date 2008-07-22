@@ -1,7 +1,7 @@
 /** @file PointingHistory.h
     @brief declare class PointingHistory
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/PointingHistory.h,v 1.2 2007/04/14 20:40:32 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/PointingHistory.h,v 1.3 2007/06/25 23:01:47 burnett Exp $
     
 */
 
@@ -26,6 +26,10 @@ namespace astro{
         /// @param offset perhaps needed for ascii files that have times from 
         PointingHistory(const std::string& filename, double offset=0);
         ~PointingHistory(){}
+
+        /// @param add a FITS file to the history
+        void readFitsData(std::string filename);
+
 #ifndef SWIG
         /** @class PointingHistory::TimeRangeError
             @brief inherit from std::runtime_error for backward compatibility
@@ -62,7 +66,6 @@ namespace astro{
         void readTextData(std::string filename, double offset);
         // for FITS setup
         bool haveFitsFile(std::string filename) const;
-        void readFitsData(std::string filename);
         //?void fitsReportError(FILE *, int) const;
     };
             

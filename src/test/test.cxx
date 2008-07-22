@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.46 2007/12/07 05:20:05 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.47 2007/12/07 16:21:08 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -293,6 +293,11 @@ bool test_GPS_readFitsData() {
     checkdir(gps->xAxisDir(), SkyDir( 99.46017, 0));
     checkdir(gps->zAxisDir(), SkyDir(9.460165, 63.5));
     checkdir(gps->zenithDir(), SkyDir(9.460165, 28.5));
+
+
+    // this should work--testing capability to merge different FT2 files
+    PointingHistory history(filename);
+    history.readFitsData(filename);
 
     return true;
 }
