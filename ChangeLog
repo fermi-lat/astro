@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Tue Jul 22 08:32:03 PDT 2008
+astro/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+expose capability to append FT2 files; tag
+    *
+------------------------------------------------------------
+User: burnett  Tue Jul 22 08:32:03 PDT 2008
 astro/cmt
 
 Modified Files:
