@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Jul 31 15:22:54 PDT 2008
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+add correction capability to GPS class.
+    *
+------------------------------------------------------------
 User: burnett  Thu Jul 31 15:22:53 PDT 2008
 astro/doc
 
