@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Jul 31 15:22:53 PDT 2008
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+add correction capability to GPS class.
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-07-00, operation: add
 Package: astro
