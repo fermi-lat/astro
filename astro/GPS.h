@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.29 2007/12/18 02:47:29 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.30 2008/01/02 01:44:20 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -107,6 +107,11 @@ public:
     */
     CLHEP::Hep3Vector aberration(const CLHEP::Hep3Vector &sdir,double met=-1);
 
+    /// @brief make a correction, using alignment and/or aberration to a skydir
+    /// @param sdir uncorrected direction
+    /// @param met [-1] MET seconds: use current value if not specified
+    astro::SkyDir correct(const astro::SkyDir& sdir, double met=-1);
+
     /// expansion of the current orbit
     double      expansion () const; 
     /// sample interval for random orbit distribution
@@ -173,7 +178,9 @@ public:
 
     static int test();
 
-    void setAlignmentRotation(CLHEP::HepRotation r){m_alignment=r;}
+    /// @brief set the rotation to be used for alignment
+    /// @param r The misalignment matrix, so needs to be inverted to apply
+    void setAlignmentRotation(const CLHEP::HepRotation& r);
 
     /// @brief enable the application of the aberration
     /// @flag [true] value to set
