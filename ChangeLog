@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Thu Jul 31 15:22:53 PDT 2008
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+add correction capability to GPS class.
+    *
+------------------------------------------------------------
+User: burnett  Thu Jul 31 15:22:53 PDT 2008
 astro/astro
 
 Modified Files:
