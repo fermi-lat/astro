@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Aug 12 09:34:51 PDT 2008
+astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+add a little slop on the end
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-02-01, operation: add
 Package: astro
