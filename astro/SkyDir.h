@@ -38,7 +38,7 @@ namespace astro {
     /** @class SkyDir
     * @brief Describe an absolute direction
     * @author S. Robinson 
-    * <br>$Id: SkyDir.h,v 1.29 2006/03/21 01:43:17 usher Exp $
+    * <br>$Id: SkyDir.h,v 1.30 2007/07/23 18:42:52 peachey Exp $
     *
     * Note that units associated with sky coordinates (ra, dec, l, b) are consistently in degrees
     */
@@ -100,6 +100,13 @@ namespace astro {
 
         //! check for validity: m_dir.z is made gt 1 if invalid
         bool isValid()const{ return m_dir.z()<1.0; }
+
+        /** @brief determine coordinates with respect to zenith
+
+        @param zenithDir the direction defining the zenith
+        @return the azimuth and latitude in degrees. Note that the heading is 90-azimuth mod 360
+        */
+        std::pair<double, double> zenithCoords(const astro::SkyDir& zenithDir)const;
 
     private:
         static CLHEP::HepRotation s_equatorialToGalactic;

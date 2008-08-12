@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.33 2006/03/21 01:43:17 usher Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.34 2008/01/22 21:25:31 burnett Exp $
 */
 
 // Include files
@@ -146,6 +146,22 @@ double SkyDir::difference(const SkyDir& other)const
         return 2.*asin(x);
 }
 
+        
+std::pair<double, double> SkyDir::zenithCoords(const astro::SkyDir& zenithDir)const
+{
+    static Hep3Vector north_pole(0,0,1);
+    Hep3Vector east_dir( north_pole.cross(zenithDir()).unit() ); // east is perp to north_pole and zenith
+    Hep3Vector north_dir( zenithDir().cross(east_dir));
+
+    double theta = difference(zenithDir); 
+    double azimuth=atan2(dir().dot(north_dir),  dir().dot(east_dir)  ); // (y,x), so 0 is East, 90 North.
+    if( azimuth <0) azimuth += 2*M_PI; // to 0-360 deg.
+    // now convert to degrees
+    azimuth *= 180/M_PI;
+    theta *= 180/M_PI;
+    return std::make_pair(azimuth, theta-90); 
+
+}
 
   
 
