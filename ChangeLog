@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Aug 12 09:35:20 PDT 2008
+astro/astro
+
+Modified Files:
+	SkyDir.h 
+Log Message:
+Implement method to obtain zenith coordinates.
+    *
+------------------------------------------------------------
 User: burnett  Tue Aug 12 09:34:51 PDT 2008
 astro/src
 
