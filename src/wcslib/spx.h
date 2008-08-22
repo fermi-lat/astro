@@ -27,7 +27,7 @@
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
 *   http://www.atnf.csiro.au/~mcalabre/index.html
-*   $Id: spx.h,v 4.2 2005/09/21 13:21:57 cal103 Exp $
+*   $Id: spx.h,v 1.4 2005/10/20 16:08:37 hierath Exp $
 *=============================================================================
 *
 *   WCSLIB 4.2 - C routines that implement the spectral coordinate systems
@@ -333,7 +333,7 @@ SPX_PROTO(betavelo)
 
 
 #ifdef __cplusplus
-};
+}
 #endif
 
 #endif /* WCSLIB_SPEC */

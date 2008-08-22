@@ -27,7 +27,7 @@
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
 *   http://www.atnf.csiro.au/~mcalabre/index.html
-*   $Id: prj.h,v 4.2 2005/09/21 13:21:57 cal103 Exp $
+*   $Id: prj.h,v 1.4 2005/10/20 16:08:37 hierath Exp $
 *=============================================================================
 *
 *   WCSLIB 4.2 - C routines that implement the spherical map projections
@@ -700,7 +700,7 @@ extern int prj_stat;
 
 
 #ifdef __cplusplus
-};
+}
 #endif
 
 #endif /* WCSLIB_PROJ */
