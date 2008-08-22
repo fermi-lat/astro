@@ -27,7 +27,7 @@
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
 *   http://www.atnf.csiro.au/~mcalabre/index.html
-*   $Id: lin.h,v 4.2 2005/09/21 13:21:57 cal103 Exp $
+*   $Id: lin.h,v 1.4 2005/10/20 16:08:37 hierath Exp $
 *=============================================================================
 *
 *   WCSLIB 4.2 - C routines that implement the FITS World Coordinate System
@@ -421,7 +421,7 @@ int matinv(int, const double [], double []);
 
 
 #ifdef __cplusplus
-};
+}
 #endif
 
 #endif /* WCSLIB_LIN */
