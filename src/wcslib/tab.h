@@ -27,7 +27,7 @@
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
 *   http://www.atnf.csiro.au/~mcalabre/index.html
-*   $Id: tab.h,v 4.2 2005/09/22 08:59:02 cal103 Exp $
+*   $Id: tab.h,v 1.1 2005/10/20 16:08:38 hierath Exp $
 *=============================================================================
 *
 *   WCSLIB 4.2 - C routines that implement tabular coordinate systems as
@@ -515,7 +515,7 @@ int tabs2x(struct tabprm *, int, int, const double[], double[], int[]);
 
 
 #ifdef __cplusplus
-};
+}
 #endif
 
 #endif /* WCSLIB_TAB */

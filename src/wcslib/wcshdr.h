@@ -27,7 +27,7 @@
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
 *   http://www.atnf.csiro.au/~mcalabre/index.html
-*   $Id: wcshdr.h,v 4.2 2005/09/22 08:53:12 cal103 Exp $
+*   $Id: wcshdr.h,v 1.1 2005/10/20 16:08:38 hierath Exp $
 *=============================================================================
 *
 *   WCSLIB 4.2 - C routines that implement the FITS World Coordinate System
@@ -396,7 +396,7 @@ int wcsvfree(int *, struct wcsprm **);
 
 
 #ifdef __cplusplus
-};
+}
 #endif
 
 #endif /* WCSLIB_WCSHDR */
