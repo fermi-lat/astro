@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: elwinter  Fri Aug 22 15:03:05 PDT 2008
+astro/src/wcslib
+
+Modified Files:
+	spc.h 
+Log Message:
+Removed superfluous semicolon.
+
+    *
+------------------------------------------------------------
 User: elwinter  Fri Aug 22 15:01:18 PDT 2008
 astro/src/wcslib
 
