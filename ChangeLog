@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: elwinter  Fri Aug 22 14:40:36 PDT 2008
+astro/src/wcslib
+
+Modified Files:
+	lin.h 
+Log Message:
+Removed superfluous semicolon.
+
+    *
+------------------------------------------------------------
 User: elwinter  Fri Aug 22 14:05:40 PDT 2008
 astro/src
 
