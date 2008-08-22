@@ -27,7 +27,7 @@
 *
 *   Author: Mark Calabretta, Australia Telescope National Facility
 *   http://www.atnf.csiro.au/~mcalabre/index.html
-*   $Id: spc.h,v 4.2 2005/09/22 08:53:12 cal103 Exp $
+*   $Id: spc.h,v 1.4 2005/10/20 16:08:37 hierath Exp $
 *=============================================================================
 *
 *   WCSLIB 4.2 - C routines that implement the spectral coordinate systems
@@ -676,7 +676,7 @@ int spctrn(const char[], double, double, double, double, char[], double *,
 
 
 #ifdef __cplusplus
-};
+}
 #endif
 
 #endif /* WCSLIB_SPC */
