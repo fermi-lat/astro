@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: elwinter  Fri Aug 22 14:05:40 PDT 2008
+astro/src
+
+Modified Files:
+	IGRField.cxx 
+Log Message:
+Removed superfluous semicolons.
+
+    *
+------------------------------------------------------------
 User: elwinter  Fri Aug 22 14:01:22 PDT 2008
 astro/astro
 
