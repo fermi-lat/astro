@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: elwinter  Fri Aug 22 14:01:22 PDT 2008
+astro/astro
+
+Modified Files:
+	IGRField.h 
+Log Message:
+Removed superfluous semicolon.
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-03-00, operation: add
 Package: astro
