@@ -1,4 +1,12 @@
 ------------------------------------------------------------
+TAG
+Tag name: ScienceTools-09-07-00, operation: del
+Package: astro
+User: glastrm  Wed Sep 17 13:11:34 2008
+Files:
+
+    *
+------------------------------------------------------------
 User: elwinter  Fri Aug 22 15:18:47 PDT 2008
 astro/src/wcslib
 
