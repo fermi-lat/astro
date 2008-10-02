@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Oct  2 09:44:14 PDT 2008
+astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+more precision for out of range error message.
+    *
+------------------------------------------------------------
 User: burnett  Thu Oct  2 09:43:46 PDT 2008
 astro/src
 
