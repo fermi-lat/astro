@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.34 2008/01/22 21:25:31 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.35 2008/08/12 16:35:20 burnett Exp $
 */
 
 // Include files
@@ -159,8 +159,7 @@ std::pair<double, double> SkyDir::zenithCoords(const astro::SkyDir& zenithDir)co
     // now convert to degrees
     azimuth *= 180/M_PI;
     theta *= 180/M_PI;
-    return std::make_pair(azimuth, theta-90); 
-
+    return std::make_pair(azimuth, 90-theta); 
 }
 
   
