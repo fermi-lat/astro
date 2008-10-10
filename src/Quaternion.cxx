@@ -1,7 +1,7 @@
 /** @file Quaternion.cxx
 @brief implement class Quaternion
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.13 2008/06/29 11:06:52 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/Quaternion.cxx,v 1.14 2008/10/10 16:06:30 burnett Exp $
 
 */
 
@@ -87,7 +87,7 @@ Quaternion Quaternion::operator* (const CLHEP::Hep3Vector & vp) const
     return Quaternion(pv,ps);
 }
 
-Quaternion operator* (const CLHEP::Hep3Vector & v, const Quaternion & q)
+Quaternion astro::operator* (const CLHEP::Hep3Vector & v, const Quaternion & q)
 {
     Hep3Vector pv= v.cross(q.vector())  + v*q.scalar();
     double ps =- v*q.vector();
