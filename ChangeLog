@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Oct 10 09:06:29 PDT 2008
+astro/astro
+
+Modified Files:
+	Quaternion.h 
+Log Message:
+fix to Quaternion
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-03-01, operation: add
 Package: astro
