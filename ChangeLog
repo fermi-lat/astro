@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Fri Oct 10 09:06:29 PDT 2008
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+fix to Quaternion
+    *
+------------------------------------------------------------
+User: burnett  Fri Oct 10 09:06:29 PDT 2008
 astro/astro
 
 Modified Files:
