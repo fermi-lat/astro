@@ -2,7 +2,7 @@
 @brief declare class Quaternion
 
 @author T. Burnett <tburnett@u.washington.edu>
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Quaternion.h,v 1.4 2008/03/17 01:24:21 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/Quaternion.h,v 1.5 2008/04/16 02:40:31 burnett Exp $
 
 */
 
@@ -59,9 +59,6 @@ namespace astro {
         /** multiply a vector, Q*v -> Q' */
         Quaternion operator* (const CLHEP::Hep3Vector & r) const;
 
-        /** multiply by a vector v*Q -> Q/ */
-        friend Quaternion operator* (const CLHEP::Hep3Vector & rx, const Quaternion & r);
-
         /** access to vector part
         */
         const CLHEP::Hep3Vector& vector()const{return m_v;}
@@ -103,6 +100,9 @@ namespace astro {
         CLHEP::Hep3Vector m_v;
         double m_s;
     };
+    /** multiply by a vector v*Q -> Q/ */
+    Quaternion operator* (const CLHEP::Hep3Vector & rx, const Quaternion & r);
+
 
 }
 
