@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Oct 10 09:06:30 PDT 2008
+astro/src
+
+Modified Files:
+	Quaternion.cxx 
+Log Message:
+fix to Quaternion
+    *
+------------------------------------------------------------
 User: burnett  Fri Oct 10 09:06:29 PDT 2008
 astro/doc
 
