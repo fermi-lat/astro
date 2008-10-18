@@ -2,7 +2,7 @@
 
     @brief declare  the class SkyFunction
     @author Toby Burnett <tburnett@u.washington.edu>
-    $Header: /nfs/slac/g/glast/ground/cvs/map_tools/map_tools/SkyFunction.h,v 1.2 2004/03/10 20:43:47 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SkyFunction.h,v 1.1 2004/03/25 12:44:11 burnett Exp $
 
 */
 
@@ -25,6 +25,13 @@ public:
     //! @brief  coordinates of a point in the sky
     //! @return value at that point
     virtual double operator()(const astro::SkyDir& bincenter)const=0;
+
+    //! @brief evaluate average over the opening angle, with tolerance
+    //! Base class just returns the value -- meant for subclass to really determine
+    virtual double average(const astro::SkyDir& dir, double /*angle*/, double /*tolerance*/)const{
+        return (*this)(dir);
+    }
+
     virtual ~SkyFunction(){}
 protected:    
     SkyFunction(){}    
