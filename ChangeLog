@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Oct 24 15:20:34 PDT 2008
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+JulianDate fix for leap seconds (output only for now)
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-03-05, operation: add
 Package: astro
