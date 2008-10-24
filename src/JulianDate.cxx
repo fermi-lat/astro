@@ -1,7 +1,7 @@
 /** @file JulianDate.cxx
     @brief JulianDate implementation 
 
-    $Header$
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/JulianDate.cxx,v 1.4 2004/07/18 22:36:52 burnett Exp $
 */
 #include "astro/JulianDate.h"
 
@@ -61,10 +61,16 @@ namespace astro{
       mn = mn + 2 - 12*l;
       yr = 100*(n-49) + yr + l;
 
+      // account for leap seconds here
+      if( yr>2005) hr-=1./3600.;
+      if( yr>2008) hr-=1./3600.;
+
+
       An = yr;   
       Me = mn;   
       Gio = day;  
       utc = hr;
+
    }
 
    std::string JulianDate::getGregorianDate(void) const
