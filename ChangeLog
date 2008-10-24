@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Fri Oct 24 15:20:34 PDT 2008
+astro/src
+
+Modified Files:
+	JulianDate.cxx 
+Log Message:
+JulianDate fix for leap seconds (output only for now)
+    *
+------------------------------------------------------------
+User: burnett  Fri Oct 24 15:20:34 PDT 2008
 astro/doc
 
 Modified Files:
