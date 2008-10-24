@@ -2,9 +2,9 @@
 # @file SConscript
 # @brief build info
 #
-# $Id: SConscript,v 1.19 2008/10/11 02:30:04 glastrm Exp $
+# $Id: SConscript,v 1.20 2008/10/18 18:30:05 glastrm Exp $
 # Authors: T. Burnett <tburnett@u.washington.edu>
-# Version: astro-03-03-05
+# Version: astro-03-04-00
 
 Import('baseEnv')
 Import('listFiles')
