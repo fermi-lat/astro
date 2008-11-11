@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Nov 10 19:49:35 PST 2008
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+add some protection for the end-of-run interval; fix test for leap seconds
+    *
+------------------------------------------------------------
+User: burnett  Mon Nov 10 19:49:35 PST 2008
 astro/src
 
 Modified Files:
