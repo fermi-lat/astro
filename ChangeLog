@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Nov 10 19:49:35 PST 2008
+astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+add some protection for the end-of-run interval; fix test for leap seconds
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-04-00, operation: add
 Package: astro
