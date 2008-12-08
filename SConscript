@@ -2,7 +2,7 @@
 # @file SConscript
 # @brief build info
 #
-# $Id: SConscript,v 1.21 2008/10/24 22:30:05 glastrm Exp $
+# $Id: SConscript,v 1.22 2008/11/11 04:30:06 glastrm Exp $
 # Authors: T. Burnett <tburnett@u.washington.edu>
 # Version: astro-03-04-01
 
@@ -29,3 +29,6 @@ progEnv.Tool('registerObjects',
 	     libraries = [astroLib], 
 	     testApps = [test_astro], 
 	     includes = listFiles(['astro/*.h']))
+
+
+
