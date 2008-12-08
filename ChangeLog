@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: ecephas  Mon Dec  8 13:40:14 PST 2008
+GlastRelease-scons/astro
+
+Modified Files:
+	SConscript 
+Log Message:
+Check in SConscript for astro v3r4p1 (for branch-tag, GlastReleasev15r49) 
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-09-00, operation: add
 Package: astro
