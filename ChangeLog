@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Jan  2 16:34:53 PST 2009
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+fix JulianDate ctor for leap seconds; tagging
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-09-00, operation: add
 Package: astro
