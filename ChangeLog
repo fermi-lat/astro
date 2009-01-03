@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Fri Jan  2 16:34:53 PST 2009
+astro/src
+
+Modified Files:
+	JulianDate.cxx 
+Log Message:
+fix JulianDate ctor for leap seconds; tagging
+    *
+------------------------------------------------------------
+User: burnett  Fri Jan  2 16:34:53 PST 2009
 astro/doc
 
 Modified Files:
