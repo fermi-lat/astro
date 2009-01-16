@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Jan 16 10:12:14 PST 2009
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+tagging after minor tweak for linux compiler
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-15-50-10, operation: del
 Package: astro
