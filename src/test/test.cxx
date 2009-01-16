@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.50 2008/11/11 03:49:35 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.51 2009/01/03 00:34:53 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -250,8 +250,8 @@ bool testJD()
         }
     }
     // quick test of leap second(s) - 2 after 2008
-    astro::JulianDate date(astro::JulianDate(astro::JulianDate::missionStart()+252460802.00003/86400. ));
-    std::string td( date.getGregorianDate() );
+    JD2000 = astro::JulianDate(astro::JulianDate::missionStart()+252460802.00003/86400. );
+    std::string td( JD2000.getGregorianDate() );
     if( td != "2009-01-01T00:00:00.0000"){
         std::cout << "Fail leap second test, got" << td <<  std::endl;
         passed=false;
