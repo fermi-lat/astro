@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Jan 26 09:04:14 PST 2009
+astro/astro
+
+Modified Files:
+	EarthCoordinate.h 
+Log Message:
+provide access to IGR  lambda parameter
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-03-01, operation: mov
 Package: astro
