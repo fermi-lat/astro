@@ -1,7 +1,7 @@
 /** @file EarthCoordinate.cxx
     @brief implement class EarthCoordinate
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.26 2008/03/16 23:34:58 burnett Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.27 2008/05/12 16:59:53 burnett Exp $
 
 */
 #include <cmath>
@@ -86,6 +86,7 @@ EarthCoordinate::EarthCoordinate( CLHEP::Hep3Vector pos, double met)
     m_L = field.L();
     m_B = field.B();
     m_geolat = field.invariantLatitude();
+    m_lambda = field.lambda();
 }
    
 double EarthCoordinate::L()const
@@ -97,6 +98,11 @@ double EarthCoordinate::L()const
 double EarthCoordinate::B()const
 {
     return m_B; // Geomag::B(latitude(), longitude());
+}
+double EarthCoordinate::lambda()const
+{
+    return m_lambda;
+
 }
 double EarthCoordinate::geolat()const
 {
