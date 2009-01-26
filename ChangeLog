@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Mon Jan 26 09:04:14 PST 2009
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+provide access to IGR  lambda parameter
+    *
+------------------------------------------------------------
+User: burnett  Mon Jan 26 09:04:14 PST 2009
 astro/astro
 
 Modified Files:
