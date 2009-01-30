@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Jan 30 09:15:32 PST 2009
+astro/src/jplephem
+
+Modified Files:
+	bary.cxx 
+Log Message:
+change path for JPL stuff.
+    *
+------------------------------------------------------------
 User: burnett  Fri Jan 30 09:15:31 PST 2009
 astro/doc
 
