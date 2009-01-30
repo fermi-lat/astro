@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Jan 30 09:15:31 PST 2009
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+change path for JPL stuff.
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-05-01, operation: add
 Package: astro
