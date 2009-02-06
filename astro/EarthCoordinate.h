@@ -13,7 +13,7 @@ namespace astro {
 
   * \brief describe a point with respect to the surface of the Earth
   * \author T. Burnett and G. Tosti
-  * <hr> $Id: EarthCoordinate.h,v 1.15 2008/03/16 23:34:57 burnett Exp $
+  * <hr> $Id: EarthCoordinate.h,v 1.16 2009/01/26 17:04:14 burnett Exp $
   *
   * Note that we calculate the geodetic coordinates: from http://ssd.jpl.nasa.gov/glossary.html#geodetic
   *
@@ -64,6 +64,16 @@ lonv=( 45, 41, 31, 9,-11,-34,-46,-62,-79,-85,-89,-87, 45);
     //! access to the lambda parameter
     double lambda()const;
 
+    // other parameters
+    //! Radius in km
+    double R() const;
+    //! north component of bfield (gauss)
+    double bNorth() const;
+    //! east component of bfield (gauss)
+    double bEast()  const;
+    //! downward component of bfield (gauss)
+    double bDown()  const;
+
     double geolat()const;///< geomagnetic latitude (deg)
     double geolon()const;///< geomagnetic longitude (deg) (deprecated)
 
@@ -81,6 +91,7 @@ private:
     double m_geolat; ///< geomagnetic latitude, or invariant latitude
     CLHEP::Hep3Vector m_field;
     double m_lambda;
+    double m_R;
 
    /**
      * GetGMST returns the Greenwich sideral time in degrees, 
