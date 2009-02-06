@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: lsrea  Fri Feb  6 13:04:16 PST 2009
+astro/astro
+
+Modified Files:
+	EarthCoordinate.h 
+Log Message:
+Added interface for "R" and components of B-field; signed lambda and maglat
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-10-00, operation: add
 Package: astro
