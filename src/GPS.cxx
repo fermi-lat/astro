@@ -1,7 +1,7 @@
 /** @file GPS.cxx
 @brief  implementation of the GPS class.
 
-$Id: GPS.cxx,v 1.48 2008/07/31 22:22:54 burnett Exp $
+$Id: GPS.cxx,v 1.49 2009/01/29 22:13:15 burnett Exp $
 */
 #include "astro/GPS.h"
 
@@ -18,6 +18,10 @@ $Id: GPS.cxx,v 1.48 2008/07/31 22:22:54 burnett Exp $
 
 using namespace astro;
 using namespace CLHEP;
+
+namespace {
+    const double D2R = M_PI/180.;
+}
 
 GPS*	GPS::s_instance = 0;
 
@@ -210,7 +214,7 @@ CLHEP::HepRotation GPS::transformToGlast(double seconds, CoordSystem index){
 
 CLHEP::Hep3Vector GPS::aberration(const CLHEP::Hep3Vector& pvec, double met) {
     static double seconds_per_day(86400);
-    static double cob(20.49552/3600 * M_PI/180); // constant of aberration in radians
+    static double cob(20.49552/3600 * D2R); // constant of aberration in radians
     Hep3Vector enp(SkyDir(270,90-23.439281)());  // ecliptic northpole 
     if( met ==-1) { // use current time
         met = time();
@@ -336,15 +340,14 @@ void GPS::update(double inputTime){
 
     if(m_rockType == POINT){
         // pointing mode
-        astro::EarthCoordinate earthpos(position,inputTime);
-        Hep3Vector xaxis( npole.cross(m_point()).unit() ); // 
+        Hep3Vector xaxis( npole.cross(m_point()).unit() ); 
         m_currentPoint = PointingInfo( position, 
             Quaternion(m_point(), xaxis), earthpos );
         return; 
     }
 
     // Rocking if get here: decide on strategy 
-    double rockangle ( m_rockDegrees*M_PI/180 )  // default up
+    double rockangle ( m_rockDegrees*D2R )  // default up
         ,  zenithDec( SkyDir(zenith).dec() );
 
     if (m_rockType == NONE) {
@@ -401,7 +404,7 @@ int GPS::test()
         HepRotation Rzen = gps.transformToGlast(2000,GPS::ZENITH);
         Hep3Vector localZenith(0,0,1),
             testz ( Rzen* localZenith );
-        double dot(testz.dot(localZenith) ), cs(cos(rock*M_PI/180));
+        double dot(testz.dot(localZenith) ), cs(cos(rock*D2R));
         if( fabs(dot-cs) >1e-10  ) ++rc;
     }
 
