@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.35 2008/08/12 16:35:20 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.36 2008/10/02 16:42:33 burnett Exp $
 */
 
 // Include files
@@ -13,6 +13,11 @@ using namespace astro;
 #include <stdexcept>
 
 using namespace CLHEP;
+
+namespace {
+    const double R2D = 180./M_PI;
+    const double D2R = 1./R2D;
+}
 
 
 /** @brief initialize from (ra, dec), or (l,b)
@@ -72,8 +77,8 @@ SkyDir::SkyDir(double param1, double param2, const SkyProj& projection, bool che
     // this can throw an exception
    std::pair<double,double> s = projection.pix2sph(param1, param2);
 
-   double ra_rad = s.first * M_PI/180.;
-   double dec_rad = s.second * M_PI/180.;
+   double ra_rad = s.first * D2R;
+   double dec_rad = s.second * D2R;
 
    Hep3Vector t = Hep3Vector( cos(ra_rad)*cos(dec_rad), sin(ra_rad)*cos(dec_rad) , sin(dec_rad) );        
    if( !projection.isGalactic()){
