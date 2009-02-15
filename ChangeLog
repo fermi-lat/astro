@@ -1,5 +1,20 @@
 ------------------------------------------------------------
 User: lsrea  Sat Feb 14 21:53:42 PST 2009
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx SkyDir.cxx 
+Log Message:
+Remove extraneous public methods from EarthCoordinate
+Fix EarthCoordinates to separate geometric from magnetic calculations
+  This will speed up gtobssim, since it doesn't use the magnetic stuff
+convert lambda from radians to degrees here
+Change "large number" -9.999e102 to -9.999e37, so it works on Windows
+Define R2D = 180./M_PI in anonymous namespace
+
+    *
+------------------------------------------------------------
+User: lsrea  Sat Feb 14 21:53:42 PST 2009
 astro/astro
 
 Modified Files:
