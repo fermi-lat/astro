@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: lsrea  Thu Feb 19 13:21:20 PST 2009
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+Put in the latest SAA boundary polygon
+Fix up the boundary tests (they worked, but only by accident)
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-07-01, operation: add
 Package: astro
