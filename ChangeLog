@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: lsrea  Fri Feb 20 09:21:42 PST 2009
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+Fix the test program SAA test for the new SAA polygon
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-08-00, operation: add
 Package: astro
