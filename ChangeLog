@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: glastrm  Mon Apr  6 12:42:37 PDT 2009
+ScienceTools-scons/astro/src/wcslib
+
+Modified Files:
+	fitshdr.c wcsutrn.c 
+Log Message:
+Initialize global variables
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-11-00, operation: add
 Package: astro
