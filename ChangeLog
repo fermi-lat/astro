@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+TAG
+Tag name: v3r8p3, operation: mov
+Package: astro
+User: glastrm  Tue Apr  7 16:30:10 2009
+Files:
+  astro/SConscript  1.36
+
+    *
+------------------------------------------------------------
 User: glastrm  Tue Apr  7 16:30:04 PDT 2009
 astro
 
