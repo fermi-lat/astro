@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: glastrm  Thu Apr 30 08:22:18 PDT 2009
+astro
+
+Modified Files:
+	SConscript 
+Log Message:
+register astro data files
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-08-03, operation: add
 Package: astro
