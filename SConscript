@@ -2,9 +2,9 @@
 # @file SConscript
 # @brief build info
 #
-# $Id: SConscript,v 1.34 2009/02/20 17:30:06 glastrm Exp $
+# $Id: SConscript,v 1.36 2009/04/07 23:30:04 glastrm Exp $
 # Authors: T. Burnett <tburnett@u.washington.edu>
-# Version: astro-03-08-02
+# Version: astro-03-08-03
 Import('baseEnv')
 Import('listFiles')
 libEnv = baseEnv.Clone()
@@ -26,7 +26,8 @@ test_astro = progEnv.Program('test_astro', listFiles(['src/test/*.cxx']))
 progEnv.Tool('registerObjects', 
              package = 'astro', 
 	     libraries = [astroLib], 
-	     testApps = [test_astro], 
+	     testApps = [test_astro],
+             data = listFiles(['data/*']),
 	     includes = listFiles(['astro/*.h']))
 
 
