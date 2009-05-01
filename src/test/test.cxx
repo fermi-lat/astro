@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.53 2009/01/29 22:13:15 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.54 2009/02/20 17:21:43 lsrea Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -342,6 +342,8 @@ int main(){
     using namespace astro;
     using namespace std;
     int rc = 0;
+
+    facilities::commonUtilities::setupEnvironment();
 
     try {
         if( Quaternion::test()!=0) {
