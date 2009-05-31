@@ -3,10 +3,10 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.165 2009/04/07 23:09:12 burnett Exp $
+$Id: release.notes,v 1.166 2009/05/31 00:27:17 burnett Exp $
 
 @verbatim
-  v3r8p4   30-may-09 THB Fix JIRA OBS-14 and suppress SWIG warning. 
+  v3r8p5   30-may-09 THB Fix JIRA OBS-14  
   v3r8p3   07-apr-09 THB Increase tolerance for pointing interpolation warning message to 65 s.
   v3r8p2   06-apr-09 THB Minor tweak to wcslib code by Navid to satisfy Mac compiler
   v3r8p1   20-feb-09 LSR Adjust the test program for the new SAA polygon
