@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.55 2009/05/01 22:51:41 glastrm Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.56 2009/05/31 00:27:18 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -365,7 +365,8 @@ int main(){
             std::cout << "JIRA OBS-14\n";
             double secsperday(86400.); 
             astro::JulianDate mission_start(2001, 1, 1, 0); 
-
+ 
+            //double t0(252460741.00005 ); //version to check insertion of leap
             double t0(255139200.00005); // slight change to round off seconds
 
             for (double i=t0-5; i < t0+5; i++) { 
