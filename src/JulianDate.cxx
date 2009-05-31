@@ -1,7 +1,7 @@
 /** @file JulianDate.cxx
     @brief JulianDate implementation 
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/JulianDate.cxx,v 1.5 2008/10/24 22:20:34 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/JulianDate.cxx,v 1.6 2009/01/03 00:34:53 burnett Exp $
 */
 #include "astro/JulianDate.h"
 
@@ -75,15 +75,18 @@ namespace astro{
       Me = mn;   
       Gio = day;  
       utc = hr;
-      // these corrections made necessary by leap seconds
+      // these corrections made necessary by leap seconds which messes up logic above
       if( utc>=24.0*(1-1e-6) ){
           utc =- 24.;
           Gio += 1.;
       }
           
-      if( utc<-1e-6){
+      while( utc<-1e-9){
           utc += 24.;
           Gio -= 1;
+      }
+      if( Gio ==0) { // fix day
+          Gio = 1; Me--;
       }
 
    }
