@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jrb  Thu Jul  9 18:01:42 PDT 2009
+ScienceTools-scons/astro
+
+Modified Files:
+	SConscript 
+Log Message:
+Call registerTargets rather than registerObjects
+
+    *
+------------------------------------------------------------
 User: heather  Wed Jul  1 09:34:39 PDT 2009
 astro/doc
 
