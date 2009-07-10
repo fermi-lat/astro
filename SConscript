@@ -2,7 +2,7 @@
 # @file SConscript
 # @brief build info
 #
-# $Id: SConscript,v 1.38 2009/05/31 00:30:07 glastrm Exp $
+# $Id: SConscript,v 1.39 2009/05/31 04:30:07 glastrm Exp $
 # Authors: T. Burnett <tburnett@u.washington.edu>
 # Version: astro-03-08-05
 Import('baseEnv')
@@ -23,10 +23,10 @@ astroLib = libEnv.SharedLibrary('astro', listFiles(
 progEnv.Tool('astroLib')
 test_astro = progEnv.Program('test_astro', listFiles(['src/test/*.cxx']))
 
-progEnv.Tool('registerObjects', 
+progEnv.Tool('registerTargets', 
              package = 'astro', 
-	     libraries = [astroLib], 
-	     testApps = [test_astro],
+	     libraryCxts = [[astroLib, libEnv]], 
+	     testAppCxts = [[test_astro, progEnv]],
              data = listFiles(['data/*']),
 	     includes = listFiles(['astro/*.h']))
 
