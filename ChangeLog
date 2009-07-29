@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Wed Jul 29 10:54:49 PDT 2009
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+fix found by Johan Bregeon to EarthCoordinate.
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-08-06, operation: add
 Package: astro
