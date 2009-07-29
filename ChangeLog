@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: burnett  Wed Jul 29 10:54:49 PDT 2009
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+fix found by Johan Bregeon to EarthCoordinate.
+    *
+------------------------------------------------------------
+User: burnett  Wed Jul 29 10:54:49 PDT 2009
 astro/doc
 
 Modified Files:
