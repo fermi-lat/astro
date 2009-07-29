@@ -3,11 +3,11 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.168 2009/07/01 16:34:39 heather Exp $
+$Id: release.notes,v 1.169 2009/07/15 17:05:01 jrb Exp $
 
 @verbatim
  * EOH *
-
+  v3r8p7   29-jul-09 THB Fix to EarthCoordinate, bug found by Johan Bregeon [johan.bregeon@pi.infn.it]
   v3r8p6   15-Jul-09 jrb Update to SConscript
   v3r8p5   30-may-09 THB Fix JIRA OBS-14  
   v3r8p3   07-apr-09 THB Increase tolerance for pointing interpolation warning message to 65 s.
