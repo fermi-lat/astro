@@ -2,6 +2,14 @@
 TAG
 Tag name: astro-03-08-07, operation: add
 Package: astro
+User: golpa  Wed Jul 29 21:39:42 2009
+Files:
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: astro-03-08-07, operation: add
+Package: astro
 User: burnett  Wed Jul 29 10:57:13 2009
 Files:
   astro/.cvsignore  1.2
