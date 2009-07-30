@@ -2,6 +2,14 @@
 TAG
 Tag name: ScienceTools-09-15-04, operation: add
 Package: astro
+User: glastrm  Thu Jul 30 16:21:32 2009
+Files:
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: ScienceTools-09-15-04, operation: add
+Package: astro
 User: glastrm  Thu Jul 30 15:50:44 2009
 Files:
   astro/.cvsignore  1.2
