@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: elwinter  Thu Jul 30 07:45:19 PDT 2009
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+Removed superfluous semicolon which caused compilation to fail at FSSC.
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-08-07, operation: add
 Package: astro
