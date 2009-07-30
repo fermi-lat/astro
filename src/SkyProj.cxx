@@ -1,7 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.24 2008/03/16 23:34:58 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.25 2008/10/02 16:43:46 burnett Exp $
 */
 
 // Include files
@@ -240,7 +240,7 @@ std::pair<double,double> SkyProj::pix2pix(double x1, double x2, const SkyProj& o
 bool SkyProj::isGalactic()const
 {
     return ( std::string( m_wcs->ctype[0] ).substr(0,4)=="GLON");
-};
+}
 
 /*@brief determine the x or y range for a given x or y coordinate
    @param xvar varies x if true, varies y if false
