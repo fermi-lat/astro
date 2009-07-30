@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: elwinter  Thu Jul 30 07:50:13 PDT 2009
+astro/src
+
+Modified Files:
+      Tag: ScienceToolsv9r15p2
+	SkyProj.cxx 
+Log Message:
+Removed superfluous semicolon which caused compilation to fail at FSSC.
+
+    *
+------------------------------------------------------------
 User: elwinter  Thu Jul 30 07:45:19 PDT 2009
 astro/src
 
