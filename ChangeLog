@@ -1,4 +1,19 @@
 ------------------------------------------------------------
+User: lsrea  Thu Oct  1 17:35:22 PDT 2009
+astro/src
+
+Modified Files:
+	IGRField.cxx 
+Log Message:
+Fixed a bug in the calculation of Lambda; change in Lambda is small:
+ 0   at  0
+ 0.5 at 35
+ 1.0 at 38
+I *think deltaLambda/Lambda is negative
+ 
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-15-05, operation: add
 Package: astro
