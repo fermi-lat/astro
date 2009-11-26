@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Nov 26 09:53:59 PST 2009
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+fix slight problem with leap seconds,
+    *
+------------------------------------------------------------
 User: burnett  Thu Nov 26 09:53:58 PST 2009
 astro/src
 
