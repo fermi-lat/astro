@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Fri Nov 27 10:09:42 PST 2009
+astro/src
+
+Modified Files:
+	SkyDir.cxx 
+Log Message:
+add convenience functions to take dot and cross products with SkyDir objects (suggestion of J. Chiang)
+    *
+------------------------------------------------------------
 User: burnett  Fri Nov 27 10:09:41 PST 2009
 astro/astro
 
