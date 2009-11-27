@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.36 2008/10/02 16:42:33 burnett Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.37 2009/02/15 05:53:42 lsrea Exp $
 */
 
 // Include files
@@ -168,6 +168,17 @@ std::pair<double, double> SkyDir::zenithCoords(const astro::SkyDir& zenithDir)co
 }
 
   
+astro::SkyDir SkyDir::cross(const astro::SkyDir & other) const
+{ 
+         return astro::SkyDir(dir().cross(other.dir())); 
+} 
+
+double SkyDir::dot(const astro::SkyDir & other) const
+{ 
+         return dir().dot(other.dir()); 
+} 
+    
+
 
 
 
