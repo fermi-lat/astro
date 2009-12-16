@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.57 2009/05/31 03:35:34 burnett Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.58 2009/11/26 17:53:58 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -22,6 +22,7 @@
 
 #include <stdexcept>
 #include <iomanip>
+#include <typeinfo>
 
 using namespace astro;
 bool testSkyDir(){
