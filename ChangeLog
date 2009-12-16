@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: elwinter  Wed Dec 16 10:01:10 PST 2009
+astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+Added headers needed for gcc4 build, and added std:: qualification to abs()
+call to prevent namespace error on build.
+
+    *
+------------------------------------------------------------
 User: elwinter  Wed Dec 16 09:58:54 PST 2009
 astro/src
 
