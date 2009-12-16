@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: elwinter  Wed Dec 16 10:04:03 PST 2009
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+Added <cstring> include for gcc4 build. Also removed superlfuous semicolon
+which caused build errors at the FSSC.
+
+    *
+------------------------------------------------------------
 User: elwinter  Wed Dec 16 10:01:10 PST 2009
 astro/src
 
