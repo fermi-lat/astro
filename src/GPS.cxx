@@ -1,7 +1,7 @@
 /** @file GPS.cxx
 @brief  implementation of the GPS class.
 
-$Id: GPS.cxx,v 1.49 2009/01/29 22:13:15 burnett Exp $
+$Id: GPS.cxx,v 1.50 2009/02/15 06:15:12 lsrea Exp $
 */
 #include "astro/GPS.h"
 
@@ -14,7 +14,7 @@ $Id: GPS.cxx,v 1.49 2009/01/29 22:13:15 burnett Exp $
 #include <iomanip>
 #include <sstream>
 #include <cassert>
-
+#include <stdlib.h>
 
 using namespace astro;
 using namespace CLHEP;
