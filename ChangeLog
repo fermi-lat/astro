@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: elwinter  Wed Dec 16 10:06:21 PST 2009
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+Added <typeinfo> header needed by gcc4.
+
+    *
+------------------------------------------------------------
 User: elwinter  Wed Dec 16 10:04:03 PST 2009
 astro/src
 
