@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Dec 17 11:13:22 PST 2009
+astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+limit number of warning messages for inconsistent LAT/LON info.
+    *
+------------------------------------------------------------
 User: elwinter  Wed Dec 16 10:06:21 PST 2009
 astro/src/test
 
