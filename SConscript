@@ -2,7 +2,7 @@
 # @file SConscript
 # @brief build info
 #
-# $Id: SConscript,v 1.44 2009/11/26 17:55:40 burnett Exp $
+# $Id: SConscript,v 1.45 2009/11/27 18:10:42 burnett Exp $
 # Authors: T. Burnett <tburnett@u.washington.edu>
 # Version: astro-03-09-00
 Import('baseEnv')
@@ -13,7 +13,6 @@ progEnv = baseEnv.Clone()
 if baseEnv['PLATFORM'] == "win32":
     libEnv.Append(CCFLAGS = "/wd4554") #  warning C4554: '<<' : check operator precedence
 
-libEnv.Tool('astroLib', depsOnly = 1)
 astroLib = libEnv.SharedLibrary('astro', listFiles(
 ['src/*.cxx', 
  'src/wcslib/*.c', 
