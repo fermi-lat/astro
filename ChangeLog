@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jrb  Wed Feb 24 12:11:58 PST 2010
+ScienceTools-scons/astro
+
+Modified Files:
+	SConscript 
+Log Message:
+Fix shareable linking on mac
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-09-02, operation: add
 Package: astro
