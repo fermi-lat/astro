@@ -1,7 +1,7 @@
 /** @file PointingInfo.h
     @brief declare class PointingInfo
 
-    $Header$
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/PointingInfo.h,v 1.1 2006/11/05 20:06:26 burnett Exp $
 */
 #ifndef ASTRO_POINTINGINFO_H
 #define ASTRO_POINTINGINFO_H
@@ -38,7 +38,8 @@ public:
     ///! equivalent rotation
     CLHEP::HepRotation rotation()const{return m_q.rotation();}
 
-    PointingInfo interpolate(const astro::PointingInfo& next, double fraction)const;
+    ///! iterpolation
+    PointingInfo interpolate(const astro::PointingInfo& next, double fraction, double time)const;
 
 private:
     CLHEP::Hep3Vector m_position; ///< position (km)
