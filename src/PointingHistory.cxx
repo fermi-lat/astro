@@ -1,7 +1,7 @@
 /** @file PointingHistory.cxx
     @brief implement PointingHistory
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingHistory.cxx,v 1.16 2009/12/16 18:01:10 elwinter Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingHistory.cxx,v 1.17 2009/12/17 19:13:22 burnett Exp $
 
     */
 
@@ -106,7 +106,7 @@ const astro::PointingInfo& PointingHistory::operator()(double time)const throw(T
         const PointingInfo & h1 =iter->second;
         double prop( (time-time1)/(time2-time1) );
 
-        m_currentPoint = h1.interpolate(h2, prop);
+        m_currentPoint = h1.interpolate(h2, prop, time);
 
     }
     return m_currentPoint;
