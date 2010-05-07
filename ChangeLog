@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: burnett  Fri May  7 15:26:05 PDT 2010
+astro/src
+
+Modified Files:
+	PointingHistory.cxx PointingInfo.cxx 
+Log Message:
+fix interpolation for earth position in PointingInfo
+Note that the public interface was changed, so clients other than PointingHistory would be broken.
+    *
+------------------------------------------------------------
 User: burnett  Fri May  7 15:26:04 PDT 2010
 astro/astro
 
