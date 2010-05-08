@@ -1,7 +1,7 @@
 /** @file JulianDate.cxx
     @brief JulianDate implementation 
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/JulianDate.cxx,v 1.8 2009/05/31 03:35:33 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/JulianDate.cxx,v 1.9 2009/11/26 17:53:58 burnett Exp $
 */
 #include "astro/JulianDate.h"
 
@@ -48,11 +48,23 @@ namespace {
       utc = hr;
    }
 
-   // leap seconds applied after these JD times
-   astro::JulianDate leaptime[]={
-       astro::JulianDate(2006,1,1,1./3600.), 
-       astro::JulianDate(2009,1,1,1./3600.)};
+double leapSeconds(double JD)
+{     
+    // wire these in to avoid need for initialization: must correspond to the dates shown
+    double leaptime[]={
+                         2453736.5000115740 //astro::JulianDate(2006,1,1,1./3600.)
+                        ,2454832.5000115740 //astro::JulianDate(2009,1,1,1./3600.)
+                      }; 
+
+    int leap(0);
+    if (JD>leaptime[0]) leap++;
+    if (JD>leaptime[1]) leap++;
+    return double(leap);
 }
+
+}//anon namespace
+
+
 
 namespace astro{
 
@@ -70,22 +82,15 @@ namespace astro{
       if (An < 0) C = C - 1;
       int D = (int)(30.6001 * (Me + 1));
       m_JD = B + C + D + Gio + 1720994.5+ utc / 24.;
-        
-      double leap(0);
-      // add in leap seconds
-      if (m_JD>leaptime[0]) leap+= 1./secondsPerDay; 
-      if (m_JD>leaptime[1]) leap+= 1./secondsPerDay; 
-       m_JD += leap;
+
+      m_JD += leapSeconds(m_JD)/secondsPerDay;
    }
 
    void JulianDate::getGregorianDate(int &An, int &Me, int &Gio, double &utc) const
    {
        double JD(m_JD);
 
-       // correct for leap seconds here
-       if( m_JD>leaptime[0])  JD-=1./secondsPerDay;
-       if( m_JD>leaptime[1])  JD-=1./secondsPerDay;
-
+       JD -= leapSeconds(JD)/secondsPerDay;
        gregDate(JD, An, Me, Gio,utc);
    }
 
