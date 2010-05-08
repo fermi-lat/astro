@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sat May  8 07:34:17 PDT 2010
+astro/src
+
+Modified Files:
+	JulianDate.cxx 
+Log Message:
+refactor leap-second calculation to hopefully behave the same on all architectures
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-10-00, operation: add
 Package: astro
