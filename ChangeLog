@@ -2,6 +2,17 @@
 TAG
 Tag name: astro-03-10-02, operation: add
 Package: astro
+User: burnett  Tue May 18 05:42:19 2010
+Files:
+  astro/cmt/.cvsignore  1.3
+  astro/cmt/requirements  1.182
+  astro/cmt/Makefile  1.1
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: astro-03-10-02, operation: add
+Package: astro
 User: burnett  Tue May 18 05:42:12 2010
 Files:
   astro/astro/Quaternion.h  1.7
