@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue May 18 05:13:22 PDT 2010
+ScienceTools-scons/astro/src
+
+Modified Files:
+	IGRField.cxx 
+Log Message:
+change implementation of singleton a bit to avoid static code in header file, needed by vc
+    *
+------------------------------------------------------------
 User: burnett  Tue May 18 05:13:21 PDT 2010
 ScienceTools-scons/astro/astro
 
