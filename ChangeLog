@@ -2,6 +2,23 @@
 TAG
 Tag name: astro-03-10-02, operation: add
 Package: astro
+User: burnett  Tue May 18 05:42:33 2010
+Files:
+  astro/doc/qsc.jpg  1.1
+  astro/doc/.cvsignore  1.1
+  astro/doc/sfl.jpg  1.1
+  astro/doc/ait.jpg  1.1
+  astro/doc/release.notes  1.180
+  astro/doc/original.jpg  1.1
+  astro/doc/mol.jpg  1.1
+  astro/doc/zea.jpg  1.1
+  astro/doc/skyproj.html  1.6
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: astro-03-10-02, operation: add
+Package: astro
 User: burnett  Tue May 18 05:42:26 2010
 Files:
   astro/data/history_test.txt  1.1
