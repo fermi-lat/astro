@@ -2,6 +2,15 @@
 TAG
 Tag name: astro-03-10-02, operation: add
 Package: astro
+User: burnett  Tue May 18 05:42:39 2010
+Files:
+  astro/python/swig_setup.in  1.3
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: astro-03-10-02, operation: add
+Package: astro
 User: burnett  Tue May 18 05:42:33 2010
 Files:
   astro/doc/qsc.jpg  1.1
