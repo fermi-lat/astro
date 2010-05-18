@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue May 18 05:13:21 PDT 2010
+ScienceTools-scons/astro/astro
+
+Modified Files:
+	IGRField.h 
+Log Message:
+change implementation of singleton a bit to avoid static code in header file, needed by vc
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-10-01, operation: add
 Package: astro
