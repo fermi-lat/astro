@@ -1,7 +1,7 @@
 /** @file PointingInfo.h
     @brief declare class PointingInfo
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/PointingInfo.h,v 1.1 2006/11/05 20:06:26 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/astro/PointingInfo.h,v 1.2 2010/05/07 22:26:04 burnett Exp $
 */
 #ifndef ASTRO_POINTINGINFO_H
 #define ASTRO_POINTINGINFO_H
@@ -34,6 +34,8 @@ public:
     astro::SkyDir zenith()const;
     const CLHEP::Hep3Vector& position()const{return m_position;}
     const astro::EarthCoordinate& earthCoord()const{return m_earth;}
+    const  astro::Quaternion& quaternion() const {return m_q;}
+
 
     ///! equivalent rotation
     CLHEP::HepRotation rotation()const{return m_q.rotation();}
