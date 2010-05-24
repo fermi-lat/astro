@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: heather  Mon May 24 14:06:15 PDT 2010
+astro/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+add quaternion accessor to pointingInfo
+    *
+------------------------------------------------------------
 User: heather  Mon May 24 14:06:14 PDT 2010
 astro/astro
 
