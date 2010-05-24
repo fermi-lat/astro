@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: heather  Mon May 24 14:06:14 PDT 2010
+astro
+
+Modified Files:
+	SConscript 
+Log Message:
+add quaternion accessor to pointingInfo
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-10-02, operation: add
 Package: astro
