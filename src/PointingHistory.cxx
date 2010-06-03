@@ -1,7 +1,7 @@
 /** @file PointingHistory.cxx
     @brief implement PointingHistory
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingHistory.cxx,v 1.17 2009/12/17 19:13:22 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingHistory.cxx,v 1.18 2010/05/07 22:26:05 burnett Exp $
 
     */
 
@@ -16,6 +16,7 @@ using namespace astro;
 #include <sstream>
 #include <memory>
 #include <cmath>
+using CLHEP::Hep3Vector;
 
 namespace {
     static double time_tol(10); // seconds allow beyond the end
