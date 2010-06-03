@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Thu Jun  3 14:30:28 PDT 2010
+astro/src
+
+Modified Files:
+	GPS.cxx PointingHistory.cxx PointingInfo.cxx 
+Log Message:
+CLHEP namespace
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-11-01, operation: add
 Package: astro
