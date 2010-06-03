@@ -1,11 +1,11 @@
 /** @file PointingInfo.h
     @brief implement class PointingInfo
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingInfo.cxx,v 1.3 2007/12/04 04:24:11 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingInfo.cxx,v 1.4 2010/05/07 22:26:05 burnett Exp $
 */
 
 #include "astro/PointingInfo.h"
-
+using CLHEP::Hep3Vector;
 using namespace astro;
 
 PointingInfo::PointingInfo(const CLHEP::Hep3Vector& position, 

@@ -1,7 +1,7 @@
 /** @file GPS.cxx
 @brief  implementation of the GPS class.
 
-$Id: GPS.cxx,v 1.50 2009/02/15 06:15:12 lsrea Exp $
+$Id: GPS.cxx,v 1.51 2009/12/16 17:58:54 elwinter Exp $
 */
 #include "astro/GPS.h"
 
@@ -18,7 +18,8 @@ $Id: GPS.cxx,v 1.50 2009/02/15 06:15:12 lsrea Exp $
 
 using namespace astro;
 using namespace CLHEP;
-
+using CLHEP::HepRotation;
+using CLHEP::Hep3Vector;
 namespace {
     const double D2R = M_PI/180.;
 }
