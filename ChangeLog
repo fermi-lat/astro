@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jrb  Tue Jun 15 16:07:48 PDT 2010
+GlastRelease-scons/astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+comment out unused ::getenv which fails for SCons
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-17-00, operation: add
 Package: astro
