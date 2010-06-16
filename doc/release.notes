@@ -3,11 +3,12 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.181 2010/05/24 21:06:15 heather Exp $
+$Id: release.notes,v 1.182 2010/06/03 21:32:29 burnett Exp $
 
 @verbatim
  * EOH *
 
+ astro-03-11-03 16-Jun-2010    jrb updates for SCons builds
  astro-03-11-02 03-Jun-2010 burnett CLHEP mods
  astro-03-11-01 23-May-2010     hmk add Quaternion accessor to PointingInfo
  astro-03-10-02 18-May-2010 burnett move static code into implementation file
