@@ -1,7 +1,7 @@
 /** @file EarthCoordinate.cxx
     @brief implement class EarthCoordinate
 
- $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.32 2009/02/20 17:21:42 lsrea Exp $
+ $Header: /nfs/slac/g/glast/ground/cvs/astro/src/EarthCoordinate.cxx,v 1.33 2009/07/29 17:54:49 burnett Exp $
 
 */
 #include <cmath>
@@ -85,6 +85,13 @@ EarthCoordinate::EarthCoordinate( CLHEP::Hep3Vector pos, double met)
         std::stringstream msg;
         msg <<"astro::EarthCoordinate: invalid altitude, expect near 550 km, got: " << m_altitude;
         throw std::invalid_argument(msg.str());
+    }
+    if (m_haveMagCoords==false){
+        m_L=0;
+        m_B=0;
+        m_lambda=0;
+        m_geolat=0;
+        m_R=0;
     }
 }
    
