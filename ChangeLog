@@ -1,4 +1,18 @@
 ------------------------------------------------------------
+User: tstephen  Thu Jul 29 11:06:15 PDT 2010
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+Added initialization of several member variables to zero.  The lack of
+initalization was causing the 64-bit builds to fill these variables with
+values that evaluated to NaN and was causing segfaults and floating point
+execptions when the objects were being copied.
+
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-17-00, operation: add
 Package: astro
