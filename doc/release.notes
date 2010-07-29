@@ -3,11 +3,12 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.182 2010/06/03 21:32:29 burnett Exp $
+$Id: release.notes,v 1.183 2010/06/16 18:31:19 jrb Exp $
 
 @verbatim
  * EOH *
 
+ astro-03-11-04 29-Jul-2010 tstephen Tagging to get updated EarthCoordinate.cxx for 64-bit builds into production
  astro-03-11-03 16-Jun-2010    jrb updates for SCons builds
  astro-03-11-02 03-Jun-2010 burnett CLHEP mods
  astro-03-11-01 23-May-2010     hmk add Quaternion accessor to PointingInfo
