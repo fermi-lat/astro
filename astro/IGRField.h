@@ -1,7 +1,7 @@
 /** @file IGRField.h
 @brief declare class IGRField.h
 
-$Header$
+$Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/astro/IGRField.h,v 1.5 2010/05/18 12:13:21 burnett Exp $
 */
 
 #ifndef IGRFIELD_HH
@@ -94,8 +94,12 @@ class IGRField {
       float invariantLatitude() const { return m_invariantLat;};
 // Get R
       float R() const  { return m_R;};
-// Get lambda (causes SWIG warning--not sure how to fix
+// Get lambda 
+#ifndef SWIG lambda is a python keyword
       float lambda() const { return m_lambda;};
+#else
+      float _lambda() const { return m_lambda;};
+#endif
 };
 
 }
