@@ -3,11 +3,12 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.184 2010/07/29 18:12:21 tstephen Exp $
+$Id: release.notes,v 1.185 2010/07/31 15:38:17 burnett Exp $
 
 @verbatim
  * EOH *
 
+ astro-03-11-06 01-Aug-2010 burnett fix comment fix
  astro-03-11-05 31-Jul-2010 burnett fix SWIG warning in IGRField
  astro-03-11-04 29-Jul-2010 tstephen Tagging to get updated EarthCoordinate.cxx for 64-bit builds into production
  astro-03-11-03 16-Jun-2010    jrb updates for SCons builds
