@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Aug  1 07:06:08 PDT 2010
+ScienceTools-scons/astro/astro
+
+Modified Files:
+	IGRField.h 
+Log Message:
+comment in wrong place for SWIG
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-11-05, operation: add
 Package: astro
