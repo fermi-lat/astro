@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Aug  1 17:40:07 PDT 2010
+ScienceTools-scons/astro/astro
+
+Modified Files:
+	IGRField.h 
+Log Message:
+final resolution SWIG problem, I hope.
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-11-06, operation: add
 Package: astro
