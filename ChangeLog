@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Mon Nov 22 10:01:59 PST 2010
+astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+fix to LATPOLE and LONPOLE, STGEN-110
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-19-00, operation: add
 Package: astro
