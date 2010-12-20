@@ -2,6 +2,16 @@
 TAG
 Tag name: astro-03-11-09, operation: add
 Package: astro
+User: cohen  Mon Dec 20 11:35:02 2010
+Files:
+  astro/data/history_test.txt  1.1
+  astro/data/test_FT2.fits  1.1
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: astro-03-11-09, operation: add
+Package: astro
 User: cohen  Mon Dec 20 11:34:52 2010
 Files:
   astro/cmt/.cvsignore  1.3
