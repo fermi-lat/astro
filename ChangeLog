@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: cohen  Mon Dec 20 11:30:14 PST 2010
+ScienceTools-scons/astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+fix gcc 4.4 build
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-20-00, operation: add
 Package: astro
