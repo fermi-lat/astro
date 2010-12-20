@@ -1,4 +1,4 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.59 2009/12/16 18:06:21 elwinter Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/test/test.cxx,v 1.60 2010/06/03 21:30:29 burnett Exp $
 
 #include <cassert>
 #include "astro/GPS.h"
@@ -20,6 +20,7 @@
 #include "tip/Image.h"
 
 
+#include <cstdio>
 #include <stdexcept>
 #include <iomanip>
 #include <typeinfo>
