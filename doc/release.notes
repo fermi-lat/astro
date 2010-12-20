@@ -3,11 +3,12 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.187 2010/08/02 00:44:19 burnett Exp $
+$Id: release.notes,v 1.188 2010/11/22 18:05:06 burnett Exp $
 
 @verbatim
  * EOH *
 
+ astro-03-11-09 20-Dec-2010  cohen fix gcc 4.4 builds
  astro-03-11-08 22-Nov-2010 burnett resolve LATPOLE problem
  astro-03-11-07 01-Aug-2010 burnett fix SWIG fix
  astro-03-11-06 01-Aug-2010 burnett fix comment fix
