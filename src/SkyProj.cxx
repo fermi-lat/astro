@@ -1,7 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.26 2009/12/16 18:04:03 elwinter Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/SkyProj.cxx,v 1.27 2010/11/22 18:01:59 burnett Exp $
 */
 
 // Include files
@@ -518,9 +518,5 @@ void SkyProj::setKeywords(tip::Header& hdr)
 
     // todo: fix these
     setKey("CROTA2",  0, "", "Image rotation (deg)");
-    if( std::string(m_wcs->ctype[0]).substr(5,3)=="CAR") return;
-    // these are needed by ds9 for non-CAR. 
-    setKey("LONPOLE", 0.,     "deg", "longitude of celestial pole");
-    setKey("LATPOLE", 90.,    "deg", "latitude of celestial pole");
 }
 
