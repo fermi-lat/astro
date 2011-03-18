@@ -1,7 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/SkyProj.cxx,v 1.27 2010/11/22 18:01:59 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/SkyProj.cxx,v 1.28 2011/03/11 01:17:53 lande Exp $
 */
 
 // Include files
@@ -388,7 +388,7 @@ void SkyProj::init(const std::string &projName,
     try {
         findBound(crpix);
     }catch(...){
-        std::cerr << "warning: could not find bounding box" << std::endl;
+//        std::cerr << "warning: could not find bounding box" << std::endl;
     }
 
     // a simple test
