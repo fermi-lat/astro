@@ -1,13 +1,4 @@
 ------------------------------------------------------------
-User: heather  Sat May 21 13:15:16 PDT 2011
-astro
-
-Modified Files:
-	SConscript 
-Log Message:
-use of CLHEP
-    *
-------------------------------------------------------------
 TAG
 Tag name: astro-03-11-12, operation: add
 Package: astro
