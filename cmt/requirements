@@ -1,14 +1,14 @@
 package astro
 
-version v3r11p12
-#$Id: requirements,v 1.191 2011/03/18 14:34:27 jchiang Exp $
+version v3r11p13
+#$Id: requirements,v 1.192 2011/05/20 16:08:58 heather Exp $
 
 author  T. Burnett <tburnett@u.washington.edu>
 
 use GlastPolicy  * -no_auto_imports
 use facilities   *
 use cfitsio * IExternal 
-use CLHEP v3* IExternal
+use CLHEP * IExternal
 use extFiles * IExternal -no_auto_imports # for jphephem data
 use tip *
 use python * IExternal -no_auto_imports   # needed for windows in RM
