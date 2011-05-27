@@ -3,11 +3,12 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.192 2011/05/20 16:08:58 heather Exp $
+$Id: release.notes,v 1.193 2011/05/21 20:15:17 heather Exp $
 
 @verbatim
  * EOH *
 
+ astro-03-11-14 27-May-2011    jrb Support for imminent GRBAnalysis-scons container
  astro-03-11-13 21-May-2011 hmk     patch requirements file for CLHEP
  astro-03-11-12 20-May-2011 hmk     CLHEP 2.1.0.1
  astro-03-11-11 18-Mar-2011 jchiang silence bounding box message
