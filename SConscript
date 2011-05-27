@@ -2,7 +2,7 @@
 # @file SConscript
 # @brief build info
 #
-# $Id: SConscript,v 1.66 2011/05/20 16:08:57 heather Exp $
+# $Id: SConscript,v 1.67 2011/05/21 20:15:16 heather Exp $
 # Authors: T. Burnett <tburnett@u.washington.edu>
 # Version: astro-03-11-13
 Import('baseEnv')
@@ -13,24 +13,40 @@ progEnv = baseEnv.Clone()
 if baseEnv['PLATFORM'] == "win32":
     libEnv.Append(CCFLAGS = "/wd4554") #  warning C4554: '<<' : check operator precedence
 
-libEnv.Tool('addLinkDeps', package="astro", toBuild="shared")
-    
-astroLib = libEnv.SharedLibrary('astro', listFiles(
-['src/*.cxx', 
- 'src/wcslib/*.c', 
- 'src/jplephem/*.cxx',
- 'src/igrf_sub/*.cxx']))
+if 'makeStatic' in baseEnv:
+    libEnv.Tool('addLinkDeps', package="astro", toBuild="static")
+    astroLib = libEnv.StaticLibrary('astro', listFiles(
+        ['src/*.cxx', 
+         'src/wcslib/*.c', 
+         'src/jplephem/*.cxx',
+         'src/igrf_sub/*.cxx']))
+
+else:
+    libEnv.Tool('addLinkDeps', package="astro", toBuild="shared")
+    astroLib = libEnv.SharedLibrary('astro', listFiles(
+        ['src/*.cxx', 
+         'src/wcslib/*.c', 
+         'src/jplephem/*.cxx',
+         'src/igrf_sub/*.cxx']))
 
 progEnv.Tool('astroLib')
 
 test_astro = progEnv.Program('test_astro', listFiles(['src/test/*.cxx']))
 
-progEnv.Tool('registerTargets', 
-             package = 'astro', 
-	     libraryCxts = [[astroLib, libEnv]], 
-	     testAppCxts = [[test_astro, progEnv]],
-             data = listFiles(['data/*']),
-	     includes = listFiles(['astro/*.h']))
+if 'makeStatic' in baseEnv:
+    progEnv.Tool('registerTargets', 
+                 package = 'astro', 
+                 staticLibraryCxts = [[astroLib, libEnv]], 
+                 testAppCxts = [[test_astro, progEnv]],
+                 data = listFiles(['data/*']),
+                 includes = listFiles(['astro/*.h']))
+else:
+    progEnv.Tool('registerTargets', 
+                 package = 'astro', 
+                 libraryCxts = [[astroLib, libEnv]], 
+                 testAppCxts = [[test_astro, progEnv]],
+                 data = listFiles(['data/*']),
+                 includes = listFiles(['astro/*.h']))
 
 
 
