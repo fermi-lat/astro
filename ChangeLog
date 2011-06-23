@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jrb  Thu Jun 23 15:59:42 PDT 2011
+ScienceTools-scons/astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+data member tol should be initialized for all constructors
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-11-14, operation: add
 Package: astro
