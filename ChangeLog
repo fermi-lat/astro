@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jrb  Fri Jul  1 12:31:14 PDT 2011
+astro/src
+
+Modified Files:
+      Tag: GlastReleasev17r35p20
+	SkyProj.cxx 
+Log Message:
+retrofit SkyProj patch to v17r35p20 branch
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-24-00, operation: add
 Package: astro
