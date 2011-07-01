@@ -1,7 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/SkyProj.cxx,v 1.28 2011/03/11 01:17:53 lande Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyProj.cxx,v 1.29 2011/03/18 14:33:41 jchiang Exp $
 */
 
 // Include files
@@ -79,6 +79,7 @@ SkyProj::SkyProj(const std::string & fitsFile, const std::string & extension) {
 
    bool galactic;
    std::string ctype;
+   tol=0.00000001;
    header["CTYPE1"].get(ctype);
    if (ctype.substr(0, 2) == "RA") {
       galactic = false;
@@ -134,6 +135,7 @@ SkyProj::SkyProj(const std::string &fitsFile, int relax, int ctrl)
        numkeys, // number of keys (cards) in header
        nummore; // number of keys that can be added to header
    char *header(0); // string containing header
+   tol=0.00000001;
 
    fits_open_file(&fptr,fitsFile.c_str(),mode,&fstatus);
    fits_report_error(stderr, fstatus);
