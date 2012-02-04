@@ -1,7 +1,7 @@
 /** @file PointingHistory.cxx
     @brief implement PointingHistory
 
-    $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/PointingHistory.cxx,v 1.19 2010/06/03 21:30:28 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/PointingHistory.cxx,v 1.20 2010/12/20 19:30:14 cohen Exp $
 
     */
 
@@ -21,7 +21,8 @@ using CLHEP::Hep3Vector;
 namespace {
     static double time_tol(10); // seconds allow beyond the end
     static double max_interval(65); // more than this triggers warning message
-    int max_warning_message_count(100); // suppress messages if more than this  
+//    int max_warning_message_count(100); // suppress messages if more than this  
+    int max_warning_message_count(0); // suppress messages if more than this  
 }
 
 PointingHistory::PointingHistory(const std::string& filename, double offset)
