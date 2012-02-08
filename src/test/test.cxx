@@ -1,6 +1,7 @@
-// $Header: /nfs/slac/g/glast/ground/cvs/astro/src/test/test.cxx,v 1.61 2010/12/20 19:30:14 cohen Exp $
+// $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/test/test.cxx,v 1.62 2011/05/20 16:08:58 heather Exp $
 
 #include <cassert>
+#include <cstdlib>
 #include "astro/GPS.h"
 #include "astro/SolarSystem.h"
 #include "astro/EarthCoordinate.h"
