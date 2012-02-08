@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Feb  8 10:15:40 PST 2012
+ScienceTools-scons/astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+add header file that FSSC noted was needed for their builds
+    *
+------------------------------------------------------------
 User: jchiang  Fri Feb  3 22:53:20 PST 2012
 ScienceTools-scons/astro/src
 
