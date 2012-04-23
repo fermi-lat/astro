@@ -1,7 +1,7 @@
 /** @file JulianDate.cxx
     @brief JulianDate implementation 
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/JulianDate.cxx,v 1.9 2009/11/26 17:53:58 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/JulianDate.cxx,v 1.10 2010/05/08 14:34:17 burnett Exp $
 */
 #include "astro/JulianDate.h"
 
@@ -9,11 +9,12 @@
 #include <cmath>
 
 namespace {
-  // getGregorianDate
+   // getGregorianDate
    // Adapted from DAYCNV in the astronomy IDL library
    // http://idlastro.gsfc.nasa.gov/ftp/pro/astro/daycnv.pro
    //
-   // Appears to give better than .00004 second consistency with JulianDate() over time 
+   // Appears to give better than .00004 second consistency with
+   // JulianDate() over time
    // interval 2002 to 2020.
 
     void gregDate(double JD, int &An, int &Me, int &Gio, double &utc)
@@ -48,23 +49,25 @@ namespace {
       utc = hr;
    }
 
-double leapSeconds(double JD)
-{     
-    // wire these in to avoid need for initialization: must correspond to the dates shown
-    double leaptime[]={
-                         2453736.5000115740 //astro::JulianDate(2006,1,1,1./3600.)
-                        ,2454832.5000115740 //astro::JulianDate(2009,1,1,1./3600.)
-                      }; 
-
-    int leap(0);
-    if (JD>leaptime[0]) leap++;
-    if (JD>leaptime[1]) leap++;
-    return double(leap);
+double leapSeconds(double JD) {
+   // wire these in to avoid need for initialization: must correspond
+   // to the dates shown
+   double leaptime[] = {
+      2453736.5000115740 //astro::JulianDate(2006,1,1,1./3600.)
+      ,2454832.5000115740 //astro::JulianDate(2009,1,1,1./3600.)
+      ,2456109.5000231480226 //astro::JulianDate(2012, 1, 1, 0)
+   };
+    
+   int leap(0);
+   for (int i(0); i < 3; i++) {
+      if (JD > leaptime[i]) {
+         leap++;
+      }
+   }
+   return double(leap);
 }
 
 }//anon namespace
-
-
 
 namespace astro{
 
