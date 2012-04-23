@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Apr 23 10:49:08 PDT 2012
+ScienceTools-scons/astro/src
+
+Modified Files:
+	JulianDate.cxx 
+Log Message:
+add leap second for 2012Jul01 00:00:00; fix JD tests for rhel5-32 optimized
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-17-35-24-gr27, operation: add
 Package: astro
