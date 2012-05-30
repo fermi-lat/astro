@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue May 29 22:22:46 PDT 2012
+ScienceTools-scons/astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+new IGRF implementation
+    *
+------------------------------------------------------------
+User: jchiang  Tue May 29 22:22:46 PDT 2012
 ScienceTools-scons/astro/src/igrf_sub
 
 Modified Files:
