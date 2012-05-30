@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Wed May 30 09:04:48 PDT 2012
+ScienceTools-scons/astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+add magnetic field components to test_IGRF output
+
+    *
+------------------------------------------------------------
 User: jchiang  Tue May 29 22:22:46 PDT 2012
 ScienceTools-scons/astro/src/test
 
