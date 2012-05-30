@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue May 29 22:22:45 PDT 2012
+ScienceTools-scons/astro/src
+
+Modified Files:
+	IGRField.cxx 
+Log Message:
+new IGRF implementation
+    *
+------------------------------------------------------------
+User: jchiang  Tue May 29 22:22:45 PDT 2012
 ScienceTools-scons/astro/data
 
 Added Files:
