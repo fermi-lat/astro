@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jun 15 11:30:36 PDT 2012
+ScienceTools-scons/astro/astro
+
+Modified Files:
+	IGRField.h 
+Log Message:
+enclose igrf_data member in ifndef to avoid missing IGRF_data declaration in swig build of skymaps
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-13-01, operation: add
 Package: astro
