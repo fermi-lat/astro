@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jun 15 07:22:04 PDT 2012
+ScienceTools-scons/astro/src
+
+Modified Files:
+	IGRField.cxx 
+Log Message:
+uncomment warning messages
+
+    *
+------------------------------------------------------------
 User: jchiang  Fri Jun 15 00:12:17 PDT 2012
 ScienceTools-scons/astro/src/igrf_sub
 
