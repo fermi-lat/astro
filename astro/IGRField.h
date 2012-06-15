@@ -1,7 +1,7 @@
 /** @file IGRField.h
 @brief declare class IGRField.h
 
-$Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/astro/IGRField.h,v 1.8 2010/08/02 00:40:07 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/astro/IGRField.h,v 1.9 2012/06/15 07:12:16 jchiang Exp $
 */
 
 #ifndef IGRFIELD_HH
@@ -104,7 +104,9 @@ class IGRField {
 #endif
       float _lambda() const { return m_lambda;};
 
+#ifndef SWIG
    const IGRF_data & igrf_data(const std::string & filename);
+#endif
 
 private:
 
