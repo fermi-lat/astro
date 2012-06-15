@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jun 15 00:12:17 PDT 2012
+ScienceTools-scons/astro/src/igrf_sub
+
+Modified Files:
+	igrf_sub.cxx 
+Log Message:
+add IGRF_data class to enable caching of IGRF coefficient data in order to obtain factor 4-ish speedup
+    *
+------------------------------------------------------------
 User: jchiang  Fri Jun 15 00:12:16 PDT 2012
 ScienceTools-scons/astro/src
 
