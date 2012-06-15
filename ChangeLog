@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jun 15 00:12:16 PDT 2012
+ScienceTools-scons/astro/astro
+
+Modified Files:
+	IGRField.h 
+Added Files:
+	IGRF_data.h 
+Log Message:
+add IGRF_data class to enable caching of IGRF coefficient data in order to obtain factor 4-ish speedup
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-17-35-24-lp31, operation: add
 Package: astro
