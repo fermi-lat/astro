@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: lsrea  Mon Jun 25 17:22:08 PDT 2012
+astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+Implemented new parameterization of magnetic equator; removed sign of geomatlat
+
+    *
+------------------------------------------------------------
 User: lsrea  Mon Jun 25 17:22:07 PDT 2012
 astro/astro
 
