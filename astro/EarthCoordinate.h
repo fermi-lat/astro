@@ -13,7 +13,7 @@ namespace astro {
 
   * \brief describe a point with respect to the surface of the Earth
   * \author T. Burnett and G. Tosti
-  * <hr> $Id: EarthCoordinate.h,v 1.17 2009/02/06 21:04:15 lsrea Exp $
+  * <hr> $Id: EarthCoordinate.h,v 1.18 2009/02/15 05:53:42 lsrea Exp $
   *
   * Note that we calculate the geodetic coordinates: from http://ssd.jpl.nasa.gov/glossary.html#geodetic
   *
@@ -91,6 +91,8 @@ private:
    mutable bool m_haveMagCoords;
 
    void computeMagCoords()const ;
+   
+   int getHemisphere(double longitude, double latitude)const ;
 
    /**
      * GetGMST returns the Greenwich sideral time in degrees, 
