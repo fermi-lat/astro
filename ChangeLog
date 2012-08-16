@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jrb  Thu Aug 16 16:51:17 PDT 2012
+GlastRelease-scons/astro
+
+Modified Files:
+	astroLib.py 
+Log Message:
+for Windows no-installed-headers
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-20-04-01, operation: add
 Package: astro
