@@ -1,7 +1,7 @@
 /** @file GPS.cxx
 @brief  implementation of the GPS class.
 
-$Id: GPS.cxx,v 1.52 2010/06/03 21:30:28 burnett Exp $
+$Id: GPS.cxx,v 1.53 2010/06/15 23:07:48 jrb Exp $
 */
 #include "astro/GPS.h"
 
@@ -88,7 +88,7 @@ double	GPS::time ()  const{     return m_time;}
 
 double   GPS::expansion () const{    return m_expansion;}
 
-double GPS::endTime()const{ return m_history==0? 3e8 : m_history->endTime();}
+double GPS::endTime()const{ return m_history==0? 3e9 : m_history->endTime();}
 
 // functions that set the state, then retrieve the given value
 
