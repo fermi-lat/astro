@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Mon Oct 15 13:07:08 PDT 2012
+ScienceTools-scons/astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+increase astro::GPS::endTime() cutoff to 3e9 (kicking the can down the road).  This addresses OBS-19@JIRA
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-20-06-02, operation: add
 Package: astro
