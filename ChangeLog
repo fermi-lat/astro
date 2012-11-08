@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Wed Nov  7 16:52:14 PST 2012
+ScienceTools-scons/astro/astro
+
+Modified Files:
+	PointingInfo.h 
+Added Files:
+	LatProperties.h 
+Log Message:
+add LatProperties class and use in Pointing[Info,History], filling from FT2 data
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-20-06-04, operation: add
 Package: astro
