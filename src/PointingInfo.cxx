@@ -1,7 +1,7 @@
 /** @file PointingInfo.h
     @brief implement class PointingInfo
 
-    $Header: /nfs/slac/g/glast/ground/cvs/astro/src/PointingInfo.cxx,v 1.4 2010/05/07 22:26:05 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/PointingInfo.cxx,v 1.5 2010/06/03 21:30:28 burnett Exp $
 */
 
 #include "astro/PointingInfo.h"
@@ -10,10 +10,12 @@ using namespace astro;
 
 PointingInfo::PointingInfo(const CLHEP::Hep3Vector& position, 
                            const Quaternion& orientation,
-                           const EarthCoordinate& earthPos)
+                           const EarthCoordinate& earthPos,
+                           const LatProperties & latProperties)
 : m_position(position)
 , m_q(orientation)
 , m_earth(earthPos)
+, m_latProperties(latProperties)
 {}
 
 astro::SkyDir PointingInfo::xAxis()const
@@ -49,7 +51,7 @@ astro::PointingInfo PointingInfo::interpolate(const astro::PointingInfo& next, d
     Hep3Vector position (linear_interp(pos1,pos2,f).unit() * alt );
 
     // note using the quaternion interpolation (SLERP)
-    return PointingInfo(position, m_q.interpolate(next.m_q, f), EarthCoordinate(position,time));
+    return PointingInfo(position, m_q.interpolate(next.m_q, f), EarthCoordinate(position,time), latProperties());
  
     return *this; // todo
 
