@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Nov  9 23:24:34 PST 2012
+ScienceTools-scons/astro/astro
+
+Modified Files:
+	LatProperties.h PointingInfo.h 
+Log Message:
+clean up source files; add alternate constructor for pointlike builds; provide access to livetime, start, stop
+    *
+------------------------------------------------------------
 User: jchiang  Wed Nov  7 16:52:14 PST 2012
 ScienceTools-scons/astro/src
 
