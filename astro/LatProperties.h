@@ -4,7 +4,7 @@
  * 
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/astro/LatProperties.h,v 1.1 2012/11/08 00:52:14 jchiang Exp $
  **/
 
 #ifndef astro_LatProperties_h
@@ -39,6 +39,18 @@ public:
 
    int data_qual() const {
       return m_data_qual;
+   }
+
+   double livetime() const {
+      return m_livetime;
+   }
+   
+   double interval_start() const {
+      return m_start;
+   }
+
+   double interval_stop() const {
+      return m_stop;
    }
 
    double rock_angle() const {
