@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Nov 11 15:23:07 PST 2012
+ScienceTools-scons/astro/data
+
+Modified Files:
+	test_FT2.fits 
+Log Message:
+update test_FT2.fits to include newer columns such as LAT_CONFIG
+    *
+------------------------------------------------------------
 User: jchiang  Fri Nov  9 23:24:34 PST 2012
 ScienceTools-scons/astro/src
 
