@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Nov 11 16:19:01 PST 2012
+ScienceTools-scons/astro/astro
+
+Modified Files:
+	LatProperties.h 
+Log Message:
+include in_saa flag in LatProperties; add test_LatProperties function to test code
+    *
+------------------------------------------------------------
 User: jchiang  Sun Nov 11 15:23:07 PST 2012
 ScienceTools-scons/astro/data
 
