@@ -1,7 +1,7 @@
 /** @file SkyProj.cxx
 @brief implementation of the class SkyProj
 
-$Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/SkyProj.cxx,v 1.29 2011/03/18 14:33:41 jchiang Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/SkyProj.cxx,v 1.30 2011/06/23 22:59:42 jrb Exp $
 */
 
 // Include files
@@ -95,6 +95,8 @@ SkyProj::SkyProj(const std::string & fitsFile, const std::string & extension) {
    std::string projName("");
    if (ctype.size() > 7) {
       projName = ctype.substr(ctype.size() - 3, 3);
+   } else {
+      throw std::runtime_error("CTYPE1 must be more than 7 characters");
    }
    
    double crpix[2], crval[2], cdelt[2];
