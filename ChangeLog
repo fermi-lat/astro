@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: lande  Mon Jan 21 18:58:30 PST 2013
+ScienceTools-scons/astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+raise exception when CTYPE1 has fewer than 8 characters in it
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-20-08-04, operation: add
 Package: astro
