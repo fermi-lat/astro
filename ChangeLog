@@ -1,5 +1,146 @@
 ------------------------------------------------------------
 TAG
+Tag name: GlastRelease-17-35-24-lp42, operation: add
+Package: astro
+User: heather  Tue Apr  9 04:51:25 2013
+Files:
+  astro/.cvsignore  1.3
+  astro/ChangeLog  1.1651
+  astro/astroLib.py  1.3
+  astro/SConscript  1.80
+  astro/astro/IGRF_data.h  1.1
+  astro/astro/Quaternion.h  1.7
+  astro/astro/LatProperties.h  1.3
+  astro/astro/HTM.h  1.4
+  astro/astro/Photon.h  1.3
+  astro/astro/SkyDir.h  1.32
+  astro/astro/SkyProj.h  1.23
+  astro/astro/SkyFunction.h  1.2
+  astro/astro/EarthCoordinate.h  1.19
+  astro/astro/IGRField.h  1.10
+  astro/astro/JulianDate.h  1.8
+  astro/astro/PointingTransform.h  1.4
+  astro/astro/EarthOrbit.h  1.15
+  astro/astro/PointingInfo.h  1.5
+  astro/astro/SkyStat.h  1.2
+  astro/astro/GPS.h  1.31
+  astro/astro/SolarSystem.h  1.14
+  astro/astro/PointingHistory.h  1.4
+  astro/cmt/.cvsignore  1.3
+  astro/cmt/requirements  1.205
+  astro/cmt/Makefile  1.1
+  astro/data/history_test.txt  1.1
+  astro/data/dgrf2000.dat  1.1
+  astro/data/igrf2010.dat  1.1
+  astro/data/igrf1930.dat  1.1
+  astro/data/dgrf1980.dat  1.1
+  astro/data/igrf1920.dat  1.1
+  astro/data/igrf1910.dat  1.1
+  astro/data/dgrf1995.dat  1.1
+  astro/data/dgrf1960.dat  1.1
+  astro/data/igrf2005.dat  1.1
+  astro/data/dgrf2005.dat  1.1
+  astro/data/dgrf1990.dat  1.1
+  astro/data/dgrf1970.dat  1.1
+  astro/data/dgrf1975.dat  1.1
+  astro/data/dgrf1950.dat  1.1
+  astro/data/dgrf1965.dat  1.1
+  astro/data/igrf1900.dat  1.1
+  astro/data/dgrf1955.dat  1.1
+  astro/data/igrf2010s.dat  1.1
+  astro/data/igrf1935.dat  1.1
+  astro/data/igrf1915.dat  1.1
+  astro/data/igrf1940.dat  1.1
+  astro/data/test_FT2.fits  1.2
+  astro/data/dgrf1945.dat  1.1
+  astro/data/dgrf1985.dat  1.1
+  astro/data/igrf1925.dat  1.1
+  astro/data/igrf1905.dat  1.1
+  astro/doc/qsc.jpg  1.1
+  astro/doc/.cvsignore  1.1
+  astro/doc/sfl.jpg  1.1
+  astro/doc/ait.jpg  1.1
+  astro/doc/release.notes  1.205
+  astro/doc/original.jpg  1.1
+  astro/doc/mol.jpg  1.1
+  astro/doc/zea.jpg  1.1
+  astro/doc/skyproj.html  1.6
+  astro/python/swig_setup.in  1.3
+  astro/src/Quaternion.cxx  1.15
+  astro/src/PointingHistory.cxx  1.24
+  astro/src/IGRF_data.cxx  1.1
+  astro/src/IGRField.cxx  1.8
+  astro/src/EarthCoordinate.cxx  1.35
+  astro/src/GPS.cxx  1.54
+  astro/src/EarthOrbit.cxx  1.26
+  astro/src/mainpage.h  1.6
+  astro/src/Geomag.cxx  1.3
+  astro/src/SkyStat.cxx  1.3
+  astro/src/JulianDate.cxx  1.11
+  astro/src/SolarSystem.cxx  1.18
+  astro/src/HTM.cxx  1.4
+  astro/src/Geomag.h  1.1
+  astro/src/PointingInfo.cxx  1.7
+  astro/src/Geomag.inc  1.1
+  astro/src/PointingTransform.cxx  1.7
+  astro/src/SkyDir.cxx  1.38
+  astro/src/SkyProj.cxx  1.30
+  astro/src/igrf_sub/igrf_sub.for  1.1
+  astro/src/igrf_sub/igrf_sub.h  1.2
+  astro/src/igrf_sub/igrf_sub.cxx  1.8
+  astro/src/igrf_sub/igrf_sub.f  1.1
+  astro/src/jplephem/bary.h  1.3
+  astro/src/jplephem/bary.cxx  1.3
+  astro/src/jplephem/dpleph.cxx  1.2
+  astro/src/jplephem/dpleph.h  1.1
+  astro/src/test/Healpix  Neighbors
+  astro/src/test/test.cxx  1.68
+  astro/src/wcslib/tab.h  1.2
+  astro/src/wcslib/prj.c  1.3
+  astro/src/wcslib/wcsutil.c  1.1
+  astro/src/wcslib/log.c  1.1
+  astro/src/wcslib/sph.h  1.4
+  astro/src/wcslib/spc.h  1.5
+  astro/src/wcslib/lin.c  1.2
+  astro/src/wcslib/wcsunits.c  1.1
+  astro/src/wcslib/lin.h  1.5
+  astro/src/wcslib/wcslib.h  1.1
+  astro/src/wcslib/fitshdr.c  1.3
+  astro/src/wcslib/getwcstab.c  1.1
+  astro/src/wcslib/wcshdr.c  1.1
+  astro/src/wcslib/getwcstab.h  1.1
+  astro/src/wcslib/wcs.c  1.3
+  astro/src/wcslib/spc.c  1.2
+  astro/src/wcslib/wcshdr.h  1.2
+  astro/src/wcslib/wcspih.c  1.3
+  astro/src/wcslib/cel.c  1.2
+  astro/src/wcslib/config.h  1.1
+  astro/src/wcslib/tab.c  1.1
+  astro/src/wcslib/fitshdr.h  1.1
+  astro/src/wcslib/sph.c  1.2
+  astro/src/wcslib/wcsutil.h  1.1
+  astro/src/wcslib/log.h  1.1
+  astro/src/wcslib/wcsutrn.l  1.1
+  astro/src/wcslib/wcsulex.c  1.4
+  astro/src/wcslib/wcsunits.h  1.1
+  astro/src/wcslib/wcsulex.l  1.1
+  astro/src/wcslib/wcstrig.c  1.2
+  astro/src/wcslib/cel.h  1.4
+  astro/src/wcslib/wcspih.l  1.1
+  astro/src/wcslib/spx.c  1.2
+  astro/src/wcslib/wcstrig.h  1.4
+  astro/src/wcslib/wcsutrn.c  1.4
+  astro/src/wcslib/wcs.h  1.6
+  astro/src/wcslib/prj.h  1.5
+  astro/src/wcslib/wcsfix.h  1.1
+  astro/src/wcslib/spx.h  1.5
+  astro/src/wcslib/fitshdr.l  1.1
+  astro/src/wcslib/wcsfix.c  1.1
+  astro/src/wcslib/wcsmath.h  1.4
+
+    *
+------------------------------------------------------------
+TAG
 Tag name: GlastRelease-20-08-12, operation: add
 Package: astro
 User: heather  Tue Apr  9 04:30:05 2013
