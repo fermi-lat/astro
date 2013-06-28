@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jperkins  Fri Jun 28 13:44:18 PDT 2013
+ScienceTools-scons/astro/src
+
+Modified Files:
+	PointingHistory.cxx 
+Log Message:
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-20-08-18, operation: add
 Package: astro
