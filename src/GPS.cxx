@@ -1,7 +1,7 @@
 /** @file GPS.cxx
 @brief  implementation of the GPS class.
 
-$Id: GPS.cxx,v 1.53 2010/06/15 23:07:48 jrb Exp $
+$Id: GPS.cxx,v 1.54 2012/10/15 20:07:08 jchiang Exp $
 */
 #include "astro/GPS.h"
 
@@ -254,6 +254,12 @@ CLHEP::Hep3Vector GPS::LATdirection(CoordSystem index,const CLHEP::Hep3Vector& d
                     north(0,0,1),
                     east( north.cross(zenith).unit() );
                 HepRotation zenith_to_cel(east, zenith.cross(east), zenith);
+
+                if (::getenv("ZENITH_FRAME_FIX")) {
+                   /// Use coordinate system with z-axis along nadir,
+                   /// x-axis to the north, y-axis to east
+                   zenith_to_cel = HepRotation(zenith.cross(east), east, -zenith);
+                }
 
                 // return the product, zenith->celestial->GLAST
                 result = trans* zenith_to_cel * result;
