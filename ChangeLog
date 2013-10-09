@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Oct  9 15:35:36 PDT 2013
+astro/src
+
+Modified Files:
+	GPS.cxx 
+Log Message:
+add NADIR case that correctly implements transformations using EARTH_AZIMUTH_ANGLE
+    *
+------------------------------------------------------------
+User: jchiang  Wed Oct  9 15:35:36 PDT 2013
 astro/astro
 
 Modified Files:
