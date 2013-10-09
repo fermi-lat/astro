@@ -1,7 +1,7 @@
 /** @file GPS.h
 @brief declare class GPS
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.30 2008/01/02 01:44:20 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/GPS.h,v 1.31 2008/07/31 22:22:53 burnett Exp $
 */
 #ifndef ASTRO_GPS_H
 #define ASTRO_GPS_H
@@ -43,7 +43,8 @@ public:
         GLAST=0,  //! 0: The original direction is in the GLAST frame already
         LAT = 0,  //! 0; LAT is not really GLAST anymore 
         ZENITH=1, //! 1: rotate from the earth-zenith frame to GLAST
-        CELESTIAL=2 //! 2: rotate from the cartesian celestial coordinate system (like a SkyDir)
+        CELESTIAL=2, //! 2: rotate from the cartesian celestial coordinate system (like a SkyDir)
+        NADIR=3 //3: This conforms to the definition of EARTH_AZIMUTH_ANGLE, whereas ZENITH does not
     };
 
     enum RockType { 
