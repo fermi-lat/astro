@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Oct  9 15:35:36 PDT 2013
+astro/astro
+
+Modified Files:
+	GPS.h 
+Log Message:
+add NADIR case that correctly implements transformations using EARTH_AZIMUTH_ANGLE
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-17-35-24-lp60, operation: add
 Package: astro
