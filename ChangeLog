@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Dec  3 16:30:45 PST 2014
+ScienceTools-scons/astro/src
+
+Modified Files:
+	EarthCoordinate.cxx 
+Log Message:
+output met in exception method
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-34-03, operation: add
 Package: astro
