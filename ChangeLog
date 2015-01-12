@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Jan 12 14:54:07 PST 2015
+ScienceTools-scons/astro/src
+
+Modified Files:
+	IGRField.cxx 
+Log Message:
+update to use IGRF-12 coefficients
+    *
+------------------------------------------------------------
+User: jchiang  Mon Jan 12 14:54:07 PST 2015
 ScienceTools-scons/astro/data
 
 Added Files:
