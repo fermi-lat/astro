@@ -1,7 +1,7 @@
 /** @file JulianDate.cxx
     @brief JulianDate implementation 
 
-    $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/JulianDate.cxx,v 1.10 2010/05/08 14:34:17 burnett Exp $
+    $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/JulianDate.cxx,v 1.11 2012/04/23 17:49:08 jchiang Exp $
 */
 #include "astro/JulianDate.h"
 
@@ -55,11 +55,12 @@ double leapSeconds(double JD) {
    double leaptime[] = {
       2453736.5000115740 //astro::JulianDate(2006,1,1,1./3600.)
       ,2454832.5000115740 //astro::JulianDate(2009,1,1,1./3600.)
-      ,2456109.5000231480226 //astro::JulianDate(2012, 1, 1, 0)
+      ,2456109.5000231480226 //astro::JulianDate(2012, 7, 1, 1./3600.)
+      ,2457204.500046296 //astro::JulianDate(2015, 7, 1, 1./3600.)
    };
     
    int leap(0);
-   for (int i(0); i < 3; i++) {
+   for (int i(0); i < 4; i++) {
       if (JD > leaptime[i]) {
          leap++;
       }
