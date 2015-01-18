@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Jan 17 16:21:33 PST 2015
+ScienceTools-scons/astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+add leap second for 2105-07-01 00:00:00
+    *
+------------------------------------------------------------
 User: jchiang  Sat Jan 17 16:21:32 PST 2015
 ScienceTools-scons/astro/src
 
