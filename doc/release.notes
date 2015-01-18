@@ -3,11 +3,12 @@
 
   package astro
   Package coordinators: T.Burnett
-$Id: release.notes,v 1.211 2014/12/19 18:20:46 jchiang Exp $
+$Id: release.notes,v 1.212 2015/01/12 22:54:54 jchiang Exp $
 
 @verbatim
  * EOH *
 
+ astro-03-15-08 17-Jan-2015 jchiang add leap-second for 2015-07-01 00:00:00
  astro-03-15-07 12-Jan-2015 jchiang update to use IGRF-12 coefficients; see [STGEN-141@JIRA]
  astro-03-15-06 19-Dec-2014 jchiang disable throwing of exception from EarthCoordinate
  astro-03-15-05 03-Dec-2014 jchiang Add MET to exception message from EarthCoordinate when altitude exceeds 600 km
