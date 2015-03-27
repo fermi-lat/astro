@@ -2,9 +2,9 @@
 # @file SConscript
 # @brief build info
 #
-# $Id: SConscript,v 1.87 2015/01/12 22:54:54 jchiang Exp $
+# $Id: SConscript,v 1.4 2015/03/05 19:58:30 echarles Exp $
 # Authors: T. Burnett <tburnett@u.washington.edu>
-# Version: astro-03-15-08
+# Version: astro-03-15-06
 Import('baseEnv')
 Import('listFiles')
 libEnv = baseEnv.Clone()
@@ -15,17 +15,17 @@ if baseEnv['PLATFORM'] == "win32":
 
 if 'makeStatic' in baseEnv:
     libEnv.Tool('addLinkDeps', package="astro", toBuild="static")
+    # EAC, switch to using wcslib as an external
     astroLib = libEnv.StaticLibrary('astro', listFiles(
         ['src/*.cxx', 
-         'src/wcslib/*.c', 
          'src/jplephem/*.cxx',
          'src/igrf_sub/*.cxx']))
 
 else:
     libEnv.Tool('addLinkDeps', package="astro", toBuild="shared")
+    # EAC, switch to using wcslib as an external
     astroLib = libEnv.SharedLibrary('astro', listFiles(
         ['src/*.cxx', 
-         'src/wcslib/*.c', 
          'src/jplephem/*.cxx',
          'src/igrf_sub/*.cxx']))
 
