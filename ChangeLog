@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: echarles  Fri Mar 27 13:07:57 PDT 2015
+ScienceTools-scons/astro/src
+
+Modified Files:
+	SkyProj.cxx 
+Log Message:
+Switch to using wcslib and healpix as externals
+    *
+------------------------------------------------------------
 User: echarles  Fri Mar 27 13:07:56 PDT 2015
 ScienceTools-scons/astro
 
