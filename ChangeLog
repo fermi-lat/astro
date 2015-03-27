@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: echarles  Fri Mar 27 13:07:56 PDT 2015
+ScienceTools-scons/astro
+
+Modified Files:
+	SConscript astroLib.py 
+Log Message:
+Switch to using wcslib and healpix as externals
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-10-00-03, operation: add
 Package: astro
