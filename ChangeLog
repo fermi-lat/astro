@@ -1,4 +1,18 @@
 ------------------------------------------------------------
+User: echarles  Fri Mar 27 13:08:28 PDT 2015
+ScienceTools-scons/astro/src/wcslib
+
+Removed Files:
+	cel.c cel.h config.h fitshdr.c fitshdr.h fitshdr.l getwcstab.c 
+	getwcstab.h lin.c lin.h log.c log.h prj.c prj.h spc.c spc.h 
+	sph.c sph.h spx.c spx.h tab.c tab.h wcs.c wcs.h wcsfix.c 
+	wcsfix.h wcshdr.c wcshdr.h wcslib.h wcsmath.h wcspih.c 
+	wcspih.l wcstrig.c wcstrig.h wcsulex.c wcsulex.l wcsunits.c 
+	wcsunits.h wcsutil.c wcsutil.h wcsutrn.c wcsutrn.l 
+Log Message:
+remove wcslib code from astro
+    *
+------------------------------------------------------------
 User: echarles  Fri Mar 27 13:07:57 PDT 2015
 ScienceTools-scons/astro/src
 
