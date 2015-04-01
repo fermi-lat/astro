@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: kuss  Wed Apr  1 03:13:13 PDT 2015
+astro/src/igrf_sub
+
+Modified Files:
+	igrf_sub.cxx 
+Log Message:
+bug fix: set numye to one less than the number of geomag data files.
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: astro-03-16-00, operation: add
 Package: astro
