@@ -2,7 +2,7 @@
 @brief definition of class SolarSystem 
 
 
-$Header: /nfs/slac/g/glast/ground/cvs/astro/astro/SolarSystem.h,v 1.13 2007/04/16 04:14:59 burnett Exp $
+$Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/astro/SolarSystem.h,v 1.14 2008/03/17 01:24:21 burnett Exp $
 */
 #ifndef astro_SolarSystem_H
 #define astro_SolarSystem_H
@@ -27,7 +27,8 @@ namespace astro {
         /**
         * index of body that corresponds to the elements in dpleph class
         */
-        typedef enum Body { MERCURY=1,
+//        typedef enum Body { MERCURY=1,
+       enum Body { MERCURY=1,
             VENUS=2, EARTH=3, MARS=4,
             JUPITER=5, SATURN=6, URANUS=7,
             NEPTUNE=8, PLUTO=9, MOON=10, SUN=11};
