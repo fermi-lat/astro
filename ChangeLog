@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: echarles  Wed Dec  9 16:41:59 PST 2015
+astro/astro
+
+Modified Files:
+	SkyDir.h SkyProj.h 
+Added Files:
+	HealpixProj.h ProjBase.h 
+Log Message:
+Split SkyProj into HealpixProj and SkyProj, with ProjBase base class
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-20-10-03, operation: add
 Package: astro
