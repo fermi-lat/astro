@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: echarles  Wed Dec  9 16:42:00 PST 2015
+astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+Split SkyProj into HealpixProj and SkyProj, with ProjBase base class
+    *
+------------------------------------------------------------
+User: echarles  Wed Dec  9 16:42:00 PST 2015
 astro/src
 
 Modified Files:
