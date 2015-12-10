@@ -1,7 +1,7 @@
 /** @file SkyDir.cxx
     @brief implementation of the class SkyDir
 
-   $Header: /nfs/slac/g/glast/ground/cvs/astro/src/SkyDir.cxx,v 1.37 2009/02/15 05:53:42 lsrea Exp $
+   $Header: /nfs/slac/g/glast/ground/cvs/users/echarles/healpix_changes/astro/src/SkyDir.cxx,v 1.3 2015/03/03 06:00:10 echarles Exp $
 */
 
 // Include files
@@ -67,7 +67,7 @@ SkyDir::SkyDir(Hep3Vector dir, CoordSystem inputType)
 @param param2 projected equivalent dec or b, in degrees
 @param projection used to deproject these coordinates
 */
-SkyDir::SkyDir(double param1, double param2, const SkyProj& projection, bool check)
+SkyDir::SkyDir(double param1, double param2, const ProjBase& projection, bool check)
 {
    // convert from pixel to ra/dec (or l/b) 
     if( check && projection.testpix2sph(param1, param2)!=0){
@@ -132,7 +132,7 @@ double SkyDir::dec ()const{
 }
 
 // wcslib based projection routine
-std::pair<double,double> SkyDir::project(const SkyProj& projection) const
+std::pair<double,double> SkyDir::project(const ProjBase& projection) const
 {
     if(projection.isGalactic()){
         double l, b; 
