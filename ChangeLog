@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: mdwood  Mon Feb 29 16:20:09 PST 2016
+ScienceTools-scons/astro/src
+
+Modified Files:
+	SkyDir.cxx 
+Log Message:
+Updating FK5 to Galactic rotation angles.
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-20-10-04, operation: add
 Package: astro
