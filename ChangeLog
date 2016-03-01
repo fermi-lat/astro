@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: mdwood  Mon Feb 29 16:20:10 PST 2016
+ScienceTools-scons/astro/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+Updating FK5 to Galactic rotation angles.
+    *
+------------------------------------------------------------
 User: mdwood  Mon Feb 29 16:20:09 PST 2016
 ScienceTools-scons/astro/src
 
