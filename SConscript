@@ -2,9 +2,9 @@
 # @file SConscript
 # @brief build info
 #
-# $Id: SConscript,v 1.92 2015/12/10 06:48:03 echarles Exp $
+# $Id: SConscript,v 1.93 2016/03/05 19:35:24 mdwood Exp $
 # Authors: T. Burnett <tburnett@u.washington.edu>
-# Version: astro-04-00-01
+# Version: astro-04-00-02
 Import('baseEnv')
 Import('listFiles')
 libEnv = baseEnv.Clone()
