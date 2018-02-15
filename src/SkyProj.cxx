@@ -261,7 +261,7 @@ std::pair<double,double> SkyProj::pix2sph(double x1, double x2) const
     while(s1 < 0) s1 +=360.;
     while(s1 >= 360) s1 -= 360.;
 
-    return std::make_pair<double,double>(s1,worldcrd[1]);
+    return std::make_pair(s1,worldcrd[1]);
 }
 
 
@@ -270,7 +270,7 @@ std::pair<double,double> SkyProj::pix2sph(double x1, double x2) const
    @param x1 x or y coordinate to find y or x range respectively */
 std::pair<double,double> SkyProj::range(double x1,bool xvar) {
     if(hasRange(x1,xvar))
-        return std::make_pair<double,double>(0,0);
+        return std::make_pair(0,0);
     double xval,yval,delt;
     double max,min;
     int offset;
@@ -331,7 +331,7 @@ std::pair<double,double> SkyProj::range(double x1,bool xvar) {
         delt=delt/2;
     }
     xvar?min=xval:min=yval;
-    return std::make_pair<double,double>(max,min);
+    return std::make_pair(max,min);
 }
 
 /*@brief determines if a pixel coordinate is in 
