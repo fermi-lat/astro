@@ -15,8 +15,8 @@
 #include <cmath>
 
 namespace {
-
-    double EarthFlat= (1/298.25);            /* Earth Flattening Coeff. */
+    
+    double EarthFlat= (1/298.257223563);            /* Earth Flattening Coeff. */
     double J2000= astro::JulianDate(2000,1,1,12); // 2451545.0;
 
     const double R2D = 180./M_PI;
@@ -43,7 +43,8 @@ namespace {
 
 // static constants 
 namespace astro {
-double EarthCoordinate::s_EarthRadius = 6378145.; //m
+    
+double EarthCoordinate::s_EarthRadius = 6378137.; //m
 
 
 double EarthCoordinate::earthRadius(){return s_EarthRadius;}
@@ -81,7 +82,9 @@ EarthCoordinate::EarthCoordinate( CLHEP::Hep3Vector pos, double met)
     // or http://www.colorado.edu/geography/gcraft/notes/datum/gif/ellipse.gif
     m_altitude=sqrt(sqr(pos.x())+sqr(pos.y()))/cos(m_lat)
         -s_EarthRadius / (1000.*sqrt(1.-sqr(0.00669454*sin(m_lat))));
-
+    
+    
+       
     if( fabs(m_altitude-550.) > 50){
         std::stringstream msg;
         msg <<"astro::EarthCoordinate: invalid altitude, expect near 550 km, got: " << m_altitude << " at MET " << met;
