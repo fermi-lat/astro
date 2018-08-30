@@ -13,6 +13,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <cmath>
+#include <CLHEP/Vector/ThreeVector.h>
 
 namespace {
     
@@ -43,7 +44,56 @@ namespace {
 
 // static constants 
 namespace astro {
-    
+
+void EarthCoordinate::computeFerrariLatitudeAndAltitude(CLHEP::Hep3Vector pos, double &lat, double &alt)
+{
+
+  // Preliminary computations and assigments
+  double a = EarthCoordinate::s_EarthRadius;
+
+  double asq = a*a;
+
+  double fc = 1.0 - EarthFlat;
+  double fcsq = fc * fc;
+  double b = a * fc;
+  double esq = EarthFlat * (fc + 1);
+  double edsq = esq / fcsq;
+  double bEsq = asq * esq;
+
+  double x = pos.x();
+  double y = pos.y();
+  double z = pos.z();
+
+  double zsq = z*z;
+  double rsq = x*x + y*y;
+  double r = sqrt(rsq);
+  double f = 54.0 * b*b * zsq;
+  double g = rsq + zsq*fcsq - esq*bEsq;
+
+  double c = esq*esq*f*rsq/(g*g*g);
+
+  double term1 = 1 + c + sqrt(c*(c+2));
+  double s = pow(term1,1.0/3.0);
+
+  double term2 = (1 + s + 1.0/s)*g;
+  double p = f/(3*term2*term2);
+
+  double q = sqrt(1 + 2.0*p*esq*esq);
+
+  double term3 = asq*(1 + 1.0/q)/2.0 - p*rsq/2.0 - p*zsq*fcsq/(q*(q + 1.0));
+  double r0 = sqrt(term3) - (p*esq*r/(q + 1));
+  double term4 = r - r0*esq;
+  double u = sqrt(zsq + term4*term4);
+  double v = sqrt(term4*term4 + zsq*fcsq);
+
+  double term5 = b*b/(v*a);
+  double z0 = z * term5;
+
+  // Finally assign to the references
+  lat = atan((z + z0*edsq)/r); // radians
+  alt = u*(1.0 - term5);
+}
+
 double EarthCoordinate::s_EarthRadius = 6378137.; //m
 
 
@@ -66,7 +116,7 @@ EarthCoordinate::EarthCoordinate( CLHEP::Hep3Vector pos, double met)
     if (s_SAA_boundary == 0 ) {
       s_SAA_boundary = new std::vector<std::pair<double, double> >;
     }
-    m_lat = M_PI/2- pos.theta();
+
     // convert from MET to JD
     JulianDate jd(JulianDate::missionStart() + met/JulianDate::secondsPerDay);
     m_lon = pos.phi() - GetGMST(jd)*D2R;
@@ -74,15 +124,18 @@ EarthCoordinate::EarthCoordinate( CLHEP::Hep3Vector pos, double met)
     if( m_lon<-M_PI) m_lon+=2*M_PI; // to get into (-180,180)
     if( m_lon>M_PI) m_lon-=2*M_PI;
 
-    // oblateness correction to obtain geodedic latitude 
-    m_lat=(atan(tan(m_lat))/(sqr(1.-EarthFlat)) );
+    // Old code
+    // oblateness correction to obtain geodedic latitude
+//    m_lat = M_PI/2- pos.theta();
+//    m_lat=(atan(tan(m_lat))/(sqr(1.-EarthFlat)) );
+//
+//    // this is also such a correction: the number 0.00669454 is the geodetic eccentricity squared?
+//    // see http://www.cage.curtin.edu.au/~will/gra64_05.pdf
+//    // or http://www.colorado.edu/geography/gcraft/notes/datum/gif/ellipse.gif
+//    m_altitude=sqrt(sqr(pos.x())+sqr(pos.y()))/cos(m_lat)
+//        -s_EarthRadius / (1000.*sqrt(1.-sqr(0.00669454*sin(m_lat))));
 
-    // this is also such a correction: the number 0.00669454 is the geodetic eccentricity squared?
-    // see http://www.cage.curtin.edu.au/~will/gra64_05.pdf
-    // or http://www.colorado.edu/geography/gcraft/notes/datum/gif/ellipse.gif
-    m_altitude=sqrt(sqr(pos.x())+sqr(pos.y()))/cos(m_lat)
-        -s_EarthRadius / (1000.*sqrt(1.-sqr(0.00669454*sin(m_lat))));
-    
+  this->computeFerrariLatitudeAndAltitude(pos, m_lat, m_altitude);
     
        
     if( fabs(m_altitude-550.) > 50){
@@ -90,7 +143,7 @@ EarthCoordinate::EarthCoordinate( CLHEP::Hep3Vector pos, double met)
         msg <<"astro::EarthCoordinate: invalid altitude, expect near 550 km, got: " << m_altitude << " at MET " << met;
 //        throw std::invalid_argument(msg.str());
     }
-    if (m_haveMagCoords==false){
+    if (!m_haveMagCoords) {
         m_L=0;
         m_B=0;
         m_lambda=0;

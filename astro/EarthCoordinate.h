@@ -32,6 +32,12 @@ public:
 
    EarthCoordinate() : m_haveMagCoords(false) {} // default ctor
 
+   /**
+    @brief return Ferrari's computation of Latitude and Altitude.
+    **/
+
+   void computeFerrariLatitudeAndAltitude(CLHEP::Hep3Vector pos, double &lat, double &alt);
+
     /** @brief true if inside the SAA
 
 Some work on defining a realistic SAA boundary for the LAT is described at
