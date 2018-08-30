@@ -124,20 +124,18 @@ EarthCoordinate::EarthCoordinate( CLHEP::Hep3Vector pos, double met)
     if( m_lon>M_PI) m_lon-=2*M_PI;
 
     // Old code
-    // oblateness correction to obtain geodedic latitude
-    double lat = M_PI/2- pos.theta();
-    lat=(atan(tan(lat))/(sqr(1.-EarthFlat)) );
-
-    // this is also such a correction: the number 0.00669454 is the geodetic eccentricity squared?
-    // see http://www.cage.curtin.edu.au/~will/gra64_05.pdf
-    // or http://www.colorado.edu/geography/gcraft/notes/datum/gif/ellipse.gif
-    double altitude=sqrt(sqr(pos.x())+sqr(pos.y()))/cos(lat)
-        -s_EarthRadius / (1000.*sqrt(1.-sqr(0.00669454*sin(lat))));
+//    // oblateness correction to obtain geodedic latitude
+//    double lat = M_PI/2- pos.theta();
+//    lat=(atan(tan(lat))/(sqr(1.-EarthFlat)) );
+//
+//    // this is also such a correction: the number 0.00669454 is the geodetic eccentricity squared?
+//    // see http://www.cage.curtin.edu.au/~will/gra64_05.pdf
+//    // or http://www.colorado.edu/geography/gcraft/notes/datum/gif/ellipse.gif
+//    double altitude=sqrt(sqr(pos.x())+sqr(pos.y()))/cos(lat)
+//        -s_EarthRadius / (1000.*sqrt(1.-sqr(0.00669454*sin(lat))));
 
     this->computeFerrariLatitudeAndAltitude(pos, m_lat, m_altitude);
-
-    std::cerr << "Ratio latitude " << m_lat / lat << ", ratio altitude " << m_altitude / altitude << std::endl;
-       
+     
     if( fabs(m_altitude-550.) > 50){
         std::stringstream msg;
         msg <<"astro::EarthCoordinate: invalid altitude, expect near 550 km, got: " << m_altitude << " at MET " << met;
