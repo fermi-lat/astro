@@ -57,7 +57,7 @@ void EarthCoordinate::computeFerrariLatitudeAndAltitude(CLHEP::Hep3Vector pos, d
   y = pos.y() / 1000.0;
   z = pos.z() / 1000.0;
 
-  double a = EarthCoordinate::s_EarthRadius;
+  double a = EarthCoordinate::s_EarthRadius / 1000.0;
   f = EarthFlat;
 
   asq = a*a;
