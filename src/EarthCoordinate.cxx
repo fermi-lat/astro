@@ -49,49 +49,47 @@ void EarthCoordinate::computeFerrariLatitudeAndAltitude(CLHEP::Hep3Vector pos, d
 {
 
   // Preliminary computations and assigments
+
+  double asq, fc, fcsq, b, esq, edsq, bEsq;
+  double x, y, z, zsq, rsq, r, f, g, c, term, s, p, q, r0, u, v, z0;
+
+  x = pos.x();
+  y = pos.y();
+  z = pos.z();
+
   double a = EarthCoordinate::s_EarthRadius;
+  f = EarthFlat;
 
-  double asq = a*a;
+  asq = a*a;
+  fc = 1.0 - f;
+  fcsq = fc * fc;
+  b = a * fc;
+  esq = f * (fc + 1);
+  edsq = esq / fcsq;
+  bEsq = asq * esq;
 
-  double fc = 1.0 - EarthFlat;
-  double fcsq = fc * fc;
-  double b = a * fc;
-  double esq = EarthFlat * (fc + 1);
-  double edsq = esq / fcsq;
-  double bEsq = asq * esq;
+  zsq = z*z;
+  rsq = x*x + y*y;
+  r = sqrt(rsq);
+  f = 54.0 * b*b * zsq;
+  g = rsq + zsq*fcsq - esq*bEsq;
+  c = esq*esq*f*rsq/(g*g*g);
+  term = 1 + c + sqrt(c*(c+2));
+  s = pow(term,1.0/3.0);
+  term = (1 + s + 1.0/s)*g;
+  p = f/(3*term*term);
+  q = sqrt(1 + 2.0*p*esq*esq);
+  term = asq*(1 + 1.0/q)/2.0 - p*rsq/2.0 - p*zsq*fcsq/(q*(q + 1.0));
+  r0 = sqrt(term) - (p*esq*r/(q + 1));
+  term = r - r0*esq;
+  u = sqrt(zsq + term*term);
+  v = sqrt(term*term + zsq*fcsq);
+  term = b*b/(v*a);
+  z0 = z * term;
 
-  double x = pos.x();
-  double y = pos.y();
-  double z = pos.z();
+  alt = u*(1.0 - term);
+  lat = atan((z + z0*edsq)/r);
 
-  double zsq = z*z;
-  double rsq = x*x + y*y;
-  double r = sqrt(rsq);
-  double f = 54.0 * b*b * zsq;
-  double g = rsq + zsq*fcsq - esq*bEsq;
-
-  double c = esq*esq*f*rsq/(g*g*g);
-
-  double term1 = 1 + c + sqrt(c*(c+2));
-  double s = pow(term1,1.0/3.0);
-
-  double term2 = (1 + s + 1.0/s)*g;
-  double p = f/(3*term2*term2);
-
-  double q = sqrt(1 + 2.0*p*esq*esq);
-
-  double term3 = asq*(1 + 1.0/q)/2.0 - p*rsq/2.0 - p*zsq*fcsq/(q*(q + 1.0));
-  double r0 = sqrt(term3) - (p*esq*r/(q + 1));
-  double term4 = r - r0*esq;
-  double u = sqrt(zsq + term4*term4);
-  double v = sqrt(term4*term4 + zsq*fcsq);
-
-  double term5 = b*b/(v*a);
-  double z0 = z * term5;
-
-  // Finally assign to the references
-  lat = atan((z + z0*edsq)/r); // radians
-  alt = u*(1.0 - term5);
 }
 
 double EarthCoordinate::s_EarthRadius = 6378137.; //m
