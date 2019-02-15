@@ -45,7 +45,7 @@ GPS::~GPS ()
 }//delete m_orbit; }
 
 
-const astro::PointingHistory& GPS::history()
+const astro::PointingHistory& GPS::history()const
 {   if( m_history==0) throw GPS::NoHistoryError("GPS:: no history has been loaded");
     return *m_history;
 }
