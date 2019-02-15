@@ -47,9 +47,9 @@ namespace astro{
 
         */
         const astro::PointingInfo& operator()(double time)const 
-#ifndef SWIG
-            throw(TimeRangeError)          
-#endif
+//#ifndef SWIG
+//            throw(TimeRangeError)          
+//#endif
         ;
 
         double startTime()const{return m_startTime;}
