@@ -56,27 +56,27 @@ namespace astro {
         /**
         * @brief return the SkyDir at date
         */
-        SkyDir direction(JulianDate jd)const throw( SolarSystem::BadDate);
+        SkyDir direction(JulianDate jd)const;
 
 		/**
         * @brief return the distance of the body from Earth at date in lightseconds
         */
-        double distance(JulianDate jd)const throw( SolarSystem::BadDate);
+        double distance(JulianDate jd)const;
 
         /**
         * @brief return the distance vector to solar system barycenter at date in lightseconds
         */
-        CLHEP::Hep3Vector getBarycenter(JulianDate jd)const throw( SolarSystem::BadDate);
+        CLHEP::Hep3Vector getBarycenter(JulianDate jd)const;
 
         /**
         * @brief return a distance vector to the sun at date in lightseconds
         */
-        CLHEP::Hep3Vector getSolarVector(JulianDate jd)const throw( SolarSystem::BadDate);
+        CLHEP::Hep3Vector getSolarVector(JulianDate jd)const;
 
         /*
         * @brief returns the distance vector between two bodies: target and center at date in lightseconds
         */
-        static CLHEP::Hep3Vector vector(Body targ, Body cent, JulianDate jd) throw( SolarSystem::BadDate);
+        static CLHEP::Hep3Vector vector(Body targ, Body cent, JulianDate jd);
 
 
     private:
