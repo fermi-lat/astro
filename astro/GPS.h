@@ -154,9 +154,9 @@ public:
 #endif
     /// access to a const reference for the history. Error if does not exist.
     const astro::PointingHistory& history()const 
-#ifndef SWIG // not recognized by swig
-        throw(NoHistoryError)
-#endif
+//#ifndef SWIG // not recognized by swig
+//        throw(NoHistoryError)
+//#endif
         ;
 
     // notification support, managed by facilities/Observer

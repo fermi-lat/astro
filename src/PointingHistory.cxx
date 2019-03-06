@@ -71,7 +71,7 @@ void PointingHistory::readTextData(std::string filename, double offset)
     }
 }
 
-const astro::PointingInfo& PointingHistory::operator()(double time)const throw(TimeRangeError){
+const astro::PointingInfo& PointingHistory::operator()(double time)const{
 
     if( time!=m_selected){
 
