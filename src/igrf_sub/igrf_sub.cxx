@@ -77,10 +77,10 @@ struct {
 
 union {
     struct {
-	real x[3], h__[144];
+	real x[3], h__[196];
     } _1;
     struct {
-	real xi[3], h__[144];
+	real xi[3], h__[196];
     } _2;
 } _BLNK__;
 
@@ -91,12 +91,12 @@ union {
     struct {
 	char name__[12];
 	integer nmax;
-	real time, g[144];
+	real time, g[196];
     } _1;
     struct {
 	char fil1[14];
 	integer nmax;
-	real time, gh1[144];
+	real time, gh1[196];
     } _2;
 } model_;
 
@@ -144,14 +144,14 @@ union {
     /* static */ real bab1;
     /* static */ integer ibbb;
     /* static */ real babs, dimo, lati, alog2;
-    extern /* Subroutine */ int feldg_(real *, real *, real *, real *, real *,
-	     real *, real *);
+  //extern /* Subroutine */ int feldg_(real *, real *, real *, real *, real *,
+  //real *, real *);
     /* static */ real beast, longi, bdown;
-    extern /* Subroutine */ int shellg_(real *, real *, real *, real *, real *
-	    , integer *, real *);
+  //extern /* Subroutine */ int shellg_(real *, real *, real *, real *, real *
+  //	    , integer *, real *);
     /* static */ real bnorth;
     /* static */ integer istart;
-    extern /* Subroutine */ int feldcof_(real *, real *), initize_(void);
+//extern /* Subroutine */ int feldcof_(real *, real *), initize_(void);
 
 /* ---------------------------------------------------------------- */
 /*   INPUT: */
@@ -209,7 +209,7 @@ union {
 	     bmin, rold, step;
     /* static */ integer irun;
     /* static */ real step12;
-    extern /* Subroutine */ int stoer_(real *, real *, real *);
+  //extern /* Subroutine */ int stoer_(real *, real *, real *);
     /* static */ real bdelta;
 
 /* -------------------------------------------------------------------- */
@@ -348,7 +348,7 @@ L8888:
 	    zz, bq1, bq2, bq3, r3h, hli, stp, arg1, arg2, bequ, rlat;
     /* static */ integer iequ;
     /* static */ real term, rlon, step2, radik, step12, oterm;
-    extern /* Subroutine */ int stoer_(real *, real *, real *);
+    //    extern /* Subroutine */ int stoer_(real *, real *, real *);
     /* static */ real dimob0, oradik;
 
 /* -------------------------------------------------------------------- */
@@ -678,7 +678,7 @@ L30:
     /* Local variables */
     /* static */ real q, dr, dx, dy, dz, rq, xm, ym, zm, wr, fli, dsq, dxm, dym, 
 	    dzm;
-    extern /* Subroutine */ int feldi_(void);
+    // extern /* Subroutine */ int feldi_(void);
 
 /* ******************************************************************* */
 /* * SUBROUTINE USED FOR FIELD LINE TRACING IN SHELLG                * */
@@ -986,13 +986,13 @@ igrf2020.dat igrf2020s.dat";
     /* static */ integer i__, j, l, m, n;
     /* static */ doublereal x, f0;
     /* static */ integer is, iu;
-    /* static */ real gh2[144], gha[144];
+    /* static */ real gh2[196], gha[196];
     /* static */ integer ier;
     /* static */ char fil2[14];
     /* static */ real dte1, dte2;
     /* static */ integer iyea, nmax1, nmax2;
     /* static */ real sqrt2;
-    /* static */ integer numye;
+  /* static */ integer numye,istye;
   // extern /* Subroutine */ int getshc_(integer *, char *, integer *, real *, 
   //	    real *, integer *, ftnlen);
 
@@ -1013,8 +1013,8 @@ igrf2020.dat igrf2020s.dat";
 
 /* ### numye = numye + 1 ; is number of years represented by IGRF */
 
-    numye = 16;
-
+    numye = numRecords - 1;
+    istye = dtemod[0];
 /*  IS=0 FOR SCHMIDT NORMALIZATION   IS=1 GAUSS NORMALIZATION */
 /*  IU  IS INPUT UNIT NUMBER FOR IGRF COEFFICIENT SETS */
 
@@ -1023,7 +1023,7 @@ igrf2020.dat igrf2020s.dat";
 /* -- DETERMINE IGRF-YEARS FOR INPUT-YEAR */
     model_2.time = *year;
     iyea = (integer) (*year / 5.f) * 5;
-    l = (iyea - 1945) / 5 + 1;
+    l = (iyea - istye) / 5 + 1;
     if (l < 1) {
 	l = 1;
     }
