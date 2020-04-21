@@ -20,8 +20,6 @@ C 2005.00 04/25/05 CALL FELDI and DO 1111 I=1,7 (Alexey Petrov)
 C 2005.01 11/10/05 added igrf_dip and geodip (MLAT) 
 C 2005.02 11/10/05 updated to IGRF-10 version
 C 2006.00 12/21/06 GH2(120) -> GH2(144)
-C 2010.00 03/12/09 SHELLG: NMAX=13 for DGRF00 & IGRF05; H/G-arrays(195)
-C 2010.01 02/26/10 FELDCOF: IGRF-11; new coeff: DGRF05, IGRF10, IGRF10S
 C
 C*********************************************************************
 
@@ -66,18 +64,6 @@ C
 C
 C SHELLIG.FOR
 C
-C 11/01/91 SHELLG: lowest starting point for B0 search is 2  
-C  1/27/92 Adopted to IGRF-91 coeffcients model
-C  2/05/92 Reduce variable-names: INTER(P)SHC,EXTRA(P)SHC,INITI(ALI)ZE
-C  8/08/95 Updated to IGRF-45-95; new coeff. DGRF90, IGRF95, IGRF95S
-C  5/31/00 Updated to IGRF-45-00; new coeff.: IGRF00, IGRF00s
-C  3/24/05 Updated to IGRF-45-10; new coeff.: IGRF05, IGRF05s
-C  4/25/05 ENTRY FELDI(XI,H) and  DO 1111 I=1,7 [Alexey Petrov]
-C  7/22/09 SHELLG: NMAX=13 for DGRF00 and IGRF05; H/G-arrays(195)
-C  2/26/10 FELDCOF: Updated IGRF45-15; new coeff: DGRF05, IGRF10, IGRF10S
-C  4/29/10 H/H-arrays(196); FELDCOF: corrected IGRF00 and ..00S
-C  4/29/10 Change to new files dgrf%%%%.asc; new GETSHC; char*12 to 13
-
 C*********************************************************************
 C  SUBROUTINES FINDB0, SHELLG, STOER, FELDG, FELDCOF, GETSHC,        *
 C       INTERSHC, EXTRASHC, INITIZE                                  *
@@ -193,7 +179,7 @@ C      G. KLUGE, COMPUTER PHYSICS COMMUNICATIONS 3, 31-35, 1972
 C--------------------------------------------------------------------
 C CHANGES (D. BILITZA, NOV 87):
 C   - USING CORRECT DIPOL MOMENT I.E.,DIFFERENT COMMON/MODEL/
-C 09/07/22 NMAX=13 for DGRF00 and IGRF05; H/G-arrays(195)
+C   - USING IGRF EARTH MAGNETIC FIELD MODELS FROM 1945 TO 1990
 C--------------------------------------------------------------------
 C  INPUT:  ENTRY POINT SHELLG
 C               GLAT  GEODETIC LATITUDE IN DEGREES (NORTH)
@@ -221,7 +207,7 @@ C                          APPROXIMATION IS USED.
 C          B0           MAGNETIC FIELD STRENGTH IN GAUSS
 C-----------------------------------------------------------------------
       DIMENSION         V(3),U(3,3),P(8,100),SP(3)
-      COMMON/IGRF2/     X(3),H(196)
+      COMMON            X(3),H(144)
       COMMON/FIDB0/     SP
       COMMON/GENER/     UMR,ERA,AQUAD,BQUAD
 C
@@ -418,11 +404,9 @@ C
 C*******************************************************************
 C* SUBROUTINE USED FOR FIELD LINE TRACING IN SHELLG                *
 C* CALLS ENTRY POINT FELDI IN GEOMAGNETIC FIELD SUBROUTINE FELDG   *
-C
-C 09/07/22 NMAX=13 for DGRF00 and IGRF05; H/G-arrays(195)
 C*******************************************************************
       DIMENSION         P(7),U(3,3)
-      COMMON/IGRF2/     XI(3),H(196)
+      COMMON            XI(3),H(144)
 C*****XM,YM,ZM  ARE GEOMAGNETIC CARTESIAN INVERSE CO-ORDINATES          
       ZM=P(3)                                                           
       FLI=P(1)*P(1)+P(2)*P(2)+1E-15
@@ -440,7 +424,7 @@ C*****TRANSFORM TO GEOGRAPHIC CO-ORDINATE SYSTEM
       XI(3)=XM*U(3,1)          +ZM*U(3,3)                               
 C*****COMPUTE DERIVATIVES                                               
 C      CALL FELDI(XI,H)                                                  
-      CALL FELDI                                                 
+      CALL FELDI                                                  
       Q=H(1)/RQ                                                         
       DX=H(3)+H(3)+Q*XI(1)                                              
       DY=H(4)+H(4)+Q*XI(2)                                              
@@ -470,7 +454,6 @@ C--------------------------------------------------------------------
 C CHANGES (D. BILITZA, NOV 87):
 C   - FIELD COEFFICIENTS IN BINARY DATA FILES INSTEAD OF BLOCK DATA
 C   - CALCULATES DIPOL MOMENT
-C 09/07/22 NMAX=13 for DGRF00 and IGRF05; H/G-arrays(195)
 C--------------------------------------------------------------------
 C  INPUT:  ENTRY POINT FELDG
 C               GLAT  GEODETIC LATITUDE IN DEGREES (NORTH)
@@ -506,11 +489,10 @@ C                 POINTING IN THE TANGENTIAL PLANE TO THE NORTH, EAST
 C                 AND DOWNWARD.   
 C-----------------------------------------------------------------------
       DIMENSION         V(3),B(3)   
-      CHARACTER*13      NAME
-      COMMON/IGRF2/     XI(3),H(196)
-      COMMON/MODEL/     NAME,NMAX,TIME,G(196)  
+      CHARACTER*12      NAME
+      COMMON            XI(3),H(144)
+      COMMON/MODEL/     NAME,NMAX,TIME,G(144)  
       COMMON/GENER/     UMR,ERA,AQUAD,BQUAD
-
 C
 C-- IS RECORDS ENTRY POINT
 C
@@ -598,34 +580,29 @@ C       OUTPUT: DIMO    GEOMAGNETIC DIPOL MOMENT IN GAUSS (NORMALIZED
 C                       TO EARTH'S RADIUS) AT THE TIME (YEAR)
 C  D. BILITZA, NSSDC, GSFC, CODE 633, GREENBELT, MD 20771, 
 C       (301)286-9536   NOV 1987.
-C 05/31/2000 updated to IGRF-2000 version (###) 
-C 03/24/2000 updated to IGRF-2005 version (###) 
-C 07/22/2009 NMAX=13 for DGRF00 and IGRF05; H/G-arrays(195)
-C 02/26/2010 updated to IGRF-2010 version (###)  
+C  ### updated to IGRF-2000 version -dkb- 5/31/2000
+C  ### updated to IGRF-2005 version -dkb- 3/24/2005
 C-----------------------------------------------------------------------
-        CHARACTER*13    FILMOD, FIL1, FIL2           
-C ### FILMOD, DTEMOD array-size is number of IGRF maps
-        DIMENSION       GH1(196),GH2(196),GHA(196),FILMOD(24),DTEMOD(24)
+        CHARACTER*14    FILMOD, FIL1, FIL2           
+C ### FILMOD, DTEMOD arrays +1
+        DIMENSION       GH1(144),GH2(144),GHA(144),FILMOD(17),DTEMOD(17)
         DOUBLE PRECISION X,F0,F 
         COMMON/MODEL/   FIL1,NMAX,TIME,GH1
         COMMON/GENER/   UMR,ERAD,AQUAD,BQUAD
-C ### updated coefficient file names and corresponding years
-        DATA  FILMOD   /'igrf1900.dat', 'igrf1905.dat', 'igrf1910.dat',           
-     1   'igrf1915.dat', 'igrf1920.dat', 'igrf1925.dat', 'igrf1930.dat',
-     2   'igrf1935.dat', 'igrf1940.dat', 'dgrf1945.dat', 'dgrf1950.dat', 
-     3   'dgrf1955.dat', 'dgrf1960.dat', 'dgrf1965.dat', 'dgrf1970.dat', 
-     4   'dgrf1975.dat', 'dgrf1980.dat', 'dgrf1985.dat', 'dgrf1990.dat', 
-     5   'dgrf1995.dat', 'dgrf2000.dat', 'dgrf2005.dat', 'igrf2010.dat', 
-     6   'igrf2010s.dat'/
-        DATA  DTEMOD /  1900., 1905., 1910., 1915., 1920., 1925., 1930., 
-     1    1935., 1940., 1945., 1950., 1955., 1960., 1965., 1970., 1975., 
-     2    1980., 1985., 1990., 1995., 2000., 2005., 2010., 2015./      
+C ### updated to IGRF-13 (dgrf until 2015, igrf2020, igrf2020s)
+        DATA            FILMOD /'dgrf45.dat', 'dgrf1950.dat',            
+     1                  'dgrf1955.dat','dgrf1960.dat','dgrf1965.dat',      
+     2                  'dgrf1970.dat','dgrf1975.dat','dgrf1980.dat',      
+     3                  'dgrf1985.dat','dgrf1990.dat','dgrf1995.dat',
+     4                  'dgrf2000.dat','dgrf2005.dat','dgrf2010.dat',
+     5                  'drgf2015.dat','igrf2020.dat','igrf2020s.dat'/
+        DATA   DTEMOD / 1945., 1950., 1955., 1960., 1965., 1970.,
+     1       1975., 1980., 1985., 1990., 1995., 2000., 2005., 2010.,
+     2       2015., 2020., 2025./      
 C
-C ### numye is number of IGRF coefficient files minus 1
-C ### istye is start year of IGRF coefficient files 
+C ### numye = numye + 1 ; is number of years represented by IGRF
 C
-        NUMYE=23
-        ISTYE=1900
+        NUMYE=16
 C
 C  IS=0 FOR SCHMIDT NORMALIZATION   IS=1 GAUSS NORMALIZATION
 C  IU  IS INPUT UNIT NUMBER FOR IGRF COEFFICIENT SETS
@@ -635,13 +612,13 @@ C
 C-- DETERMINE IGRF-YEARS FOR INPUT-YEAR
         TIME = YEAR
         IYEA = INT(YEAR/5.)*5
-        L = (IYEA - ISTYE)/5 + 1
+        L = (IYEA - 1945)/5 + 1
         IF(L.LT.1) L=1
         IF(L.GT.NUMYE) L=NUMYE         
         DTE1 = DTEMOD(L)   
         FIL1 = FILMOD(L)   
         DTE2 = DTEMOD(L+1) 
-        FIL2 = FILMOD(L+1)
+        FIL2 = FILMOD(L+1) 
 C-- GET IGRF COEFFICIENTS FOR THE BOUNDARY YEARS
         CALL GETSHC (IU, FIL1, NMAX1, ERAD, GH1, IER)  
             IF (IER .NE. 0) STOP                           
@@ -688,13 +665,19 @@ C-- DETERMINE MAGNETIC DIPOL MOMENT AND COEFFIECIENTS G
         END
 C
 C
-        SUBROUTINE GETSHC (IU, FSPEC, NMAX, ERAD, GH, IER)                                                                                           
+        SUBROUTINE GETSHC (IU, FSPEC, NMAX, ERAD, GH, IER)           
+                                                                                
 C ===============================================================               
+C                                                                               
+C       Version 1.01                                                 
+C                                                                               
 C       Reads spherical harmonic coefficients from the specified     
 C       file into an array.                                          
+C                                                                               
 C       Input:                                                       
 C           IU    - Logical unit number                              
 C           FSPEC - File specification                               
+C                                                                               
 C       Output:                                                      
 C           NMAX  - Maximum degree and order of model                
 C           ERAD  - Earth's radius associated with the spherical     
@@ -705,32 +688,64 @@ C                   harmonic coefficients
 C           IER   - Error number: =  0, no error                     
 C                                 = -2, records out of order         
 C                                 = FORTRAN run-time error number    
+C                                                                    
+C       A. Zunde                                                     
+C       USGS, MS 964, Box 25046 Federal Center, Denver, CO  80225    
+C                                                                               
 C ===============================================================               
                                                                                 
-        CHARACTER  FSPEC*(*), FOUT*80                                    
-        DIMENSION       GH(196) 
-        
-        do 1 j=1,196  
-1          GH(j)=0.0
-
+        CHARACTER  FSPEC*(*), FOUT*55                                    
+        DIMENSION       GH(*)                                        
 C ---------------------------------------------------------------               
 C       Open coefficient file. Read past first header record.        
 C       Read degree and order of model and Earth's radius.           
 C ---------------------------------------------------------------               
-        WRITE(FOUT,667) FSPEC
- 667    FORMAT(A13)
-c 667    FORMAT('/var/www/omniweb/cgi/vitmo/IRI/',A13)
+      WRITE(FOUT,667) FSPEC
+c 667  FORMAT('/usr/local/etc/httpd/cgi-bin/natasha/IRI/',A12)
+ 667  FORMAT(A12)
         OPEN (IU, FILE=FOUT, STATUS='OLD', IOSTAT=IER, ERR=999)     
-        READ (IU, *, IOSTAT=IER, ERR=999)                            
-        READ (IU, *, IOSTAT=IER, ERR=999) NMAX, ERAD, XMYEAR 
-        nm=nmax*(nmax+2)                
-        READ (IU, *, IOSTAT=IER, ERR=999) (GH(i),i=1,nm) 
-        goto 888 
-               
-999     write(monito,100) FOUT
-100     FORMAT('Error while reading ',A13)
-
-888     CLOSE (IU)                                                                                                                                   
+     
+       READ (IU, *, IOSTAT=IER, ERR=999)                            
+        READ (IU, *, IOSTAT=IER, ERR=999) NMAX, ERAD                 
+C ---------------------------------------------------------------               
+C       Read the coefficient file, arranged as follows:              
+C                                                                               
+C                                       N     M     G     H          
+C                                       ----------------------       
+C                                   /   1     0    GH(1)  -          
+C                                  /    1     1    GH(2) GH(3)       
+C                                 /     2     0    GH(4)  -          
+C                                /      2     1    GH(5) GH(6)       
+C           NMAX*(NMAX+3)/2     /       2     2    GH(7) GH(8)       
+C              records          \       3     0    GH(9)  -          
+C                                \      .     .     .     .          
+C                                 \     .     .     .     .          
+C           NMAX*(NMAX+2)          \    .     .     .     .          
+C           elements in GH          \  NMAX  NMAX   .     .          
+C                                                                               
+C       N and M are, respectively, the degree and order of the       
+C       coefficient.                                                 
+C ---------------------------------------------------------------               
+                                                                                
+        I = 0                                                        
+        DO 2211 NN = 1, NMAX                                              
+            DO 2233 MM = 0, NN                                            
+                READ (IU, *, IOSTAT=IER, ERR=999) N, M, G, H         
+                IF (NN .NE. N .OR. MM .NE. M) THEN                   
+                    IER = -2                                         
+                    GOTO 999                                         
+                ENDIF                                                
+                I = I + 1                                            
+                GH(I) = G                                            
+                IF (M .NE. 0) THEN                                   
+                    I = I + 1                                        
+                    GH(I) = H                                        
+                ENDIF                                                
+2233        CONTINUE                                                    
+2211    CONTINUE                                                        
+                                                                                
+999     CLOSE (IU)                                                   
+                                                                                
         RETURN                                                       
         END                                                          
 C
@@ -777,7 +792,7 @@ C       performed with the missing coefficients assumed to be 0.
 C ---------------------------------------------------------------               
                                                                                 
         FACTOR = (DATE - DTE1) / (DTE2 - DTE1)                       
-
+                                                                                
         IF (NMAX1 .EQ. NMAX2) THEN                                   
             K = NMAX1 * (NMAX1 + 2)                                  
             NMAX = NMAX1                                             
@@ -893,7 +908,3 @@ C-----------------------------------------------------------------
         UMR=ATAN(1.0)*4./180.
         RETURN
         END
-
-
-
-
