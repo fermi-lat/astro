@@ -208,7 +208,7 @@ namespace astro {
         double tol;
 
         // allocate a local array to hold the wcslib: must be at least as large
-        static const size_t sizeof_wcslib = 2000;
+        static const size_t sizeof_wcslib = 3000;
         char  m_wcs_struct[sizeof_wcslib];
 
         // Number of coordinate representations found by wcspih
