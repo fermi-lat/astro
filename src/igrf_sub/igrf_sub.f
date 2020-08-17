@@ -87,12 +87,6 @@ C          BEQU   MAGNETIC FIELD STRENGTH AT MAGNETIC EQUATOR
 C          RR0    EQUATORIAL RADIUS NORMALIZED TO EARTH RADIUS
 C          BDEL   FINAL ACHIEVED ACCURACY
 C--------------------------------------------------------------------
-Cf2py intent(in) stps
-Cf2py intent(in) bdel
-Cf2py intent(out) value
-Cf2py intent(out) bequ
-Cf2py intent(out) rr0
-
       DIMENSION         P(8,4),SP(3)
       LOGICAL           VALUE
       COMMON/FIDB0/     SP
@@ -212,13 +206,6 @@ C                          WHICH ACCURATE CALCULATION IS REQUIRED;
 C                          APPROXIMATION IS USED.
 C          B0           MAGNETIC FIELD STRENGTH IN GAUSS
 C-----------------------------------------------------------------------
-Cf2py intent(in) glat
-Cf2py intent(in) glon
-Cf2py intent(in) alt
-Cf2py intent(out) fl
-Cf2py intent(out) icode
-Cf2py intent(out) b0
-
       DIMENSION         V(3),U(3,3),P(8,100),SP(3)
       COMMON            X(3),H(144)
       COMMON/FIDB0/     SP
@@ -501,14 +488,6 @@ C                 TO THE LOCAL GEODETIC COORDINATE SYSTEM, WITH AXIS
 C                 POINTING IN THE TANGENTIAL PLANE TO THE NORTH, EAST
 C                 AND DOWNWARD.   
 C-----------------------------------------------------------------------
-Cf2py intent(in) glat
-Cf2py intent(in) glon
-Cf2py intent(in) alt
-Cf2py intent(out) babs
-Cf2py intent(out) bnorth
-Cf2py intent(out) beast
-Cf2py intent(out) bdown
-
       DIMENSION         V(3),B(3)   
       CHARACTER*12      NAME
       COMMON            XI(3),H(144)
@@ -604,25 +583,26 @@ C       (301)286-9536   NOV 1987.
 C  ### updated to IGRF-2000 version -dkb- 5/31/2000
 C  ### updated to IGRF-2005 version -dkb- 3/24/2005
 C-----------------------------------------------------------------------
-Cf2py intent(in) year
-Cf2py intent(out) dimo
-
-
-     
+        CHARACTER*14    FILMOD, FIL1, FIL2           
 C ### FILMOD, DTEMOD arrays +1
-        CHARACTER*12    FIL1
-        DIMENSION       GH1(144),GH2(144),GHA(144),DTEMOD(5)
+        DIMENSION       GH1(144),GH2(144),GHA(144),FILMOD(17),DTEMOD(17)
         DOUBLE PRECISION X,F0,F 
         COMMON/MODEL/   FIL1,NMAX,TIME,GH1
         COMMON/GENER/   UMR,ERAD,AQUAD,BQUAD
-	
-        include "dgrfdata.inc"
-
-        DATA   DTEMOD / 1990., 1995., 2000.,2005.,2010./      
+C ### updated to IGRF-13 (dgrf until 2015, igrf2020, igrf2020s)
+        DATA            FILMOD /'dgrf45.dat', 'dgrf1950.dat',            
+     1                  'dgrf1955.dat','dgrf1960.dat','dgrf1965.dat',      
+     2                  'dgrf1970.dat','dgrf1975.dat','dgrf1980.dat',      
+     3                  'dgrf1985.dat','dgrf1990.dat','dgrf1995.dat',
+     4                  'dgrf2000.dat','dgrf2005.dat','dgrf2010.dat',
+     5                  'drgf2015.dat','igrf2020.dat','igrf2020s.dat'/
+        DATA   DTEMOD / 1945., 1950., 1955., 1960., 1965., 1970.,
+     1       1975., 1980., 1985., 1990., 1995., 2000., 2005., 2010.,
+     2       2015., 2020., 2025./      
 C
 C ### numye = numye + 1 ; is number of years represented by IGRF
 C
-        NUMYE=4
+        NUMYE=16
 C
 C  IS=0 FOR SCHMIDT NORMALIZATION   IS=1 GAUSS NORMALIZATION
 C  IU  IS INPUT UNIT NUMBER FOR IGRF COEFFICIENT SETS
@@ -632,34 +612,18 @@ C
 C-- DETERMINE IGRF-YEARS FOR INPUT-YEAR
         TIME = YEAR
         IYEA = INT(YEAR/5.)*5
-        L = (IYEA - 1990)/5 + 1
+        L = (IYEA - 1945)/5 + 1
         IF(L.LT.1) L=1
         IF(L.GT.NUMYE) L=NUMYE         
         DTE1 = DTEMOD(L)   
-C        FIL1 = FILMOD(L)   
+        FIL1 = FILMOD(L)   
         DTE2 = DTEMOD(L+1) 
-C        FIL2 = FILMOD(L+1) 
+        FIL2 = FILMOD(L+1) 
 C-- GET IGRF COEFFICIENTS FOR THE BOUNDARY YEARS
-        IF (L.EQ.1) THEN
-	  CALL GETSHC (dgrf90, NMAX1, ERAD, GH1, IER)  
-          CALL GETSHC (dgrf95, NMAX2, ERAD, GH2, IER)  
-        ENDIF
-        IF (L.EQ.2) THEN
-	  CALL GETSHC (dgrf95, NMAX1, ERAD, GH1, IER)  
-          CALL GETSHC (dgrf00, NMAX2, ERAD, GH2, IER)  
-        ENDIF
-        IF (L.EQ.3) THEN
-	  CALL GETSHC (dgrf00, NMAX1, ERAD, GH1, IER)  
-          CALL GETSHC (igrf05, NMAX2, ERAD, GH2, IER)  
-        ENDIF
-        IF (L.EQ.4) THEN
-	  CALL GETSHC (igrf05, NMAX1, ERAD, GH1, IER)  
-          CALL GETSHC (igrf05s, NMAX2, ERAD, GH2, IER)  
-        ENDIF
-     
-        IF (IER .NE. 0) GOTO 9998                           
-
-
+        CALL GETSHC (IU, FIL1, NMAX1, ERAD, GH1, IER)  
+            IF (IER .NE. 0) STOP                           
+        CALL GETSHC (IU, FIL2, NMAX2, ERAD, GH2, IER)  
+            IF (IER .NE. 0) STOP                    
 C-- DETERMINE IGRF COEFFICIENTS FOR YEAR
         IF (L .LE. NUMYE-1) THEN                        
           CALL INTERSHC (YEAR, DTE1, NMAX1, GH1, DTE2, 
@@ -697,14 +661,11 @@ C-- DETERMINE MAGNETIC DIPOL MOMENT AND COEFFIECIENTS G
         GH1(I+1) = GHA(I) * F
         I=I+2
 9     CONTINUE                                          
-      RETURN
-9998  DIMO = -9999e99
-      YEAR = -1
-      RETURN
-      END
+        RETURN
+        END
 C
 C
-        SUBROUTINE GETSHC (MULTIP,NMAX, ERAD, GH, IER)           
+        SUBROUTINE GETSHC (IU, FSPEC, NMAX, ERAD, GH, IER)           
                                                                                 
 C ===============================================================               
 C                                                                               
@@ -733,14 +694,19 @@ C       USGS, MS 964, Box 25046 Federal Center, Denver, CO  80225
 C                                                                               
 C ===============================================================               
                                                                                 
-       REAL            MULTIP
-       DIMENSION       MULTIP(*)
-       DIMENSION       GH(*)                                        
-C      INTEGER CX
-
-       NMAX= INT(MULTIP(1))
-       ERAD = MULTIP(2)    
-       
+        CHARACTER  FSPEC*(*), FOUT*55                                    
+        DIMENSION       GH(*)                                        
+C ---------------------------------------------------------------               
+C       Open coefficient file. Read past first header record.        
+C       Read degree and order of model and Earth's radius.           
+C ---------------------------------------------------------------               
+      WRITE(FOUT,667) FSPEC
+c 667  FORMAT('/usr/local/etc/httpd/cgi-bin/natasha/IRI/',A12)
+ 667  FORMAT(A12)
+        OPEN (IU, FILE=FOUT, STATUS='OLD', IOSTAT=IER, ERR=999)     
+     
+       READ (IU, *, IOSTAT=IER, ERR=999)                            
+        READ (IU, *, IOSTAT=IER, ERR=999) NMAX, ERAD                 
 C ---------------------------------------------------------------               
 C       Read the coefficient file, arranged as follows:              
 C                                                                               
@@ -761,15 +727,10 @@ C       N and M are, respectively, the degree and order of the
 C       coefficient.                                                 
 C ---------------------------------------------------------------               
                                                                                 
-        I = 0    
-	CX = 4                                                    
+        I = 0                                                        
         DO 2211 NN = 1, NMAX                                              
             DO 2233 MM = 0, NN                                            
-                N=INT(MULTIP(CX))
-		M=INT(MULTIP(CX+1))
-		G=MULTIP(CX+2)
-		H=MULTIP(CX+3)
-		CX=CX+4
+                READ (IU, *, IOSTAT=IER, ERR=999) N, M, G, H         
                 IF (NN .NE. N .OR. MM .NE. M) THEN                   
                     IER = -2                                         
                     GOTO 999                                         
@@ -782,8 +743,10 @@ C ---------------------------------------------------------------
                 ENDIF                                                
 2233        CONTINUE                                                    
 2211    CONTINUE                                                        
-                                                                                                                                                                
-999     RETURN                                                       
+                                                                                
+999     CLOSE (IU)                                                   
+                                                                                
+        RETURN                                                       
         END                                                          
 C
 C
@@ -945,16 +908,3 @@ C-----------------------------------------------------------------
         UMR=ATAN(1.0)*4./180.
         RETURN
         END
-
-
-
-        REAL FUNCTION SIGNC(V1,V2)
-	REAL V1,V2
-	REAL SIGNC
-	
-	SIGNC=V1
-	IF (V2.LT.0) SIGNC=-V1
-	
-	RETURN
-	END
-	
