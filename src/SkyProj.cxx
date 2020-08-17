@@ -554,6 +554,6 @@ void SkyProj::setKeywords(tip::Header& hdr)
         "Y-axis incr per pixel of physical coord at position of ref pixel(deg)");
 
     // todo: fix these
-    setKey("CROTA2",  0, "", "Image rotation (deg)");
+    setKey("CROTA2",  m_wcs->crota[1], "", "Image rotation (deg)");
 }
 
