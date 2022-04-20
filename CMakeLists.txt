@@ -51,7 +51,8 @@ target_link_libraries(test_astro astro)
 ###############################################################
 # Installation
 ###############################################################
-install(DIRECTORY astro DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(DIRECTORY astro DESTINATION ${FERMI_INSTALL_INCLUDEDIR})
+install(DIRECTORY data/ DESTINATION ${FERMI_INSTALL_DATADIR})
 
 install(
   TARGETS astro
@@ -61,6 +62,3 @@ install(
   ARCHIVE DESTINATION lib
   INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
-
-# install(FILES include/pil.h include/pil_error.h
-#         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
