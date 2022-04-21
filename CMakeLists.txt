@@ -34,18 +34,21 @@ target_include_directories(
 
 target_link_libraries(
   astro
+
   PUBLIC
   facilities
+  PkgConfig::healpix_cxx
+
+  PRIVATE
   tip
   CLHEP::CLHEP
   OpenMP::OpenMP_CXX
   PkgConfig::cfitsio
   PkgConfig::wcslib
-  PkgConfig::healpix_cxx
 )
 
 add_executable(test_astro src/test/test.cxx)
-target_link_libraries(test_astro astro)
+target_link_libraries(test_astro PRIVATE astro tip CLHEP::CLHEP)
 
 
 ###############################################################
