@@ -55,7 +55,7 @@ target_link_libraries(test_astro PRIVATE astro tip CLHEP::CLHEP)
 # Installation
 ###############################################################
 install(DIRECTORY astro DESTINATION ${FERMI_INSTALL_INCLUDEDIR})
-install(DIRECTORY data/ DESTINATION ${FERMI_INSTALL_DATADIR})
+install(DIRECTORY data/ DESTINATION ${FERMI_INSTALL_REFDATADIR}/astro)
 
 install(
   TARGETS astro test_astro
