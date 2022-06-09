@@ -3,7 +3,7 @@
 ####################################
 
 add_library(
-  astro SHARED
+  astro 
   src/EarthCoordinate.cxx
   src/EarthOrbit.cxx
   src/Geomag.cxx
