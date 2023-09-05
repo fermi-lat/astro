@@ -17,9 +17,9 @@ resources:
       type: github
       name: fermi-lat/ci
       endpoint: fermi-lat
-
+      
 variables:
-- group: DevOps Access Keys
+- group: Build Parameters
 - name: repo
   value: astro
 
@@ -46,7 +46,7 @@ stages:
   - template: azure_templates/azure-testrepolinux-template.yml@ci
     parameters:
       repo: '$(repo)'
-
+       
 #####################################
 
 #####################################
@@ -62,7 +62,7 @@ stages:
   - template: azure_templates/azure-buildrepomacos-template.yml@ci
     parameters:
       repo: '$(repo)'
-
+   
    ### MacOS Test Stage ###
 - stage: macos_test_stage
   displayName: 'Testing package on MacOS'
@@ -72,7 +72,7 @@ stages:
   - template: azure_templates/azure-testrepomacos-template.yml@ci
     parameters:
       repo: '$(repo)'
-
+       
 #####################################
 
 #####################################
