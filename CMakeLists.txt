@@ -37,13 +37,13 @@ target_link_libraries(
 
   PUBLIC
   facilities
-  PkgConfig::healpix_cxx
+  healpix_cxx::healpix_cxx
   CLHEP::CLHEP
 
   PRIVATE
   tip
-  PkgConfig::cfitsio
-  PkgConfig::wcslib
+  cfitsio::cfitsio
+  WCSlib::WCSlib
 )
 
 add_executable(test_astro src/test/test.cxx)
