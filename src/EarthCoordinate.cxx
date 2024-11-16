@@ -136,7 +136,7 @@ EarthCoordinate::EarthCoordinate( CLHEP::Hep3Vector pos, double met)
 
     this->computeFerrariLatitudeAndAltitude(pos, m_lat, m_altitude);
      
-    if( fabs(m_altitude-550.) > 50){
+    if( fabs(m_altitude-550.) > 100){
         std::stringstream msg;
         msg <<"astro::EarthCoordinate: invalid altitude, expect near 550 km, got: " << m_altitude << " at MET " << met;
         throw std::invalid_argument(msg.str());

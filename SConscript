@@ -4,7 +4,7 @@
 #
 # $Id: SConscript,v 1.93 2016/03/05 19:35:24 mdwood Exp $
 # Authors: T. Burnett <tburnett@u.washington.edu>
-# Version: astro-04-00-02
+# Version: astro-04-03-00 released manually
 Import('baseEnv')
 Import('listFiles')
 libEnv = baseEnv.Clone()
