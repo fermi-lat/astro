@@ -952,8 +952,8 @@ L7:
   /* static */ char files[] = "dgrf1945.dat dgrf1950.dat dgrf1955.dat \
 dgrf1960.dat dgrf1965.dat dgrf1970.dat dgrf1975.dat dgrf1980.dat dgrf1985.dat \
 dgrf1990.dat dgrf1995.dat dgrf2000.dat dgrf2005.dat dgrf2010.dat dgrf2015.dat \
-igrf2020.dat igrf2020s.dat";
-  const int numRecords = 17;
+dgrf2020.dat igrf2025.dat igrf2025s.dat"; // igrf2020s.dat";
+  const int numRecords = 18;
   std::vector<std::string> filmod;
   facilities::Util::stringTokenize(files, " ", filmod, true);
   if ( numRecords != filmod.size() ) {
@@ -968,7 +968,7 @@ igrf2020.dat igrf2020s.dat";
   
   /* static */ real dtemod[numRecords] = { 1945.f,1950.f,1955.f,1960.f,1965.f,1970.f,
 					   1975.f,1980.f,1985.f,1990.f,1995.f,2e3f,2005.f,2010.f,2015.f,
-					   2020.f,2025.f };
+					   2020.f,2025.f,2030.f};
   
   /* System generated locals */
   integer i__1, i__2;
@@ -1010,6 +1010,7 @@ igrf2020.dat igrf2020s.dat";
 /* ----------------------------------------------------------------------- */
 /* ### FILMOD, DTEMOD arrays +1 */
 /* ### updated to IGRF-13 (dgrf until 2015, igrf2020, igrf2020s) */
+/* ### updated to IGRF-14 (dgrf until 2020, igrf2025, igrf2025s) */
 
 /* ### numye = numye + 1 ; is number of years represented by IGRF */
 

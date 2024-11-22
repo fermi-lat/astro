@@ -33,12 +33,12 @@ void IGRField::setYear(const float year){
    if(fabs(year-m_year)<0.001) return;
    m_year=year;
 
-   float max_year(2025.);
+   float max_year(2030.);
    if (max_year - m_year < 0.5 && m_year < max_year) {
       std::cout << "WARNING: Requested year, " << m_year 
                 << ", is within six months of the "
                 << "end of valid range (1900-" << max_year << ") "
-                << "for the IGRF-13 model." << std::endl;
+                << "for the IGRF-14 model." << std::endl;
    }
    if (m_year >= max_year) {
       if (!std::getenv("IGNORE_IGRF_BOUNDARY")) {
