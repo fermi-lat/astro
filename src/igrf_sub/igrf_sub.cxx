@@ -951,9 +951,12 @@ L7:
   
   /* static */ char files[] = "dgrf1945.dat dgrf1950.dat dgrf1955.dat \
 dgrf1960.dat dgrf1965.dat dgrf1970.dat dgrf1975.dat dgrf1980.dat dgrf1985.dat \
-dgrf1990.dat dgrf1995.dat dgrf2000.dat dgrf2005.dat dgrf2010.dat dgrf2015.dat \
-dgrf2020.dat igrf2025.dat igrf2025s.dat"; // igrf2020s.dat";
-  const int numRecords = 18;
+dgrf1990.dat dgrf1995.dat dgrf2000.dat dgrf2005.dat dgrf2010.dat dgrf2015.dat dgrf2020.dat \
+igrf2025.dat igrf2025s.dat"; //igrf2020s.dat";
+
+
+  //const int numRecords = 17; // IGRF0-13
+  const int numRecords = 18; // IGRF0-14
   std::vector<std::string> filmod;
   facilities::Util::stringTokenize(files, " ", filmod, true);
   if ( numRecords != filmod.size() ) {

@@ -1,9 +1,8 @@
 /**
  * @file IGRF_data.cxx
  * @brief Definition of class to contain spherical harmonic coefficients
- * for the IGRF-11 model.
+ * for the IGRF-14 model.
  * @author J. Chiang
- *
  * $Header$
  */
 
