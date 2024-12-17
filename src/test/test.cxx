@@ -557,11 +557,10 @@ bool test_GPS_readFitsData() {
     std::cout << "GPS LAT:" << gps->lat() << " LON:" << gps->lon()<<std::endl;                                                                                                                                               
 
     // these numbers extracted from a previous run, or the data itself. 
-    // ASSERT_EQUALS(gps->lat(), 28.69208); 
-    // ASSERT_EQUALS(gps->lon(), -91.25456);
-    //ASSERT_EQUALS(gps->lat(), 28.6484); 
-    //ASSERT_EQUALS(gps->lon(), -91.2546);
-  
+    //ASSERT_EQUALS(gps->lat(), 28.69208); 
+    //ASSERT_EQUALS(gps->lon(), -91.25456);
+    ASSERT_EQUALS(gps->lat(), 28.6484); 
+    ASSERT_EQUALS(gps->lon(), -91.2546);
     checkdir(gps->xAxisDir(), SkyDir( 99.46017, 0));
     checkdir(gps->zAxisDir(), SkyDir(9.460165, 63.5));
     checkdir(gps->zenithDir(), SkyDir(9.460165, 28.5));
@@ -578,9 +577,10 @@ bool test_IGRF() {
    std::ofstream output("test_IGRF_output.txt");
    std::cout<<"File test_IGRF_output.txt opened"<<std::endl;
    EarthOrbit earthOrbit;
-   for (int year(1985); year < 2025; year++) {
+   for (int year(1985); year < 2030; year++) {
       for (int month(1); month < 13; month++) {
-         JulianDate jd(year, month, 15, 0);
+         // JulianDate jd(year, month, 15, 0);
+         JulianDate jd(year, month, 1, 0);
          double met(jd.seconds() - JulianDate::missionStart().seconds());
          EarthCoordinate earthCoord(earthOrbit.position(jd), met);
          output << month << "  "
@@ -603,7 +603,8 @@ bool test_IGRF() {
 // ensure that R() and verticalRigidityCutoff() are computed at the
 // same point in time as in EarthCoordinate::computeMagCoords(). That
 // code has to be fixed eventually.
-         IGRField::Model().compute(latitude, longitude, altitude, approx_year);
+         IGRField::Model().compute(0, 0, 500.0, approx_year);
+         //IGRField::Model().compute(latitude, longitude, altitude, approx_year);
 
          output 
             // << "       " 
@@ -612,60 +613,70 @@ bool test_IGRF() {
             // << IGRField::Model().lambda()*180./M_PI << "  "
             << IGRField::Model().bEast() << "  "
             << IGRField::Model().bNorth() << "  "
-            << -IGRField::Model().bDown() << "  "
+            << IGRField::Model().bDown() << "  "
             << IGRField::Model().R() << "  "
             << IGRField::Model().verticalRigidityCutoff() << std::endl;
 
-	 std::cout<<year<<" "
+     std::cout<<year<<" "
 		  <<month<<" "
 		  << IGRField::Model().bEast() << "  "
 		  << IGRField::Model().bNorth() << "  "
-		  << -IGRField::Model().bDown() << "  "
+		  << IGRField::Model().bDown() << "  "
 		  << IGRField::Model().R() << "  "
 		  << IGRField::Model().verticalRigidityCutoff() << std::endl;
       }
    }
    output.close();
 
-// Test for year request outside of the valid range for IGRF-13.
-   JulianDate jd(2030, 1, 1, 0);
+// Test for year request outside of the valid range for IGRF-14.
+   JulianDate jd(2035, 1, 1, 0);
    double met(jd.seconds() - JulianDate::missionStart().seconds());
    EarthCoordinate earthCoord(earthOrbit.position(jd), met);
    try {
       IGRField::Model().compute(earthCoord.longitude(), earthCoord.latitude(),
-                                earthCoord.altitude(), 2030.);
+                                earthCoord.altitude(), 2035.);
       throw std::runtime_error("Expected exception not thrown.");
    } catch(std::runtime_error & eObj) {
       std::string message(eObj.what());
-      if (message.find("Requested year, 2030, is outside "
-                       "the valid range of 1900-2025") == std::string::npos) {
+      if (message.find("Requested year, 2035, is outside "
+                       "the valid range of 1900-2030") == std::string::npos) {
          throw;
       }
    }
 
 // Test values beyond 2015 from IGRF 13th Generation version.  
 // http://www.geomag.bgs.ac.uk/data_service/models_compass/igrf_form.shtml
+// Test value after 2025 have been computed using the fortran code igrf14.f that
+// uses the 14th generation of IGRF updated December 2024. Code is available here:
+// https://www.ngdc.noaa.gov/IAGA/vmod/igrf14.f
    double longitude(0);
    double latitude(0);
    double altitude(500);
-   double years[] =   { 2015.5,    2017.5,   2019.5,   2021.5,   2023.5};
-   double B_North[] = {0.21625,   0.21620,  0.21614,  0.21605,  0.21594};
-   double B_East[] =  {-0.02189, -0.02073, -0.01957, -0.01836, -0.01714};
-   double B_Vert[] =  {-0.10696, -0.10756, -0.10816, -0.10853, -0.10883};
-   for (unsigned int i=0; i < 4; i++) {
+   double years[] =   {  2015.5,   2017.5,   2019.5,   2021.5,   2023.5, 2024.5,    2025.5,   2026.5,   2027.5,    2028.5,   2029.5};
+   double B_North[] = { 0.21625,  0.21620,  0.21614,  0.21594,  0.21569, 0.21557,  0.21542,  0.21526,  0.21509,   0.21492,  0.21475};
+   double B_East[] =  {-0.02189, -0.02073, -0.01957, -0.01856, -0.01759, -0.01710, -0.01664, -0.01619, -0.01574, -0.01529, -0.01484};
+   double B_Vert[] =  {-0.10696, -0.10756, -0.10816, -0.10825, -0.10820, -0.10818, -0.10813, -0.10805, -0.10798, -0.10790, -0.10783};
+   for (unsigned int i=0; i < 11; i++) {
      IGRField::Model().compute(latitude, longitude, altitude, years[i]);
+     /*
      std::cout << i << "  " 
 	       << years[i] << " "  
 	       << B_North[i] << "  "
-	       << IGRField::Model().bNorth() << std::endl;
+	       << IGRField::Model().bNorth() << "  "
+           << (B_North[i] - IGRField::Model().bNorth())/IGRField::Model().bNorth() <<std::endl;
      std::cout << i << "  " 
 	       << years[i] << " "  
 	       << B_East[i] << "  "
-	       << IGRField::Model().bEast() << std::endl;
+	       << IGRField::Model().bEast() << "  "
+           << (B_East[i] - IGRField::Model().bEast())/IGRField::Model().bEast() <<std::endl;
      std::cout << i << "  " 
 	       << years[i] << " "  
 	       << B_Vert[i] << "  "
-	       << IGRField::Model().bDown() << std::endl;
+	       << IGRField::Model().bDown() << "  "
+           << (B_Vert[i] - IGRField::Model().bDown())/IGRField::Model().bDown() <<std::endl;
+     */
+
+
      ASSERT_ALMOST_EQUALS(B_North[i], IGRField::Model().bNorth());
      ASSERT_ALMOST_EQUALS(B_East[i], IGRField::Model().bEast());
      ASSERT_ALMOST_EQUALS(B_Vert[i], IGRField::Model().bDown());
