@@ -71,7 +71,7 @@ void PointingHistory::readTextData(std::string filename, double offset)
     }
 }
 
-const astro::PointingInfo& PointingHistory::operator()(double time)const throw(TimeRangeError){
+const astro::PointingInfo& PointingHistory::operator()(double time)const{
 
     if( time!=m_selected){
 
@@ -130,7 +130,7 @@ bool PointingHistory::haveFitsFile(std::string filename) const {
      bool is_fits = true;
      try {
        // Try opening a primary extension of a FITS file.
-         std::auto_ptr<const tip::Extension>ext(tip::IFileSvc::instance().readExtension(filename, "0"));
+         std::unique_ptr<const tip::Extension>ext(tip::IFileSvc::instance().readExtension(filename, "0"));
      } catch (const tip::TipException &) {
        is_fits = false;
      }

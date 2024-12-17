@@ -676,6 +676,7 @@ bool test_IGRF() {
            << (B_Vert[i] - IGRField::Model().bDown())/IGRField::Model().bDown() <<std::endl;
      */
 
+
      ASSERT_ALMOST_EQUALS(B_North[i], IGRField::Model().bNorth());
      ASSERT_ALMOST_EQUALS(B_East[i], IGRField::Model().bEast());
      ASSERT_ALMOST_EQUALS(B_Vert[i], IGRField::Model().bDown());
