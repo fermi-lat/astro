@@ -38,7 +38,7 @@ target_link_libraries(
   PUBLIC
   facilities
   healpix_cxx::healpix_cxx
-  CLHEP::CLHEP
+  CLHEP::VectorS
 
   PRIVATE
   tip
