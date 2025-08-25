@@ -38,13 +38,15 @@ target_link_libraries(
   PUBLIC
   facilities
   healpix_cxx::healpix_cxx
-  CLHEP::CLHEP
+  CLHEP::VectorS
 
   PRIVATE
   tip
   cfitsio::cfitsio
   WCSlib::WCSlib
 )
+
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 add_executable(test_astro src/test/test.cxx)
 target_link_libraries(test_astro PRIVATE astro tip)
