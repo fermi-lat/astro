@@ -23,7 +23,7 @@ namespace {
     const double R2D = 180./M_PI;
     const double D2R = 1./R2D;
  
-    inline double sqr(double x){return x*x;}
+    inline auto sqr(double x) -> double{return x*x;}
 
     // default polygon
     /* These points are assumed to be in counter-clockwise order,
@@ -96,7 +96,7 @@ void EarthCoordinate::computeFerrariLatitudeAndAltitude(CLHEP::Hep3Vector pos, d
 double EarthCoordinate::s_EarthRadius = 6378137.; //m
 
 
-double EarthCoordinate::earthRadius(){return s_EarthRadius;}
+auto EarthCoordinate::earthRadius() -> double{return s_EarthRadius;}
 
   std::vector<std::pair<double,double> >*  EarthCoordinate::s_SAA_boundary = 0;
 
@@ -168,7 +168,7 @@ void EarthCoordinate::computeMagCoords() const {
     m_haveMagCoords = true;
 }
 
-double EarthCoordinate::L()const
+auto EarthCoordinate::L()const -> double
 {
    if (!m_haveMagCoords) {
       computeMagCoords();
@@ -177,7 +177,7 @@ double EarthCoordinate::L()const
 
 }
    
-double EarthCoordinate::B()const
+auto EarthCoordinate::B()const -> double
 {
    if (!m_haveMagCoords) {
       computeMagCoords();
@@ -185,7 +185,7 @@ double EarthCoordinate::B()const
     return m_B; // Geomag::B(latitude(), longitude());
 }
 
-double EarthCoordinate::R()const
+auto EarthCoordinate::R()const -> double
 {
    if (!m_haveMagCoords) {
       computeMagCoords();
@@ -193,7 +193,7 @@ double EarthCoordinate::R()const
     return m_R; // radius;
 }
 
-double EarthCoordinate::lambda()const
+auto EarthCoordinate::lambda()const -> double
 {
    if (!m_haveMagCoords) {
       computeMagCoords();
@@ -202,7 +202,7 @@ double EarthCoordinate::lambda()const
 
 }
 
-double EarthCoordinate::geolat()const
+auto EarthCoordinate::geolat()const -> double
 {
    if (!m_haveMagCoords) {
       computeMagCoords();
@@ -212,14 +212,14 @@ double EarthCoordinate::geolat()const
 }
 
 
-double EarthCoordinate::geolon()const
+auto EarthCoordinate::geolon()const -> double
 {
     return Geomag::geolon(latitude(), longitude());
 }
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-double  EarthCoordinate::GetGMST(JulianDate jd)
+auto  EarthCoordinate::GetGMST(JulianDate jd) -> double
 {
     double J_D=jd;
     double M, Ora_Un_Dec=modf(J_D-0.5,&M)*24;  J_D-=Ora_Un_Dec/24;
@@ -248,7 +248,7 @@ void EarthCoordinate::setSAAboundary(const std::vector<std::pair<double,double> 
 // Determine the magnetic hemisphere of the input lat/long point
 //     returns 1 for "north", -1 for "south" 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   int EarthCoordinate::getHemisphere(double longitude, double latitude)const
+   auto EarthCoordinate::getHemisphere(double longitude, double latitude)const -> int
 {
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // tabulated equator vs longitude (inspired by Jonathan Ormes)
@@ -339,11 +339,11 @@ void EarthCoordinate::setSAAboundary(const std::vector<std::pair<double,double> 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Determine whether we are inside the SAA (South Atlantic Anomaly)
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-bool EarthCoordinate::insideSAA() const
+auto EarthCoordinate::insideSAA() const -> bool
 {
     return insideSAA( latitude(), longitude());
 }
-bool EarthCoordinate::insideSAA(double lat, double lon) const
+auto EarthCoordinate::insideSAA(double lat, double lon) const -> bool
 {
  
     typedef std::pair<double, double> coords;
@@ -425,14 +425,14 @@ bool EarthCoordinate::insideSAA(double lat, double lon) const
     
     return true;
 }
-const CLHEP::Hep3Vector& EarthCoordinate::magnetic_field()const
+auto EarthCoordinate::magnetic_field()const -> const CLHEP::Hep3Vector&
 {
     return m_field; 
 }
 
-double EarthCoordinate::latitude()const{ return m_lat*R2D;}
-double EarthCoordinate::longitude()const{ return m_lon*R2D;}
-double EarthCoordinate::altitude()const{ return m_altitude;}
+auto EarthCoordinate::latitude()const -> double{ return m_lat*R2D;}
+auto EarthCoordinate::longitude()const -> double{ return m_lon*R2D;}
+auto EarthCoordinate::altitude()const -> double{ return m_altitude;}
 
 
 } // namespace astro

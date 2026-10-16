@@ -71,7 +71,7 @@ void PointingHistory::readTextData(std::string filename, double offset)
     }
 }
 
-const astro::PointingInfo& PointingHistory::operator()(double time)const{
+auto PointingHistory::operator()(double time)const -> const astro::PointingInfo&{
 
     if( time!=m_selected){
 
@@ -124,7 +124,7 @@ const astro::PointingInfo& PointingHistory::operator()(double time)const{
     return m_currentPoint;
 }
 
-bool PointingHistory::haveFitsFile(std::string filename) const {
+auto PointingHistory::haveFitsFile(std::string filename) const -> bool {
 
      // Determine a type of the input file, FITS or TEXT.
      bool is_fits = true;

@@ -28,7 +28,7 @@ SkyStat::SkyStat(const astro::SkyFunction & sf, const int level, const astro::HT
 }
 
 
-int SkyStat::calculate_values()
+auto SkyStat::calculate_values() -> int
 {
     int count = 0;
     for( HTM::const_iterator it = m_h->begin(m_level); it != m_h->end(m_level); ++it)
@@ -61,24 +61,24 @@ SkyStat::~SkyStat()
         delete m_h;
 }
 
-double SkyStat::ave()const
+auto SkyStat::ave()const -> double
 {
     return m_ave;
 }
 
-double SkyStat::rms()const
+auto SkyStat::rms()const -> double
 {
     return m_rms;
 }
-double SkyStat::sigma()const
+auto SkyStat::sigma()const -> double
 {
     return m_sigma;
 }
-double SkyStat::min()const
+auto SkyStat::min()const -> double
 {
     return m_min;
 }
-double SkyStat::max()const
+auto SkyStat::max()const -> double
 {
     return m_max;
 }

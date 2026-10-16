@@ -38,7 +38,7 @@
 namespace IGRFf2c {
 
 extern "C" {
-   doublereal r_sign(real *v1, real *v2)
+   auto r_sign(real *v1, real *v2) -> doublereal
    {
       /* System generated locals */
       doublereal ret_val;
@@ -133,9 +133,9 @@ union {
 /* 2006.00 12/21/06 GH2(120) -> GH2(144) */
 
 /* ********************************************************************* */
-/* Subroutine */ int igrf_sub__(real *xlat, real *xlong, real *year, 
+/* Subroutine */ auto igrf_sub__(real *xlat, real *xlong, real *year, 
 				real *height, real *xl, integer *icode, 
-				real *dip, real *dec)
+				real *dip, real *dec) -> int
 {
     /* Builtin functions */
     // double log(doublereal), asin(doublereal), sqrt(doublereal);
@@ -196,8 +196,8 @@ union {
 /* ********************************************************************* */
 
 
-/* Subroutine */ int findb0_(real *stps, real *bdel, logical *value, 
-			     real *bequ, real *rr0)
+/* Subroutine */ auto findb0_(real *stps, real *bdel, logical *value, 
+			     real *bequ, real *rr0) -> int
 {
     /* Builtin functions */
   // double r_sign(real *, real *), sqrt(doublereal);
@@ -320,9 +320,9 @@ L8888:
 
 
 
-/* Subroutine */ int shellg_0_(int n__, real *glat, real *glon, 
+/* Subroutine */ auto shellg_0_(int n__, real *glat, real *glon, 
 			       real *alt, real *dimo, real *fl, 
-			       integer *icode, real *b0, real *v)
+			       integer *icode, real *b0, real *v) -> int
 {
     /* Initialized data */
 
@@ -648,13 +648,13 @@ L30:
     return 0;
 } /* shellg_ */
 
-/* Subroutine */ int shellg_(real *glat, real *glon, real *alt, real *dimo, 
-			     real *fl, integer *icode, real *b0)
+/* Subroutine */ auto shellg_(real *glat, real *glon, real *alt, real *dimo, 
+			     real *fl, integer *icode, real *b0) -> int
 {
     return shellg_0_(0, glat, glon, alt, dimo, fl, icode, b0, (real *)0);
     }
 
-/* Subroutine */ int shellc_(real *v, real *fl, real *b0)
+/* Subroutine */ auto shellc_(real *v, real *fl, real *b0) -> int
 {
     return shellg_0_(1, (real *)0, (real *)0, (real *)0, (real *)0, fl, (
 	    integer *)0, b0, v);
@@ -662,7 +662,7 @@ L30:
 
 
 
-/* Subroutine */ int stoer_(real *p, real *bq, real *r__)
+/* Subroutine */ auto stoer_(real *p, real *bq, real *r__) -> int
 {
     /* Initialized data */
 
@@ -726,9 +726,9 @@ L30:
 
 
 
-/* Subroutine */ int feldg_0_(int n__, real *glat, real *glon, real *alt, 
+/* Subroutine */ auto feldg_0_(int n__, real *glat, real *glon, real *alt, 
 			      real *bnorth, real *beast, real *bdown, 
-			      real *babs, real *v, real *b)
+			      real *babs, real *v, real *b) -> int
 {
     /* System generated locals */
     integer i__1;
@@ -923,21 +923,21 @@ L7:
     return 0;
 } /* feldg_ */
 
-/* Subroutine */ int feldg_(real *glat, real *glon, real *alt, 
+/* Subroutine */ auto feldg_(real *glat, real *glon, real *alt, 
 			    real *bnorth, real *beast, real *bdown, 
-			    real *babs)
+			    real *babs) -> int
 {
     return feldg_0_(0, glat, glon, alt, bnorth, beast, bdown, babs, (real *)0,
 	     (real *)0);
     }
 
-/* Subroutine */ int feldc_(real *v, real *b)
+/* Subroutine */ auto feldc_(real *v, real *b) -> int
 {
     return feldg_0_(1, (real *)0, (real *)0, (real *)0, (real *)0, (real *)0, 
 	    (real *)0, (real *)0, v, b);
     }
 
-/* Subroutine */ int feldi_(void)
+/* Subroutine */ auto feldi_(void) -> int
 {
     return feldg_0_(2, (real *)0, (real *)0, (real *)0, (real *)0, (real *)0, 
 	    (real *)0, (real *)0, (real *)0, (real *)0);
@@ -945,7 +945,7 @@ L7:
 
 
 
-/* Subroutine */ int feldcof_(real *year, real *dimo)
+/* Subroutine */ auto feldcof_(real *year, real *dimo) -> int
 {
   /* Initialized data */
   
@@ -1107,9 +1107,9 @@ igrf2020.dat igrf2020s.dat";
     return 0;
 } /* feldcof_ */
 
-int getshc_(integer *iu, char *fspec, integer *nmax, 
+auto getshc_(integer *iu, char *fspec, integer *nmax, 
             real *erad, real *gh, integer *ier, 
-            ftnlen fspec_len) {
+            ftnlen fspec_len) -> int {
 #if 0
    for (integer j=0; j < 196; j++) {
       gh[j] = 0.;
@@ -1332,9 +1332,9 @@ int getshc_(integer *iu, char *fspec, integer *nmax,
 
 
 
-/* Subroutine */ int intershc_(real *date, real *dte1, integer *nmax1, 
+/* Subroutine */ auto intershc_(real *date, real *dte1, integer *nmax1, 
 			       real *gh1, real *dte2, integer *nmax2, 
-			       real *gh2, integer *nmax, real *gh)
+			       real *gh2, integer *nmax, real *gh) -> int
 {
     /* System generated locals */
     integer i__1;
@@ -1416,9 +1416,9 @@ int getshc_(integer *iu, char *fspec, integer *nmax,
 
 
 
-/* Subroutine */ int extrashc_(real *date, real *dte1, integer *nmax1, 
+/* Subroutine */ auto extrashc_(real *date, real *dte1, integer *nmax1, 
 			       real *gh1, integer *nmax2, real *gh2, 
-			       integer *nmax, real *gh)
+			       integer *nmax, real *gh) -> int
 {
     /* System generated locals */
     integer i__1;
@@ -1500,7 +1500,7 @@ int getshc_(integer *iu, char *fspec, integer *nmax,
 
 
 
-/* Subroutine */ int initize_(void)
+/* Subroutine */ auto initize_(void) -> int
 {
     /* Builtin functions */
   //double atan(doublereal);

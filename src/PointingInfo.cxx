@@ -10,7 +10,7 @@ using CLHEP::Hep3Vector;
 
 namespace {
    template<typename T>
-   inline T linear_interp(T a, T b, double f){
+   inline auto linear_interp(T a, T b, double f) -> T{
       return (1-f)*a + f*b;
    }
 }
@@ -34,21 +34,21 @@ PointingInfo::PointingInfo(const CLHEP::Hep3Vector & position,
      m_earth(earthPos),
      m_latProperties(latProperties) {}
 
-SkyDir PointingInfo::xAxis()const {
+auto PointingInfo::xAxis()const -> SkyDir {
    return m_q.rotate(Hep3Vector(1,0,0));
 }
 
-SkyDir PointingInfo::zAxis()const {
+auto PointingInfo::zAxis()const -> SkyDir {
    return m_q.rotate(Hep3Vector(0,0,1));
 }
 
-SkyDir PointingInfo::zenith()const {
+auto PointingInfo::zenith()const -> SkyDir {
    return SkyDir(m_position);
 }
 
-PointingInfo 
+auto 
 PointingInfo::interpolate(const astro::PointingInfo & next,
-                          double f, double time) const {
+                          double f, double time) const -> PointingInfo {
     using CLHEP::Hep3Vector;
 
     // linear interpolation of position

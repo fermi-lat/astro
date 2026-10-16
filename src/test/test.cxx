@@ -32,7 +32,7 @@
 #include <typeinfo>
 
 using namespace astro;
-bool testSkyDir(){
+auto testSkyDir() -> bool{
     using namespace astro;
     bool ok = true;
     double l;
@@ -113,7 +113,7 @@ bool testSkyDir(){
 //------------------------------------------------------------
 /** @brief test a single point, transforming from world to pixel and back
 */
-double test_one(double lon, double lat, const astro::SkyProj& t){
+auto test_one(double lon, double lat, const astro::SkyProj& t) -> double{
     using namespace astro;
     SkyDir dir(lon, lat);
     std::pair<double, double> pixel = dir.project(t );
@@ -128,7 +128,7 @@ double test_one(double lon, double lat, const astro::SkyProj& t){
 //------------------------------------------------------------
 /** @brief test a single point, transforming from world to pixel and back
 */
-double test_one_healpix(double lon, double lat, const astro::HealpixProj& t){
+auto test_one_healpix(double lon, double lat, const astro::HealpixProj& t) -> double{
     using namespace astro;
     SkyDir dir(lon, lat);
     std::pair<double, double> pixel = dir.project(t );
@@ -141,8 +141,8 @@ double test_one_healpix(double lon, double lat, const astro::HealpixProj& t){
 /**
  * @brief Write out a test FITS file for SkyProj
  */
-std::string writeTestFile(const std::string & ctype, double * crpix, 
-                          double * crval, double * cdelt) {
+auto writeTestFile(const std::string & ctype, double * crpix, 
+                          double * crval, double * cdelt) -> std::string {
    std::string filename("SkyProj_test_file.fits");
    tip::IFileSvc::instance().createFile(filename);
    std::vector<long> naxes;
@@ -164,7 +164,7 @@ std::string writeTestFile(const std::string & ctype, double * crpix,
    return filename;
 }
 
-std::string writeTestFileHealpix(int order, Healpix_Ordering_Scheme scheme, bool galactic = false) {
+auto writeTestFileHealpix(int order, Healpix_Ordering_Scheme scheme, bool galactic = false) -> std::string {
    int nside = int(pow(2,order));
    int npix = 12*nside*nside;
    std::string filename("HealpixProj_test_file.fits");
@@ -189,7 +189,7 @@ std::string writeTestFileHealpix(int order, Healpix_Ordering_Scheme scheme, bool
 
 /** @brief test a group of directions
 */
-bool testSkyProj(){
+auto testSkyProj() -> bool{
     using namespace astro;
 
     // simple test of SkyProj
@@ -251,7 +251,7 @@ bool testSkyProj(){
 //---------------------------------------------------------------------
 /** @brief test a group of directions
 */
-bool testHealpixProj(){
+auto testHealpixProj() -> bool{
     using namespace astro;
 
     HealpixProj proj(5,RING,false);
@@ -358,7 +358,7 @@ void test_insideSAA() {
         throw std::runtime_error("InsideSAA test failed."); 
 }
 
-bool testJD() {
+auto testJD() -> bool {
    bool passed = true;
 
    /// JulianDate.cxx code claims that its algorithm gives 0.00004
@@ -514,7 +514,7 @@ bool testJD() {
     }
     return passed;
 }
-bool testHTM()
+auto testHTM() -> bool
 {
     using astro::HTM;
     size_t maxlevel = 6;
@@ -542,7 +542,7 @@ void checkdir(double ra1, double dec1, double ra2, double dec2) {
     checkdir( astro::SkyDir(ra1, dec1), astro::SkyDir(ra2, dec2) );
 }
 
-bool test_GPS_readFitsData() {
+auto test_GPS_readFitsData() -> bool {
     using astro::SkyDir;
     astro::GPS * gps = astro::GPS::instance();
 
@@ -574,7 +574,7 @@ bool test_GPS_readFitsData() {
     return true;
 }
 
-bool test_IGRF() {
+auto test_IGRF() -> bool {
    std::ofstream output("test_IGRF_output.txt");
    std::cout<<"File test_IGRF_output.txt opened"<<std::endl;
    EarthOrbit earthOrbit;
@@ -675,7 +675,7 @@ bool test_IGRF() {
    return true;
 }
 
-bool test_LatProperties() {
+auto test_LatProperties() -> bool {
    astro::GPS * gps(astro::GPS::instance());
    std::string data_path(facilities::commonUtilities::getDataPath("astro"));
    std::string filename(facilities::commonUtilities::joinPath(data_path, 
@@ -701,7 +701,7 @@ bool test_LatProperties() {
    return true;
 }
 
-int main(){
+auto main() -> int{
 
     using namespace astro;
     using namespace std;

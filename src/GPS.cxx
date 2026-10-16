@@ -14,7 +14,7 @@ $Id: GPS.cxx,v 1.55 2013/08/29 22:39:58 jchiang Exp $
 #include <iomanip>
 #include <sstream>
 #include <cassert>
-#include <stdlib.h>
+#include <cstdlib>
 
 using namespace astro;
 using namespace CLHEP;
@@ -45,7 +45,7 @@ GPS::~GPS ()
 }//delete m_orbit; }
 
 
-const astro::PointingHistory& GPS::history()const
+auto GPS::history()const -> const astro::PointingHistory&
 {   if( m_history==0) throw GPS::NoHistoryError("GPS:: no history has been loaded");
     return *m_history;
 }
@@ -75,31 +75,31 @@ void GPS::synch ()
 }
 
 // access functions that retrive parameters from current state
-double        GPS::lat()const{               return m_currentPoint.earthCoord().latitude();}     
-double        GPS::lon()const{               return m_currentPoint.earthCoord().longitude();}  	
-double        GPS::altitude()const {         return m_currentPoint.earthCoord().altitude();}   
-astro::SkyDir GPS::zAxisDir()const{          return m_currentPoint.zAxis();}    
-astro::SkyDir GPS::xAxisDir()const{          return m_currentPoint.xAxis();}     
-astro::SkyDir GPS::zenithDir()const{         return m_currentPoint.zenith();}
-CLHEP::Hep3Vector GPS::position()const{      return m_currentPoint.position();} 
-astro::EarthCoordinate GPS::earthpos()const{ return m_currentPoint.earthCoord();}
+auto        GPS::lat()const -> double{               return m_currentPoint.earthCoord().latitude();}     
+auto        GPS::lon()const -> double{               return m_currentPoint.earthCoord().longitude();}  	
+auto        GPS::altitude()const -> double {         return m_currentPoint.earthCoord().altitude();}   
+auto GPS::zAxisDir()const -> astro::SkyDir{          return m_currentPoint.zAxis();}    
+auto GPS::xAxisDir()const -> astro::SkyDir{          return m_currentPoint.xAxis();}     
+auto GPS::zenithDir()const -> astro::SkyDir{         return m_currentPoint.zenith();}
+auto GPS::position()const -> CLHEP::Hep3Vector{      return m_currentPoint.position();} 
+auto GPS::earthpos()const -> astro::EarthCoordinate{ return m_currentPoint.earthCoord();}
 
-double	GPS::time ()  const{     return m_time;}
+auto	GPS::time ()  const -> double{     return m_time;}
 
-double   GPS::expansion () const{    return m_expansion;}
+auto   GPS::expansion () const -> double{    return m_expansion;}
 
-double GPS::endTime()const{ return m_history==0? 3e9 : m_history->endTime();}
+auto GPS::endTime()const -> double{ return m_history==0? 3e9 : m_history->endTime();}
 
 // functions that set the state, then retrieve the given value
 
-double                    GPS::lat(double t){       time(t); return m_currentPoint.earthCoord().latitude();}  
-double                    GPS::lon(double t){       time(t); return m_currentPoint.earthCoord().longitude();} 
-double                    GPS::altitude(double t){  time(t); return m_currentPoint.earthCoord().altitude();}  
-astro::SkyDir             GPS::zAxisDir(double t){  time(t); return m_currentPoint.zAxis();}    
-astro::SkyDir             GPS::xAxisDir(double t){  time(t); return m_currentPoint.xAxis();}     
-astro::SkyDir             GPS::zenithDir(double t){ time(t); return m_currentPoint.zenith();}
-CLHEP::Hep3Vector         GPS::position(double t){  time(t); return m_currentPoint.position();} 
-astro::EarthCoordinate    GPS::earthpos(double t){  time(t); return m_currentPoint.earthCoord();}
+auto                    GPS::lat(double t) -> double{       time(t); return m_currentPoint.earthCoord().latitude();}  
+auto                    GPS::lon(double t) -> double{       time(t); return m_currentPoint.earthCoord().longitude();} 
+auto                    GPS::altitude(double t) -> double{  time(t); return m_currentPoint.earthCoord().altitude();}  
+auto             GPS::zAxisDir(double t) -> astro::SkyDir{  time(t); return m_currentPoint.zAxis();}    
+auto             GPS::xAxisDir(double t) -> astro::SkyDir{  time(t); return m_currentPoint.xAxis();}     
+auto             GPS::zenithDir(double t) -> astro::SkyDir{ time(t); return m_currentPoint.zenith();}
+auto         GPS::position(double t) -> CLHEP::Hep3Vector{  time(t); return m_currentPoint.position();} 
+auto    GPS::earthpos(double t) -> astro::EarthCoordinate{  time(t); return m_currentPoint.earthCoord();}
 
 
 void GPS::pass ( double t )
@@ -122,7 +122,7 @@ void GPS::time ( double t )
     update(t);  // update orientation, etc.
 }
 
-GPS*	GPS::instance() 
+auto	GPS::instance() -> GPS* 
 { return (s_instance != 0) ? s_instance : (s_instance = new GPS()); }
 
 void GPS::kill()
@@ -133,7 +133,7 @@ void GPS::kill()
 
 void    GPS::sampleintvl ( double s ){    m_sampleintvl = s;}
 
-double  GPS::sampleintvl () const{    return m_sampleintvl;}
+auto  GPS::sampleintvl () const -> double{    return m_sampleintvl;}
 
 void GPS::setPointingDirection( const astro::SkyDir& dir){
     m_point = dir;
@@ -149,18 +149,18 @@ void GPS::setPointingHistoryFile(std::string fileName, double  offset, bool x_ea
 
 }
 
-double GPS::rockingDegrees(double rockDegrees){
+auto GPS::rockingDegrees(double rockDegrees) -> double{
     double ret=m_rockDegrees;
     m_rockDegrees = rockDegrees;
     return ret;}
 
-GPS::RockType GPS::setRockType(RockType rockType){
+auto GPS::setRockType(RockType rockType) -> GPS::RockType{
     RockType ret (m_rockType);
     m_rockType = rockType;
     return ret;
 }
 
-CLHEP::HepRotation GPS::transformToGlast(double seconds, CoordSystem index){
+auto GPS::transformToGlast(double seconds, CoordSystem index) -> CLHEP::HepRotation{
     ///Purpose:  return the rotation to transfrom a vector in a given system to
     ///the S/C satellite system.  
 
@@ -221,7 +221,7 @@ CLHEP::HepRotation GPS::transformToGlast(double seconds, CoordSystem index){
     return trans;
 }
 
-CLHEP::Hep3Vector GPS::aberration(const CLHEP::Hep3Vector& pvec, double met) {
+auto GPS::aberration(const CLHEP::Hep3Vector& pvec, double met) -> CLHEP::Hep3Vector {
     static double seconds_per_day(86400);
     static double cob(20.49552/3600 * D2R); // constant of aberration in radians
     Hep3Vector enp(SkyDir(270,90-23.439281)());  // ecliptic northpole 
@@ -240,7 +240,7 @@ CLHEP::Hep3Vector GPS::aberration(const CLHEP::Hep3Vector& pvec, double met) {
     return result;  
 }
 
-CLHEP::Hep3Vector GPS::LATdirection(CoordSystem index,const CLHEP::Hep3Vector& dir, double met)
+auto GPS::LATdirection(CoordSystem index,const CLHEP::Hep3Vector& dir, double met) -> CLHEP::Hep3Vector
 {
     CLHEP::Hep3Vector result(dir);
     if( met != -1)update( met);
@@ -291,7 +291,7 @@ CLHEP::Hep3Vector GPS::LATdirection(CoordSystem index,const CLHEP::Hep3Vector& d
     return result;
 }
 
-astro::SkyDir GPS::toSky(const CLHEP::Hep3Vector& latdir, double met)
+auto GPS::toSky(const CLHEP::Hep3Vector& latdir, double met) -> astro::SkyDir
 {
     if( met != -1)update( met);
 
@@ -302,7 +302,7 @@ astro::SkyDir GPS::toSky(const CLHEP::Hep3Vector& latdir, double met)
     return astro::SkyDir(tdir);
 }
 
-astro::SkyDir GPS::correct(const astro::SkyDir& sdir, double met)
+auto GPS::correct(const astro::SkyDir& sdir, double met) -> astro::SkyDir
 {
     if( met != -1)update( met);
     const HepRotation& R(m_currentPoint.rotation()); // rotation
@@ -395,7 +395,7 @@ void GPS::update(double inputTime){
 
 
 
-int GPS::test()
+auto GPS::test() -> int
 {
     using namespace astro;
     using namespace std;

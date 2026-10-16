@@ -5,7 +5,7 @@
 */
 #include "astro/JulianDate.h"
 
-#include <stdio.h>
+#include <cstdio>
 #include <cmath>
 
 namespace {
@@ -49,7 +49,7 @@ namespace {
       utc = hr;
    }
 
-double leapSeconds(double JD) {
+auto leapSeconds(double JD) -> double {
    // wire these in to avoid need for initialization: must correspond
    // to the dates shown
    double leaptime[] = {
@@ -99,7 +99,7 @@ namespace astro{
        gregDate(JD, An, Me, Gio,utc);
    }
 
-   std::string JulianDate::getGregorianDate(void) const
+   auto JulianDate::getGregorianDate(void) const -> std::string
    {
       int year, month, day, hour, minute, second, sec_deci;
       double utc;

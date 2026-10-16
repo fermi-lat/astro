@@ -19,7 +19,7 @@ namespace {
 
     // Allowed Latitude range is -30 to +30
     // Allowed Longitude range is -180 to 180 (but 0 to 360 works too)
-    double geoInterp(double lat, double lon, const double * array) {
+    auto geoInterp(double lat, double lon, const double * array) -> double {
         int ilat, ilon;
         double a, b;
 
@@ -45,19 +45,19 @@ namespace {
     }
 }
 
-double Geomag::L(double lat, double lon) {
+auto Geomag::L(double lat, double lon) -> double {
     return geoInterp(lat, lon, Lvals);
 }
 
-double Geomag::B(double lat, double lon) {
+auto Geomag::B(double lat, double lon) -> double {
     return geoInterp(lat, lon, Bvals);
 }
 
-double Geomag::geolat(double lat, double lon) {
+auto Geomag::geolat(double lat, double lon) -> double {
     return geoInterp(lat, lon, glats);
 }
 
-double Geomag::geolon(double lat, double lon) {
+auto Geomag::geolon(double lat, double lon) -> double {
     return geoInterp(lat, lon, glons);
 }
 

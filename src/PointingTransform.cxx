@@ -14,7 +14,7 @@ namespace astro {
 
     /** @brief transform a local to a celestial direction
     */
-    CLHEP::HepRotation PointingTransform::localToCelestial () const{
+    auto PointingTransform::localToCelestial () const -> CLHEP::HepRotation{
         const CLHEP::Hep3Vector& xd(m_xDir.dir());
         const CLHEP::Hep3Vector& zd(m_zDir.dir());
         const CLHEP::Hep3Vector& yd( (m_zDir.dir()).cross( m_xDir.dir() ) );
@@ -24,7 +24,7 @@ namespace astro {
 
     /** @brief get the celestial direction from the local one
     */
-    SkyDir PointingTransform::gDir(CLHEP::Hep3Vector localDir) const{
+    auto PointingTransform::gDir(CLHEP::Hep3Vector localDir) const -> SkyDir{
         CLHEP::Hep3Vector dir(localDir);
         SkyDir ret(localToCelestial()*dir,SkyDir::EQUATORIAL);
         return ret;

@@ -18,7 +18,7 @@ namespace {
 
 namespace astro {
 
-IGRField& IGRField::Model() { 
+auto IGRField::Model() -> IGRField& { 
    if (model==0) {
       model = new IGRField();
    }
@@ -58,7 +58,7 @@ void IGRField::setYear(const float year){
    IGRFf2c::feldcof_(&m_year,&m_dipoleMoment);
 }
       
-int IGRField::compute(const float latitude,const float longitude,const float altitude,const float year){
+auto IGRField::compute(const float latitude,const float longitude,const float altitude,const float year) -> int{
 
    float earth_radius= 6371.2 ;
 
@@ -106,7 +106,7 @@ int IGRField::compute(const float latitude,const float longitude,const float alt
 
 }
 
-const IGRF_data & IGRField::igrf_data(const std::string & filename) {
+auto IGRField::igrf_data(const std::string & filename) -> const IGRF_data & {
    std::map<std::string, astro::IGRF_data>::const_iterator it 
       = m_IGRF_data_map.find(filename);
    if (it != m_IGRF_data_map.end()) {

@@ -22,7 +22,7 @@ namespace {
     }
     
     
-    inline double sqr(double x){return x*x;}
+    inline auto sqr(double x) -> double{return x*x;}
     
 }
 
@@ -74,7 +74,7 @@ void EarthOrbit::initialize()
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CLHEP::Hep3Vector EarthOrbit::position(JulianDate JD) const
+auto EarthOrbit::position(JulianDate JD) const -> CLHEP::Hep3Vector
 {
     double elapse = (JD - m_launch)*SecondsPerDay;
     
@@ -92,7 +92,7 @@ CLHEP::Hep3Vector EarthOrbit::position(JulianDate JD) const
     return pos;  
 }
 
-double EarthOrbit::Kepler(double MeanAnomaly,double Eccentricity)
+auto EarthOrbit::Kepler(double MeanAnomaly,double Eccentricity) -> double
 {
     double E = MeanAnomaly;    // Initial guess to Eccentric Anomaly
     if( Eccentricity==0) return E; // THB: skip following
@@ -118,16 +118,16 @@ double EarthOrbit::Kepler(double MeanAnomaly,double Eccentricity)
     return TrueAnomaly;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-JulianDate EarthOrbit::dateFromSeconds(double seconds)const{
+auto EarthOrbit::dateFromSeconds(double seconds)const -> JulianDate{
     return m_launch+(seconds/SecondsPerDay);
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-JulianDate EarthOrbit::mjdFromSeconds(double seconds)const{
+auto EarthOrbit::mjdFromSeconds(double seconds)const -> JulianDate{
    double MJDStart = m_launch - 2400000.5;
    return MJDStart+(seconds/SecondsPerDay);
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-double EarthOrbit::phase(JulianDate jd) const
+auto EarthOrbit::phase(JulianDate jd) const -> double
 {
     double elapse = (jd - m_launch)*SecondsPerDay;
     return m_M0+m_dMdt*elapse;
@@ -135,7 +135,7 @@ double EarthOrbit::phase(JulianDate jd) const
 
 // Calculates the Shapiro delay due to gravitational relativistic effects on the 
 // photon arrival times.
-double EarthOrbit::calcShapiroDelay(JulianDate jd, const SkyDir &sourceDir) const
+auto EarthOrbit::calcShapiroDelay(JulianDate jd, const SkyDir &sourceDir) const -> double
 {
 //   SolarSystem::Body sunID = (SolarSystem::Body) 8;
 
@@ -164,7 +164,7 @@ double EarthOrbit::calcShapiroDelay(JulianDate jd, const SkyDir &sourceDir) cons
 
 // Takes a Julian Date and a source direction and computes the light travel time to the
 // solar system barycenter.
-double EarthOrbit::calcTravelTime(JulianDate jd, const SkyDir &sourceDir) const
+auto EarthOrbit::calcTravelTime(JulianDate jd, const SkyDir &sourceDir) const -> double
 {
    SolarSystem solsys;
    CLHEP::Hep3Vector barycenter;
@@ -199,7 +199,7 @@ double EarthOrbit::calcTravelTime(JulianDate jd, const SkyDir &sourceDir) const
 // Takes a Julian Date and returns the correction that is added to TT to get TDB.
 // Does a linear interpolation to avoid recomputing 100+ sin functions each time
 // the TDB-TT correction is needed.
-double EarthOrbit::tdb_minus_tt(JulianDate jd) const
+auto EarthOrbit::tdb_minus_tt(JulianDate jd) const -> double
 {
    static double tdb_tt;
    static double tdb_tt_dot;
@@ -276,7 +276,7 @@ double EarthOrbit::tdb_minus_tt(JulianDate jd) const
  *
  *---------------------------------------------------------------------------*/
 
-double EarthOrbit::ctatv(int long jdno, double fjdno) const
+auto EarthOrbit::ctatv(int long jdno, double fjdno) const -> double
 {
 
   double t, tt, t1, t2, t3, t4, t5, t24, t25, t29, t30;
@@ -422,7 +422,7 @@ double EarthOrbit::ctatv(int long jdno, double fjdno) const
 
       return (t1+t2+t3+t4+t5+t24+t25+t29+t30) * 1.0e-6 ;
 }
-double EarthOrbit::set_inclination(double inclination)
+auto EarthOrbit::set_inclination(double inclination) -> double
 {
     double old = s_incl;
     s_incl=inclination*M_PI/180;

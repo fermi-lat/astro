@@ -112,15 +112,15 @@ void  SkyDir::setGalCoordsFromDir(double & l, double & b) const{
 }
 
 
-double SkyDir::l ()const{
+auto SkyDir::l ()const -> double{
     double xl, xb; setGalCoordsFromDir(xl,xb); return xl;
 }
 
-double SkyDir::b ()const{
+auto SkyDir::b ()const -> double{
     double xl, xb; setGalCoordsFromDir(xl,xb); return xb;
 }
 
-double SkyDir::ra ()const{
+auto SkyDir::ra ()const -> double{
     double ra=atan2(m_dir.y(), m_dir.x())*180/M_PI;    
     //fold RA into the range (0,360)
     while(ra < 0) ra+=360.;
@@ -128,12 +128,12 @@ double SkyDir::ra ()const{
     return ra;
 }
 
-double SkyDir::dec ()const{
+auto SkyDir::dec ()const -> double{
     return asin(m_dir.z())*180/M_PI;
 }
 
 // wcslib based projection routine
-std::pair<double,double> SkyDir::project(const ProjBase& projection) const
+auto SkyDir::project(const ProjBase& projection) const -> std::pair<double,double>
 {
     if(projection.isGalactic()){
         double l, b; 
@@ -146,14 +146,14 @@ std::pair<double,double> SkyDir::project(const ProjBase& projection) const
 
 
 
-double SkyDir::difference(const SkyDir& other)const
+auto SkyDir::difference(const SkyDir& other)const -> double
 {
 	double x = 0.5*(m_dir-other.dir()).mag();
         return 2.*asin(x);
 }
 
         
-std::pair<double, double> SkyDir::zenithCoords(const astro::SkyDir& zenithDir)const
+auto SkyDir::zenithCoords(const astro::SkyDir& zenithDir)const -> std::pair<double, double>
 {
     static Hep3Vector north_pole(0,0,1);
     Hep3Vector east_dir( north_pole.cross(zenithDir()).unit() ); // east is perp to north_pole and zenith
@@ -169,12 +169,12 @@ std::pair<double, double> SkyDir::zenithCoords(const astro::SkyDir& zenithDir)co
 }
 
   
-astro::SkyDir SkyDir::cross(const astro::SkyDir & other) const
+auto SkyDir::cross(const astro::SkyDir & other) const -> astro::SkyDir
 { 
          return astro::SkyDir(dir().cross(other.dir())); 
 } 
 
-double SkyDir::dot(const astro::SkyDir & other) const
+auto SkyDir::dot(const astro::SkyDir & other) const -> double
 { 
          return dir().dot(other.dir()); 
 } 

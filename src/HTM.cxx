@@ -40,13 +40,13 @@ HTM::HTM(int maxlevel)
     std::sort(m_nodes.begin(), m_nodes.end());
 }
 
-HTM::NodeList::const_iterator HTM::begin(int level)const {
+auto HTM::begin(int level)const -> HTM::NodeList::const_iterator {
     if( level <0 ) level = m_level; // default
     return level>0? m_nodes.begin()+start(level) : m_nodes.begin();
     //   return std::find(m_nodes.begin(), m_nodes.end(), size(level));
 }
 
-HTM::NodeList::const_iterator HTM::end(int level)const {
+auto HTM::end(int level)const -> HTM::NodeList::const_iterator {
 
     if( level <0 ) level = m_level; // default
 
@@ -56,13 +56,13 @@ HTM::NodeList::const_iterator HTM::end(int level)const {
 }
 
 /** @brief return node by id */
-const HTM::Node& HTM::node( unsigned int id) const
+auto HTM::node( unsigned int id) const -> const HTM::Node&
 {
     return m_nodes[index(id)];
 }
 
 /** @brief return  first child of */
-HTM::NodeList::const_iterator HTM::child(const HTM::Node& node) const
+auto HTM::child(const HTM::Node& node) const -> HTM::NodeList::const_iterator
 {
     unsigned int child_id = 4*node.id();
     return m_nodes.begin()+index(child_id);
@@ -70,13 +70,13 @@ HTM::NodeList::const_iterator HTM::child(const HTM::Node& node) const
 
 
 /** @brief number of elements at the level */
-size_t HTM::size(int level) { return 8*(1<<2*level); }
+auto HTM::size(int level) -> size_t { return 8*(1<<2*level); }
 
 /** @brief index of the start for a given level*/
-size_t HTM::start(int level) { return 8*((1<<2*level)-1)/3; }
+auto HTM::start(int level) -> size_t { return 8*((1<<2*level)-1)/3; }
 
 /** @brief index into the vector for a given id */
-size_t HTM::index(unsigned int id) const {
+auto HTM::index(unsigned int id) const -> size_t {
     if( id<8 || id>m_maxid) throw std::out_of_range("HTM::index id out of range");
     unsigned int i = id / 32; // shift 5 bits
     int level = 0;
@@ -90,9 +90,9 @@ size_t HTM::index(unsigned int id) const {
 code from htm's SpatialIndex::area.
 @todo: is it really necessary to evaluate 8 trig functions?
 */ 
-double HTM::area(const astro::SkyDir& v0,
+auto HTM::area(const astro::SkyDir& v0,
                    const astro::SkyDir& v1,
-                   const astro::SkyDir& v2)
+                   const astro::SkyDir& v2) -> double
 {  
     double a = acos( v0() * v1())
         ,  b = acos( v1() * v2())

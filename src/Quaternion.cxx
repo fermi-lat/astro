@@ -71,7 +71,7 @@ Quaternion::Quaternion(const CLHEP::Hep3Vector& zhat, const CLHEP::Hep3Vector& x
     }
 }
 
-Quaternion Quaternion::operator* (const Quaternion & r) const
+auto Quaternion::operator* (const Quaternion & r) const -> Quaternion
 {
     Hep3Vector pv= m_v.cross(r.m_v) + m_s*r.m_v + m_v*r.m_s;
     double ps = m_s*r.m_s - m_v*r.m_v;
@@ -79,7 +79,7 @@ Quaternion Quaternion::operator* (const Quaternion & r) const
     return Quaternion(pv,ps);
 }
 
-Quaternion Quaternion::operator* (const CLHEP::Hep3Vector & vp) const
+auto Quaternion::operator* (const CLHEP::Hep3Vector & vp) const -> Quaternion
 {
     Hep3Vector pv= m_v.cross(vp) + m_s*vp;
     double ps = -m_v*vp;
@@ -87,7 +87,7 @@ Quaternion Quaternion::operator* (const CLHEP::Hep3Vector & vp) const
     return Quaternion(pv,ps);
 }
 
-Quaternion astro::operator* (const CLHEP::Hep3Vector & v, const Quaternion & q)
+auto astro::operator* (const CLHEP::Hep3Vector & v, const Quaternion & q) -> Quaternion
 {
     Hep3Vector pv= v.cross(q.vector())  + v*q.scalar();
     double ps =- v*q.vector();
@@ -95,7 +95,7 @@ Quaternion astro::operator* (const CLHEP::Hep3Vector & v, const Quaternion & q)
     return Quaternion(pv,ps);
 }
 
-HepRotation Quaternion::rotation()const
+auto Quaternion::rotation()const -> HepRotation
 {
     /// create rotation matrix
     double s(m_s), x(m_v.x()), y(m_v.y()), z(m_v.z());
@@ -107,12 +107,12 @@ HepRotation Quaternion::rotation()const
     return HepRotation(xcol, ycol, zcol);
 }
 
-double Quaternion::norm()const
+auto Quaternion::norm()const -> double
 {
     return m_s*m_s + m_v.mag2();
 }
 
-CLHEP::Hep3Vector Quaternion::rotate(const CLHEP::Hep3Vector& t) const
+auto Quaternion::rotate(const CLHEP::Hep3Vector& t) const -> CLHEP::Hep3Vector
 {
 
 #if 0 // inefficient code using formal definition: enable to verify
@@ -124,18 +124,18 @@ CLHEP::Hep3Vector Quaternion::rotate(const CLHEP::Hep3Vector& t) const
 #endif
 }
 
-astro::Quaternion Quaternion::power(double t)const{
+auto Quaternion::power(double t)const -> astro::Quaternion{
     if( t==0) return Quaternion();
     double a( m_s>1? 0 : acos(m_s) );
     return Quaternion( m_v.unit()*sin(a*t), cos(a*t) );
 }
 
-bool Quaternion::isNear(const Quaternion& other)const
+auto Quaternion::isNear(const Quaternion& other)const -> bool
 {
     return m_v.isNear(other.vector()) && fabs(m_s-other.scalar())<1e-10;
 }
 
-Quaternion Quaternion::interpolate(const Quaternion& q1, double t)const
+auto Quaternion::interpolate(const Quaternion& q1, double t)const -> Quaternion
 {
     if( t==0) return *this;
     if( m_v.dot(q1.vector()) <0) {
@@ -148,7 +148,7 @@ Quaternion Quaternion::interpolate(const Quaternion& q1, double t)const
 }
 
 
-int Quaternion::test()
+auto Quaternion::test() -> int
 {
     using astro::SkyDir;
     int ret( 0 );

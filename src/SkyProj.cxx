@@ -40,7 +40,7 @@ public:
     {}
 
     virtual ~SkyProjException() throw() {}
-    virtual const char *what() const throw(){
+    virtual auto what() const throw() -> const char *{
         std::stringstream msg; 
         msg << "SkyProj wcslib error "<< m_status << " : ";
         if(  m_status<1 || m_status>11 ) msg << " unknown error";
@@ -49,7 +49,7 @@ public:
         ::strncpy(buf, msg.str().c_str(), sizeof(buf));
         return buf;
     }
-    int status()const throw(){return m_status;}
+    auto status()const throw() -> int{return m_status;}
 private:
     int m_status;
 };
@@ -205,7 +205,7 @@ SkyProj::~SkyProj()
 @param s2 dec or b, in degrees
 @return pair(x,y) in pixel coordinates
 */
-std::pair<double,double> SkyProj::sph2pix(double s1, double s2) const
+auto SkyProj::sph2pix(double s1, double s2) const -> std::pair<double,double>
 {
     int ncoords = 1;
     int nelem = 2;
@@ -242,7 +242,7 @@ std::pair<double,double> SkyProj::sph2pix(double s1, double s2) const
     return std::make_pair(pixcrd[0],pixcrd[1]);
 }
 
-std::pair<double,double> SkyProj::pix2sph(double x1, double x2) const
+auto SkyProj::pix2sph(double x1, double x2) const -> std::pair<double,double>
 {
     int ncoords = 1;
     int nelem = 2;
@@ -268,7 +268,7 @@ std::pair<double,double> SkyProj::pix2sph(double x1, double x2) const
 /*@brief determine the x or y range for a given x or y coordinate
    @param xvar varies x if true, varies y if false
    @param x1 x or y coordinate to find y or x range respectively */
-std::pair<double,double> SkyProj::range(double x1,bool xvar) {
+auto SkyProj::range(double x1,bool xvar) -> std::pair<double,double> {
     if(hasRange(x1,xvar))
         return std::make_pair(0,0);
     double xval,yval,delt;
@@ -336,7 +336,7 @@ std::pair<double,double> SkyProj::range(double x1,bool xvar) {
 
 /*@brief determines if a pixel coordinate is in 
     the scope of the projection*/
-int SkyProj::testpix2sph(double x1, double x2) const{
+auto SkyProj::testpix2sph(double x1, double x2) const -> int{
     int ncoords = 1;
     int nelem = 2;
     double worldcrd[2], imgcrd[2];
@@ -445,7 +445,7 @@ SkyProj::SkyProj(const SkyProj & other)
 }
 
 /** @brief determines if current point and variable are in range */
-bool SkyProj::hasRange(double x1, bool xvar) {
+auto SkyProj::hasRange(double x1, bool xvar) -> bool {
     return (xvar&&limit[4]==1)||(!xvar&&limit[5]==1)||((x1>limit[2]||x1<limit[3])&&xvar)||((x1>limit[0]||x1<limit[1])&&!xvar);
 }
 

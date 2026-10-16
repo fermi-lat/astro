@@ -15,12 +15,12 @@ SolarSystem::SolarSystem(Body body)
 {
 }
 
-SkyDir SolarSystem::direction(JulianDate jd)const
+auto SolarSystem::direction(JulianDate jd)const -> SkyDir
 {
     return SkyDir(vector(EARTH, m_body,jd));
 }
 
-SkyDir SolarSystem::direction(JulianDate jd, const CLHEP::Hep3Vector& position)const
+auto SolarSystem::direction(JulianDate jd, const CLHEP::Hep3Vector& position)const -> SkyDir
 {
     static double c(299792.458); // velocity of light in km/s
 
@@ -30,12 +30,12 @@ SkyDir SolarSystem::direction(JulianDate jd, const CLHEP::Hep3Vector& position)c
 }
 
 
-double SolarSystem::distance(JulianDate jd)const
+auto SolarSystem::distance(JulianDate jd)const -> double
 {
    return vector(m_body,EARTH,jd).mag();
 }
 
-double * SolarSystem::jplSetup(JulianDate jd) 
+auto SolarSystem::jplSetup(JulianDate jd) -> double * 
 {
     static bool ephemInit=false;
     if(!ephemInit) {
@@ -67,7 +67,7 @@ double * SolarSystem::jplSetup(JulianDate jd)
 }
 
 // Returns an Hep3Vector with light seconds as distance units
-CLHEP::Hep3Vector SolarSystem::getBarycenter(JulianDate jd)const
+auto SolarSystem::getBarycenter(JulianDate jd)const -> CLHEP::Hep3Vector
 {
     const double *eposn =  dpleph(jplSetup(jd), m_body, SUN);
     if( eposn==0) {
@@ -84,12 +84,12 @@ CLHEP::Hep3Vector SolarSystem::getBarycenter(JulianDate jd)const
 
 }
 
-CLHEP::Hep3Vector SolarSystem::getSolarVector(JulianDate jd)const
+auto SolarSystem::getSolarVector(JulianDate jd)const -> CLHEP::Hep3Vector
 {
 	return vector(EARTH,SUN,jd);
 }
 
-CLHEP::Hep3Vector SolarSystem::vector(Body targ, Body cent, JulianDate jd)
+auto SolarSystem::vector(Body targ, Body cent, JulianDate jd) -> CLHEP::Hep3Vector
 {
    const double *eposn = dpleph(jplSetup(jd), targ, cent);
      if( eposn==0) {

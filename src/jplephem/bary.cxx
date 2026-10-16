@@ -11,7 +11,7 @@
  *   return:   FITS file pointer, NULL if not found
  *
  *----------------------------------------------------------------------*/
-fitsfile *openFFile (const char *name)
+auto openFFile (const char *name) -> fitsfile *
 {
    char fileName[1024];
    fitsfile *FF = NULL;

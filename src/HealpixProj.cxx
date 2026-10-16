@@ -90,7 +90,7 @@ HealpixProj::HealpixProj(const HealpixProj& other)
 }
 
 
-std::pair<double,double> HealpixProj::sph2pix(double s1, double s2) const {
+auto HealpixProj::sph2pix(double s1, double s2) const -> std::pair<double,double> {
   // Holder for the return values
   std::pair<double,double> retVal(-1.,0.);
   // value checking.  Let's leave the longitude alone, but require the fabs(latitude) be <= 90.
@@ -104,7 +104,7 @@ std::pair<double,double> HealpixProj::sph2pix(double s1, double s2) const {
   return retVal;
 }
 
-std::pair<double,double> HealpixProj::pix2sph(double x1, double x2) const {
+auto HealpixProj::pix2sph(double x1, double x2) const -> std::pair<double,double> {
   // Holder for the return values
   std::pair<double,double> retVal(-1,0.);
   // This is really a 1-D representation, if x2 is not 0 we have a problem
@@ -121,7 +121,7 @@ std::pair<double,double> HealpixProj::pix2sph(double x1, double x2) const {
   return retVal;
 }
 
-std::pair<double,double> HealpixProj::range(double x1,bool xvar) {
+auto HealpixProj::range(double x1,bool xvar) -> std::pair<double,double> {
   std::pair<double,double> retVal(0.,0.);
   if (!xvar) {
     // X is constant. This is really a 1-D representation so return (0.,0.)
@@ -134,7 +134,7 @@ std::pair<double,double> HealpixProj::range(double x1,bool xvar) {
   return retVal;
 }
 
-int HealpixProj::testpix2sph(double x1, double x2) const{
+auto HealpixProj::testpix2sph(double x1, double x2) const -> int{
   // this is supposed to return a mask telling us which coordinates are messed up
   // i.e., 0 means all ok
   int mask(0); 
@@ -173,7 +173,7 @@ void HealpixProj::setKeywords(tip::Header& hdr) {
 }
 
 
-pointing HealpixProj::convertToPointing(const SkyDir& dir) {
+auto HealpixProj::convertToPointing(const SkyDir& dir) -> pointing {
   // convert to what HEALPix expects (angles in radians and theta instead of latitude)
   double s1 = isGalactic() ? dir.l() : dir.ra();
   double s2 = isGalactic() ? dir.b() : dir.dec();

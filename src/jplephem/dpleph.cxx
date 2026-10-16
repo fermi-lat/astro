@@ -53,11 +53,11 @@ static double clight ;
 static double au ;
 static double aufac, velfac ;
 
-int state (double *, int, int, double *) ;
-int getstate (int, double, double *) ;
-int interp (double *, double, int, int, double *) ;
-int readephem (long) ;
-double findcval (char **, double *, long, char *) ;
+auto state (double *, int, int, double *) -> int ;
+auto getstate (int, double, double *) -> int ;
+auto interp (double *, double, int, int, double *) -> int ;
+auto readephem (long) -> int ;
+auto findcval (char **, double *, long, char *) -> double ;
 
 /*-----------------------------------------------------------------------
  *
@@ -94,7 +94,7 @@ double findcval (char **, double *, long, char *) ;
  *
  *----------------------------------------------------------------------*/
 
-const double *dpleph (double *jd, int ntarg, int ncent)
+auto dpleph (double *jd, int ntarg, int ncent) -> const double *
 {
   static double posn[12] ;
   long jdint ;
@@ -153,7 +153,7 @@ const double *dpleph (double *jd, int ntarg, int ncent)
  *
  *----------------------------------------------------------------------*/
 
-int state (double *jd, int ntarg, int ncent, double *posn)
+auto state (double *jd, int ntarg, int ncent, double *posn) -> int
 {
   double t, t1, t2 ;
 //  int i ;
@@ -236,7 +236,7 @@ int state (double *jd, int ntarg, int ncent, double *posn)
  *
  *----------------------------------------------------------------------*/
 
-int getstate (int ntarg, double t1, double *posn) {
+auto getstate (int ntarg, double t1, double *posn) -> int {
   int mtarg, mcent, i ;
   double st[6], scale ;
 
@@ -331,7 +331,7 @@ int getstate (int ntarg, double t1, double *posn) {
  *
  *----------------------------------------------------------------------*/
 
-int interp (double *buf, double t1, int ncf, int na, double *pv)
+auto interp (double *buf, double t1, int ncf, int na, double *pv) -> int
 {
 
   static double pc[18], vc[18] ;
@@ -439,7 +439,7 @@ int interp (double *buf, double t1, int ncf, int na, double *pv)
  *
  *----------------------------------------------------------------------*/
 
-int readephem (long recnum)
+auto readephem (long recnum) -> int
 {
   fitsfile *ephem_file;
   int status=0 ;
@@ -482,7 +482,7 @@ int readephem (long recnum)
  *
  *----------------------------------------------------------------------*/
 
-int initephem (int ephnum, int *denum, double *c, double *radsol, double *msol)
+auto initephem (int ephnum, int *denum, double *c, double *radsol, double *msol) -> int
 {
   fitsfile *ephem_file;
   int status=0 ;
@@ -642,7 +642,7 @@ int initephem (int ephnum, int *denum, double *c, double *radsol, double *msol)
  *
  *----------------------------------------------------------------------*/
 
-double findcval (char **cnam, double *cval, long n, char *name) {
+auto findcval (char **cnam, double *cval, long n, char *name) -> double {
   int i ;
   double t ;
 
