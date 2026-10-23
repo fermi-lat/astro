@@ -490,6 +490,10 @@ used** by CMake. In the CMake build, `ProjBase`, `SkyProj`, `HealpixProj`,
   HEALPix files lack it), and ignores partial-sky indexing (`INDXSCHM`).
 
 **JPL ephemeris**
+- The installed `JPLEPH.405` (from the `fermitools-data` package) covers
+  **1949-12-14 to 2050-01-02** (MET about 1.546e9). Outside that range the
+  reader returns no data and `SolarSystem` fails. See also the `timeSystem`
+  doc, which reads the same file.
 - `openFFile` formats `getenv("TIMING_DIR")` with `sprintf("%s/%s")` and
   no null check. If `TIMING_DIR` is unset, that is undefined behaviour
   (glibc prints `(null)/JPLEPH.405`), and the first `SolarSystem` call
