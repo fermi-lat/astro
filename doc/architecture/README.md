@@ -288,7 +288,7 @@ used** by CMake. In the CMake build, `ProjBase`, `SkyProj`, `HealpixProj`,
 
 | Variable | Read by | Effect |
 |----------|---------|--------|
-| `TIMING_DIR` | `src/jplephem/bary.cxx` (`openFFile`) | Directory holding `JPLEPH.405`. Needed by any `SolarSystem` call, and so by `GPS::aberration`, `EarthOrbit::calcTravelTime`/`calcShapiroDelay`. The conda activation script sets it to `$CONDA_PREFIX/share/fermitools/refdata/fermi/jplephem`. |
+| `TIMING_DIR` | `src/jplephem/bary.cxx` (`openFFile`) | Directory holding `JPLEPH.405`. Needed by any `SolarSystem` call, and so by `GPS::aberration`, `EarthOrbit::calcTravelTime`/`calcShapiroDelay`. Set by conda activation (see "Runtime environment" in ScienceTools' `docs/architecture/README.md`). |
 | `FERMI_INST_DIR` (via `facilities`) | `commonUtilities::getDataPath("astro")` | Where the IGRF `.dat` files are found (`$FERMI_INST_DIR/refdata/fermi/astro`). |
 | `IGNORE_IGRF_BOUNDARY` | `IGRField::setYear` | If set, years ≥ 2025 are clamped to 2025 instead of throwing. |
 | `ZENITH_FRAME_FIX` | `GPS::transformToGlast`, `GPS::LATdirection` | If set, `ZENITH` uses the same frame as `NADIR` (consistent with FT2 `EARTH_AZIMUTH_ANGLE`). `flux/src/SourceDirection.cxx` reads it too. |
@@ -334,6 +334,11 @@ used** by CMake. In the CMake build, `ProjBase`, `SkyProj`, `HealpixProj`,
     **current working directory**. Run it from a scratch directory.
   - `test_IGRF` checks that a 2030 request throws, and compares field
     values against IGRF-13 reference values for 2015.5–2021.5.
+  - The default run of the project harness `recipe/tests/ST-unit-test`
+    (see "Testing" in ScienceTools' `docs/architecture/README.md`) runs
+    `test_astro` and checks only its exit status. No output file is
+    compared and no astro reference data exists anywhere; the checks are
+    the ones built into `test_astro`.
 - **Legacy build files:** `SConscript`, `astroLib.py` and
   `python/swig_setup.in` are from SCons and are not used.
 - **CI:** `azure-pipelines.yml` uses the shared `fermi-lat/ci` templates.
