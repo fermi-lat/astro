@@ -24,11 +24,11 @@ namespace {
     const double D2R = M_PI/180.;
 }
 
-GPS*	GPS::s_instance = 0;
+GPS*	GPS::s_instance = nullptr;
 
 GPS::GPS() 
 : m_earthOrbit(new astro::EarthOrbit)
-, m_history(0)
+, m_history(nullptr)
 , m_time(0.) 
 , m_lastQueriedTime(-1.)
 , m_expansion(1.)    // default expansion:regular orbit for now
@@ -46,7 +46,7 @@ GPS::~GPS ()
 
 
 auto GPS::history()const -> const astro::PointingHistory&
-{   if( m_history==0) throw GPS::NoHistoryError("GPS:: no history has been loaded");
+{   if( m_history==nullptr) throw GPS::NoHistoryError("GPS:: no history has been loaded");
     return *m_history;
 }
 
@@ -88,7 +88,7 @@ auto	GPS::time ()  const -> double{     return m_time;}
 
 auto   GPS::expansion () const -> double{    return m_expansion;}
 
-auto GPS::endTime()const -> double{ return m_history==0? 3e9 : m_history->endTime();}
+auto GPS::endTime()const -> double{ return m_history==nullptr? 3e9 : m_history->endTime();}
 
 // functions that set the state, then retrieve the given value
 
@@ -123,12 +123,12 @@ void GPS::time ( double t )
 }
 
 auto	GPS::instance() -> GPS* 
-{ return (s_instance != 0) ? s_instance : (s_instance = new GPS()); }
+{ return (s_instance != nullptr) ? s_instance : (s_instance = new GPS()); }
 
 void GPS::kill()
 {
     delete s_instance;
-    s_instance = 0;
+    s_instance = nullptr;
 }
 
 void    GPS::sampleintvl ( double s ){    m_sampleintvl = s;}

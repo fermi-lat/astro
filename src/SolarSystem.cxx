@@ -70,7 +70,7 @@ auto SolarSystem::jplSetup(JulianDate jd) -> double *
 auto SolarSystem::getBarycenter(JulianDate jd)const -> CLHEP::Hep3Vector
 {
     const double *eposn =  dpleph(jplSetup(jd), m_body, SUN);
-    if( eposn==0) {
+    if( eposn==nullptr) {
         std::stringstream msg;
         msg << "SolarSystem::getBarycenter called with bad Julian date " << jd;
         throw BadDate(msg.str());
@@ -92,7 +92,7 @@ auto SolarSystem::getSolarVector(JulianDate jd)const -> CLHEP::Hep3Vector
 auto SolarSystem::vector(Body targ, Body cent, JulianDate jd) -> CLHEP::Hep3Vector
 {
    const double *eposn = dpleph(jplSetup(jd), targ, cent);
-     if( eposn==0) {
+     if( eposn==nullptr) {
         std::stringstream msg;
         msg << "SolarSystem::getBarycenter called with bad Julian date " << jd;
         throw BadDate(msg.str());
@@ -106,7 +106,6 @@ auto SolarSystem::vector(Body targ, Body cent, JulianDate jd) -> CLHEP::Hep3Vect
    return CLHEP::Hep3Vector(x,y,z);
 }
 
-SolarSystem::~SolarSystem(){
-}
+SolarSystem::~SolarSystem()= default;
  
 } // namespace astro

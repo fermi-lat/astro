@@ -14,14 +14,14 @@
 auto openFFile (const char *name) -> fitsfile *
 {
    char fileName[1024];
-   fitsfile *FF = NULL;
+   fitsfile *FF = nullptr;
    int error = 0;
    
    const char* extfiles_root = ::getenv("TIMING_DIR"); 
    sprintf(fileName, "%s/%s", extfiles_root,  name);
 
    fits_open_file(&FF, fileName, READONLY, &error);
-   if(FF == NULL)
+   if(FF == nullptr)
       fprintf (stderr, "File %s could not be found in %s\n", fileName, "jplephem") ;
    
 

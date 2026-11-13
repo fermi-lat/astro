@@ -39,8 +39,8 @@ public:
         : m_status(status)
     {}
 
-    virtual ~SkyProjException() throw() {}
-    virtual auto what() const throw() -> const char *{
+    virtual ~SkyProjException() throw() = default;
+    [[nodiscard]] virtual auto what() const throw() -> const char *{
         std::stringstream msg; 
         msg << "SkyProj wcslib error "<< m_status << " : ";
         if(  m_status<1 || m_status>11 ) msg << " unknown error";
@@ -49,7 +49,7 @@ public:
         ::strncpy(buf, msg.str().c_str(), sizeof(buf));
         return buf;
     }
-    auto status()const throw() -> int{return m_status;}
+    [[nodiscard]] auto status()const throw() -> int{return m_status;}
 private:
     int m_status;
 };
@@ -142,7 +142,7 @@ SkyProj::SkyProj(const std::string &fitsFile, int relax, int ctrl)
    int fstatus = 0, // cfitsio error status 
        numkeys, // number of keys (cards) in header
        nummore; // number of keys that can be added to header
-   char *header(0); // string containing header
+   char *header(nullptr); // string containing header
 
    tol=0.00000001;
 

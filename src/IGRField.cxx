@@ -13,13 +13,13 @@ $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/astro/src/IGRField.cxx,
 
 namespace {
    // static instance like singleton 
-   astro::IGRField*  model(0);
+   astro::IGRField*  model(nullptr);
 }
 
 namespace astro {
 
 auto IGRField::Model() -> IGRField& { 
-   if (model==0) {
+   if (model==nullptr) {
       model = new IGRField();
    }
    return *model; 
@@ -97,7 +97,7 @@ auto IGRField::compute(const float latitude,const float longitude,const float al
 // rigidity_const * cos(m_lambda)^4 / m_R^2
 
 // needs an approximation to the solution rl(b) of the equation b^2*rl^6+3*rl-4==0 in the range b=1..10
-   double Bdoub = (double)m_B;
+   auto Bdoub = (double)m_B;
    double rl= pow(Bdoub,-0.215108)*(1.-0.020551*(Bdoub-1.)+0.0008148*(Bdoub-1.)*(Bdoub-1.));
    m_R= rl*m_L;
    m_lambda= (rl<=1) ? acos(sqrt(rl)) : 0.;
@@ -107,7 +107,7 @@ auto IGRField::compute(const float latitude,const float longitude,const float al
 }
 
 auto IGRField::igrf_data(const std::string & filename) -> const IGRF_data & {
-   std::map<std::string, astro::IGRF_data>::const_iterator it 
+   auto it 
       = m_IGRF_data_map.find(filename);
    if (it != m_IGRF_data_map.end()) {
       return it->second;

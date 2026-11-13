@@ -107,7 +107,7 @@ auto HTM::area(const astro::SkyDir& v0,
 }
 
 void HTM::dump(std::ostream & out) const {
-    for( NodeList::const_iterator it = m_nodes.begin();it!= m_nodes.end(); ++it){
+    for( auto it = m_nodes.begin();it!= m_nodes.end(); ++it){
         const Node& n = *it;
         out << n.id() << " " << n.area() << std::endl;
     }

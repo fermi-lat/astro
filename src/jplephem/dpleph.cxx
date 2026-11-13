@@ -45,7 +45,7 @@ static long irecsz ;   /* length of ephemeris records (no. of doubles)  */
 static double ss1, ss2, ss3, ss3inv ;
 static long currec = 0 ;
 static double emratinv ; /* emratinv = 1.0 / (1.0 + emrat) */
-static double *buffer=NULL ;
+static double *buffer=nullptr ;
 static long iptr[13], ncf[13], na[13] ;
 static long buflen ;
 static long nrecs ;
@@ -121,7 +121,7 @@ auto dpleph (double *jd, int ntarg, int ncent) -> const double *
  *      Get the positions and return
  */
   if ( state (jd, ntarg, ncent, posn) )
-    return (const double *) NULL ;
+    return (const double *) nullptr ;
   else {
     return (const double *) posn ;
   }
@@ -444,9 +444,9 @@ auto readephem (long recnum) -> int
   fitsfile *ephem_file;
   int status=0 ;
   int htype, any ;
-  void *dum = NULL ;
+  void *dum = nullptr ;
 
-  if ( (ephem_file = openFFile (ephfile) ) == NULL ) {
+  if ( (ephem_file = openFFile (ephfile) ) == nullptr ) {
     status = 104 ;
     fprintf(stderr, "dpleph[readephem]: Cannot open file %s\n", EPHEM) ;
   }
@@ -493,7 +493,7 @@ auto initephem (int ephnum, int *denum, double *c, double *radsol, double *msol)
   double cval[200] ;
   char extname[80] ;
   double x ;
-  void *dum = NULL ;
+  void *dum = nullptr ;
   int i ;
 
 /*
@@ -516,7 +516,7 @@ auto initephem (int ephnum, int *denum, double *c, double *radsol, double *msol)
     sprintf (ephfile, "%s.%d", EPHEM, ephnum ) ;
   else
     strcpy (ephfile, EPHEM) ;
-  if ( (ephem_file = openFFile (ephfile) ) == NULL ) {
+  if ( (ephem_file = openFFile (ephfile) ) == nullptr ) {
     status = 104 ;
     fprintf(stderr, "dpleph[initephem]: Cannot open file %s\n", ephfile) ;
     return status ;

@@ -17,7 +17,7 @@ SkyStat::SkyStat(const astro::SkyFunction & sf, const int level, const astro::HT
 , m_sf(sf), m_level(level)
 , m_ave(0), m_rms(0), m_min(0), m_max(0), m_rejected(0)
 {    
-    if (h != 0)
+    if (h != nullptr)
         m_HTM_Created = false;
     else
     {
@@ -31,7 +31,7 @@ SkyStat::SkyStat(const astro::SkyFunction & sf, const int level, const astro::HT
 auto SkyStat::calculate_values() -> int
 {
     int count = 0;
-    for( HTM::const_iterator it = m_h->begin(m_level); it != m_h->end(m_level); ++it)
+    for( auto it = m_h->begin(m_level); it != m_h->end(m_level); ++it)
     {
         const HTM::Node & n = *it;
         double work = m_sf(n.dir());

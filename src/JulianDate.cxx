@@ -83,7 +83,7 @@ namespace astro{
       }
       int A = (An / 100);
       int B = 2 - A + (A / 4);
-      long int C = (long int)(365.25 * An);
+      auto C = (long int)(365.25 * An);
       if (An < 0) C = C - 1;
       int D = (int)(30.6001 * (Me + 1));
       m_JD = B + C + D + Gio + 1720994.5+ utc / 24.;

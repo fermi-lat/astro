@@ -651,13 +651,13 @@ L30:
 /* Subroutine */ auto shellg_(real *glat, real *glon, real *alt, real *dimo, 
 			     real *fl, integer *icode, real *b0) -> int
 {
-    return shellg_0_(0, glat, glon, alt, dimo, fl, icode, b0, (real *)0);
+    return shellg_0_(0, glat, glon, alt, dimo, fl, icode, b0, (real *)nullptr);
     }
 
 /* Subroutine */ auto shellc_(real *v, real *fl, real *b0) -> int
 {
-    return shellg_0_(1, (real *)0, (real *)0, (real *)0, (real *)0, fl, (
-	    integer *)0, b0, v);
+    return shellg_0_(1, (real *)nullptr, (real *)nullptr, (real *)nullptr, (real *)nullptr, fl, (
+	    integer *)nullptr, b0, v);
     }
 
 
@@ -927,20 +927,20 @@ L7:
 			    real *bnorth, real *beast, real *bdown, 
 			    real *babs) -> int
 {
-    return feldg_0_(0, glat, glon, alt, bnorth, beast, bdown, babs, (real *)0,
-	     (real *)0);
+    return feldg_0_(0, glat, glon, alt, bnorth, beast, bdown, babs, (real *)nullptr,
+	     (real *)nullptr);
     }
 
 /* Subroutine */ auto feldc_(real *v, real *b) -> int
 {
-    return feldg_0_(1, (real *)0, (real *)0, (real *)0, (real *)0, (real *)0, 
-	    (real *)0, (real *)0, v, b);
+    return feldg_0_(1, (real *)nullptr, (real *)nullptr, (real *)nullptr, (real *)nullptr, (real *)nullptr, 
+	    (real *)nullptr, (real *)nullptr, v, b);
     }
 
 /* Subroutine */ auto feldi_(void) -> int
 {
-    return feldg_0_(2, (real *)0, (real *)0, (real *)0, (real *)0, (real *)0, 
-	    (real *)0, (real *)0, (real *)0, (real *)0);
+    return feldg_0_(2, (real *)nullptr, (real *)nullptr, (real *)nullptr, (real *)nullptr, (real *)nullptr, 
+	    (real *)nullptr, (real *)nullptr, (real *)nullptr, (real *)nullptr);
     }
 
 

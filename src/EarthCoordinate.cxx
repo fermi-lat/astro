@@ -98,7 +98,7 @@ double EarthCoordinate::s_EarthRadius = 6378137.; //m
 
 auto EarthCoordinate::earthRadius() -> double{return s_EarthRadius;}
 
-  std::vector<std::pair<double,double> >*  EarthCoordinate::s_SAA_boundary = 0;
+  std::vector<std::pair<double,double> >*  EarthCoordinate::s_SAA_boundary = nullptr;
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -112,7 +112,7 @@ EarthCoordinate::EarthCoordinate( CLHEP::Hep3Vector pos, double met)
 
     }
 
-    if (s_SAA_boundary == 0 ) {
+    if (s_SAA_boundary == nullptr ) {
       s_SAA_boundary = new std::vector<std::pair<double, double> >;
     }
 
@@ -236,7 +236,7 @@ auto  EarthCoordinate::GetGMST(JulianDate jd) -> double
 
 void EarthCoordinate::setSAAboundary(const std::vector<std::pair<double,double> >& boundary)
 {
-    if (s_SAA_boundary == 0 ) {
+    if (s_SAA_boundary == nullptr ) {
       s_SAA_boundary = new std::vector<std::pair<double, double> >;
     }
 
@@ -346,10 +346,10 @@ auto EarthCoordinate::insideSAA() const -> bool
 auto EarthCoordinate::insideSAA(double lat, double lon) const -> bool
 {
  
-    typedef std::pair<double, double> coords;
+    using coords = std::pair<double, double>;
     double my_lon(lon), my_lat(lat);
     
-    if (s_SAA_boundary == 0 ) {
+    if (s_SAA_boundary == nullptr ) {
       s_SAA_boundary = new std::vector<std::pair<double, double> >;
     }
 
@@ -362,7 +362,7 @@ auto EarthCoordinate::insideSAA(double lat, double lon) const -> bool
         }
     }
     if (lon_min==1e10) {
-        for( std::vector<coords>::const_iterator it =s_SAA_boundary->begin();
+        for( auto it =s_SAA_boundary->begin();
             it!= s_SAA_boundary->end(); ++it)
         {
             double latv( it->first), lonv(it->second);
@@ -379,8 +379,8 @@ auto EarthCoordinate::insideSAA(double lat, double lon) const -> bool
         
     /* Find nearest 2 boundary points to the east whose
         latitude straddles my_lat */
-    std::vector<coords>::const_iterator it = s_SAA_boundary->begin();
-    std::vector<coords>::const_iterator prev = it;
+    auto it = s_SAA_boundary->begin();
+    auto prev = it;
     for ( ; it->first < my_lat && it != s_SAA_boundary->end(); prev = it, ++it) {}
     
     if (it == s_SAA_boundary->end()) return false;

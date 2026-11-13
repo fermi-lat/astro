@@ -367,7 +367,7 @@ auto testJD() -> bool {
    /// machines, so we test using multiple outcomes that are within
    /// this accuracy.
 
-   typedef std::map<double, std::vector<std::string> > Utc_vector_t;
+   using Utc_vector_t = std::map<double, std::vector<std::string> >;
    Utc_vector_t utc_values;
 
    // Test around leap second at 2009Jan01 at 00:00:00 UTC
@@ -522,7 +522,7 @@ auto testHTM() -> bool
     //      h.dump(std::cout);
     for( size_t level = 0; level <= maxlevel; ++level) {
         double area = 0;
-        for( HTM::const_iterator it = h.begin(level); it!=h.end(level); ++it){
+        for( auto it = h.begin(level); it!=h.end(level); ++it){
             const HTM::Node & n = *it;
             area += n.area();
         }

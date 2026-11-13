@@ -75,7 +75,7 @@ auto PointingHistory::operator()(double time)const -> const astro::PointingInfo&
 
     if( time!=m_selected){
 
-        std::map<double,astro::PointingInfo>::const_iterator iter=m_data.upper_bound(time);
+        auto iter=m_data.upper_bound(time);
         bool tooEarly( time< (*(m_data.begin())).first );
         bool tooLate( iter==m_data.end() && time > m_endTime);
 
